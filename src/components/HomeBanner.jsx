@@ -19,7 +19,7 @@ export default function HomeBanner() {
             Conneting great minds,{" "}
             <span className="text-[#9E76E9]">igniting success</span>
           </div>
-          <div className="absolute max-w-[clamp(100px,45vw,496px)]  right-5 mt-[40%]">
+          <div className="absolute max-w-[clamp(100px,45vw,496px)]  right-5 mt-[clamp(30%,42vw,40%)]">
             <div className=" font-semibold font-AntarcticanMonoSemiBold">
               Unlocking Tech Talent
             </div>
