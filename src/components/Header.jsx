@@ -9,7 +9,12 @@ export default function Header() {
     <MaxWidthWrapper className={"mt-10 mb-[-90px] z-50 relative"}>
       <div className=" flex justify-between items-center ">
         <div className="  ">
-          <Image src={"/logo.svg"} width={228} height={50} />
+          <Image
+            src={"/logo.svg"}
+            width={228}
+            height={50}
+            alt="Logo of website"
+          />
         </div>
         <div className=" flex gap-8">
           <ul className="max-[1070px]:hidden flex text-[clamp(14,2vw,18px)]  items-center font-AntarcticanMonoMedium gap-8  uppercase">
