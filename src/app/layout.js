@@ -46,6 +46,7 @@ export default async function RootLayout({ children }) {
     <html lang="en">
       <body
         className={cn(
+          "text-[#1A1B1D]",
           ArticulateRegular.className,
           `${ArticulateRegular.variable} ${ArticulateRegularOblique.variable} ${ArticulateMedium.variable} ${ArticulateMediumOblique.variable} ${ArticulateThin.variable} ${ArticulateThinOblique.variable} ${ArticulateBold.variable} ${ArticulateBoldOblique.variable} ${ArticulateDemiBold.variable} ${ArticulateDemiBoldOblique.variable} ${ArticulateExtraBold.variable} ${ArticulateExtraBoldOblique.variable} ${ArticulateExtraLight.variable} ${ArticulateExtraLightOblique.variable} ${ArticulateHeavy.variable} ${ArticulateHeavyOblique.variable} ${ArticulateNormal.variable} ${ArticulateNormalOblique.variable} ${ArticulateLight.variable} ${ArticulateLightOblique.variable} ${AntarcticanMonoBook.variable} ${AntarcticanMonoBookItalic.variable} ${AntarcticanMonoMedium.variable} ${AntarcticanMonoMediumItalic.variable} ${AntarcticanMonoSemiBold.variable} ${AntarcticanMonoSemiBoldItalic.variable} ${AntarcticanMonoBold.variable} ${AntarcticanMonoBoldItalic.variable}`
         )}

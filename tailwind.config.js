@@ -17,6 +17,7 @@ module.exports = {
       "2xl": "1536px", // Double extra large screens
       // Add your custom breakpoints here
       maxScreenSize: "1528px", // Example of a custom breakpoint
+      header: "1056px",
     },
     container: {
       center: true,
@@ -124,6 +125,14 @@ module.exports = {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        "slide-up": {
+          from: {
+            transform: "translateY(100%)",
+          },
+          to: {
+            transform: "translateY(0)",
+          },
+        },
         "accordion-down": {
           from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
@@ -134,6 +143,7 @@ module.exports = {
         },
       },
       animation: {
+        "slide-up": "slide-up 0.5s ease-in-out forwards",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
