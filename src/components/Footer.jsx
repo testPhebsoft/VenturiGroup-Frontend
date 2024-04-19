@@ -28,7 +28,7 @@ export default function Footer({
   ],
 }) {
   return (
-    <div className=" pt-20 pb-10">
+    <div className="bg-background pt-20 pb-10">
       <MaxWidthWrapper className={" relative"}>
         <div className="h-[80px] mb-20 lg:hidden"></div>
         <div className="flex flex-wrap lg:justify-between justify-center gap-y-10 ">
@@ -43,15 +43,19 @@ export default function Footer({
               </Link>
               <Link className="hover:text-input/60" href={"/join-us"}>
                 {" "}
-                <li>join us</li>
+                <li>Join us</li>
               </Link>
               <Link className="hover:text-input/60" href={"/insights"}>
                 {" "}
-                <li>insights</li>
+                <li>Insights</li>
               </Link>
               <Link className="hover:text-input/60" href={"/contact"}>
                 {" "}
-                <li>contact</li>
+                <li>Contact</li>
+              </Link>
+              <Link className="hover:text-input/60" href={"/contact"}>
+                {" "}
+                <li>I’m a candidate</li>
               </Link>
             </ul>
           </div>
@@ -94,13 +98,20 @@ export default function Footer({
           </div>
           <div className=" mt-10 flex w-full max-lg:max-w-[500px] justify-between max-lg:justify-center gap-5 ">
             <p className="text-input">Copyright © 2024 Venturi Group</p>
-            <Link className="hover:text-input/60" href={"/cookies"}>
+            <Link className=" max-lg:hidden" href={"/cookies"}>
               {" "}
-              <p className="text-input max-lg:hidden ">Cookies</p>
+              <p className="text-input hover:text-input/60 max-lg:hidden ">
+                Cookies
+              </p>
             </Link>
-            <Link className="hover:text-input/60" href={"/diversity-inclusion"}>
+            <Link
+              className="hover:text-input/60 max-lg:hidden"
+              href={"/diversity-inclusion"}
+            >
               {" "}
-              <p className="text-input  max-lg:hidden">Diversity & Inclusion</p>
+              <p className="text-input hover:text-input/60 max-lg:hidden">
+                Diversity & Inclusion
+              </p>
             </Link>
             <p className="w-[366px] max-lg:hidden"></p>
           </div>
@@ -131,11 +142,11 @@ const RenderAddress = ({
   number = "+44 161 850 1155",
 }) => {
   return (
-    <div className="flex flex-col gap-2 w-full max-lg:text-center max-lg:items-center max-w-[clamp(191px,2vw,235px)]">
+    <div className="flex flex-col  gap-2 w-full max-lg:text-center max-lg:items-center max-w-[clamp(191px,2vw,235px)]">
       <p className="text-primary font-AntarcticanMonoSemiBold uppercase">
         {city}
       </p>
-      <p className="text-input mt-10 w-full max-w-[clamp(91px,2vw,235px)] ">
+      <p className="text-input mt-10 w-full max-w-[clamp(191px,2vw,235px)] ">
         {addressLine}
       </p>
       <p className="text-input mt-10">{number}</p>
