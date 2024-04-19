@@ -74,7 +74,7 @@ export default function Footer({
                 alt="Linkedin"
                 height={20}
                 width={20}
-                src="/Linkedin.svg"
+                src="/LinkedIn.svg"
               />
             </div>
             <div className="relative before:absolute before:block before:rounded-full before:size-8 before:-inset-[6px] before:bottom-[50%] size-5   before:bg-[#1A1B1D1A]  ">
