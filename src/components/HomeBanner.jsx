@@ -1,6 +1,9 @@
+import Image from "next/image";
 import LeadinLight from "./LeadingLight";
 import MaxWidthWrapper from "./MaxWidthWraper";
 import { Button } from "./ui/button";
+import SLope from "./slope";
+import HorizenatalLine from "./horizentalLine";
 
 export default function HomeBanner() {
   return (
@@ -21,7 +24,37 @@ export default function HomeBanner() {
             igniting success
           </div>
           <div className="absolute max-w-[clamp(100px,45vw,496px)] z-10 right-5 mt-[clamp(30%,42vw,40%)]">
-            <div className=" font-semibold font-AntarcticanMonoSemiBold">
+            <div className="relative w-fit my-[25px] mr-[25px]">
+              <div className="w-[200px] px-[25px]">
+                <SLope className="" />
+                <HorizenatalLine className="mt-[-2px]" />
+              </div>
+              <div className=" absolute bottom-[-25px] rounded-full overflow-hidden border border-black h-[48px] w-[48px] ">
+                <Image
+                  width={148}
+                  height={148}
+                  className="h-auto"
+                  src="/avatar1.jpg"
+                />
+              </div>
+              <div className=" absolute bottom-[-25px] right-0 rounded-full overflow-hidden border border-black h-[48px] w-[48px] ">
+                <Image
+                  width={108}
+                  height={108}
+                  className="h-auto mt-[-20%]"
+                  src="/avatar3.jpg"
+                />
+              </div>
+              <div className=" absolute top-[-25px] right-[-23px] rounded-full overflow-hidden border border-black h-[48px] w-[48px] ">
+                <Image
+                  width={148}
+                  height={148}
+                  className="h-auto"
+                  src="/avatar2.jpg"
+                />
+              </div>
+            </div>
+            <div className=" font-semibold mt-10 font-AntarcticanMonoSemiBold">
               Unlocking Tech Talent
             </div>
             <div className=" font-ArticulateMedium mt-6">
@@ -34,10 +67,54 @@ export default function HomeBanner() {
             <Button className="uppercase mt-20">find out more +</Button>
           </div>
           <div className=" absolute mt-[40vmax] flex w-full max-w-[60%]">
-            {/* <p className=" font-AntarcticanMonoBook text-[16px] ml-[-50px] rotate-80">
+            <p className=" font-AntarcticanMonoBook text-[16px] mt-[16px] h-fit rotate-90">
               Scroll{" "}
-            </p> */}
-            <LeadinLight className="mb-[6px] max-w-[646px] w-full" />{" "}
+            </p>
+            <div className="w-full ">
+              <div className="flex gap-5 mt-[40%] mb-[calc(-40%-20px)] ml-10  items-center mt-10 ">
+                <div className="relative before:absolute before:block before:rounded-full before:size-8 before:-inset-[6px] before:bottom-[50%] size-5   before:bg-[#1A1B1D1A]  ">
+                  <Image
+                    className="  "
+                    alt="Instagram"
+                    fill
+                    src="/instagram.svg"
+                  />
+                </div>
+                <div className="relative before:absolute before:block before:rounded-full before:size-8 before:-inset-[6px] before:bottom-[50%] size-5   before:bg-[#1A1B1D1A]  ">
+                  <Image
+                    alt="Linkedin"
+                    height={20}
+                    width={20}
+                    src="/LinkedIn.svg"
+                  />
+                </div>
+                <div className="relative before:absolute before:block before:rounded-full before:size-8 before:-inset-[6px] before:bottom-[50%] size-5   before:bg-[#1A1B1D1A]  ">
+                  <Image
+                    alt="twitter"
+                    height={20}
+                    width={20}
+                    src="/twitter.svg"
+                  />
+                </div>
+                <div className="relative before:absolute before:block before:rounded-full before:size-8 before:-inset-[6px] before:bottom-[50%] size-5   before:bg-[#1A1B1D1A]  ">
+                  <Image
+                    alt="youtube"
+                    height={20}
+                    width={20}
+                    src="/youtube.svg"
+                  />
+                </div>
+                <div className="relative before:absolute before:block before:rounded-full before:size-8 before:-inset-[6px] before:bottom-[50%] size-5   before:bg-[#1A1B1D1A]  ">
+                  <Image
+                    alt="facebook"
+                    height={20}
+                    width={20}
+                    src="/facebook.svg"
+                  />
+                </div>
+              </div>
+              <LeadinLight className="mb-[6px] max-w-[646px] w-full" />{" "}
+            </div>
             <p className=" uppercase self-end ml-10  whitespace-nowrap   font-AntarcticanMonoMedium">
               {" "}
               TAILORED RECRUITMENT 
