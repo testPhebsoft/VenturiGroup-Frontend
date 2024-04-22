@@ -8,7 +8,7 @@ import HorizenatalLine from "./horizentalLine";
 export default function HomeBanner() {
   return (
     <div>
-      <div className="  after:bg-[linear-gradient(180deg,rgba(245,245,245,0)0%,#F5F5F5)] after:absolute after:z-[-1] w-full  h-[60vmax] aspect-video after:h-[60vmax] after:top-0  after:w-full">
+      <div className="  after:bg-[linear-gradient(180deg,rgba(245,245,245,0)0%,#F5F5F5)] after:absolute after:z-[-1] w-full  h-[100vmax] lg:h-[60vmax] lg:aspect-video lg:after:h-[60vmax] after:h-[100vmax] after:top-0  after:w-full">
         <video
           className="fixed w-full z-[-2]  h-[100vh] object-cover  bg-[linear-gradient(180deg,rgba(245,245,245,0)0%,#F5F5F5)]"
           loop
@@ -17,13 +17,13 @@ export default function HomeBanner() {
         >
           <source src="https://s3-figma-videos-production-sig.figma.com/video/1360250505037508142/TEAM/c763/de54/-e78b-4017-9db2-5f993aaf3743?Expires=1714348800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=fO2NJPkatf3DvC2Op5oohC0Ts-9SPKX2xaThhgwe5ble-80ingqNzi23GNMZsaLit4NeP80AGsBlFXwzGiOxOXs8CMUi~4Y6mxI6FF2EALSZtk3xp9JFSouWMMR4TVQPZ3VgWr7dBWZXvZs2AKSmNT4LkFuouny-nKhZCCK-mtU-bS2U3yVLYbmsq4Q6suGzKi0MmBB9LC36~fbqt3X9VeWKZEa004JG-EaXB0pS1TOI-ihG5GwXc~7fcLaUeq~jP7yE14S6v8KDx9X59EMZJiD-vqpdkaWW4~JvdxXYfQTYOXD~uh2yzsmFlGzXRcCKMWJSYsUvvzgkkJ4gORX4RA__" />
         </video>
-        <MaxWidthWrapper className={"relative  "}>
-          <div className="absolute z-10 max-w-[clamp(400px,45vw,1026px)] font-[lust-text] text-[clamp(18px,6vw,121px)] leading-[clamp(18px,6vw,121px)] -translate-x-[20%] left-[20%] mt-[15%] ">
+        <MaxWidthWrapper className={" absolute lg:relative   "}>
+          <div className="lg:absolute z-10  w-full sm:max-w-[clamp(200px,70vw,1026px)] lg:max-w-[clamp(200px,45vw,1026px)] font-[lust-text] leading-[clamp(18px,12vw,110px)] text-[clamp(18px,12vw,110px)] sm:leading-[clamp(18px,8vw,110px)] sm:text-[clamp(18px,8vw,110px)]  lg:text-[clamp(18px,5vw,110px)] lg:leading-[clamp(18px,5vw,110px)] lg:-translate-x-[20%] lg:left-[20%]  mt-[120px] lg:mt-[15%] ">
             {" "}
             Conneting <span className="text-[#9E76E9]">great minds</span>,
             igniting success
           </div>
-          <div className="absolute max-w-[clamp(100px,45vw,496px)] z-10 right-5 mt-[clamp(30%,42vw,40%)]">
+          <div className="md:absolute  w-full md:max-w-[clamp(100px,45vw,496px)] z-10 right-5 mx-auto mt-10 lg:mt-[22vmax]">
             <div className="relative w-fit my-[25px] mr-[25px]">
               <div className="w-[200px] px-[25px]">
                 <SLope className="" />
@@ -35,6 +35,7 @@ export default function HomeBanner() {
                   height={148}
                   className="h-auto"
                   src="/avatar1.jpg"
+                  alt="Avatar image"
                 />
               </div>
               <div className=" absolute bottom-[-25px] right-0 rounded-full overflow-hidden border border-black h-[48px] w-[48px] ">
@@ -43,6 +44,7 @@ export default function HomeBanner() {
                   height={108}
                   className="h-auto mt-[-20%]"
                   src="/avatar3.jpg"
+                  alt="Avatar image"
                 />
               </div>
               <div className=" absolute top-[-25px] right-[-23px] rounded-full overflow-hidden border border-black h-[48px] w-[48px] ">
@@ -51,6 +53,7 @@ export default function HomeBanner() {
                   height={148}
                   className="h-auto"
                   src="/avatar2.jpg"
+                  alt="Avatar image"
                 />
               </div>
             </div>
@@ -64,14 +67,16 @@ export default function HomeBanner() {
               incredible tech talent where it&apos;s needed most, from startups
               to global corporations.
             </div>
-            <Button className="uppercase mt-20">find out more +</Button>
+            <Button className="uppercase mt-10 sm:mt-20">
+              find out more +
+            </Button>
           </div>
-          <div className=" absolute mt-[40vmax] flex w-full max-w-[60%]">
+          <div className=" max-lg:hidden absolute mt-[40vmax] flex w-full max-w-[60%]">
             <p className=" font-AntarcticanMonoBook text-[16px] mt-[16px] h-fit rotate-90">
               Scroll{" "}
             </p>
             <div className="w-full ">
-              <div className="flex gap-5 mt-[40%] mb-[calc(-40%-20px)] ml-10  items-center mt-10 ">
+              <div className="flex gap-5 mt-[40%] mb-[calc(-40%-20px)] ml-10  items-center  ">
                 <div className="relative before:absolute before:block before:rounded-full before:size-8 before:-inset-[6px] before:bottom-[50%] size-5   before:bg-[#1A1B1D1A]  ">
                   <Image
                     className="  "
@@ -122,7 +127,7 @@ export default function HomeBanner() {
           </div>
         </MaxWidthWrapper>
       </div>
-      <div className="h-[16vmax] bg-background"></div>
+      <div className="h-[16vmax] max-lg:hidden bg-background"></div>
     </div>
   );
 }
