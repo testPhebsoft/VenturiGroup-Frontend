@@ -7,7 +7,7 @@ import HorizenatalLine from "./horizentalLine";
 
 export default function HomeBanner() {
   return (
-    <div>
+    <div className="">
       <div className="  after:bg-[linear-gradient(180deg,rgba(245,245,245,0)0%,#F5F5F5)] after:absolute after:z-[-1] w-full  h-[100vmax] lg:h-[60vmax] lg:aspect-video lg:after:h-[60vmax] after:h-[100vmax] after:top-0  after:w-full">
         <video
           className="fixed w-full z-[-2]  h-[100vh] object-cover  bg-[linear-gradient(180deg,rgba(245,245,245,0)0%,#F5F5F5)]"
@@ -23,7 +23,7 @@ export default function HomeBanner() {
             Conneting <span className="text-[#9E76E9]">great minds</span>,
             igniting success
           </div>
-          <div className="md:absolute  w-full md:max-w-[clamp(100px,45vw,496px)] z-10 right-5 mx-auto mt-10 lg:mt-[22vmax]">
+          <div className="md:absolute  w-full md:max-w-[clamp(100px,45vw,496px)] z-10 right-5 mx-auto mt-10 lg:mt-[clamp(32%,22vmax,540px)]">
             <div className="relative w-fit my-[25px] mr-[25px]">
               <div className="w-[200px] px-[25px]">
                 <SLope className="" />
@@ -71,8 +71,12 @@ export default function HomeBanner() {
               find out more +
             </Button>
           </div>
-          <div className=" max-lg:hidden absolute mt-[40vmax] flex w-full max-w-[60%]">
-            <p className=" font-AntarcticanMonoBook text-[16px] mt-[16px] h-fit rotate-90">
+        </MaxWidthWrapper>
+      </div>
+      <div className="   mt-[500px]  max-lg:hidden bg-background  ">
+        <div className="mt-[-500px]   max-lg:hidden  flex w-[100%] justify-around max-w-screen-maxScreenSize mx-auto">
+          <div className=" mt-[-500px]  w-[50%] flex ">
+            <p className=" ml-[-24px] font-AntarcticanMonoBook  text-[16px] mt-[16px] h-fit rotate-90">
               Scroll{" "}
             </p>
             <div className="w-full ">
@@ -118,17 +122,15 @@ export default function HomeBanner() {
                   />
                 </div>
               </div>
-              <LeadinLight className="mb-[6px] max-w-[646px] w-full" />{" "}
+              <LeadinLight className="mb-[6px]    w-full" />{" "}
             </div>
-            <p className=" uppercase self-end ml-10  whitespace-nowrap   font-AntarcticanMonoMedium">
-              {" "}
-              TAILORED RECRUITMENT 
-            </p>
           </div>
-        </MaxWidthWrapper>
+          <p className="  w-[40%] uppercase self-end    whitespace-nowrap   font-AntarcticanMonoMedium">
+            {" "}
+            TAILORED RECRUITMENT
+          </p>
+        </div>
       </div>
-      <div className="h-[16vmax] max-lg:hidden bg-background"></div>
     </div>
   );
 }
-// background: linear-gradient(180deg, rgba(245, 245, 245, 0) 0%, #F5F5F5 100%);

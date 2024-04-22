@@ -1,4 +1,5 @@
 import HomeBanner from "@/components/HomeBanner";
+import TailoredRecuritment from "@/components/TailoredRecruitment";
 
 function sleep(delay) {
   return new Promise((resolve) => setTimeout(resolve, delay));
@@ -8,6 +9,7 @@ export default async function Home() {
   return (
     <main>
       <HomeBanner />
+      <TailoredRecuritment />
     </main>
   );
 }
