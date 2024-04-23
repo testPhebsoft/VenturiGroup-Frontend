@@ -1,4 +1,5 @@
 import HomeBanner from "@/components/HomeBanner";
+import OurSector from "@/components/OurSectors";
 import TailoredRecuritment from "@/components/TailoredRecruitment";
 
 function sleep(delay) {
@@ -10,6 +11,7 @@ export default async function Home() {
     <main>
       <HomeBanner />
       <TailoredRecuritment />
+      <OurSector />
     </main>
   );
 }
