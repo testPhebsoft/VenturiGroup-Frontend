@@ -8,7 +8,7 @@ import HorizenatalLine from "./horizentalLine";
 export default function HomeBanner() {
   return (
     <div className="">
-      <div className="  after:bg-[linear-gradient(180deg,rgba(245,245,245,0)0%,#F5F5F5)] after:absolute after:z-[-1] w-full  h-[100vmax] lg:h-[60vmax] lg:aspect-video lg:after:h-[60vmax] after:h-[100vmax] after:top-0  after:w-full">
+      <div className="  after:bg-[linear-gradient(180deg,rgba(245,245,245,0)0%,#F5F5F5)] after:absolute after:z-[-1] w-full  max-sm:h-[clamp(745px,60vmax,1335px)]  max-sm:after:h-[clamp(745px,60vmax,1335px)] h-[clamp(850px,60vmax,1335px)] lg:aspect-video after:h-[clamp(850px,60vmax,1335px)]  after:top-0  after:w-full">
         <video
           className="fixed w-full z-[-2]  h-[100vh] object-cover  bg-[linear-gradient(180deg,rgba(245,245,245,0)0%,#F5F5F5)]"
           loop
@@ -75,7 +75,7 @@ export default function HomeBanner() {
       </div>
       <div className="   mt-[500px]  max-lg:hidden bg-background  ">
         <div className="mt-[-500px]   max-lg:hidden  flex w-[100%] justify-around max-w-screen-maxScreenSize mx-auto">
-          <div className=" mt-[-500px]  w-[50%] flex ">
+          <div className=" mt-[-500px] self-end w-[50%] flex ">
             <p className=" ml-[-24px] font-AntarcticanMonoBook  text-[16px] mt-[16px] h-fit rotate-90">
               Scroll{" "}
             </p>
