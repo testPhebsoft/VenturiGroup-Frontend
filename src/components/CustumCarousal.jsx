@@ -76,6 +76,7 @@ export function CustumCarousal({ data }) {
       container.removeEventListener("scroll", handleScroll);
     };
   }, [containerRef.current?.scrollLeft]);
+
   const handleNext = () => {
     if (containerRef.current) {
       const container = containerRef.current;

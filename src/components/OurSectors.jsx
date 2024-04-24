@@ -5,7 +5,7 @@ import MaxWidthWrapper from "./MaxWidthWraper";
 export default function OurSector() {
   const renderCard = (imagesrc = "/sector1.jpg", number = "01", heading) => {
     return (
-      <div className="w-full mx-2 inline-block snap-center   bg-white max-w-[408px] pb-10 pt-2 px-2 rounded-[18px]">
+      <div className="w-full mx-2 inline-block snap-center   bg-white max-w-[403px] pb-10 pt-2 px-2 rounded-[18px]">
         <div className="relative    w-full aspect-[1.8926] ">
           <Image
             className="rounded-[18px]"
@@ -42,13 +42,13 @@ export default function OurSector() {
           View our areas of <span className="text-[#9E76E9] "> expertise</span>
         </h2>
       </div>
-      <MaxWidthWrapper
+      <div
         style={{
           WebkitOverflowScrolling: "touch",
           scrollbarWidth: "none",
           msOverflowStyle: "none",
         }}
-        className="snap-x scroll-smooth  snap-mandatory touch-pan-x scroll-m-5 whitespace-nowrap overflow-x-scroll mt-10 px-5 sm:px-0 max-w-[1279px] "
+        className="snap-x scroll-smooth  snap-mandatory touch-pan-x scroll-m-5 whitespace-nowrap overflow-x-scroll mt-10 px-5 mx-auto sm:px-0 max-w-[1250px] "
       >
         {renderCard()}
         {renderCard("/sector2.jpg", "02", "Software Engineering")}
@@ -59,7 +59,7 @@ export default function OurSector() {
             ERP & <br></br>CRM
           </>
         )}
-      </MaxWidthWrapper>
+      </div>
     </div>
   );
 }
