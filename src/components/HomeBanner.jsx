@@ -17,7 +17,7 @@ export default function HomeBanner() {
         >
           <source src="https://s3-figma-videos-production-sig.figma.com/video/1360250505037508142/TEAM/c763/de54/-e78b-4017-9db2-5f993aaf3743?Expires=1714348800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=fO2NJPkatf3DvC2Op5oohC0Ts-9SPKX2xaThhgwe5ble-80ingqNzi23GNMZsaLit4NeP80AGsBlFXwzGiOxOXs8CMUi~4Y6mxI6FF2EALSZtk3xp9JFSouWMMR4TVQPZ3VgWr7dBWZXvZs2AKSmNT4LkFuouny-nKhZCCK-mtU-bS2U3yVLYbmsq4Q6suGzKi0MmBB9LC36~fbqt3X9VeWKZEa004JG-EaXB0pS1TOI-ihG5GwXc~7fcLaUeq~jP7yE14S6v8KDx9X59EMZJiD-vqpdkaWW4~JvdxXYfQTYOXD~uh2yzsmFlGzXRcCKMWJSYsUvvzgkkJ4gORX4RA__" />
         </video>
-        <MaxWidthWrapper className={" absolute lg:relative   "}>
+        <MaxWidthWrapper className={" absolute lg:relative max-w-[1473px]  "}>
           <div className="lg:absolute z-10  w-full sm:max-w-[clamp(200px,70vw,1026px)] lg:max-w-[clamp(200px,45vw,1026px)] font-[lust-text] leading-[clamp(18px,12vw,110px)] text-[clamp(18px,12vw,110px)] sm:leading-[clamp(18px,8vw,110px)] sm:text-[clamp(18px,8vw,110px)]  lg:text-[clamp(18px,5vw,110px)] lg:leading-[clamp(18px,5vw,110px)] lg:-translate-x-[20%] lg:left-[20%]  mt-[120px] lg:mt-[15%] ">
             {" "}
             Conneting <span className="text-[#9E76E9]">great minds</span>,
@@ -74,7 +74,7 @@ export default function HomeBanner() {
         </MaxWidthWrapper>
       </div>
       <div className="   mt-[500px]  max-lg:hidden bg-background  ">
-        <div className="mt-[-500px]   max-lg:hidden  flex w-[100%] justify-around max-w-screen-maxScreenSize mx-auto">
+        <div className="mt-[-500px]   max-lg:hidden  flex w-[100%] justify-around max-w-[1473px] mx-auto">
           <div className=" mt-[-500px] self-end w-[50%] flex ">
             <p className=" ml-[-24px] font-AntarcticanMonoBook  text-[16px] mt-[16px] h-fit rotate-90">
               Scroll{" "}
@@ -125,7 +125,7 @@ export default function HomeBanner() {
               <LeadinLight className="mb-[6px]    w-full" />{" "}
             </div>
           </div>
-          <p className="  w-[40%] uppercase self-end    whitespace-nowrap   font-AntarcticanMonoMedium">
+          <p className="  w-[43%] uppercase self-end    whitespace-nowrap   font-AntarcticanMonoMedium">
             {" "}
             TAILORED RECRUITMENT
           </p>

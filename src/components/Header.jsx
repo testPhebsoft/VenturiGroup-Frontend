@@ -6,7 +6,9 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <MaxWidthWrapper className={"mt-10 mb-[-90px] z-50 relative"}>
+    <MaxWidthWrapper
+      className={"mt-10 mb-[-90px] max-w-[1528px] z-50 relative"}
+    >
       <div className=" flex justify-between items-center ">
         <div className="  ">
           <Link href={"/"}>

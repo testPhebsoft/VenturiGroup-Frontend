@@ -16,7 +16,7 @@ module.exports = {
       xl: "1280px", // Extra large screens
       "2xl": "1536px", // Double extra large screens
       // Add your custom breakpoints here
-      maxScreenSize: "1528px", // Example of a custom breakpoint
+      maxScreenSize: "1311px", // Example of a custom breakpoint
       header: "1056px",
     },
     container: {
