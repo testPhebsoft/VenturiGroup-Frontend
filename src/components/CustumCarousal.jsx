@@ -27,43 +27,28 @@ export function CustumCarousal({ data }) {
       }
     };
   }, []);
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-          const visibleItem = entry.target;
-          const visibleItemHeight = visibleItem.offsetHeight;
-          console.log(index, entry);
-          // setVisibleItemHeight(visibleItemHeight);
-        }
-      });
-    });
 
-    const container = containerRef.current;
-    const items = container.children;
-
-    Array.from(items).forEach((item) => {
-      observer.observe(item);
-    });
-
-    return () => {
-      observer.disconnect();
-    };
-  }, [containerRef.current]);
   useEffect(() => {
     const handleScroll = () => {
       // Accessing the current scrollLeft value of the container
       const scrollLeft = containerRef.current.scrollLeft;
       const container = containerRef.current;
-      console.log("Scroll position changed:", scrollLeft);
+      console.log(
+        "Scroll position changed:",
+        scrollLeft,
+        container.scrollLeft + container.clientWidth,
+        container.clientWidth,
+        container.scrollWidth
+      );
       if (
-        container.scrollLeft + container.clientWidth ==
+        container.scrollLeft + container.clientWidth >=
         container.scrollWidth
       ) {
         container.scrollLeft = itemWidthRef.current;
       }
       if (container.scrollLeft === 0) {
-        container.scrollLeft = container.scrollWidth - 200;
+        container.scrollLeft =
+          container.scrollWidth - container.clientWidth - 200;
       }
     };
 
