@@ -1,5 +1,5 @@
 import MaxWidthWrapper from "./MaxWidthWraper";
-import Quote from "./quote";
+import Quote from "./Quote";
 
 export default function OurCustomers() {
   return (
