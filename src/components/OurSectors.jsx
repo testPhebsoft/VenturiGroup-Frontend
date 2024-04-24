@@ -38,9 +38,8 @@ export default function OurSector() {
           {" "}
           Our Sectors
         </h3>
-        <h2 className="font-[lust-text] text-[clamp(24px,5vw,36px)] leading-[clamp(24px,5vw,36px)]  font-light">
-          View our areas of{" "}
-          <span className="text-[#9E76E9] mt-5"> expertise</span>
+        <h2 className="font-[lust-text] mt-7 text-[clamp(24px,5vw,36px)] leading-[clamp(24px,5vw,36px)]  font-light">
+          View our areas of <span className="text-[#9E76E9] "> expertise</span>
         </h2>
       </div>
       <MaxWidthWrapper
@@ -49,7 +48,7 @@ export default function OurSector() {
           scrollbarWidth: "none",
           msOverflowStyle: "none",
         }}
-        className="snap-x scroll-smooth touch-pan-x scroll-m-5 whitespace-nowrap overflow-x-scroll mt-10  "
+        className="snap-x scroll-smooth touch-pan-x scroll-m-5 whitespace-nowrap overflow-x-scroll mt-10 px-5 sm:px-0 max-w-[1279px] "
       >
         {renderCard()}
         {renderCard("/sector2.jpg", "02", "Software Engineering")}
