@@ -48,7 +48,7 @@ export default function OurSector() {
           scrollbarWidth: "none",
           msOverflowStyle: "none",
         }}
-        className="snap-x scroll-smooth touch-pan-x scroll-m-5 whitespace-nowrap overflow-x-scroll mt-10 px-5 sm:px-0 max-w-[1279px] "
+        className="snap-x scroll-smooth  snap-mandatory touch-pan-x scroll-m-5 whitespace-nowrap overflow-x-scroll mt-10 px-5 sm:px-0 max-w-[1279px] "
       >
         {renderCard()}
         {renderCard("/sector2.jpg", "02", "Software Engineering")}
