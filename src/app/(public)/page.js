@@ -1,4 +1,5 @@
 import HomeBanner from "@/components/HomeBanner";
+import OurCustomers from "@/components/OurCustomers";
 import OurSector from "@/components/OurSectors";
 import TailoredRecuritment from "@/components/TailoredRecruitment";
 
@@ -12,6 +13,7 @@ export default async function Home() {
       <HomeBanner />
       <TailoredRecuritment />
       <OurSector />
+      <OurCustomers />
     </main>
   );
 }
