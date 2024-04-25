@@ -15,6 +15,7 @@ export default function ExploreNext() {
                     fill
                     className="  max-lg:rounded-[24px]"
                     src={"/explorenext.jpeg"}
+                    alt="explore next"
                   />
                 </div>
               </div>
@@ -33,7 +34,7 @@ export default function ExploreNext() {
                 </h2>
                 <p className=" text-[clamp(12px,1.5vw,16px)] leading-[clamp(14px,3vw,25px)] w-full lg:max-w-[387px] ">
                   Cut through the noise. Find opportunities that speak to your
-                  talent and skillset. If you're ready to explore your next
+                  talent and skillset. If you&apos;re ready to explore your next
                   chapter, do it with Venturi.
                 </p>
                 <Button
