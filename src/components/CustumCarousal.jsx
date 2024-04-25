@@ -102,20 +102,20 @@ export function CustumCarousal({ data }) {
           scrollbarWidth: "none",
           msOverflowStyle: "none",
         }}
-        className="lg:mr-[calc(-49vw+618px)]  flex-1 snap-x snap-mandatory overflow-x-scroll whitespace-nowrap touch-pan-x "
+        className="lg:mr-[calc(-49vw+618px)]  lg:mt-[70px] flex-1 snap-x snap-mandatory overflow-x-scroll whitespace-nowrap touch-pan-x "
       >
         {data.map((item, index) => (
           <div
             style={{ height: visibleItemHeight }}
             key={index}
-            className="relative lg:snap-start inline-block mx-5 w-auto snap-center border-primary border rounded-[18px] aspect-[0.804] h-[clamp(328px,65vw,456px)]"
+            className="relative  lg:snap-start inline-block mx-5 w-auto snap-center border-primary border rounded-[18px] aspect-[0.804] h-[clamp(328px,65vw,456px)]"
           >
             <Image className="rounded-[18px]" fill src={item.image} />
             <div className="top-[15px] absolute w-[55px] text-black"></div>
           </div>
         ))}
       </div>
-      <div className="flex max-lg:hidden absolute top-[-70px] justify-center items-center gap-5">
+      <div className="flex max-lg:hidden absolute top-[0px] justify-center items-center gap-5">
         <button onClick={handlePrevious}>
           <svg
             width="50"
