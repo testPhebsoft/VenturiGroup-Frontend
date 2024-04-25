@@ -7,7 +7,7 @@ export default function TailoredRecuritment() {
     <div className="bg-background py-[50px]">
       <MaxWidthWrapper className="w-full max-[839px]:flex-col  flex gap-5 ">
         <div className="min-[839px]:w-[55%] w-full max-[839px]:mx-auto">
-          <div className="max-[839px]:hidden relative   aspect-[0.95]  max-w-[495px]">
+          <div className="max-[839px]:hidden relative  aspect-[0.95]  max-w-[495px]">
             <Image fill className=" rounded-[24px]" src="/Youngboy.jpg" />
           </div>
           <div className=" min-[839px]:hidden  relative aspect-[1.5] max-[839px]:mx-auto max-w-[495px]">

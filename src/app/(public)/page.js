@@ -1,3 +1,4 @@
+import ExploreNext from "@/components/ExploreNext";
 import HomeBanner from "@/components/HomeBanner";
 import OurCustomers from "@/components/OurCustomers";
 import OurSector from "@/components/OurSectors";
@@ -14,6 +15,7 @@ export default async function Home() {
       <TailoredRecuritment />
       <OurSector />
       <OurCustomers />
+      <ExploreNext />
     </main>
   );
 }
