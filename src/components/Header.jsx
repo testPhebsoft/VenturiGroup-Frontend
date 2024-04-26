@@ -3,6 +3,7 @@ import MaxWidthWrapper from "./MaxWidthWraper";
 import { Button } from "./ui/button";
 import { Languages } from "./Languages";
 import Link from "next/link";
+import HeaderMenu from "./HeaderMenu";
 
 export default function Header() {
   return (
@@ -50,7 +51,11 @@ export default function Header() {
               <li>contact</li>
             </Link>
           </ul>
-          <Button variant="outline"> I’m a candidate </Button>
+          <Button variant="outline" className="max-md:hidden">
+            {" "}
+            I’m a candidate{" "}
+          </Button>
+          <HeaderMenu className={"min-[1070px]:hidden"} />
           <Languages className={"max-[1070px]:hidden"} />
         </div>
       </div>

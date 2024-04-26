@@ -7,7 +7,7 @@ export default function ExploreNext() {
     <div className="bg-background py-10">
       <div className="lg:h-[567px] lg:overflow-clip bg-background ">
         <MaxWidthWrapper className={"  "}>
-          <div className="lg:h-[565px] rounded-[24px] border overflow-clip">
+          <div className="lg:h-[565px] lg:rounded-[24px]  overflow-clip">
             <div className={"lg:flex lg:h-[1500px] lg:overflow-clip  relative"}>
               <div className=" w-full lg:absolute  lg:h-full ">
                 <div className="w-full lg:sticky lg:h-[500px]  lg:mt-[-200px] lg:top-0 ">

@@ -1,18 +1,10 @@
 "use client";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import MaxWidthWrapper from "./MaxWidthWraper";
 import { Button } from "./ui/button";
+import { useHorizontalScroll } from "./useHorizontalScroll";
 export default function TrendingJobs() {
-  const scrollContainerRef = useRef(null);
-
-  const handleScroll = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    console.log(scrollContainerRef.current.scrollLeft + e.deltaY);
-
-    scrollContainerRef.current.scrollLeft =
-      scrollContainerRef.current.scrollLeft + e.deltaY;
-  };
+  const scrollContainerRef = useHorizontalScroll();
 
   return (
     <div className=" bg-background py-10 ">
@@ -25,13 +17,12 @@ export default function TrendingJobs() {
         </div>
         <div
           ref={scrollContainerRef}
-          onWheel={handleScroll}
           style={{
             WebkitOverflowScrolling: "touch",
             scrollbarWidth: "none",
             msOverflowStyle: "none",
           }}
-          className="  snap-mandatory   overflow-y-hidden mt-10 relative overflow-x-scroll touch-pan-x whitespace-nowrap mr-[calc(-50vw+51%)]"
+          className=" snap-x snap-mandatory  scroll-smooth overflow-y-hidden mt-10 relative overflow-x-scroll touch-pan-x whitespace-nowrap mr-[calc(-50vw+51%)]"
         >
           {Array(10)
             .fill(0)
@@ -50,9 +41,11 @@ const JobCard = ({
   employmentType = "Full-time",
   salary = "45 - 55,000",
   buttonText = "quick apply",
+  ...props
 }) => {
   return (
     <div
+      {...props}
       className={`mx-2 inline-block snap-start w-[clamp(305px,30vw,367px)] aspect-[0.812] bg-cover bg-no-repeat border rounded-[24px] bg-[url('../../public/jobsbg.svg')]`}
     >
       <div className="p-10 py-10 flex flex-col h-full">
