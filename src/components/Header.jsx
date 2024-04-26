@@ -6,8 +6,10 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <MaxWidthWrapper
-      className={"mt-10 mb-[-90px] max-w-[1528px] z-50 relative"}
+    <div
+      className={
+        "mt-10 mb-[-90px]  px-5 sm:px-10 w-full max-w-[1528px]  mx-auto z-50 relative"
+      }
     >
       <div className=" flex justify-between items-center ">
         <div className="  ">
@@ -52,6 +54,6 @@ export default function Header() {
           <Languages className={"max-[1070px]:hidden"} />
         </div>
       </div>
-    </MaxWidthWrapper>
+    </div>
   );
 }
