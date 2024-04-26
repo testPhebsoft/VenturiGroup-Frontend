@@ -18,13 +18,13 @@ import Image from "next/image";
 export default function HeaderMenu({ ...props }) {
   return (
     <Sheet {...props}>
-      <SheetTrigger>
+      <SheetTrigger className="min-[1070px]:hidden">
         {" "}
         <Menu />
       </SheetTrigger>
       <SheetContent
-        side="top"
-        className="h-full flex flex-col overflow-y-auto "
+        side="right"
+        className="h-full w-full flex flex-col overflow-y-auto "
       >
         <SheetHeader>
           <SheetTitle>
