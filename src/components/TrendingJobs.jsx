@@ -1,6 +1,19 @@
+"use client";
+import { useRef } from "react";
 import MaxWidthWrapper from "./MaxWidthWraper";
 import { Button } from "./ui/button";
 export default function TrendingJobs() {
+  const scrollContainerRef = useRef(null);
+
+  const handleScroll = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    console.log(scrollContainerRef.current.scrollLeft + e.deltaY);
+
+    scrollContainerRef.current.scrollLeft =
+      scrollContainerRef.current.scrollLeft + e.deltaY;
+  };
+
   return (
     <div className=" bg-background py-10 ">
       <MaxWidthWrapper>
@@ -11,12 +24,14 @@ export default function TrendingJobs() {
           <Button className=" uppercase ">see more +</Button>
         </div>
         <div
+          ref={scrollContainerRef}
+          onWheel={handleScroll}
           style={{
             WebkitOverflowScrolling: "touch",
             scrollbarWidth: "none",
             msOverflowStyle: "none",
           }}
-          className="snap-x  snap-mandatory  mt-10 relative overflow-x-scroll whitespace-nowrap mr-[calc(-50vw+51%)]"
+          className="  snap-mandatory   overflow-y-hidden mt-10 relative overflow-x-scroll touch-pan-x whitespace-nowrap mr-[calc(-50vw+51%)]"
         >
           {Array(10)
             .fill(0)

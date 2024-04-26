@@ -1,5 +1,7 @@
+import BringUsOn from "@/components/BringUsOn";
 import ExploreNext from "@/components/ExploreNext";
 import HomeBanner from "@/components/HomeBanner";
+import OurClients from "@/components/OurClients";
 import OurCustomers from "@/components/OurCustomers";
 import OurSector from "@/components/OurSectors";
 import TailoredRecuritment from "@/components/TailoredRecruitment";
@@ -18,6 +20,8 @@ export default async function Home() {
       <OurCustomers />
       <ExploreNext />
       <TrendingJobs />
+      <BringUsOn />
+      {/* <OurClients /> */}
     </main>
   );
 }
