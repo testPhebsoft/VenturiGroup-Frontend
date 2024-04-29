@@ -5,11 +5,11 @@ import { Socials } from "./Socials";
 export default function AboutBanner() {
   return (
     <div className="bg-background ">
-      <div className="h-[clamp(100vh,100vmax,1117px)] overflow-clip bg-background ">
-        <div className="h-[clamp(100vh,100vmax,1117px)]  overflow-clip">
+      <div className="h-[clamp(636px,100vmax,1117px)] overflow-clip bg-background ">
+        <div className="h-[clamp(636px,100vmax,1117px)]  overflow-clip">
           <div
             className={
-              "flex h-[clamp(100vh,100vmax,1117px)] after:bg-[linear-gradient(180deg,rgba(245,245,245,0)0%,#F5F5F5)] after:absolute after:w-full after:h-full overflow-clip  relative"
+              "flex h-[clamp(636px,100vmax,1117px)] after:bg-[linear-gradient(180deg,rgba(245,245,245,0)0%,#F5F5F5)] after:absolute after:w-full after:h-full overflow-clip  relative"
             }
           >
             <div className=" w-full absolute  h-full ">
@@ -26,7 +26,7 @@ export default function AboutBanner() {
               </div>
             </div>
             <MaxWidthWrapper className="w-full relative h-[1500px]">
-              <div className="flex  flex-col absolute w-[82%] left-[7%] top-[calc(100vh-500px)]  lg:top-[15vmax] h-[0px] z-10 mt-10  ">
+              <div className="flex  flex-col absolute w-[82%] left-[7%] top-[calc(clamp(582px,100vmax,1117px)-500px)]  lg:top-[15vmax] h-[0px] z-10 mt-10  ">
                 <h1 className="  text-[clamp(64px,6.5vw,121px)] leading-[clamp(64px,6.9vw,121px)] font-[lust-text] ">
                   Our <br />
                   <span className="text-primary"> Story </span>

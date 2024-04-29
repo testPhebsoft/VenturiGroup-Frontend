@@ -1,5 +1,6 @@
 import AboutBanner from "@/components/AboutBanner";
 import BringUsOn from "@/components/BringUsOn";
+import Evolution from "@/components/Evolution";
 import ExploreNext from "@/components/ExploreNext";
 import HomeBanner from "@/components/HomeBanner";
 import OurClients from "@/components/OurClients";
@@ -16,6 +17,7 @@ export default async function Home() {
   return (
     <main>
       <AboutBanner />
+      <Evolution />
       <OurSector />
       <OurCustomers />
       <ExploreNext />
