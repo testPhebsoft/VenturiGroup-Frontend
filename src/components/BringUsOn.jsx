@@ -8,7 +8,7 @@ export default function BringUsOn() {
       <MaxWidthWrapper className="flex gap-10 flex-col md:flex-row items-end w-full max-w-[496px]">
         <div className="relative w-full max-w-[753px] aspect-[1.56875] ">
           {" "}
-          <Image fill src={"/WordBubbles.png"} />
+          <Image fill src={"/WordBubbles.png"} alt="word bubbles" />
         </div>
         <div className="max-md:mr-auto w-full md:max-w-[496px]">
           <p className="text-[16px]  ">

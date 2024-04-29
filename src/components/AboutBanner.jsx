@@ -26,7 +26,7 @@ export default function AboutBanner() {
               </div>
             </div>
             <MaxWidthWrapper className="w-full relative h-[1500px]">
-              <div className="flex  flex-col absolute w-[82%] left-[7%] top-[calc(clamp(582px,100vmax,1117px)-500px)]  lg:top-[15vmax] h-[0px] z-10 mt-10  ">
+              <div className="flex  flex-col absolute w-[89%] left-[7%] top-[calc(clamp(582px,100vmax,1117px)-500px)]  lg:top-[15vmax] h-[0px] z-10 mt-10  ">
                 <h1 className="  text-[clamp(64px,6.5vw,121px)] leading-[clamp(64px,6.9vw,121px)] font-[lust-text] ">
                   Our <br />
                   <span className="text-primary"> Story </span>

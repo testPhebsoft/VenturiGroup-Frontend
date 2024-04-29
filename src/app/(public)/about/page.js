@@ -6,6 +6,7 @@ import HomeBanner from "@/components/HomeBanner";
 import OurClients from "@/components/OurClients";
 import OurCustomers from "@/components/OurCustomers";
 import OurSector from "@/components/OurSectors";
+import OurTeam from "@/components/OurTeam";
 import TailoredRecuritment from "@/components/TailoredRecruitment";
 import TrendingJobs from "@/components/TrendingJobs";
 
@@ -18,12 +19,8 @@ export default async function Home() {
     <main>
       <AboutBanner />
       <Evolution />
+      <OurTeam />
       <OurSector />
-      <OurCustomers />
-      <ExploreNext />
-      <TrendingJobs />
-      <BringUsOn />
-      {/* <OurClients /> */}
     </main>
   );
 }
