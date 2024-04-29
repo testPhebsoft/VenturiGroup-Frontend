@@ -3,8 +3,10 @@ import { useRef, useState } from "react";
 import MaxWidthWrapper from "./MaxWidthWraper";
 import { Button } from "./ui/button";
 import { useHorizontalScroll } from "./useHorizontalScroll";
+import useDraggable from "./hooks/useDraggable";
+import useScrollDragable from "./hooks/useScrollDragable";
 export default function TrendingJobs() {
-  const scrollContainerRef = useHorizontalScroll();
+  const scrollContainerRef = useScrollDragable();
 
   return (
     <div className=" bg-background py-10 ">
@@ -22,7 +24,7 @@ export default function TrendingJobs() {
             scrollbarWidth: "none",
             msOverflowStyle: "none",
           }}
-          className=" snap-x snap-mandatory  scroll-smooth overflow-y-hidden mt-10 relative overflow-x-scroll touch-pan-x whitespace-nowrap mr-[calc(-50vw+51%)]"
+          className="snap-x snap-mandatory lg:snap-proximity  scroll-smooth overflow-y-hidden mt-10 relative overflow-x-scroll touch-pan-x whitespace-nowrap mr-[calc(-50vw+51%)]"
         >
           {Array(10)
             .fill(0)
@@ -46,7 +48,7 @@ const JobCard = ({
   return (
     <div
       {...props}
-      className={`mx-2 inline-block snap-start w-[clamp(305px,30vw,367px)] aspect-[0.812] bg-cover bg-no-repeat border rounded-[24px] bg-[url('../../public/jobsbg.svg')]`}
+      className={`mx-2  select-none inline-block snap-start w-[clamp(305px,30vw,367px)] aspect-[0.812] bg-cover bg-no-repeat border rounded-[24px] bg-[url('../../public/jobsbg.svg')]`}
     >
       <div className="p-10 py-10 flex flex-col h-full">
         <div className="text-white">
