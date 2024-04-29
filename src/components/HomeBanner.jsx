@@ -4,6 +4,7 @@ import MaxWidthWrapper from "./MaxWidthWraper";
 import { Button } from "./ui/button";
 import SLope from "./slope";
 import HorizenatalLine from "./horizentalLine";
+import { Socials } from "./Socials";
 
 export default function HomeBanner() {
   return (
@@ -15,7 +16,7 @@ export default function HomeBanner() {
           muted
           autoPlay
         >
-          <source src="https://s3-figma-videos-production-sig.figma.com/video/1360250505037508142/TEAM/c763/de54/-e78b-4017-9db2-5f993aaf3743?Expires=1714348800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=fO2NJPkatf3DvC2Op5oohC0Ts-9SPKX2xaThhgwe5ble-80ingqNzi23GNMZsaLit4NeP80AGsBlFXwzGiOxOXs8CMUi~4Y6mxI6FF2EALSZtk3xp9JFSouWMMR4TVQPZ3VgWr7dBWZXvZs2AKSmNT4LkFuouny-nKhZCCK-mtU-bS2U3yVLYbmsq4Q6suGzKi0MmBB9LC36~fbqt3X9VeWKZEa004JG-EaXB0pS1TOI-ihG5GwXc~7fcLaUeq~jP7yE14S6v8KDx9X59EMZJiD-vqpdkaWW4~JvdxXYfQTYOXD~uh2yzsmFlGzXRcCKMWJSYsUvvzgkkJ4gORX4RA__" />
+          <source src="https://s3-figma-videos-production-sig.figma.com/video/1360250505037508142/TEAM/c763/de54/-e78b-4017-9db2-5f993aaf3743?Expires=1715558400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=pmpJQgBnMfjKc-LN~CdpMXic2kRigC2SVvoJTc7k4LOv61xWg5PwAr8K-vlxzM3w7r~HAUkiDj~3x-vBPO3yi8qDFR5a4JarfZX276mDPNpZmaAHCxYf1SsISJ2P0ee~Hn8RRu2NKzbRMjcSioIe2VJ6CxlawxlrRGFQEor6~Ugprqem9XZAD303zrZrBUfQ-Kb7sSRyMLLjCjXY0hD6boUKtDKbussy8AsjB0AodZFF0pm-MTfjm3td7tedrzYxmmqwUOqOvWLpuxZwrbym6rCtM0Z4Ozv8mCBoPRaXeyK3lwqLPXzeijZJwcCT12rk0vjXEE0~KszQYAkrECo3Vw__" />
         </video>
         <MaxWidthWrapper className={" absolute lg:relative max-w-[1473px]  "}>
           <div className="lg:absolute z-10  w-full sm:max-w-[clamp(200px,70vw,1026px)] lg:max-w-[clamp(200px,45vw,1026px)] font-[lust-text] leading-[clamp(18px,12vw,110px)] text-[clamp(18px,12vw,110px)] sm:leading-[clamp(18px,8vw,110px)] sm:text-[clamp(18px,8vw,110px)]  lg:text-[clamp(18px,5vw,110px)] lg:leading-[clamp(18px,5vw,110px)] lg:-translate-x-[20%] lg:left-[20%]  mt-[120px] lg:mt-[15%] ">
@@ -80,48 +81,7 @@ export default function HomeBanner() {
               Scroll{" "}
             </p>
             <div className="w-full ">
-              <div className="flex gap-5 mt-[40%] mb-[calc(-40%-20px)] ml-10  items-center  ">
-                <div className="relative before:absolute before:block before:rounded-full before:size-8 before:-inset-[6px] before:bottom-[50%] size-5   before:bg-[#1A1B1D1A]  ">
-                  <Image
-                    className="  "
-                    alt="Instagram"
-                    fill
-                    src="/instagram.svg"
-                  />
-                </div>
-                <div className="relative before:absolute before:block before:rounded-full before:size-8 before:-inset-[6px] before:bottom-[50%] size-5   before:bg-[#1A1B1D1A]  ">
-                  <Image
-                    alt="Linkedin"
-                    height={20}
-                    width={20}
-                    src="/LinkedIn.svg"
-                  />
-                </div>
-                <div className="relative before:absolute before:block before:rounded-full before:size-8 before:-inset-[6px] before:bottom-[50%] size-5   before:bg-[#1A1B1D1A]  ">
-                  <Image
-                    alt="twitter"
-                    height={20}
-                    width={20}
-                    src="/twitter.svg"
-                  />
-                </div>
-                <div className="relative before:absolute before:block before:rounded-full before:size-8 before:-inset-[6px] before:bottom-[50%] size-5   before:bg-[#1A1B1D1A]  ">
-                  <Image
-                    alt="youtube"
-                    height={20}
-                    width={20}
-                    src="/youtube.svg"
-                  />
-                </div>
-                <div className="relative before:absolute before:block before:rounded-full before:size-8 before:-inset-[6px] before:bottom-[50%] size-5   before:bg-[#1A1B1D1A]  ">
-                  <Image
-                    alt="facebook"
-                    height={20}
-                    width={20}
-                    src="/facebook.svg"
-                  />
-                </div>
-              </div>
+              <Socials className={"mt-[40%] mb-[calc(-40%-20px)] ml-10"} />
               <LeadinLight className="mb-[6px]    w-full" />{" "}
             </div>
           </div>

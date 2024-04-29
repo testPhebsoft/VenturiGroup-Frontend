@@ -1,6 +1,7 @@
 import Link from "next/link";
 import MaxWidthWrapper from "./MaxWidthWraper";
 import Image from "next/image";
+import { Socials } from "./Socials";
 
 export default function Footer({
   data = [
@@ -65,7 +66,7 @@ export default function Footer({
         </div>
         <div className="flex flex-col max-lg:items-center">
           <p className="text-input mt-10">Follow us</p>
-          <div className="flex gap-5 items-center mt-10 ">
+          <Socials className="mt-10 ">
             <div className="relative before:absolute before:block before:rounded-full before:size-8 before:-inset-[6px] before:bottom-[50%] size-5   before:bg-[#1A1B1D1A]  ">
               <Image className="  " alt="Instagram" fill src="/instagram.svg" />
             </div>
@@ -91,7 +92,7 @@ export default function Footer({
                 src="/facebook.svg"
               />
             </div>
-          </div>
+          </Socials>
           <div className=" mt-10 flex w-full max-lg:max-w-[250px]  justify-between gap-5 ">
             <p className="text-input lg:hidden ">Cookies</p>
             <p className="text-input  lg:hidden">Diversity & Inclusion</p>
