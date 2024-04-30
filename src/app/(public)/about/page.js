@@ -14,13 +14,13 @@ function sleep(delay) {
   return new Promise((resolve) => setTimeout(resolve, delay));
 }
 export default async function Home() {
-  await sleep(2000);
   return (
     <main>
       <AboutBanner />
       <Evolution />
       <OurTeam />
       <OurSector />
+      <OurClients />
     </main>
   );
 }

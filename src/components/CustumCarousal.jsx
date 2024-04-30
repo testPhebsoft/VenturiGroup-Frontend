@@ -102,7 +102,7 @@ export function CustumCarousal({ data }) {
           scrollbarWidth: "none",
           msOverflowStyle: "none",
         }}
-        className="lg:mr-[calc(-49vw+618px)]  lg:mt-[70px] flex-1 snap-x snap-mandatory overflow-x-scroll whitespace-nowrap touch-pan-x "
+        className="lg:mr-[calc(-49vw+618px)]  lg:mt-[70px] flex-1 snap-x snap-mandatory overflow-x-scroll whitespace-nowrap  "
       >
         {data.map((item, index) => (
           <div

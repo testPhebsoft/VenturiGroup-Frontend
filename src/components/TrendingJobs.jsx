@@ -24,7 +24,7 @@ export default function TrendingJobs() {
             scrollbarWidth: "none",
             msOverflowStyle: "none",
           }}
-          className="snap-x snap-mandatory lg:snap-proximity  scroll-smooth overflow-y-hidden mt-10 relative overflow-x-scroll touch-pan-x whitespace-nowrap mr-[calc(-50vw+51%)]"
+          className="snap-x snap-mandatory lg:snap-proximity  scroll-smooth overflow-y-hidden mt-10 relative overflow-x-scroll  whitespace-nowrap mr-[calc(-50vw+51%)]"
         >
           {Array(10)
             .fill(0)

@@ -13,8 +13,8 @@ export default function OurSector() {
   ) => {
     return (
       <Dialog className="w-full">
-        <DialogTrigger className="w-full max-w-[403px] text-left   mx-2">
-          <div className="w-full mx-2 inline-block snap-center   bg-white max-w-[403px] pb-10 pt-2 px-2 rounded-[18px]">
+        <DialogTrigger className="w-full max-w-[403px] text-left   ml-2">
+          <div className="w-full  inline-block snap-center   bg-white max-w-[403px] pb-10 pt-2 px-2 rounded-[18px]">
             <div className="relative    w-full aspect-[1.8926] ">
               <Image
                 className="rounded-[18px]"
@@ -107,7 +107,7 @@ export default function OurSector() {
           scrollbarWidth: "none",
           msOverflowStyle: "none",
         }}
-        className="snap-x scroll-smooth  snap-mandatory touch-pan-x scroll-m-5 whitespace-nowrap overflow-x-scroll mt-10 px-5 mx-auto sm:px-0 max-w-[1250px] "
+        className="snap-x scroll-smooth  snap-mandatory  scroll-m-5 whitespace-nowrap overflow-x-scroll mt-10 px-5 mx-auto sm:px-0 max-w-[1250px] "
       >
         {renderCard()}
         {renderCard("/sector2.jpg", "02", "Software Engineering")}

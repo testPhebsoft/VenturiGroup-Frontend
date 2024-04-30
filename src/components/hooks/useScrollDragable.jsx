@@ -1,7 +1,7 @@
 "use client";
 import { useRef, useEffect } from "react";
 
-const useDraggable = () => {
+const useScrollDragable = () => {
   const containerRef = useRef(null);
   const isDragging = useRef(false);
   const startDragX = useRef(0);
@@ -42,4 +42,4 @@ const useDraggable = () => {
   return containerRef;
 };
 
-export default useDraggable;
+export default useScrollDragable;

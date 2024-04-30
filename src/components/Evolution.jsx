@@ -10,7 +10,7 @@ export default function Evolution() {
         </h2>
         <h1 className="mt-10 max-[839px]:text-[clamp(16px,10vw,48px)] max-[839px]:leading-[clamp(24px,10vw,51px)] text-[clamp(16px,3.2vw,51px)] leading-[clamp(24px,3.3vw,51px)] text-input/50 font-[lust-text]">
           {" "}
-          The <span className=" text-input">Evolution</span>
+          The <span className=" text-input">evolution</span>
           <br />
           of Venturi
         </h1>
