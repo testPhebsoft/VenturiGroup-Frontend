@@ -7,6 +7,8 @@ import { Dialog, DialogContent, DialogTrigger } from "./ui/dialog";
 import { Button } from "./ui/button";
 import useScrollDragable from "./hooks/useScrollDragable";
 import { cn } from "@/lib/utils";
+import useClickToTouch from "./hooks/useClickToTouch";
+import { useRef } from "react";
 export default function OurTeam() {
   const ref = useScrollDragable();
   const renderCard = (
@@ -48,7 +50,7 @@ export default function OurTeam() {
         <DialogContent className="w-full  p-0 sm:p-0 sm:max-w-[clamp(320px,90vw,1478px)] text-left   ">
           <div
             className={
-              "flex max-lg:flex-col  py-5 justify-between max-lg:gap-5 max-lg:px-5 gap-20"
+              "flex max-lg:flex-col  max-lg:py-5 justify-between max-lg:gap-5 max-lg:px-5 gap-20"
             }
           >
             <div className="  lg:w-[40%] max-lg:flex max-lg:gap-5  ">
@@ -148,12 +150,13 @@ export default function OurTeam() {
           Meet <br className=" max-sm:hidden" />
           Our
           <br className=" sm:hidden" />
-          <span className=" text-input">Uk</span> Team
+          <span className=" text-input"> UK</span> Team
         </h1>
         <div className=" max-sm:hidden border self-end h-0 mb-2  w-full border-1 border-input/50"></div>
       </div>
       <div
         ref={ref}
+        onTouchStart={() => console.log("Touch started")}
         style={{
           WebkitOverflowScrolling: "touch",
           scrollbarWidth: "none",

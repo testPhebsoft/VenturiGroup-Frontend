@@ -5,9 +5,9 @@ import { Button } from "./ui/button";
 import { useHorizontalScroll } from "./useHorizontalScroll";
 import useDraggable from "./hooks/useDraggable";
 import useScrollDragable from "./hooks/useScrollDragable";
+import useTouchHandler from "./hooks/touchHook";
 export default function TrendingJobs() {
   const scrollContainerRef = useScrollDragable();
-
   return (
     <div className=" bg-background py-10 ">
       <MaxWidthWrapper>

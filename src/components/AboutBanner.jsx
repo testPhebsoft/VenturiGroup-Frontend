@@ -18,7 +18,7 @@ export default function AboutBanner() {
                   <Image
                     fill
                     loading="eager"
-                    className="   "
+                    className=" opacity-45  "
                     src={"/AboutBanner.jpeg"}
                     alt="explore next"
                   />

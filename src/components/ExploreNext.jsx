@@ -2,7 +2,23 @@ import Image from "next/image";
 import { Button } from "./ui/button";
 import MaxWidthWrapper from "./MaxWidthWraper";
 
-export default function ExploreNext() {
+export default function ExploreNext({
+  heading = "EXPLORE YOUR NEXT CHAPTER",
+  heading2 = (
+    <>
+      {" "}
+      I’m a <span className="text-primary lg:text-white"> candidate </span>
+    </>
+  ),
+  text = (
+    <>
+      Cut through the noise. Find opportunities that speak to your talent and
+      skillset. If you&apos;re ready to explore your next chapter, do it with
+      Venturi.
+    </>
+  ),
+  buttonText = <>MAKE THE LEAP +</>,
+}) {
   return (
     <div className="bg-background py-10">
       <div className="lg:h-[567px] lg:overflow-clip bg-background ">
@@ -25,25 +41,19 @@ export default function ExploreNext() {
               <div className="w-full lg:relative lg:h-[1500px]">
                 <div className="flex  flex-col lg:absolute lg:left-[7%] top-[70px] lg:h-[500px] z-10 mt-10 gap-5 lg:gap-12">
                   <h1 className="uppercase  whitespace-nowrap  font-AntarcticanMonoSemiBold">
-                    EXPLORE YOUR NEXT CHAPTER
+                    {heading}
                   </h1>
                   <h2 className=" max-[839px]:text-[clamp(16px,10vw,36px)] max-[839px]:leading-[clamp(24px,10vw,36px)] text-[clamp(16px,3.2vw,36px)] leading-[clamp(24px,3.3vw,36px)] font-[lust-text] ">
-                    I’m a{" "}
-                    <span className="text-primary lg:text-white">
-                      {" "}
-                      candidate{" "}
-                    </span>
+                    {heading2}
                   </h2>
                   <p className=" text-[clamp(12px,1.5vw,16px)] leading-[clamp(14px,3vw,25px)] w-full lg:max-w-[387px] ">
-                    Cut through the noise. Find opportunities that speak to your
-                    talent and skillset. If you&apos;re ready to explore your
-                    next chapter, do it with Venturi.
+                    {text}
                   </p>
                   <Button
                     variant="secondary"
                     className="max-lg:bg-primary max-lg:hover:bg-primary/80 max-lg:text-white w-fit "
                   >
-                    MAKE THE LEAP +
+                    {buttonText}
                   </Button>
                 </div>
               </div>

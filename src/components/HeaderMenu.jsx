@@ -40,20 +40,19 @@ export default function HeaderMenu({ ...props }) {
             </div>
           </SheetTitle>
           <ul className="flex flex-col text-[20px] pt-10  items-start justify-between font-AntarcticanMonoMedium gap-8  uppercase">
-            <SheetClose>
+            {" "}
+            <Link className="hover:text-input/60" href={"/about"}>
               {" "}
-              <Link className="hover:text-input/60" href={"/about"}>
-                {" "}
-                <li>About</li>
-              </Link>
-            </SheetClose>
-            <SheetClose>
-              {" "}
-              <Link className="hover:text-input/60" href={"/join-us"}>
+              <SheetClose>
+                <li>About</li>{" "}
+              </SheetClose>
+            </Link>{" "}
+            <Link className="hover:text-input/60" href={"/join-us"}>
+              <SheetClose>
                 {" "}
                 <li>join us</li>
-              </Link>
-            </SheetClose>
+              </SheetClose>
+            </Link>
             <SheetClose>
               {" "}
               <Link className="hover:text-input/60" href={"/insights"}>
@@ -118,7 +117,6 @@ export default function HeaderMenu({ ...props }) {
               </div>
             </div>
             <div className="w-full border"> </div>
-
             <Languages />
             <div className="w-full border"> </div>
           </ul>
