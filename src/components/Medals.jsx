@@ -6,12 +6,12 @@ import { useEffect, useRef, useState } from "react";
 export default function Medals() {
   const [isOverflowing, setIsOverflowing] = useState(false);
   const componentRef = useRef(null);
+  const childrenref = useRef(null);
 
   const checkOverflow = () => {
     if (componentRef.current) {
       const element = componentRef.current;
       const parent = element.parentElement;
-      console.log(parent);
 
       // Check overflow considering scroll dimensions
       const isOverflowingX = element.scrollWidth > element.offsetWidth;
@@ -30,14 +30,11 @@ export default function Medals() {
   useEffect(() => {
     checkOverflow();
   }, []);
-  console.log(isOverflowing);
   return (
     <div ref={componentRef} className="w-full overflow-hidden">
       <DuplicateChildren
+        ref={childrenref}
         isOverflowing={isOverflowing}
-        style={{
-          "--traslate50T": "20s",
-        }}
         className={`flex  ${
           isOverflowing ? "animate-translate50" : " mx-auto"
         } w-fit gap-5`}
@@ -53,7 +50,13 @@ export default function Medals() {
 }
 function DuplicateChildren({ children, className, isOverflowing, ...props }) {
   return (
-    <div {...props} className={cn("", className)}>
+    <div
+      style={{
+        "--traslate50T": `${children.length * 3}s`,
+      }}
+      {...props}
+      className={cn("", className)}
+    >
       {children}
       {isOverflowing && <>{children}</>}
     </div>
