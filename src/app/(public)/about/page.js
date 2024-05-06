@@ -3,6 +3,7 @@ import BringUsOn from "@/components/BringUsOn";
 import Evolution from "@/components/Evolution";
 import ExploreNext from "@/components/ExploreNext";
 import HomeBanner from "@/components/HomeBanner";
+import Medals from "@/components/Medals";
 import OurClients from "@/components/OurClients";
 import OurCustomers from "@/components/OurCustomers";
 import OurSector from "@/components/OurSectors";
@@ -21,6 +22,7 @@ export default async function Home() {
       <OurTeam />
       <OurSector />
       <OurClients />
+      <Medals />
     </main>
   );
 }

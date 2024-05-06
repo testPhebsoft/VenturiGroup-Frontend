@@ -1,3 +1,5 @@
+const { transform } = require("next/dist/build/swc");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
@@ -141,8 +143,14 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        translate50: {
+          to: {
+            transform: "translate(calc(-50% - 0.75rem))",
+          },
+        },
       },
       animation: {
+        translate50: "translate50 var(--traslate50T) linear infinite",
         "slide-up": "slide-up 0.5s ease-in-out forwards",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
