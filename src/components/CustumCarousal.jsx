@@ -8,59 +8,60 @@ export function CustumCarousal({ data }) {
   const itemWidthRef = useRef(0);
   let container = containerRef.current;
   const [visibleItemHeight, setVisibleItemHeight] = useState(null);
-  useEffect(() => {
-    if (containerRef.current) {
-      const container = containerRef.current;
-      const firstElement = container.firstChild.cloneNode(true);
-      const lastElement = container.lastChild.cloneNode(true);
-      container.appendChild(firstElement);
-      container.insertBefore(lastElement, container.firstChild);
-      itemWidthRef.current = firstElement.offsetWidth;
-      container.scrollLeft = itemWidthRef.current;
-    }
 
-    return () => {
-      if (containerRef.current) {
-        const container = containerRef.current;
-        container.removeChild(container.firstChild);
-        container.removeChild(container.lastChild);
-      }
-    };
-  }, []);
+  // useEffect(() => {
+  //   if (containerRef.current) {
+  //     const container = containerRef.current;
+  //     const firstElement = container.firstChild.cloneNode(true);
+  //     const lastElement = container.lastChild.cloneNode(true);
+  //     container.appendChild(firstElement);
+  //     container.insertBefore(lastElement, container.firstChild);
+  //     itemWidthRef.current = firstElement.offsetWidth;
+  //     container.scrollLeft = itemWidthRef.current;
+  //   }
 
-  useEffect(() => {
-    const handleScroll = () => {
-      // Accessing the current scrollLeft value of the container
-      const scrollLeft = containerRef.current.scrollLeft;
-      const container = containerRef.current;
-      console.log(
-        "Scroll position changed:",
-        scrollLeft,
-        container.scrollLeft + container.clientWidth,
-        container.clientWidth,
-        container.scrollWidth
-      );
-      if (
-        container.scrollLeft + container.clientWidth >=
-        container.scrollWidth
-      ) {
-        container.scrollLeft = itemWidthRef.current;
-      }
-      if (container.scrollLeft === 0) {
-        container.scrollLeft =
-          container.scrollWidth - container.clientWidth - 200;
-      }
-    };
+  //   return () => {
+  //     if (containerRef.current) {
+  //       const container = containerRef.current;
+  //       container.removeChild(container.firstChild);
+  //       container.removeChild(container.lastChild);
+  //     }
+  //   };
+  // }, []);
 
-    // Add event listener to the container element
-    const container = containerRef.current;
-    container.addEventListener("scroll", handleScroll);
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     // Accessing the current scrollLeft value of the container
+  //     const scrollLeft = containerRef.current.scrollLeft;
+  //     const container = containerRef.current;
+  //     console.log(
+  //       "Scroll position changed:",
+  //       scrollLeft,
+  //       container.scrollLeft + container.clientWidth,
+  //       container.clientWidth,
+  //       container.scrollWidth
+  //     );
+  //     if (
+  //       container.scrollLeft + container.clientWidth >=
+  //       container.scrollWidth
+  //     ) {
+  //       container.scrollLeft = itemWidthRef.current;
+  //     }
+  //     if (container.scrollLeft === 0) {
+  //       container.scrollLeft =
+  //         container.scrollWidth - container.clientWidth - 200;
+  //     }
+  //   };
 
-    // Cleanup: Remove event listener on component unmount
-    return () => {
-      container.removeEventListener("scroll", handleScroll);
-    };
-  }, [containerRef.current?.scrollLeft]);
+  //   // Add event listener to the container element
+  //   const container = containerRef.current;
+  //   container.addEventListener("scroll", handleScroll);
+
+  //   // Cleanup: Remove event listener on component unmount
+  //   return () => {
+  //     container.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, [containerRef.current?.scrollLeft]);
 
   const handleNext = () => {
     if (containerRef.current) {
@@ -105,17 +106,10 @@ export function CustumCarousal({ data }) {
         className="lg:mr-[calc(-49vw+618px)]  lg:mt-[70px] flex-1 snap-x snap-mandatory overflow-x-scroll whitespace-nowrap  "
       >
         {data.map((item, index) => (
-          <div
-            style={{ height: visibleItemHeight }}
-            key={index}
-            className="relative  lg:snap-start inline-block mx-5 w-auto snap-center border-primary border rounded-[18px] aspect-[0.804] h-[clamp(328px,65vw,456px)]"
-          >
-            <Image className="rounded-[18px]" fill src={item.image} />
-            <div className="top-[15px] absolute w-[55px] text-black"></div>
-          </div>
+          <CarousalItem index={index} item={item} />
         ))}
       </div>
-      <div className="flex max-lg:hidden absolute top-[0px] justify-center items-center gap-5">
+      <div className="flex max-lg:hidden absolute   top-[0px] justify-center items-center gap-5">
         <button onClick={handlePrevious}>
           <svg
             width="50"
@@ -155,6 +149,55 @@ export function CustumCarousal({ data }) {
           </svg>
         </button>
       </div>
+    </div>
+  );
+}
+function CarousalItem({ index, item }) {
+  const [isOutsideViewport, setIsOutsideViewport] = useState(false);
+  const ref = useRef(null);
+  useEffect(() => {
+    const options = {
+      root: ref.current.parrent, // Use the viewport as the root
+      rootMargin: "100px", // No margin around the viewport
+      threshold: 0, // Any part of the target coming into view triggers the callback
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        // When entry is fully outside the viewport from the left
+        console.log(entry.boundingClientRect.left);
+        if (entry.boundingClientRect.left <= 100) {
+          setIsOutsideViewport(true);
+        } else {
+          setIsOutsideViewport(false);
+        }
+      });
+    }, options);
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, [ref.current]);
+  console.log("isOutsideViewport");
+  console.log(isOutsideViewport);
+  return (
+    <div
+      ref={ref}
+      key={index}
+      className={`relative  lg:snap-start inline-block mx-5 w-auto snap-center border-primary border rounded-[18px] aspect-[0.804]  ${
+        !isOutsideViewport
+          ? "h-[clamp(328px,65vw,456px)]"
+          : "h-[clamp(328px,65vw,500px)]"
+      }`}
+    >
+      <Image className="rounded-[18px]" fill src={item.image} />
+      <div className="top-[15px] absolute w-[55px] text-black"></div>
     </div>
   );
 }

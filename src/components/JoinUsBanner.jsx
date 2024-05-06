@@ -26,7 +26,7 @@ export default function JoinUsBanner() {
               </div>
             </div>
             <div className="w-full max-w-[1528px] mx-auto px-5 sm:px-10 relative h-[1500px]">
-              <div className="flex justify-between  max-md:flex-col absolute w-[90%]  top-[calc(clamp(750px,100vw,1117px)-600px)]  lg:top-[20vmax]  z-10 mt-10  ">
+              <div className="flex justify-between  max-md:flex-col absolute w-[90%]  top-[calc(clamp(750px,100vw,1117px)-600px)]  lg:top-[min(13vmax,431px)]  z-10 mt-10  ">
                 <h1 className=" h-fit md:mt-[124px]  text-[clamp(64px,6.5vw,121px)] leading-[clamp(64px,6.9vw,121px)] font-[lust-text] ">
                   Join the <br />
                   <span className="text-primary"> Venturi </span> story

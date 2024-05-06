@@ -6,14 +6,14 @@ import { useHorizontalScroll } from "./useHorizontalScroll";
 import useDraggable from "./hooks/useDraggable";
 import useScrollDragable from "./hooks/useScrollDragable";
 import useTouchHandler from "./hooks/touchHook";
-export default function TrendingJobs() {
+export default function TrendingJobs({ label = "Jobs at Venturi" }) {
   const scrollContainerRef = useScrollDragable();
   return (
     <div className=" bg-background py-10 ">
       <MaxWidthWrapper>
         <div className="flex justify-between ">
           <h2 className=" max-[839px]:text-[clamp(16px,10vw,36px)] max-[839px]:leading-[clamp(24px,10vw,36px)] text-[clamp(16px,3.2vw,36px)] leading-[clamp(24px,3.3vw,36px)] font-[lust-text]">
-            Trending jobs
+            {label || "Trending jobs"}
           </h2>
           <Button className=" uppercase ">see more +</Button>
         </div>

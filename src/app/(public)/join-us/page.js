@@ -1,3 +1,5 @@
+import CompanyCulture from "@/components/CompanyCulture";
+import EmployeeRefral from "@/components/EmployeRefrel";
 import ExploreNext from "@/components/ExploreNext";
 import JoinUsBanner from "@/components/JoinUsBanner";
 import OurBenifit from "@/components/OurBenifits";
@@ -25,8 +27,12 @@ export default function Page() {
           </>
         }
       />
+      <CompanyCulture />
+
       <OurBenifit />
+
       <TrendingJobs />
+      <EmployeeRefral />
     </div>
   );
 }
