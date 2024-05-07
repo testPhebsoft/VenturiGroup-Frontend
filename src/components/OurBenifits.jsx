@@ -703,7 +703,9 @@ function Card({
     <div className=" flex  items-center gap-5 bg-white w-full px-2 py-2 max-w-[305px] mx-auto rounded-lg">
       <p> {svg}</p>
 
-      <p className=" font-AntarcticanMonoSemiBold uppercase ">{text}</p>
+      <p className=" font-AntarcticanMonoSemiBold uppercase text-[clamp(10px,2.1vw,16px)]">
+        {text}
+      </p>
     </div>
   );
 }
