@@ -6,7 +6,7 @@ import MaxWidthWrapper from "./MaxWidthWraper";
 
 export default function CompanyCulture() {
   return (
-    <MaxWidthWrapper>
+    <MaxWidthWrapper className={"py-10"}>
       <Tabs>
         <TabHeader
           className={"w-full  h-full max-w-[500px] "}

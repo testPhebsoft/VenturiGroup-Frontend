@@ -2,7 +2,7 @@ import MaxWidthWrapper from "./MaxWidthWraper";
 
 export default function OurBenifit() {
   return (
-    <MaxWidthWrapper>
+    <MaxWidthWrapper className={"py-10"}>
       <h2 className=" text-center font-[lust-text] mt-7 text-[clamp(24px,5vw,36px)] leading-[clamp(24px,5vw,36px)]  text-input/50 font-light">
         Our <span className=" text-input "> benefits</span>
       </h2>

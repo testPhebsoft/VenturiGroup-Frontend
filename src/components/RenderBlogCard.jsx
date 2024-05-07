@@ -101,15 +101,17 @@ export function RenderBlogCard({
         {tag} {icon}{" "}
       </p>
       <h3 className="font-[lust-text] text-[clamp(16px,4vw,24px)]">{title}</h3>
-      <Link
-        href={""}
-        className={cn(
-          buttonVariants(),
-          " uppercase w-fit gap-3 rounded-full h-[30px]"
-        )}
-      >
-        {btntext} {btnicon}
-      </Link>
+      <div className="flex-1 flex items-end">
+        <Link
+          href={""}
+          className={cn(
+            buttonVariants(),
+            " uppercase w-fit gap-3 rounded-full h-[30px]"
+          )}
+        >
+          {btntext} {btnicon}
+        </Link>
+      </div>
     </div>
   );
 }

@@ -50,7 +50,7 @@ export default function JoinUsBanner() {
           </div>
         </div>
       </div>
-      <div className="md:text-center px-10 flex flex-col -mt-[100px] relative z-10 gap-10  ">
+      <div className="md:text-center px-10 pb-10 flex flex-col -mt-[100px] relative z-10 gap-10  ">
         <h2 className="font-[lust-text] mt-7 max-[839px]:text-[clamp(16px,10vw,48px)] max-[839px]:leading-[clamp(24px,10vw,51px)] text-[clamp(16px,3.2vw,51px)] leading-[clamp(24px,3.3vw,51px)] text-input/50 font-light">
           Intrested in <span className="text-input"> joining</span>?
         </h2>
