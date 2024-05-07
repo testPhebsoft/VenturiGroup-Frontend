@@ -1,5 +1,5 @@
 "use server";
-
+import { cache } from "react";
 export async function getCategories() {
   return [
     { slug: "insights", name: "All" },
@@ -9,7 +9,15 @@ export async function getCategories() {
   ];
 }
 
-export async function getCategoriesBlog({ slug }) {
+export const getCategoriesBlog = cache(async function ({ slug }) {
+  console.log(slug);
+
+  await new Promise((resolve) =>
+    setTimeout(() => {
+      console.log("completed");
+      resolve();
+    }, 3000)
+  );
   let data = [
     {
       category: {
@@ -436,4 +444,4 @@ export async function getCategoriesBlog({ slug }) {
   if (slug !== "insights")
     return data.filter((item) => item.category.slug == slug);
   return data;
-}
+});

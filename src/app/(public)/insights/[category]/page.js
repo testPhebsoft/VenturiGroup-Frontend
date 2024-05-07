@@ -1,8 +1,19 @@
 import { getCategories, getCategoriesBlog } from "@/actions/Getdata";
 import { notFound } from "next/navigation";
 import { RenderBlogs } from "@/components/RenderBlogs";
+import { Suspense } from "react";
+import Loading from "@/app/loading";
+import { Loader } from "@/components/Loader";
 
 export default async function Page({ params }) {
+  return (
+    <Suspense fallback={<Loader className={" h-[50vh]"} />}>
+      <Renderer params={params} />
+    </Suspense>
+  );
+}
+
+async function Renderer({ params }) {
   let category = params.category;
   let categories;
   let blogs = [];
@@ -16,7 +27,9 @@ export default async function Page({ params }) {
   currentCategory = currentCategory[0];
   try {
     blogs = await getCategoriesBlog({ slug: category });
-  } catch (e) {}
+  } catch (e) {
+    console.log(e);
+  }
   if (blogs.length == 0) {
     return (
       <div className=" h-[50vh] flex items-center justify-center ">

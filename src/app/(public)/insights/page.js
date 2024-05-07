@@ -1,8 +1,18 @@
 import { getCategories, getCategoriesBlog } from "@/actions/Getdata";
 import { notFound } from "next/navigation";
 import { RenderBlogs } from "@/components/RenderBlogs";
+import { Suspense } from "react";
+import Loading from "@/app/loading";
+import { Loader } from "@/components/Loader";
 
-export default async function Page({}) {
+export default function Page({}) {
+  return (
+    <Suspense fallback={<Loader className={" h-[50vh]"} />}>
+      <Renderer />
+    </Suspense>
+  );
+}
+async function Renderer() {
   let blogs = [];
 
   try {
