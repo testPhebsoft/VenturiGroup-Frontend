@@ -106,7 +106,7 @@ export function CustumCarousal({ data }) {
         className="lg:mr-[calc(-49vw+618px)]  lg:mt-[70px] flex-1 snap-x snap-mandatory overflow-x-scroll whitespace-nowrap  "
       >
         {data.map((item, index) => (
-          <CarousalItem index={index} item={item} />
+          <CarousalItem key={index} index={index} item={item} />
         ))}
       </div>
       <div className="flex max-lg:hidden absolute   top-[0px] justify-center items-center gap-5">
