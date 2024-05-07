@@ -53,14 +53,7 @@ export default function OurSector() {
               {" "}
               {heading || "Data & Analytics"}
             </h2>
-            <p
-              style={{
-                WebkitOverflowScrolling: "touch",
-                scrollbarWidth: "none",
-                msOverflowStyle: "none",
-              }}
-              className="text-[clamp(12px,3vw,16px)] h-[clamp(250px,50vw,390px)] overflow-y-scroll"
-            >
+            <p className="text-[clamp(12px,3vw,16px)] h-[clamp(250px,50vw,390px)] overflow-y-scroll">
               {details || (
                 <>
                   In today’s data rich tech environment, having detail-driven

@@ -6,7 +6,7 @@ export default function OurBenifit() {
       <h2 className=" text-center font-[lust-text] mt-7 text-[clamp(24px,5vw,36px)] leading-[clamp(24px,5vw,36px)]  text-input/50 font-light">
         Our <span className=" text-input "> benefits</span>
       </h2>
-      <div className=" grid mt-10 max-[420px]:grid-cols-1 min-[420px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+      <div className=" grid mt-10 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
         <Card />
         <Card
           svg={
@@ -701,7 +701,8 @@ function Card({
 }) {
   return (
     <div className=" flex  items-center gap-5 bg-white w-full px-2 py-2 max-w-[305px] mx-auto rounded-lg">
-      {svg}
+      <p> {svg}</p>
+
       <p className=" font-AntarcticanMonoSemiBold uppercase ">{text}</p>
     </div>
   );
