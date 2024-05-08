@@ -53,28 +53,23 @@ export default function HeaderMenu({ ...props }) {
                 {" "}
                 <li>Join us</li>
               </SheetClose>
-            </Link>
-            <SheetClose>
-              {" "}
-              <Link className="hover:text-input/60" href={"/insights"}>
-                {" "}
+            </Link>{" "}
+            <Link className="hover:text-input/60" href={"/insights"}>
+              <SheetClose>
                 <li>Insights</li>
-              </Link>
-            </SheetClose>
-            <SheetClose>
-              {" "}
-              <Link className="hover:text-input/60" href={"/contact"}>
-                {" "}
+              </SheetClose>
+            </Link>{" "}
+            <Link className="hover:text-input/60" href={"/contact"}>
+              <SheetClose>
                 <li>Contact</li>
-              </Link>{" "}
-            </SheetClose>
-            <SheetClose>
+              </SheetClose>
+            </Link>{" "}
+            <Link className="hover:text-input/60" href={"/i-am-candidate"}>
               {" "}
-              <Link className="hover:text-input/60" href={"/iamcandidate"}>
-                {" "}
+              <SheetClose>
                 <li> I’m a candidate </li>
-              </Link>{" "}
-            </SheetClose>
+              </SheetClose>
+            </Link>{" "}
             <Socials className="flex gap-5 items-center mt-[5vh] " />
             <div className="w-full border"> </div>
             <Languages />

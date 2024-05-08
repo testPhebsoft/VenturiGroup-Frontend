@@ -1,9 +1,10 @@
 import Image from "next/image";
 import MaxWidthWrapper from "./MaxWidthWraper";
-import { Button } from "./ui/button";
+import { Button, buttonVariants } from "./ui/button";
 import { Languages } from "./Languages";
 import Link from "next/link";
 import HeaderMenu from "./HeaderMenu";
+import { cn } from "@/lib/utils";
 
 export default function Header() {
   return (
@@ -51,10 +52,16 @@ export default function Header() {
               <li>contact</li>
             </Link>
           </ul>
-          <Button variant="outline" className="max-md:hidden">
+          <Link
+            href={"/i-am-candidate"}
+            className={cn(
+              buttonVariants({ variant: "outline" }),
+              "max-md:hidden"
+            )}
+          >
             {" "}
             I’m a candidate{" "}
-          </Button>
+          </Link>
           <HeaderMenu className={"min-[1070px]:hidden"} />
           <Languages className={"max-[1070px]:hidden"} />
         </div>

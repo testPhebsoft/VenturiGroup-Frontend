@@ -1,11 +1,7 @@
 "use client";
-import { useRef, useState } from "react";
 import MaxWidthWrapper from "./MaxWidthWraper";
 import { Button } from "./ui/button";
-import { useHorizontalScroll } from "./useHorizontalScroll";
-import useDraggable from "./hooks/useDraggable";
 import useScrollDragable from "./hooks/useScrollDragable";
-import useTouchHandler from "./hooks/touchHook";
 export default function TrendingJobs({ label = "Jobs at Venturi" }) {
   const scrollContainerRef = useScrollDragable();
   return (
