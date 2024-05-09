@@ -34,14 +34,12 @@ import {
   AntarcticanMonoSemiBoldItalic,
 } from "@/fonts/AntarcticanMono";
 
-const inter = Inter({ subsets: ["latin"] });
-
 export const metadata = {
   title: "Venturi Group",
   description: "Venturi Group",
 };
 
-export default async function RootLayout({ children }) {
+export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body

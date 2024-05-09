@@ -50,7 +50,6 @@ const Tabs = ({ children }) => {
   const [activeTab, setActiveTab] = useState(1);
 
   const handleTabClick = (index) => {
-    console.log(index);
     setActiveTab(index + 1);
   };
 

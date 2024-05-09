@@ -10,8 +10,6 @@ export async function getCategories() {
 }
 
 export const getCategoriesBlog = cache(async function ({ slug }) {
-  console.log(slug);
-
   await new Promise((resolve) =>
     setTimeout(() => {
       console.log("completed");
