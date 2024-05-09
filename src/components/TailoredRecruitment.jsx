@@ -20,6 +20,7 @@ export default function TailoredRecuritment() {
               fill
               className="    rounded-[24px] "
               src="/Youngboymobile.jpg"
+              alt={"Youngboymobile"}
             />
           </div>
         </div>

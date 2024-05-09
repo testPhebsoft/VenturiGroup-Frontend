@@ -37,6 +37,7 @@ export default function JoinUsBanner() {
                       fill
                       className=" opacity-100 "
                       src={"/joinusTree.png"}
+                      alt={"joinusTree.png"}
                     />
                   </div>
                   <p className="  mt-10 text-[clamp(12px,1.5vw,16px)] leading-[clamp(14px,3vw,25px)] w-full max-w-[496px] ">

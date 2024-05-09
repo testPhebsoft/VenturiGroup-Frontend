@@ -93,6 +93,7 @@ export function RenderBlogCard({
         <Image
           fill
           src={imagesrc}
+          alt={imagesrc}
           className=" max-md:rounded-[5px] rounded-[10px]"
         />
       </div>

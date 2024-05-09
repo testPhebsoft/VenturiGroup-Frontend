@@ -92,6 +92,7 @@ function RecruitmentStep({
         <Image
           fill
           src={image}
+          alt={image}
           className=" object-cover rounded-3xl  filter    brightness-50   "
         />
       </div>

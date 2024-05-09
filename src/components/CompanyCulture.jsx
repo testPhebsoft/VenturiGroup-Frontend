@@ -53,7 +53,7 @@ function RenderContent({
       <div
         className={cn("w-full aspect-[1.85] relative   rounded-xl", className)}
       >
-        <Image fill src={imagesrc} className="rounded-xl" />
+        <Image fill src={imagesrc} className="rounded-xl" alt={imagesrc} />
       </div>
       <p>{text}</p>
     </div>

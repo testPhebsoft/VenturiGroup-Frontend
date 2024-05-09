@@ -69,7 +69,7 @@ function renderClientTags(
       )}
     >
       <div className=" relative size-[69px] ">
-        <Image className=" rounded-full" fill src={src} />
+        <Image className=" rounded-full" fill src={src} alt={src} />
       </div>
       <div>{name}</div>
     </div>

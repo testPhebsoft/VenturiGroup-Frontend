@@ -37,10 +37,10 @@ export default function PuttingPeople() {
             career advice and ongoing support whenever you may need it.
           </p>
           <p>
-            We value every candidate's individuality. We will never treat you as
-            just another number; that's not how we would want to be treated. To
-            gain your trust and respect, we must operate with integrity and
-            honesty.
+            We value every candidate&apos;s individuality. We will never treat
+            you as just another number; that&apos;s not how we would want to be
+            treated. To gain your trust and respect, we must operate with
+            integrity and honesty.
           </p>
         </div>
       </MaxWidthWrapper>
