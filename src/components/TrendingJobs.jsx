@@ -2,7 +2,7 @@
 import MaxWidthWrapper from "./MaxWidthWraper";
 import { Button } from "./ui/button";
 import useScrollDragable from "./hooks/useScrollDragable";
-export default function TrendingJobs({ label = "Jobs at Venturi" }) {
+export default function TrendingJobs({ label = "Trending Jobs" }) {
   const scrollContainerRef = useScrollDragable();
   return (
     <div className=" bg-background py-10 ">

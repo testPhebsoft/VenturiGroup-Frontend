@@ -31,7 +31,7 @@ export default function Page() {
 
       <OurBenifit />
 
-      <TrendingJobs />
+      <TrendingJobs label="Jobs at Venturi" />
       <EmployeeRefral />
     </div>
   );
