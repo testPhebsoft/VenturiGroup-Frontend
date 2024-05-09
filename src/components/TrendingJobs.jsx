@@ -7,7 +7,7 @@ export default function TrendingJobs({ label = "Trending Jobs" }) {
   return (
     <div className=" bg-background py-10 ">
       <MaxWidthWrapper>
-        <div className="flex justify-between ">
+        <div className="flex gap-3 items-center justify-between ">
           <h2 className=" max-[839px]:text-[clamp(16px,10vw,36px)] max-[839px]:leading-[clamp(24px,10vw,36px)] text-[clamp(16px,3.2vw,36px)] leading-[clamp(24px,3.3vw,36px)] font-[lust-text]">
             {label || "Trending jobs"}
           </h2>

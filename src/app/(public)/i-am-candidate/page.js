@@ -12,9 +12,11 @@ export default function Page() {
       <CandidateBanner />
       <PuttingPeople />
       <TrendingJobs />
-      <OurClients />
-      <ExploreYourNext />
       <RecruitmentSteps />
+
+      <OurClients />
+
+      <ExploreYourNext />
     </div>
   );
 }
