@@ -176,6 +176,67 @@ export default async function Page({ params }) {
         </MaxWidthWrapper>
       </>
     );
+  if (post == "podcast")
+    return (
+      <MaxWidthWrapper className={"mt-40"}>
+        <div className=" flex w-full gap-5 ">
+          <div className=" mt-10 w-full max-w-[376px] relative  aspect-square">
+            <Image
+              fill
+              src={"/podcast.jpg"}
+              className="object-cover rounded-3xl"
+            />
+          </div>
+          <div className="flex flex-1  flex-col   justify-end w-full max-w-[747px]">
+            <p className=" text-[clamp(12px,1.1vw,16px)] font-semibold  font-AntarcticanMonoSemiBold">
+              Posted over 1 year ago • by Daryl Gorman
+            </p>
+            <div className=" flex justify-between w-full ">
+              <h2 className=" mt-10 w-full max-w-[754px] text-[clamp(24px,3.2vw,36px)] leading-[clamp(28px,4vw,40px)] font-[lust-text]">
+                The Daemon Way: Henry Ayres - Head of Engineering
+              </h2>
+              {post == "blog" && (
+                <p className=" h-fit flex  self-end items-center justify-center gap-4 px-3 py-1 text-primary bg-white rounded-[24px] w-fit  capitalize font-AntarcticanMonoSemiBold text-[clamp(12px,1.1vw,16px)] ">
+                  {" "}
+                  {blog.tag} {blog.icon}{" "}
+                </p>
+              )}
+              {post == "data" && (
+                <p className=" h-fit flex  self-end items-center justify-center gap-4 px-3 py-1 text-primary bg-white rounded-[24px] w-fit  capitalize font-AntarcticanMonoSemiBold text-[clamp(12px,1.1vw,16px)] ">
+                  {" "}
+                  {data.tag} {data.icon}{" "}
+                </p>
+              )}
+            </div>
+            <AudioPlayer className={"my-5"} />
+          </div>
+        </div>
+
+        <div className="w-full mt-20 ">
+          <h1 className="  w-full  text-[clamp(24px,3.2vw,36px)] leading-[clamp(28px,4vw,40px)] font-[lust-text]">
+            Join us for the insightful episode as we sit down with Henry Ayres,
+            Head of Engineering at Daemon Solutions, to capture exclusive
+            insights into the way that works.
+          </h1>
+          <div className="flex flex-col w-full gap-10 mt-20">
+            <p>
+              In this interview, Henry shares his knowledge and experience for
+              discovering the right path of deciphering what their clients
+              actually want and who wants it, combating the changes that may
+              come along with the project(s) to keep it moving forward, and how
+              to make sure they are recruiting the right people into the team
+              for success.
+            </p>
+            <p>For more info on Daemon Solutions here are some useful links:</p>
+            <p>
+              https://www.dae.mn/ <br />
+              https://www.linkedin.com/company/daemon-solutions/ <br />
+              https://www.linkedin.com/in/henryayres/ <br />
+            </p>
+          </div>
+        </div>
+      </MaxWidthWrapper>
+    );
 
   function RenderSideDetails({ heading = "Category", text = "Blog" }) {
     return (
