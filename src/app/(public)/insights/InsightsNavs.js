@@ -5,24 +5,32 @@ import { usePathname } from "next/navigation";
 
 export function InsightsNavs({ categories }) {
   const pathName = usePathname();
-  console.log(pathName);
-  return (
-    <div className="flex gap-5 flex-wrap justify-center ">
-      {categories.map(({ name, slug }) => {
-        return (
-          <ShowCategories
-            key={slug}
-            slug={slug}
-            isActive={
-              pathName == `/insights/${slug}` ||
-              (pathName == "/insights" && name == "All")
-            }
-            name={name}
-          />
-        );
-      })}
-    </div>
-  );
+  console.log(pathName, pathName.split("/"));
+  if (pathName.split("/").length == 2 || pathName.split("/").length == 3)
+    return (
+      <>
+        <div className=" h-[400px] flex justify-center items-end  ">
+          <h1 className="text-[clamp(64px,15vw,121px)] text-center font-[lust-text] w-fit mx-auto">
+            Our <span className="text-primary">insights</span>
+          </h1>
+        </div>
+        <div className="flex gap-5 flex-wrap justify-center ">
+          {categories.map(({ name, slug }) => {
+            return (
+              <ShowCategories
+                key={slug}
+                slug={slug}
+                isActive={
+                  pathName == `/insights/${slug}` ||
+                  (pathName == "/insights" && name == "All")
+                }
+                name={name}
+              />
+            );
+          })}
+        </div>
+      </>
+    );
 }
 const ShowCategories = ({ name = "All", isActive, slug }) => {
   console.log("isActive", isActive);

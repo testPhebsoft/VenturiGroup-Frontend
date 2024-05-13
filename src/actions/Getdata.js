@@ -439,6 +439,7 @@ export const getCategoriesBlog = cache(async function ({ slug }) {
       ),
     },
   ];
+  if (slug === "random3") return data.slice(0, 3);
   if (slug !== "insights")
     return data.filter((item) => item.category.slug == slug);
   return data;

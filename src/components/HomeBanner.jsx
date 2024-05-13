@@ -16,7 +16,7 @@ export default function HomeBanner() {
           muted
           autoPlay
         >
-          <source src="https://s3-figma-videos-production-sig.figma.com/video/1360250505037508142/TEAM/c763/de54/-e78b-4017-9db2-5f993aaf3743?Expires=1715558400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=pmpJQgBnMfjKc-LN~CdpMXic2kRigC2SVvoJTc7k4LOv61xWg5PwAr8K-vlxzM3w7r~HAUkiDj~3x-vBPO3yi8qDFR5a4JarfZX276mDPNpZmaAHCxYf1SsISJ2P0ee~Hn8RRu2NKzbRMjcSioIe2VJ6CxlawxlrRGFQEor6~Ugprqem9XZAD303zrZrBUfQ-Kb7sSRyMLLjCjXY0hD6boUKtDKbussy8AsjB0AodZFF0pm-MTfjm3td7tedrzYxmmqwUOqOvWLpuxZwrbym6rCtM0Z4Ozv8mCBoPRaXeyK3lwqLPXzeijZJwcCT12rk0vjXEE0~KszQYAkrECo3Vw__" />
+          <source src="https://venturi.gitwork.tech/video/-e78b-4017-9db2-5f993aaf3743.mp4" />
         </video>
         <MaxWidthWrapper className={" absolute lg:relative max-w-[1473px]  "}>
           <div className="lg:absolute z-10  w-full sm:max-w-[clamp(200px,70vw,1026px)] lg:max-w-[clamp(200px,45vw,1026px)] font-[lust-text] leading-[clamp(18px,12vw,110px)] text-[clamp(18px,12vw,110px)] sm:leading-[clamp(18px,8vw,110px)] sm:text-[clamp(18px,8vw,110px)]  lg:text-[clamp(18px,5vw,110px)] lg:leading-[clamp(18px,5vw,110px)] lg:-translate-x-[20%] lg:left-[20%]  mt-[120px] lg:mt-[15%] ">

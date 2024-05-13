@@ -5,7 +5,7 @@ import { CarousalItem } from "./CarousalItem";
 import useDraggable from "@/components/hooks/useDraggable";
 import useTranslatexDraggable from "@/components/hooks/useTranslatexDrag";
 export function CustumCarousal({ data }) {
-  const { ref: containerRef, style } = useTranslatexDraggable();
+  const { ref: containerRef, style, childRef } = useTranslatexDraggable();
   const [state, setState] = useState(false);
   const itemWidthRef = useRef(0);
   let container = containerRef.current;
@@ -59,6 +59,7 @@ export function CustumCarousal({ data }) {
               key={index}
               index={index}
               item={item}
+              childref={childRef}
               parentRef={containerRef}
               scrollref={containerRef}
             />
