@@ -1,12 +1,58 @@
 import Footer from "@/components/Footer";
+import SnapScroller, { CustumCarousal } from "./testComponent";
 
 export default function Page() {
+  let data = [
+    {
+      image: "/customer1.jpeg",
+    },
+    {
+      image: "/customer2.jpeg",
+    },
+    {
+      image: "/customer3.jpeg",
+    },
+    {
+      image: "/customer1.jpeg",
+    },
+    {
+      image: "/customer2.jpeg",
+    },
+    {
+      image: "/customer3.jpeg",
+    },
+    {
+      image: "/customer1.jpeg",
+    },
+    {
+      image: "/customer2.jpeg",
+    },
+    {
+      image: "/customer1.jpeg",
+    },
+    {
+      image: "/customer2.jpeg",
+    },
+    {
+      image: "/customer3.jpeg",
+    },
+
+    {
+      image: "/customer3.jpeg",
+    },
+  ];
+  const ScrollableContent = () => {
+    return (
+      <div className="h-full flex  shrink-0 whiflex-col items-center justify-center">
+        <p className="text-xl mb-4">First Page Content</p>
+        <p className="text-xl mb-4">Second Page Content</p>
+        <p className="text-xl mb-4">Third Page Content</p>
+      </div>
+    );
+  };
   return (
     <div className="pt-40">
-      <div className="border"></div>
-      {/* <Footer /> */}
-      <h1>Page</h1>
-      <div className="border"></div>
+      <CustumCarousal data={data} />
     </div>
   );
 }

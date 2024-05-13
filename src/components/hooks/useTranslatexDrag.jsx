@@ -1,18 +1,19 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 
-const useDraggable = () => {
+const useTranslatexDraggable = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [dragging, setDragging] = useState(false);
   const componentRef = useRef(null);
-
+  console.log(position);
   useEffect(() => {
     const handleMouseDown = (e) => {
       console.log(e);
       const startX = e.pageX - position.x;
       const startY = e.pageY - position.y;
-      console.log(startX, startY);
+
       const handleMouseMove = (e) => {
+        console.log(e, componentRef.current.boundingClientRect);
         e.preventDefault();
         setPosition({
           x: e.pageX - startX,
@@ -22,22 +23,25 @@ const useDraggable = () => {
 
       const handleMouseUp = () => {
         setDragging(false);
-        document.removeEventListener("mousemove", handleMouseMove);
-        document.removeEventListener("mouseup", handleMouseUp);
+        componentRef.current.removeEventListener("mousemove", handleMouseMove);
+        componentRef.current.removeEventListener("mouseup", handleMouseUp);
+        // componentRef.current.removeEventListener("mouseup", handleMouseUp);
       };
 
       setDragging(true);
-      document.addEventListener("mousemove", handleMouseMove);
-      document.addEventListener("mouseup", handleMouseUp);
+
+      componentRef.current.addEventListener("mouseup", handleMouseUp);
+      componentRef.current.addEventListener("mousemove", handleMouseMove);
+      // document.addEventListener("mousemove", handleMouseMove);
     };
 
     if (componentRef.current) {
-      document.current.addEventListener("mousedown", handleMouseDown);
+      componentRef.current.addEventListener("mousedown", handleMouseDown);
     }
 
     return () => {
       if (componentRef.current) {
-        document.current.removeEventListener("mousedown", handleMouseDown);
+        componentRef.current.removeEventListener("mousedown", handleMouseDown);
       }
     };
   }, [position]);
@@ -46,11 +50,9 @@ const useDraggable = () => {
     ref: componentRef,
     style: {
       cursor: dragging ? "grabbing" : "grab",
-      position: "absolute",
-      top: position.y,
-      left: position.x,
+      transform: `translate3d(${position.x}px,0px,0px)`,
     },
   };
 };
 
-export default useDraggable;
+export default useTranslatexDraggable;
