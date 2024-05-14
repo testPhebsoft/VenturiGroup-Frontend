@@ -21,6 +21,17 @@ export default async function Home() {
       <Evolution />
       <OurTeam />
       <OurSector />
+      <OurTeam
+        heading={
+          <>
+            Meet <br className=" max-sm:hidden" />
+            Our
+            <br className=" sm:hidden" />
+            <span className=" text-input"> Global</span> Team
+          </>
+        }
+      />
+
       <OurClients />
       <Medals />
     </main>

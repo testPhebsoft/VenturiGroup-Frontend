@@ -54,7 +54,7 @@ export default function Footer({
                 {" "}
                 <li>Contact</li>
               </Link>
-              <Link className="hover:text-input/60" href={"/contact"}>
+              <Link className="hover:text-input/60" href={"/i-am-candidate"}>
                 {" "}
                 <li>I’m a candidate</li>
               </Link>

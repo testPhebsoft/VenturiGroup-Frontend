@@ -26,28 +26,19 @@ export default function Header() {
         </div>
         <div className=" flex gap-8">
           <ul className="max-[1070px]:hidden flex text-[clamp(14,2vw,18px)]  items-center font-AntarcticanMonoMedium gap-8  uppercase">
-            <Link className="hover:text-primary-foreground/60" href={"/about"}>
+            <Link className="hover:text-input/50" href={"/about"}>
               {" "}
               <li>About</li>
             </Link>
-            <Link
-              className="hover:text-primary-foreground/60"
-              href={"/join-us"}
-            >
+            <Link className="hover:text-input/50" href={"/join-us"}>
               {" "}
               <li>join us</li>
             </Link>
-            <Link
-              className="hover:text-primary-foreground/60"
-              href={"/insights"}
-            >
+            <Link className="hover:text-input/50" href={"/insights"}>
               {" "}
               <li>insights</li>
             </Link>
-            <Link
-              className="hover:text-primary-foreground/60"
-              href={"/contact"}
-            >
+            <Link className="hover:text-input/50" href={"/contact"}>
               {" "}
               <li>contact</li>
             </Link>

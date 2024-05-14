@@ -86,9 +86,13 @@ export function RenderBlogCard({
       />
     </svg>
   ),
+  blogLink = "",
 }) {
   return (
-    <div className=" w-full max-w-[401px] flex flex-col gap-4">
+    <div
+      style={{ transitionDuration: "0.5s" }}
+      className="hover:scale-105 w-full max-w-[401px] flex flex-col gap-4"
+    >
       <div className=" relative w-full   aspect-[1] ">
         <Image
           fill
@@ -104,7 +108,7 @@ export function RenderBlogCard({
       <h3 className="font-[lust-text] text-[clamp(16px,4vw,24px)]">{title}</h3>
       <div className="flex-1 flex items-end">
         <Link
-          href={""}
+          href={blogLink}
           className={cn(
             buttonVariants(),
             " uppercase w-fit gap-3 rounded-full h-[30px]"

@@ -6,7 +6,10 @@ export function RenderBlogs({ blogs }) {
     <div className="w-full mt-10">
       <MaxWidthWrapper className=" grid gap-x-3 gap-y-20 grid-cols-2 lg:grid-cols-3 ">
         {blogs.map(
-          ({ imagesrc, tag, icon, title, btntext, btnicon }, index) => (
+          (
+            { imagesrc, tag, icon, title, btntext, btnicon, blogLink },
+            index
+          ) => (
             <RenderBlogCard
               key={index}
               imagesrc={imagesrc}
@@ -15,6 +18,7 @@ export function RenderBlogs({ blogs }) {
               title={title}
               btntext={btntext}
               btnicon={btnicon}
+              blogLink={blogLink}
             />
           )
         )}

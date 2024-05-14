@@ -18,6 +18,7 @@ export const getCategoriesBlog = cache(async function ({ slug }) {
   );
   let data = [
     {
+      blogLink: "/insights/data/data",
       category: {
         slug: "data",
         name: "Data",
@@ -86,6 +87,7 @@ export const getCategoriesBlog = cache(async function ({ slug }) {
       ),
     },
     {
+      blogLink: "/insights/podcasts/podcast",
       category: {
         slug: "podcasts",
         name: "Podcasts",
@@ -174,6 +176,7 @@ export const getCategoriesBlog = cache(async function ({ slug }) {
       ),
     },
     {
+      blogLink: "/insights/data/data",
       category: {
         slug: "data",
         name: "Data",
@@ -242,6 +245,7 @@ export const getCategoriesBlog = cache(async function ({ slug }) {
       ),
     },
     {
+      blogLink: "/insights/blog-posts/blog",
       category: {
         name: "Blog Posts",
         slug: "blog-posts",
@@ -296,6 +300,7 @@ export const getCategoriesBlog = cache(async function ({ slug }) {
       ),
     },
     {
+      blogLink: "/insights/podcasts/podcast",
       category: {
         slug: "podcasts",
         name: "Podcasts",
@@ -385,6 +390,7 @@ export const getCategoriesBlog = cache(async function ({ slug }) {
     },
 
     {
+      blogLink: "/insights/blog-posts/blog",
       category: {
         name: "Blog Posts",
         slug: "blog-posts",

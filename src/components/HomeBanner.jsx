@@ -1,10 +1,12 @@
 import Image from "next/image";
 import LeadinLight from "./LeadingLight";
 import MaxWidthWrapper from "./MaxWidthWraper";
-import { Button } from "./ui/button";
+import { Button, buttonVariants } from "./ui/button";
 import SLope from "./slope";
 import HorizenatalLine from "./horizentalLine";
 import { Socials } from "./Socials";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 export default function HomeBanner() {
   return (
@@ -68,9 +70,12 @@ export default function HomeBanner() {
               incredible tech talent where it&apos;s needed most, from startups
               to global corporations.
             </div>
-            <Button className="uppercase mt-10 sm:mt-20">
+            <Link
+              href={"/about"}
+              className={cn(buttonVariants(), "uppercase mt-10 sm:mt-20")}
+            >
               find out more +
-            </Button>
+            </Link>
           </div>
         </MaxWidthWrapper>
       </div>

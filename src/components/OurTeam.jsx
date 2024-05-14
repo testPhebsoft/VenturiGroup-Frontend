@@ -9,7 +9,17 @@ import useScrollDragable from "./hooks/useScrollDragable";
 import { cn } from "@/lib/utils";
 import useClickToTouch from "./hooks/useClickToTouch";
 import { useRef } from "react";
-export default function OurTeam() {
+export default function OurTeam({
+  heading = (
+    <>
+      {" "}
+      Meet <br className=" max-sm:hidden" />
+      Our
+      <br className=" sm:hidden" />
+      <span className=" text-input"> UK</span> Team
+    </>
+  ),
+}) {
   const ref = useScrollDragable();
   const renderCard = (
     imagesrc = "/ourteam.png",
@@ -147,10 +157,7 @@ export default function OurTeam() {
     <MaxWidthWrapper className={" "}>
       <div className="flex mr-[calc(-50vw+60%)] ">
         <h1 className="mt-10  max-sm:mx-auto  max-sm:w-fit w-[clamp(221px,50vw,367px)] text-[clamp(24px,5vw,36px)] leading-[clamp(24px,5vw,36px)]  text-input/50 font-[lust-text]">
-          Meet <br className=" max-sm:hidden" />
-          Our
-          <br className=" sm:hidden" />
-          <span className=" text-input"> UK</span> Team
+          {heading}
         </h1>
         <div className=" max-sm:hidden border self-end h-0 mb-2  w-full border-1 border-input/50"></div>
       </div>

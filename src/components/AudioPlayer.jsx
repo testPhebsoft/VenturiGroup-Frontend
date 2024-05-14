@@ -42,8 +42,8 @@ const AudioPlayer = ({
       };
       audioRef.current.addEventListener("loadeddata", updateDuration);
       // Cleanup function to remove event listener on unmount
-      return () =>
-        audioRef.current.removeEventListener("loadeddata", updateDuration);
+      // return () =>
+      //   audioRef.current.removeEventListener("loadeddata", updateDuration);
     }
   }, [audioRef]); // Runs only when audioRef changes
 

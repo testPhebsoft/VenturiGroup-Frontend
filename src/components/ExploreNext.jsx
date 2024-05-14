@@ -1,6 +1,8 @@
 import Image from "next/image";
-import { Button } from "./ui/button";
+import { Button, buttonVariants } from "./ui/button";
 import MaxWidthWrapper from "./MaxWidthWraper";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 export default function ExploreNext({
   heading = "EXPLORE YOUR NEXT CHAPTER",
@@ -49,12 +51,15 @@ export default function ExploreNext({
                   <p className=" text-[clamp(12px,1.5vw,16px)] leading-[clamp(14px,3vw,25px)] w-full lg:max-w-[387px] ">
                     {text}
                   </p>
-                  <Button
-                    variant="secondary"
-                    className="max-lg:bg-primary max-lg:hover:bg-primary/80 max-lg:text-white w-fit "
+                  <Link
+                    href={"/i-am-candidate"}
+                    className={cn(
+                      buttonVariants({ variant: "secondary" }),
+                      "max-lg:bg-primary max-lg:hover:bg-primary/80 max-lg:text-white w-fit "
+                    )}
                   >
                     {buttonText}
-                  </Button>
+                  </Link>
                 </div>
               </div>
             </div>

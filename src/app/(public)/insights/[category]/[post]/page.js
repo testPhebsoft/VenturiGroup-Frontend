@@ -179,7 +179,7 @@ export default async function Page({ params }) {
   if (post == "podcast")
     return (
       <MaxWidthWrapper className={"mt-40"}>
-        <div className=" flex w-full gap-5 ">
+        <div className=" flex max-md:flex-col w-full gap-5 ">
           <div className=" mt-10 w-full max-w-[376px] relative  aspect-square">
             <Image
               fill
@@ -212,7 +212,7 @@ export default async function Page({ params }) {
           </div>
         </div>
 
-        <div className="w-full mt-20 ">
+        <div className="w-full max-md:mt-10 mt-20 ">
           <h1 className="  w-full  text-[clamp(24px,3.2vw,36px)] leading-[clamp(28px,4vw,40px)] font-[lust-text]">
             Join us for the insightful episode as we sit down with Henry Ayres,
             Head of Engineering at Daemon Solutions, to capture exclusive
