@@ -94,6 +94,7 @@ export function CustumCarousal({ data }) {
           <CarouselContent>
             {data.map((item, index) => (
               <CarouselItem
+                key={index}
                 className={touchingSide ? "  basis-1/4" : "basis-1/4"}
                 ref={ref}
               >
