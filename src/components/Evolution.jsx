@@ -51,7 +51,7 @@ export default function Evolution() {
             and the care and passion they have for what we do. They make the
             difference.
           </p>
-          <Button className="w-fit mt-10">join us +</Button>
+          <Button className=" uppercase w-fit mt-10">join us +</Button>
         </div>
       </div>
     </MaxWidthWrapper>

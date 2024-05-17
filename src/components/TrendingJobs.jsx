@@ -12,8 +12,14 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { useState } from "react";
+import useTranslatexDraggable from "./hooks/useTranslatexDrag";
 export default function TrendingJobs({ label = "Trending Jobs" }) {
-  const scrollContainerRef = useScrollDragable();
+  const {
+    ref: scrollContainerRef,
+    parentRef,
+    style,
+  } = useTranslatexDraggable();
+
   return (
     <div className=" bg-background py-10 ">
       <MaxWidthWrapper>
@@ -24,19 +30,25 @@ export default function TrendingJobs({ label = "Trending Jobs" }) {
           <Button className=" uppercase ">see more +</Button>
         </div>
         <div
-          ref={scrollContainerRef}
+          ref={parentRef}
           style={{
             WebkitOverflowScrolling: "touch",
             scrollbarWidth: "none",
             msOverflowStyle: "none",
           }}
-          className="snap-x snap-mandatory lg:snap-proximity  scroll-smooth overflow-y-hidden mt-10 relative overflow-x-scroll  whitespace-nowrap mr-[calc(-50vw+51%)]"
+          className="max-lg:snap-x snap-mandatory lg:snap-proximity  scroll-smooth overflow-y-hidden mt-10 relative max-lg:overflow-x-scroll overflow-hidden  whitespace-nowrap mr-[calc(-50vw+51%)]"
         >
-          {Array(10)
-            .fill(0)
-            .map((value, index) => (
-              <JobCard key={index} />
-            ))}
+          <div
+            style={style}
+            ref={scrollContainerRef}
+            className="flex w-fit gap-5"
+          >
+            {Array(10)
+              .fill(0)
+              .map((value, index) => (
+                <JobCard key={index} />
+              ))}
+          </div>
         </div>
       </MaxWidthWrapper>
     </div>
@@ -59,7 +71,7 @@ const JobCard = ({
   const [open, setOpen] = useState(false);
   function renderProperties(heading = "company", lable = "Cinch") {
     return (
-      <div className=" grid  grid-cols-2  justify-center items-center w-full max-w-[413px]">
+      <div className=" grid grid-cols-2  justify-center items-center w-full max-w-[413px]">
         <h3 className=" uppercase  font-AntarcticanMonoMedium text-primary text-[clamp(12px,1.1vw,16px)]">
           {" "}
           {heading}
@@ -73,7 +85,7 @@ const JobCard = ({
   return (
     <div
       {...props}
-      className={`mx-2  select-none inline-block snap-start w-[clamp(305px,30vw,367px)] aspect-[0.812] bg-cover bg-no-repeat border rounded-[24px] bg-[url('../../public/jobsbg.svg')]`}
+      className={`mx-2   shrink-0 select-none inline-block snap-start w-[clamp(305px,30vw,367px)] aspect-[0.812] bg-cover bg-no-repeat border rounded-[24px] bg-[url('../../public/jobsbg.svg')]`}
     >
       <div className="p-10 py-10 flex flex-col h-full">
         <div className="text-white">
@@ -121,7 +133,14 @@ const JobCard = ({
         </div>
       </div>
       <Dialog open={open} onOpenChange={(e) => setOpen(e)}>
-        <DialogContent className="overflow-y-scroll py-20 sm:px-20 px-10 w-[95%]  max-h-[100vh] sm:max-w-screen-maxScreenSize ">
+        <DialogContent
+          style={{
+            WebkitOverflowScrolling: "touch",
+            scrollbarWidth: "none",
+            msOverflowStyle: "none",
+          }}
+          className="overflow-y-scroll py-20 sm:px-20 px-10 w-[95%]  max-h-[100vh] sm:max-w-screen-maxScreenSize "
+        >
           <h2 className="max-[839px]:text-[clamp(16px,10vw,48px)] max-[839px]:leading-[clamp(24px,10vw,51px)] text-[clamp(16px,3.2vw,51px)] leading-[clamp(24px,3.3vw,51px)] font-[lust-text] ">
             {title}
           </h2>

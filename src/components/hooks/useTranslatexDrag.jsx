@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 
-const useTranslatexDraggable = ({}) => {
+const useTranslatexDraggable = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [dragging, setDragging] = useState(false);
   const componentRef = useRef(null);
@@ -12,11 +12,19 @@ const useTranslatexDraggable = ({}) => {
       const startX = e.pageX - position.x;
       var newX = e.pageX - startX;
       var rightX;
-      var childWidth = componentRef.current.firstChild.offsetWidth + 60;
+      var firstchildWidth = componentRef.current.firstChild.offsetWidth;
+
+      if (componentRef.current) {
+        let childLenght =
+          firstchildWidth * componentRef.current.children.length;
+        var gap = componentRef.current.offsetWidth - childLenght;
+        gap = gap / componentRef.current.children.length;
+      }
+      var childWidth = componentRef.current.firstChild.offsetWidth + gap;
       function handleMouseMove(e) {
         e.preventDefault();
         newX = e.pageX - startX;
-
+        // console.log(newX, rightX, componentRef.current.offsetWidth);
         rightX =
           componentRef.current.offsetWidth -
           (Math.abs(newX) + parentRef.current.offsetWidth);
@@ -28,15 +36,18 @@ const useTranslatexDraggable = ({}) => {
       const handleMouseUp = () => {
         //console.log("snapX", snapX, position.x, childWidth);
         // TODO : if moved left then translate to left else translate to right
-        console.log(
-          "left",
-          -(childWidth * Math.abs(Math.floor(newX / childWidth))),
-          childWidth * Math.abs(Math.floor(newX / childWidth)),
-          childWidth
-        );
+        // console.log(
+        //   "left",
+        //   newX,
+        //   rightX,
+        //   parentRef.current.offsetWidth,
+        //   -(childWidth * Math.abs(Math.floor(newX / childWidth))),
+        //   childWidth * Math.abs(Math.floor(newX / childWidth)),
+        //   childWidth
+        // );
         setPosition({
           x:
-            newX > 100
+            newX > 0
               ? 0
               : rightX <= 0
               ? -(
