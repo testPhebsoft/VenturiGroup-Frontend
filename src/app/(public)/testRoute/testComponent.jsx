@@ -1,17 +1,20 @@
 "use client";
-import { ArrowLeftCircle, ArrowRightCircle } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
-import { CarousalItem } from "./CarousalItem";
-import useDraggable from "@/components/hooks/useDraggable";
+import { useRef, useState } from "react";
+import CarousalItem from "./CarousalItem";
 import useTranslatexDraggable from "@/components/hooks/useTranslatexDrag";
 export function CustumCarousal({ data }) {
-  const { ref: containerRef, style, childRef } = useTranslatexDraggable();
+  const [childWidth, setChildWidth] = useState();
+
+  const {
+    ref: containerRef,
+    style,
+
+    parentRef,
+  } = useTranslatexDraggable({ childWidth: childWidth });
   const [state, setState] = useState(false);
   const itemWidthRef = useRef(0);
   let container = containerRef.current;
   const [visibleItemHeight, setVisibleItemHeight] = useState(null);
-  const parentRef = useRef();
-
   const handleNext = () => {
     if (containerRef.current) {
       const container = containerRef.current;
@@ -44,23 +47,26 @@ export function CustumCarousal({ data }) {
   };
 
   return (
-    <div className=" flex-1 relative  lg:w-[50%]">
+    <div className=" flex-1 relative  lg:w-[100%]">
       <div
+        ref={parentRef}
         style={{
           WebkitOverflowScrolling: "touch",
           scrollbarWidth: "none",
           msOverflowStyle: "none",
         }}
-        className="lg:mr-[calc(-49vw+618px)] snap-x lg:mt-[70px] flex-1  overflow-x-scroll whitespace-nowrap  "
+        className="lg:mr-[calc(-49vw+618px)] max-lg:snap-x lg:mt-[70px]    max-lg:overflow-x-scroll  overflow-hidden max-lg:whitespace-nowrap  "
       >
         <div style={style} ref={containerRef} className=" flex w-fit gap-5">
           {data.map((item, index) => (
             <CarousalItem
+              onLoad={(e) => {
+                setChildWidth(e);
+              }}
               key={index}
               index={index}
               item={item}
-              childref={childRef}
-              parentRef={containerRef}
+              parentRef={parentRef}
               scrollref={containerRef}
             />
           ))}

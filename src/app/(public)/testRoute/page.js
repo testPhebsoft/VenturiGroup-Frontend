@@ -1,5 +1,4 @@
-import Footer from "@/components/Footer";
-import SnapScroller, { CustumCarousal } from "./testComponent";
+import { CustumCarousal } from "./testComponent";
 
 export default function Page() {
   let data = [

@@ -1,39 +1,51 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 
-const useTranslatexDraggable = () => {
+const useTranslatexDraggable = ({}) => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [dragging, setDragging] = useState(false);
   const componentRef = useRef(null);
   const childRef = useRef(null);
-
+  const parentRef = useRef();
   useEffect(() => {
     const handleMouseDown = (e) => {
       const startX = e.pageX - position.x;
-      const startY = e.pageY - position.y;
-
-      const handleMouseMove = (e) => {
+      var newX = e.pageX - startX;
+      var rightX;
+      var childWidth = componentRef.current.firstChild.offsetWidth + 60;
+      function handleMouseMove(e) {
         e.preventDefault();
+        newX = e.pageX - startX;
+
+        rightX =
+          componentRef.current.offsetWidth -
+          (Math.abs(newX) + parentRef.current.offsetWidth);
         setPosition({
-          x: e.pageX - startX,
-          y: e.pageY - startY,
+          x: newX,
         });
-        console.log(position.x);
-      };
-
+        // console.log(newX, rightX);
+      }
       const handleMouseUp = () => {
-        const childWidth = childRef.current.offsetWidth;
-        console.log("childWidth", childWidth);
-        const halfChildWidth = childWidth / 2;
-
-        // Check if the absolute position is more than half the child's width
-        const shouldSnapToEdge = Math.abs(startX) > halfChildWidth;
-        console.log("shouldSnapToEdge", shouldSnapToEdge);
-        let newPosition = position.x + childWidth;
-
+        //console.log("snapX", snapX, position.x, childWidth);
+        // TODO : if moved left then translate to left else translate to right
+        console.log(
+          "left",
+          -(childWidth * Math.abs(Math.floor(newX / childWidth))),
+          childWidth * Math.abs(Math.floor(newX / childWidth)),
+          childWidth
+        );
         setPosition({
-          x: shouldSnapToEdge ? -newPosition : 0,
-          y: 0,
+          x:
+            newX > 100
+              ? 0
+              : rightX <= 0
+              ? -(
+                  componentRef.current.offsetWidth -
+                  parentRef.current.offsetWidth
+                )
+              : position.x > newX
+              ? -(childWidth * Math.abs(Math.floor(newX / childWidth)))
+              : -(childWidth * Math.abs(Math.ceil(newX / childWidth))),
         });
         setDragging(false);
 
@@ -42,15 +54,20 @@ const useTranslatexDraggable = () => {
       };
 
       const handleMouseLeave = () => {
-        const childWidth = childRef.current.offsetWidth;
-        const halfChildWidth = childWidth / 2;
-
-        const shouldSnapToEdge = Math.abs(position.x) > halfChildWidth;
-        +setPosition({
-          x: shouldSnapToEdge ? -childWidth : 0,
-          y: 0,
-        });
         setDragging(false);
+        setPosition({
+          x:
+            newX > 100
+              ? 0
+              : rightX <= 0
+              ? -(
+                  componentRef.current.offsetWidth -
+                  parentRef.current.offsetWidth
+                )
+              : position.x > newX
+              ? -(childWidth * Math.abs(Math.floor(newX / childWidth)))
+              : -(childWidth * Math.abs(Math.ceil(newX / childWidth))),
+        });
 
         componentRef.current.removeEventListener("mousemove", handleMouseMove);
         componentRef.current.removeEventListener(
@@ -63,6 +80,7 @@ const useTranslatexDraggable = () => {
 
       componentRef.current.addEventListener("mouseup", handleMouseUp);
       componentRef.current.addEventListener("mousemove", handleMouseMove);
+
       componentRef.current.addEventListener("mouseleave", handleMouseLeave);
     };
 
@@ -80,9 +98,11 @@ const useTranslatexDraggable = () => {
   return {
     ref: componentRef,
     childRef: childRef,
+    parentRef,
     style: {
-      cursor: dragging ? "grabbing" : "grab",
+      transitionDuration: dragging ? "0s" : "0.5s",
 
+      cursor: dragging ? "grabbing" : "grab",
       transform: `translate3d(${position.x}px,0px,0px)`,
     },
   };
