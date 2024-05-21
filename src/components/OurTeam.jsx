@@ -9,6 +9,7 @@ import useScrollDragable from "./hooks/useScrollDragable";
 import { cn } from "@/lib/utils";
 import useClickToTouch from "./hooks/useClickToTouch";
 import { useRef } from "react";
+import useTranslatexDraggable from "./hooks/useTranslatexDrag";
 export default function OurTeam({
   heading = (
     <>
@@ -20,7 +21,8 @@ export default function OurTeam({
     </>
   ),
 }) {
-  const ref = useScrollDragable();
+  const { ref, parentRef, style } = useTranslatexDraggable();
+
   const renderCard = (
     imagesrc = "/ourteam.png",
     jobTitle = "Job title",
@@ -28,23 +30,25 @@ export default function OurTeam({
     details
   ) => {
     return (
-      <Dialog className="w-full ">
-        <DialogTrigger className="w-full inline-block snap-center max-w-[237px] text-left   mr-2">
-          <div className="w-full    max-w-[237px] pb-10 pt-2 px-2 rounded-[18px]">
-            <div className="relative    w-full aspect-[0.8] ">
+      <Dialog className="  ">
+        <div className="w-full   select-none    shrink-0 inline-block snap-center max-w-[237px] text-left   mr-2">
+          <div className="w-full     max-w-[237px] pb-10 pt-2 px-2 rounded-[18px]">
+            <div className="relative      w-full aspect-[0.8] ">
               <Image
-                className="rounded-[18px]"
+                className="rounded-[18px] pointer-events-none"
                 fill
                 src={imagesrc ? imagesrc : "/sector1.jpg"}
                 alt="sector1"
               />
               <div className=" absolute bottom-5 right-5 ">
-                <div className="self-end mb-[15px] relative  before:absolute before:block before:rounded-full before:size-10 before:-inset-[4px] before:bottom-[50%]    before:bg-white  ">
-                  <Plus stroke="#1A1B1D" className="size-8 z-10 relative" />
-                </div>
+                <DialogTrigger>
+                  <div className="self-end mb-[15px] relative  before:absolute before:block before:rounded-full before:size-10 before:-inset-[4px] before:bottom-[50%]    before:bg-white  ">
+                    <Plus stroke="#1A1B1D" className="size-8 z-10 relative" />
+                  </div>
+                </DialogTrigger>
               </div>
             </div>
-            <div className="w-full mx-auto ">
+            <div className="w-full mx-auto pointer-events-none ">
               <div className="w-full mt-5 flex justify-between   text-[clamp(18px,3.2vw,24px)] font-[lust-text]">
                 <p className="w-full  whitespace-normal">
                   {name || "Isabella   Montgomery-Smith"}
@@ -56,7 +60,7 @@ export default function OurTeam({
               </p>
             </div>
           </div>
-        </DialogTrigger>
+        </div>
         <DialogContent className="w-full  p-0 sm:p-0 sm:max-w-[clamp(320px,90vw,1478px)] text-left   ">
           <div
             className={
@@ -153,8 +157,9 @@ export default function OurTeam({
       </Dialog>
     );
   };
+
   return (
-    <MaxWidthWrapper className={" "}>
+    <MaxWidthWrapper className={" shrink-0 w-full "}>
       <div className="flex mr-[calc(-50vw+60%)] ">
         <h1 className="mt-10  max-sm:mx-auto  max-sm:w-fit w-[clamp(221px,50vw,367px)] text-[clamp(24px,5vw,36px)] leading-[clamp(24px,5vw,36px)]  text-input/50 font-[lust-text]">
           {heading}
@@ -162,27 +167,27 @@ export default function OurTeam({
         <div className=" max-sm:hidden border self-end h-0 mb-2  w-full border-1 border-input/50"></div>
       </div>
       <div
-        ref={ref}
-        onTouchStart={() => console.log("Touch started")}
+        ref={parentRef}
         style={{
           WebkitOverflowScrolling: "touch",
           scrollbarWidth: "none",
           msOverflowStyle: "none",
         }}
-        className="snap-x lg:mr-[calc(-50vw+60%)] relative scroll-smooth  snap-mandatory  scroll-m-5 whitespace-nowrap overflow-x-scroll mt-10 px-5  sm:px-0 "
+        className="max-lg:snap-x lg:mr-[calc(-50vw+60%)] relative max-lg:scroll-smooth  max-lg:snap-mandatory    scroll-m-5 whitespace-nowrap max-lg:overflow-x-scroll  overflow-hidden  mt-10 px-5  sm:px-0 "
       >
-        {renderCard()}
-        {renderCard()}
-
-        {renderCard()}
-        {renderCard()}
-        {renderCard()}
-        {renderCard()}
-        {renderCard()}
-        {renderCard()}
-        {renderCard()}
-        {renderCard()}
-        {renderCard()}
+        <div style={style} ref={ref} className="flex w-max gap-5">
+          {renderCard()}
+          {renderCard()}
+          {renderCard()}
+          {renderCard()}
+          {renderCard()}
+          {renderCard()}
+          {renderCard()}
+          {renderCard()}
+          {renderCard()}
+          {renderCard()}
+          {renderCard()}
+        </div>
       </div>
     </MaxWidthWrapper>
   );

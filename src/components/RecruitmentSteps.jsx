@@ -7,7 +7,14 @@ export default function RecruitmentSteps() {
       <h2 className=" text-[clamp(24px,4.5vw,36px)] font-[lust-text] max-md:text-center ">
         The recruitment steps
       </h2>
-      <div className=" grid grid-cols-1 mt-10 md:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-10">
+      <div
+        style={{
+          WebkitOverflowScrolling: "touch",
+          scrollbarWidth: "none",
+          msOverflowStyle: "none",
+        }}
+        className=" grid grid-cols-1 max-md:block mt-10 md:grid-cols-2 max-md:snap-x  max-md:snap-mandatory max-md:overflow-x-scroll max-md:whitespace-nowrap lg:grid-cols-3 gap-x-5 gap-y-10"
+      >
         <RecruitmentStep />
         <RecruitmentStep
           image="/search.jpg"
@@ -87,8 +94,8 @@ function RecruitmentStep({
   ),
 }) {
   return (
-    <div className=" relative  overflow-hidden rounded-3xl">
-      <div className="relative w-full max-md:aspect-video aspect-square md:max-w-[clamp(217px,43vw,408px)]  rounded-3xl">
+    <div className=" whitespace-normal  relative max-md:inline-block snap-start  max-md:w-[90%]  rounded-3xl">
+      <div className="relative w-full  aspect-square  max-md:max-w-[90%]   md:max-w-[clamp(217px,43vw,408px)]  rounded-3xl">
         <Image
           fill
           src={image}
@@ -96,14 +103,14 @@ function RecruitmentStep({
           className=" object-cover rounded-3xl  filter    brightness-50   "
         />
       </div>
-      <div className=" flex flex-col gap-3 md:absolute top-0 pt-10 md:px-10 pb-10 md:h-full">
+      <div className=" flex flex-col gap-3 absolute top-0 pt-10 px-10 pb-10  h-full">
         <p className="text-primary  font-AntarcticanMonoSemiBold">{number}</p>
-        <h3 className=" text-[clamp(24px,4.5vw,36px)] font-[lust-text] md:text-white">
+        <h3 className=" text-[clamp(24px,4.5vw,36px)] font-[lust-text] text-white">
           {" "}
           {heading}
         </h3>
-        <div className=" flex flex-1 md:items-end md:text-white font-ArticulateMedium">
-          <p>{text}</p>
+        <div className=" flex flex-1 items-end text-white font-ArticulateMedium">
+          <p className="max-md:w-[90%]">{text}</p>
         </div>
       </div>
     </div>

@@ -14,20 +14,29 @@ export function InsightsNavs({ categories }) {
             Our <span className="text-primary">insights</span>
           </h1>
         </div>
-        <div className="flex gap-5 flex-wrap justify-center ">
-          {categories.map(({ name, slug }) => {
-            return (
-              <ShowCategories
-                key={slug}
-                slug={slug}
-                isActive={
-                  pathName == `/insights/${slug}` ||
-                  (pathName == "/insights" && name == "All")
-                }
-                name={name}
-              />
-            );
-          })}
+        <div
+          style={{
+            WebkitOverflowScrolling: "touch",
+            scrollbarWidth: "none",
+            msOverflowStyle: "none",
+          }}
+          className="w-full px-5  sm:px-0  snap-x overflow-x-scroll whitespace-nowrap snap-mandatory "
+        >
+          <div className="flex gap-5 w-fit mx-auto justify-center ">
+            {categories.map(({ name, slug }) => {
+              return (
+                <ShowCategories
+                  key={slug}
+                  slug={slug}
+                  isActive={
+                    pathName == `/insights/${slug}` ||
+                    (pathName == "/insights" && name == "All")
+                  }
+                  name={name}
+                />
+              );
+            })}
+          </div>
         </div>
       </>
     );
@@ -35,7 +44,10 @@ export function InsightsNavs({ categories }) {
 const ShowCategories = ({ name = "All", isActive, slug }) => {
   console.log("isActive", isActive);
   return (
-    <Link href={slug == "insights" ? "/insights" : `/insights/${slug}`}>
+    <Link
+      className="snap-center"
+      href={slug == "insights" ? "/insights" : `/insights/${slug}`}
+    >
       <h3
         data-isActive={isActive}
         className="text-[clamp(12px,1.1vw,16px)] leading-[clamp(12px,1.1vw,16px)] pt-3 py-2 px-6 rounded-full capitalize  text-center bg-input/10  data-[isActive=true]:bg-primary"

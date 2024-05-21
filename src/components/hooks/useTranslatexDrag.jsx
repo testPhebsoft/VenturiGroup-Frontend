@@ -19,8 +19,21 @@ const useTranslatexDraggable = () => {
           firstchildWidth * componentRef.current.children.length;
         var gap = componentRef.current.offsetWidth - childLenght;
         gap = gap / componentRef.current.children.length;
+        var childWidth = componentRef.current.firstChild.offsetWidth + gap;
+        console.log(
+          "parent Widht",
+          componentRef.current.offsetWidth,
+          "childlenght",
+          childLenght,
+          "gap",
+          gap,
+          "childWidth",
+          childWidth,
+          "firstchildWidth",
+          firstchildWidth
+        );
       }
-      var childWidth = componentRef.current.firstChild.offsetWidth + gap;
+
       function handleMouseMove(e) {
         e.preventDefault();
         newX = e.pageX - startX;

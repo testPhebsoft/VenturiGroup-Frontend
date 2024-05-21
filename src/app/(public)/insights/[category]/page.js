@@ -3,11 +3,11 @@ import { notFound } from "next/navigation";
 import { RenderBlogs } from "@/components/RenderBlogs";
 import { Suspense } from "react";
 import Loading from "@/app/loading";
-import { Loader } from "@/components/Loader";
+import { Loader, LoaderTwo } from "@/components/Loader";
 
 export default async function Page({ params }) {
   return (
-    <Suspense fallback={<Loader className={" h-[50vh]"} />}>
+    <Suspense fallback={<LoaderTwo className={" h-[50vh]"} />}>
       <Renderer params={params} />
     </Suspense>
   );
