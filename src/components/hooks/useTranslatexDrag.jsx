@@ -7,6 +7,7 @@ const useTranslatexDraggable = () => {
   const componentRef = useRef(null);
   const childRef = useRef(null);
   const parentRef = useRef();
+
   useEffect(() => {
     const handleMouseDown = (e) => {
       const startX = e.pageX - position.x;
@@ -15,49 +16,23 @@ const useTranslatexDraggable = () => {
       var firstchildWidth = componentRef.current.firstChild.offsetWidth;
 
       if (componentRef.current) {
-        let childLenght =
+        let childLength =
           firstchildWidth * componentRef.current.children.length;
-        var gap = componentRef.current.offsetWidth - childLenght;
+        var gap = componentRef.current.offsetWidth - childLength;
         gap = gap / componentRef.current.children.length;
         var childWidth = componentRef.current.firstChild.offsetWidth + gap;
-        console.log(
-          "parent Widht",
-          componentRef.current.offsetWidth,
-          "childlenght",
-          childLenght,
-          "gap",
-          gap,
-          "childWidth",
-          childWidth,
-          "firstchildWidth",
-          firstchildWidth
-        );
       }
 
       function handleMouseMove(e) {
         e.preventDefault();
         newX = e.pageX - startX;
-        // console.log(newX, rightX, componentRef.current.offsetWidth);
         rightX =
           componentRef.current.offsetWidth -
           (Math.abs(newX) + parentRef.current.offsetWidth);
-        setPosition({
-          x: newX,
-        });
-        // console.log(newX, rightX);
+        setPosition({ x: newX });
       }
+
       const handleMouseUp = () => {
-        //console.log("snapX", snapX, position.x, childWidth);
-        // TODO : if moved left then translate to left else translate to right
-        // console.log(
-        //   "left",
-        //   newX,
-        //   rightX,
-        //   parentRef.current.offsetWidth,
-        //   -(childWidth * Math.abs(Math.floor(newX / childWidth))),
-        //   childWidth * Math.abs(Math.floor(newX / childWidth)),
-        //   childWidth
-        // );
         setPosition({
           x:
             newX > 0
@@ -108,13 +83,67 @@ const useTranslatexDraggable = () => {
       componentRef.current.addEventListener("mouseleave", handleMouseLeave);
     };
 
+    const handleTouchStart = (e) => {
+      const startX = e.touches[0].pageX - position.x;
+      var newX = e.touches[0].pageX - startX;
+      var rightX;
+      var firstchildWidth = componentRef.current.firstChild.offsetWidth;
+
+      if (componentRef.current) {
+        let childLength =
+          firstchildWidth * componentRef.current.children.length;
+        var gap = componentRef.current.offsetWidth - childLength;
+        gap = gap / componentRef.current.children.length;
+        var childWidth = componentRef.current.firstChild.offsetWidth + gap;
+      }
+
+      function handleTouchMove(e) {
+        e.preventDefault();
+        newX = e.touches[0].pageX - startX;
+        rightX =
+          componentRef.current.offsetWidth -
+          (Math.abs(newX) + parentRef.current.offsetWidth);
+        setPosition({ x: newX });
+      }
+
+      const handleTouchEnd = () => {
+        setPosition({
+          x:
+            newX > 0
+              ? 0
+              : rightX <= 0
+              ? -(
+                  componentRef.current.offsetWidth -
+                  parentRef.current.offsetWidth
+                )
+              : position.x > newX
+              ? -(childWidth * Math.abs(Math.floor(newX / childWidth)))
+              : -(childWidth * Math.abs(Math.ceil(newX / childWidth))),
+        });
+        setDragging(false);
+
+        componentRef.current.removeEventListener("touchmove", handleTouchMove);
+        componentRef.current.removeEventListener("touchend", handleTouchEnd);
+      };
+
+      setDragging(true);
+
+      componentRef.current.addEventListener("touchmove", handleTouchMove);
+      componentRef.current.addEventListener("touchend", handleTouchEnd);
+    };
+
     if (componentRef.current) {
       componentRef.current.addEventListener("mousedown", handleMouseDown);
+      componentRef.current.addEventListener("touchstart", handleTouchStart);
     }
 
     return () => {
       if (componentRef.current) {
         componentRef.current.removeEventListener("mousedown", handleMouseDown);
+        componentRef.current.removeEventListener(
+          "touchstart",
+          handleTouchStart
+        );
       }
     };
   }, [position]);
@@ -125,7 +154,6 @@ const useTranslatexDraggable = () => {
     parentRef,
     style: {
       transitionDuration: dragging ? "0s" : "0.5s",
-
       cursor: dragging ? "grabbing" : "grab",
       transform: `translate3d(${position.x}px,0px,0px)`,
     },
