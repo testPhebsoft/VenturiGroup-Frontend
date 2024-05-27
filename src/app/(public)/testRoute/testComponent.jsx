@@ -2,15 +2,16 @@
 import { useRef, useState } from "react";
 import CarousalItem from "./CarousalItem";
 import useTranslatexDraggable from "@/components/hooks/useTranslatexDrag";
+import useTranslatexDraggableLoop from "@/components/hooks/useTranslatexDragLoop";
 export function CustumCarousal({ data }) {
   const [childWidth, setChildWidth] = useState();
-
+  const [expandindChildIndex, setExpandingChildIndex] = useState(0);
   const {
     ref: containerRef,
     style,
 
     parentRef,
-  } = useTranslatexDraggable({ childWidth: childWidth });
+  } = useTranslatexDraggable(863);
   const [state, setState] = useState(false);
   const itemWidthRef = useRef(0);
   let container = containerRef.current;
@@ -55,10 +56,10 @@ export function CustumCarousal({ data }) {
           scrollbarWidth: "none",
           msOverflowStyle: "none",
         }}
-        className="lg:mr-[calc(-49vw+618px)] max-lg:snap-x lg:mt-[70px]    max-lg:overflow-x-scroll  overflow-hidden max-lg:whitespace-nowrap  "
+        className="lg:mr-[calc(-49vw+618px)] px-10  max-lg:snap-x lg:mt-[70px]  w-full  max-lg:overflow-x-scroll  overflow-hidden max-lg:whitespace-nowrap  "
       >
-        <div style={style} ref={containerRef} className=" flex w-fit gap-5">
-          {data.map((item, index) => (
+        <div style={style} ref={containerRef} className=" flex w-max gap-5">
+          {data.concat(data).map((item, index) => (
             <CarousalItem
               onLoad={(e) => {
                 setChildWidth(e);
@@ -68,11 +69,12 @@ export function CustumCarousal({ data }) {
               item={item}
               parentRef={parentRef}
               scrollref={containerRef}
+              ex
             />
           ))}
         </div>
       </div>
-      <div className="flex max-lg:hidden absolute   top-[0px] justify-center items-center gap-5">
+      {/* <div className="flex max-lg:hidden absolute   top-[0px] justify-center items-center gap-5">
         <button onClick={handlePrevious}>
           <svg
             width="50"
@@ -111,7 +113,7 @@ export function CustumCarousal({ data }) {
             />
           </svg>
         </button>
-      </div>
+      </div> */}
     </div>
   );
 }

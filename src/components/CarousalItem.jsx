@@ -13,6 +13,7 @@ export default function CarousalItem({
   onLoad,
   expandindChildInde,
   setExpandingChildIndex,
+  isDesktop,
 }) {
   const [isOutsideViewport, setIsOutsideViewport] = useState(false);
   const ref = useRef(null);
@@ -20,7 +21,6 @@ export default function CarousalItem({
 
   useEffect(() => {
     if (!parentRef.current) {
-      console.error("parentRef is not defined");
       return;
     }
 
@@ -37,17 +37,25 @@ export default function CarousalItem({
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (index == 1) {
-          console.log(
-            index,
-            entry.intersectionRatio,
-            entry.boundingClientRect.x,
-            entry.intersectionRatio < 0.00000000000001 &&
-              entry.boundingClientRect.left < 50
-          );
+          // console.log(
+          //   index,
+          //   entry.intersectionRatio,
+          //   entry.boundingClientRect.x,
+          //   entry.intersectionRatio < 0.00000000000001 &&
+          //     entry.boundingClientRect.left < 50
+          // );
         }
 
-        if (1) {
+        if (isDesktop) {
           if (entry.boundingClientRect.x < 400) {
+            // ref.current.style.scale = "1";
+            setIsLoaded(false);
+            setIsOutsideViewport(true);
+          } else {
+            setIsOutsideViewport(false);
+          }
+        } else {
+          if (entry.boundingClientRect.x < 200) {
             // ref.current.style.scale = "1";
             setIsLoaded(false);
             setIsOutsideViewport(true);
@@ -64,32 +72,35 @@ export default function CarousalItem({
       console.error("ref.current is not defined");
     }
   });
-  // console.log(index, isOutsideViewport);
   return (
     <div
       ref={ref}
       style={{
         transitionDuration: isOutsideViewport ? "1s" : "0.1s",
       }}
-      className="flex gap-5"
+      className={` flex gap-5 shrink-0 ${
+        isDesktop ? " " : "flex-col  whitespace-normal "
+      }`}
     >
       {
         <div
           style={{
             transitionDuration: isOutsideViewport ? "1s" : "0.1s",
           }}
-          className={
+          className={`  ${
             isOutsideViewport
-              ? "w-[420px] h-[524px] ml-auto overflow-y-hidden"
-              : "w-0 overflow-hidden  h-[0px] overflow-y-hidden"
-          }
+              ? !isDesktop
+                ? "w-[300px]  mr-[-49vw]  h-[524px] opacity-100 overflow-y-hidden"
+                : "w-[420px] h-[524px] opacity-100 ml-auto overflow-y-hidden"
+              : "w-0 overflow-hidden  h-[0px] opacity-0 overflow-y-hidden"
+          }`}
         >
           <h3 className="text-[clamp(24px,9vw,36px)] font-[lust-text] font-light ">
             <span className=" text-input/50">Our </span> <br />
             customers
           </h3>
           <Quote className="mt-16" />
-          <p className="mt-10  text-[clamp(24px,9vw,36px)] font-[lust-text] font-light w-full ">
+          <p className="mt-10      text-[clamp(24px,9vw,36px)]  whitespace-normal font-[lust-text] font-light w-full ">
             Venturi <span className="text-primary"> excels</span> in tech
             recruitment, matching top talent to leading companies with{" "}
             <span className="text-primary"> precision</span> and{" "}
@@ -102,11 +113,14 @@ export default function CarousalItem({
           transitionDuration: isOutsideViewport ? "1s" : "0.1s",
         }}
         key={index}
-        className={`relative select-none lg:snap-start shrink-0 mx-5 w-auto snap-center border-primary border rounded-[18px] aspect-[0.804] 
+        className={`relative select-none lg:snap-start   w-auto snap-center border-primary border rounded-[18px] aspect-[0.804] 
+        
+        ${isDesktop ? " mx-5 " : " mr-10 "}
+
         ${
           isOutsideViewport
-            ? " h-[clamp(328px,65vw,456px)] mt-auto "
-            : " h-[clamp(328px,65vw,400px)] mt-auto "
+            ? " h-[clamp(328px,65vw,456px)] mt-auto  "
+            : " h-[clamp(328px,65vw,400px)] opacity-80 mt-auto "
         }
         `}
       >

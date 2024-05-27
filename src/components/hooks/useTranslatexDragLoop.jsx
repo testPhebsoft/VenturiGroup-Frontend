@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 
-const useTranslatexDraggable = (fixSnapWidth) => {
+const useTranslatexDraggable = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [dragging, setDragging] = useState(false);
   const componentRef = useRef(null);
@@ -14,35 +14,15 @@ const useTranslatexDraggable = (fixSnapWidth) => {
       var newX = e.pageX - startX;
       var rightX;
       var firstchildWidth = componentRef.current.firstChild.offsetWidth;
-      console.log(
-        componentRef.current.offsetWidth,
-        parentRef.current.offsetWidth
-      );
 
-      if (!fixSnapWidth) {
-        if (componentRef.current) {
-          let childLength;
-
-          var childrenArray = [...componentRef.current.children];
-          childrenArray.forEach((child) => {
-            childLength += child.offsetWidth;
-          });
+      if (componentRef.current) {
+        let childLength =
           firstchildWidth * componentRef.current.children.length;
-          var gap = componentRef.current.offsetWidth - childLength;
-          gap = gap / componentRef.current.children.length;
-          var childWidth = componentRef.current.firstChild.offsetWidth + gap;
-          console.log(
-            gap,
-            componentRef.current.offsetWidth,
-            parentRef.current.offsetWidth
-          );
-        }
-        console.log("not fixsna");
-      } else {
-        console.log("using fixsna");
-
-        var childWidth = fixSnapWidth;
+        var gap = componentRef.current.offsetWidth - childLength;
+        gap = gap / componentRef.current.children.length;
+        var childWidth = componentRef.current.firstChild.offsetWidth + gap;
       }
+
       function handleMouseMove(e) {
         e.preventDefault();
         newX = e.pageX - startX;
@@ -109,21 +89,12 @@ const useTranslatexDraggable = (fixSnapWidth) => {
       var rightX;
       var firstchildWidth = componentRef.current.firstChild.offsetWidth;
 
-      var childrenArray = [...componentRef.current.children];
-
-      if (!fixSnapWidth) {
-        if (componentRef.current) {
-          let childLength = 0;
-          childrenArray.forEach((child) => {
-            childLength += Number(child.offsetWidth);
-          });
-
-          var gap = componentRef.current.offsetWidth - childLength;
-          gap = gap / componentRef.current.children.length;
-          var childWidth = componentRef.current.firstChild.offsetWidth + gap;
-        }
-      } else {
-        var childWidth = fixSnapWidth;
+      if (componentRef.current) {
+        let childLength =
+          firstchildWidth * componentRef.current.children.length;
+        var gap = componentRef.current.offsetWidth - childLength;
+        gap = gap / componentRef.current.children.length;
+        var childWidth = componentRef.current.firstChild.offsetWidth + gap;
       }
 
       function handleTouchMove(e) {
@@ -136,8 +107,6 @@ const useTranslatexDraggable = (fixSnapWidth) => {
       }
 
       const handleTouchEnd = () => {
-        // childrenArray.shift();
-        // componentRef.current.children = childrenArray;
         setPosition({
           x:
             newX > 0
