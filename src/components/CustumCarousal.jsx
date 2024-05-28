@@ -11,7 +11,7 @@ export function CustumCarousal({ data }) {
     style,
 
     parentRef,
-  } = useTranslatexDraggable(isDesktop && 863);
+  } = useTranslatexDraggable();
   return (
     <div className=" lg:mr-[calc(-49vw+50%)]   flex-1 relative  lg:w-[100%]">
       <div

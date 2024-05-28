@@ -1,3 +1,4 @@
+import { Final } from "./Final";
 import { CustumCarousal } from "./testComponent";
 
 export default function Page() {
@@ -51,7 +52,7 @@ export default function Page() {
   };
   return (
     <div className="pt-40">
-      <CustumCarousal data={data} />
+      <Final data={data} />
     </div>
   );
 }

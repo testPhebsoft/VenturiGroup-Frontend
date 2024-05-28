@@ -62,3 +62,17 @@
   font-weight: 300;
   font-stretch: normal;
 }
+
+.swiper-slide-active {
+  width: 861px !important;
+}
+
+@media (max-width: 861px) {
+  .swiper-slide-active {
+    width: 100% !important;
+  }
+}
+
+.swiper-wrapper {
+  align-items: flex-end;
+}

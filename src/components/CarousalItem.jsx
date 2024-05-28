@@ -72,6 +72,7 @@ export default function CarousalItem({
       console.error("ref.current is not defined");
     }
   });
+
   return (
     <div
       ref={ref}
