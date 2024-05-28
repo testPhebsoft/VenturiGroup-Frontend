@@ -12,7 +12,7 @@ const useTranslatexDraggable = () => {
     const handleMouseDown = (e) => {
       const startX = e.pageX - position.x;
       var newX = e.pageX - startX;
-      var rightX;
+      var rightX = 0;
       var firstchildWidth = componentRef.current.firstChild.offsetWidth;
 
       if (componentRef.current) {

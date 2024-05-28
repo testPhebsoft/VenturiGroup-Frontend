@@ -21,7 +21,7 @@ const useTranslatexDraggable = (fixSnapWidth) => {
 
       if (!fixSnapWidth) {
         if (componentRef.current) {
-          let childLength;
+          let childLength = 0;
 
           var childrenArray = [...componentRef.current.children];
           childrenArray.forEach((child) => {

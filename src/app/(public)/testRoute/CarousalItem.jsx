@@ -1,19 +1,9 @@
 "use client";
 import Quote from "@/components/Quote";
-import useIntersectionObserver from "@react-hook/intersection-observer";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-export default function CarousalItem({
-  index,
-  item,
-  scrollref,
-  parentRef,
-  childref,
-  onLoad,
-  expandindChildInde,
-  setExpandingChildIndex,
-}) {
+export default function CarousalItem({ index, item, parentRef }) {
   const [isOutsideViewport, setIsOutsideViewport] = useState(false);
   const ref = useRef(null);
   const [isLoaded, setIsLoaded] = useState(true);
@@ -25,8 +15,7 @@ export default function CarousalItem({
     }
 
     const options = {
-      root: parentRef.current, // Use the provided parentRef as the root
-      // Adjust the root margin as needed
+      root: parentRef.current,
       rootMargin: "0px 0px 0px -425px",
       threshold: [
         0.0, 0.0000001, 0.00001, 0.22, 0.333, 0.2, 0.7, 0.8, 0.9, 0.999999,
@@ -36,7 +25,46 @@ export default function CarousalItem({
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (index == 1) {
+        if (entry.boundingClientRect.x < 400) {
+          setIsLoaded(false);
+          setIsOutsideViewport(true);
+        } else {
+          setIsOutsideViewport(false);
+        }
+      });
+    }, options);
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    } else {
+      console.error("Current is not defined");
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, [parentRef]);
+
+  useEffect(() => {
+    if (!parentRef.current) {
+      console.error("parentRef is not defined");
+      return;
+    }
+
+    const options = {
+      root: parentRef.current,
+      rootMargin: "0px 0px 0px 0px",
+      threshold: [
+        0.0, 0.0000001, 0.00001, 0.22, 0.333, 0.2, 0.7, 0.8, 0.9, 0.999999,
+        0.8887, 0.888888, 1,
+      ],
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (index === 1) {
           console.log(
             index,
             entry.intersectionRatio,
@@ -46,14 +74,11 @@ export default function CarousalItem({
           );
         }
 
-        if (1) {
-          if (entry.boundingClientRect.x < 400) {
-            // ref.current.style.scale = "1";
-            setIsLoaded(false);
-            setIsOutsideViewport(true);
-          } else {
-            setIsOutsideViewport(false);
-          }
+        if (entry.boundingClientRect.x < 400) {
+          setIsOutsideViewport(false);
+          setIsLoaded(false);
+        } else {
+          setIsOutsideViewport(true);
         }
       });
     }, options);
@@ -61,10 +86,16 @@ export default function CarousalItem({
     if (ref.current) {
       observer.observe(ref.current);
     } else {
-      console.error("ref.current is not defined");
+      console.error("Current is not defined");
     }
-  });
-  // console.log(index, isOutsideViewport);
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, [index, parentRef]);
+
   return (
     <div
       ref={ref}
@@ -73,30 +104,28 @@ export default function CarousalItem({
       }}
       className="flex gap-5"
     >
-      {
-        <div
-          style={{
-            transitionDuration: isOutsideViewport ? "1s" : "0.1s",
-          }}
-          className={
-            isOutsideViewport
-              ? "w-[420px] h-[524px] ml-auto overflow-y-hidden"
-              : "w-0 overflow-hidden  h-[0px] overflow-y-hidden"
-          }
-        >
-          <h3 className="text-[clamp(24px,9vw,36px)] font-[lust-text] font-light ">
-            <span className=" text-input/50">Our </span> <br />
-            customers
-          </h3>
-          <Quote className="mt-16" />
-          <p className="mt-10  text-[clamp(24px,9vw,36px)] font-[lust-text] font-light w-full ">
-            Venturi <span className="text-primary"> excels</span> in tech
-            recruitment, matching top talent to leading companies with{" "}
-            <span className="text-primary"> precision</span> and{" "}
-            <span className="text-primary"> efficiency</span>.
-          </p>
-        </div>
-      }
+      <div
+        style={{
+          transitionDuration: isOutsideViewport ? "1s" : "0.1s",
+        }}
+        className={
+          isOutsideViewport
+            ? "w-[420px] h-[524px] ml-auto overflow-y-hidden"
+            : "w-0 overflow-hidden  h-[0px] overflow-y-hidden"
+        }
+      >
+        <h3 className="text-[clamp(24px,9vw,36px)] font-[lust-text] font-light ">
+          <span className=" text-input/50">Our </span> <br />
+          customers
+        </h3>
+        <Quote className="mt-16" />
+        <p className="mt-10  text-[clamp(24px,9vw,36px)] font-[lust-text] font-light w-full ">
+          Venturi <span className="text-primary"> excels</span> in tech
+          recruitment, matching top talent to leading companies with{" "}
+          <span className="text-primary"> precision</span> and{" "}
+          <span className="text-primary"> efficiency</span>.
+        </p>
+      </div>
       <div
         style={{
           transitionDuration: isOutsideViewport ? "1s" : "0.1s",
