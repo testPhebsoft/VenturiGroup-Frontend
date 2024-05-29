@@ -43,12 +43,12 @@ export default async function Page() {
     },
   ];
 
-  let res = await getLocationsByCode();
-  console.log(res);
-  try {
-    let locations = await getLocations();
-    console.log(locations);
-  } catch (e) {}
+  // let res = await getLocationsByCode();
+  // console.log(res);
+  // try {
+  //   let locations = await getLocations();
+  //   console.log(locations);
+  // } catch (e) {}
   return (
     <div className="pt-40  max-w-screen-maxScreenSize mx-auto">
       {/* <Final data={data} /> */}

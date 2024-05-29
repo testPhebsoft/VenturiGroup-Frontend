@@ -2,7 +2,7 @@
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 
-export function Loctions({ className, data }) {
+export function Locations({ className, data = ["UK", "US", "DE", "NL"] }) {
   const [selected, setSelected] = useState(0);
   return (
     <div className={cn(" flex gap-2 items-center", className)}>
@@ -13,7 +13,7 @@ export function Loctions({ className, data }) {
           className=" data-[selected=true]:before:absolute cursor-pointer data-[selected=true]:font-AntarcticanMonoBold  font-AntarcticanMonoMedium data-[selected=true]:opacity-100  data-[selected=true]:before:-inset-2 data-[selected=true]:before:m-auto data-[selected=true]:before:block data-[selected=true]:before:size-[50px] data-[selected=true]:before:rounded-full  data-[selected=true]:before:bg-[#1A1B1D1A] opacity-50  relative bg-transparent rounded-full px-2 py-1 "
           onClick={() => setSelected(index)}
         >
-          {item}
+          {item.code}
         </div>
       ))}
     </div>

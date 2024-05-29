@@ -15,8 +15,9 @@ import { Button } from "./ui/button";
 import { Languages } from "./Languages";
 import Image from "next/image";
 import { Socials } from "./Socials";
+import { Locations } from "./Locations";
 
-export default function HeaderMenu({ ...props }) {
+export default function HeaderMenu({ LocationsData, ...props }) {
   return (
     <Sheet {...props}>
       <SheetTrigger className="min-[1070px]:hidden">
@@ -28,7 +29,7 @@ export default function HeaderMenu({ ...props }) {
         className="h-full w-full flex flex-col overflow-y-auto "
       >
         <SheetHeader>
-          <SheetTitle>
+          <SheetTitle className=" flex justify-between">
             <div className="  ">
               <Link href={"/"}>
                 <Image
@@ -39,6 +40,10 @@ export default function HeaderMenu({ ...props }) {
                 />
               </Link>
             </div>
+            <Languages
+              className={"w-fit mr-5"}
+              data={LocationsData && LocationsData}
+            />
           </SheetTitle>
           <ul className="flex flex-col text-[20px] pt-10  items-start justify-between font-AntarcticanMonoMedium gap-8  uppercase">
             {" "}
@@ -72,7 +77,7 @@ export default function HeaderMenu({ ...props }) {
             </Link>{" "}
             <Socials className="flex gap-5 items-center mt-[5vh] " />
             <div className="w-full border"> </div>
-            <Languages />
+            <Locations data={LocationsData && LocationsData} />
             <div className="w-full border"> </div>
           </ul>
         </SheetHeader>

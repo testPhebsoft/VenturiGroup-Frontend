@@ -177,7 +177,7 @@ const useTranslatexDraggable = (fixSnapWidth) => {
         );
       }
     };
-  }, [position]);
+  }, [position, fixSnapWidth]);
 
   return {
     ref: componentRef,

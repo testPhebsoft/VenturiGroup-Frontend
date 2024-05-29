@@ -6,6 +6,7 @@ import Link from "next/link";
 import HeaderMenu from "./HeaderMenu";
 import { cn } from "@/lib/utils";
 import { getLocations } from "@/actions/Getdata";
+import { Locations } from "./Locations";
 
 export default async function Header() {
   let locations;
@@ -13,7 +14,7 @@ export default async function Header() {
   try {
     locations = await getLocations();
     if (locations && locations.data && locations.length !== 0) {
-      LocationsData = locations.data.map((location) => location.code);
+      LocationsData = locations.data;
     }
   } catch (e) {
     console.log(e);
@@ -65,8 +66,16 @@ export default async function Header() {
             {" "}
             I’m a candidate{" "}
           </Link>
-          <HeaderMenu className={"min-[1070px]:hidden"} />
           <Languages
+            className={"max-sm:hidden"}
+            data={LocationsData && LocationsData}
+          />
+
+          <HeaderMenu
+            LocationsData={LocationsData && LocationsData}
+            className={"min-[1070px]:hidden"}
+          />
+          <Locations
             data={LocationsData && LocationsData}
             className={"max-[1070px]:hidden"}
           />
