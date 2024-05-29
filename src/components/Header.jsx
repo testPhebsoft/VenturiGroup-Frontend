@@ -5,8 +5,20 @@ import { Languages } from "./Languages";
 import Link from "next/link";
 import HeaderMenu from "./HeaderMenu";
 import { cn } from "@/lib/utils";
+import { getLocations } from "@/actions/Getdata";
 
-export default function Header() {
+export default async function Header() {
+  let locations;
+  let LocationsData;
+  try {
+    locations = await getLocations();
+    if (locations && locations.data && locations.length !== 0) {
+      LocationsData = locations.data.map((location) => location.code);
+    }
+  } catch (e) {
+    console.log(e);
+  }
+
   return (
     <div
       className={
@@ -54,7 +66,10 @@ export default function Header() {
             I’m a candidate{" "}
           </Link>
           <HeaderMenu className={"min-[1070px]:hidden"} />
-          <Languages className={"max-[1070px]:hidden"} />
+          <Languages
+            data={LocationsData && LocationsData}
+            className={"max-[1070px]:hidden"}
+          />
         </div>
       </div>
     </div>

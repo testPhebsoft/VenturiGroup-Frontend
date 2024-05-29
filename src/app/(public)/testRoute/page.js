@@ -1,7 +1,8 @@
+import { Print, getLocations, getLocationsByCode } from "@/actions/Getdata";
 import { Final } from "./Final";
 import { CustumCarousal } from "./testComponent";
 
-export default function Page() {
+export default async function Page() {
   let data = [
     {
       image: "/customer1.jpeg",
@@ -41,18 +42,16 @@ export default function Page() {
       image: "/customer3.jpeg",
     },
   ];
-  const ScrollableContent = () => {
-    return (
-      <div className="h-full flex  shrink-0 whiflex-col items-center justify-center">
-        <p className="text-xl mb-4">First Page Content</p>
-        <p className="text-xl mb-4">Second Page Content</p>
-        <p className="text-xl mb-4">Third Page Content</p>
-      </div>
-    );
-  };
+
+  let res = await getLocationsByCode();
+  console.log(res);
+  try {
+    let locations = await getLocations();
+    console.log(locations);
+  } catch (e) {}
   return (
     <div className="pt-40  max-w-screen-maxScreenSize mx-auto">
-      <Final data={data} />
+      {/* <Final data={data} /> */}
     </div>
   );
 }

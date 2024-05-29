@@ -1,5 +1,13 @@
 "use server";
+import { fetchDataFromApi } from "@/lib/fetchDataFromApi";
 import { cache } from "react";
+
+const serverUrl = process.env.SERVER_URL || "";
+const revalidate = 4;
+// export const Print = () => {
+//   console.log(serverUrl);
+// };
+
 export async function getCategories() {
   return [
     { slug: "insights", name: "All" },
@@ -450,3 +458,54 @@ export const getCategoriesBlog = cache(async function ({ slug }) {
     return data.filter((item) => item.category.slug == slug);
   return data;
 });
+
+export async function Name() {
+  let config = {
+    url: `${serverUrl}/locations/${code} `,
+    next: { revalidate: revalidate, tags: ["all", "locations"] },
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+  };
+  try {
+    let response = await fetchDataFromApi(config);
+    return response;
+  } catch (e) {
+    console.log("error at Name", e);
+  }
+}
+
+export async function getLocationsByCode({ code } = { code: "GB" }) {
+  let config = {
+    url: `${serverUrl}/locations/${code}`,
+    next: { revalidate: revalidate, tags: ["all", "locations"] },
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+  };
+  try {
+    let response = await fetchDataFromApi(config);
+    return response;
+  } catch (e) {
+    console.log("error at getLocationsByCode", e);
+  }
+}
+
+export async function getLocations() {
+  let config = {
+    url: `${serverUrl}/locations`,
+    next: { revalidate: revalidate, tags: ["all", "locations"] },
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+  };
+  try {
+    let response = await fetchDataFromApi(config);
+    return response;
+  } catch (e) {
+    console.log("error at getLocations", e);
+  }
+}
