@@ -43,9 +43,7 @@ export default function OurCustomers() {
   ];
   return (
     <div className="bg-background py-[50px]">
-      <MaxWidthWrapper
-        className={"flex gap-10  overflow-hidden    flex-col lg:flex-row"}
-      >
+      <MaxWidthWrapper className={""}>
         <CustumCarousal data={data} />
       </MaxWidthWrapper>
     </div>
