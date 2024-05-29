@@ -42,7 +42,6 @@ export function InsightsNavs({ categories }) {
     );
 }
 const ShowCategories = ({ name = "All", isActive, slug }) => {
-  console.log("isActive", isActive);
   return (
     <Link
       className="snap-center"
