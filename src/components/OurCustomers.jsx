@@ -1,6 +1,5 @@
 import MaxWidthWrapper from "./MaxWidthWraper";
-import Quote from "./Quote";
-import { CustumCarousal } from "./CustumCarousal";
+import CustumCarousal from "./CustumCarousal";
 
 export default function OurCustomers() {
   let data = [
@@ -44,7 +43,9 @@ export default function OurCustomers() {
   ];
   return (
     <div className="bg-background py-[50px]">
-      <MaxWidthWrapper className={"flex gap-10   flex-col lg:flex-row"}>
+      <MaxWidthWrapper
+        className={"flex gap-10  overflow-hidden    flex-col lg:flex-row"}
+      >
         <CustumCarousal data={data} />
       </MaxWidthWrapper>
     </div>

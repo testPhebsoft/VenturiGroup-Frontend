@@ -63,16 +63,23 @@
   font-stretch: normal;
 }
 
-.swiper-slide-active {
+/* .swiper-slide-active {
   width: 861px !important;
 }
 
 @media (max-width: 861px) {
   .swiper-slide-active {
-    width: 100% !important;
+    width: 461px !important;
   }
-}
-
+} */
+/* 
 .swiper-wrapper {
-  align-items: flex-end;
+  align-items: flex-end !important;
 }
+.swiper-slide {
+  height: fit-content !important;
+} */
+
+/* .swiper-slide {
+  width: 420 !important;
+} */

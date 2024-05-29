@@ -51,7 +51,7 @@ export default function Page() {
     );
   };
   return (
-    <div className="pt-40">
+    <div className="pt-40  max-w-screen-maxScreenSize mx-auto">
       <Final data={data} />
     </div>
   );

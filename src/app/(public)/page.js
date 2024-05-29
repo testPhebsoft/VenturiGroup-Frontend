@@ -16,7 +16,7 @@ export default async function Home() {
       <HomeBanner />
       <TailoredRecuritment />
       <OurSector />
-      {/* <OurCustomers /> */}
+      <OurCustomers />
       <ExploreNext />
       <OurClients />
       <TrendingJobs />

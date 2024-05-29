@@ -1,89 +1,69 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Swiper as SwiperClass } from "swiper";
 
-import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 
 import CarousalItem from "./CarousalItem";
 
-SwiperCore.use([Navigation, Pagination]);
-
 export function Final({ data }) {
-  const swiperRef = useRef(null);
+  const getBreakPoints = () => {
+    return {
+      0: {
+        slidesPerView: 1.2,
+        spaceBetween: 10,
+      },
+      534: {
+        slidesPerView: 1.3,
+        spaceBetween: 10,
+      },
+      648: {
+        slidesPerView: 1.5,
+        spaceBetween: 10,
+      },
+      700: {
+        slidesPerView: 1.7,
+        spaceBetween: 10,
+      },
+      765: {
+        slidesPerView: 1,
+        spaceBetween: 10,
+      },
+      880: {
+        slidesPerView: 1.1,
+        spaceBetween: 10,
+      },
+      1024: {
+        slidesPerView: 1.2,
+        spaceBetween: 10,
+      },
+      1111: {
+        slidesPerView: 1.3,
+        spaceBetween: 10,
+      },
 
-  const [swiper, setSwiper] = useState({ activeIndex: 0 });
-  const scaleLeftSlide = (swiper) => {
-    setSwiper(swiper);
-    const slides = swiper.slides;
-    if (!slides) return;
-
-    const activeIndex = swiper.activeIndex;
-    console.log(activeIndex);
-    const leftSlideIndex = activeIndex;
-
-    slides.forEach((slide, index) => {
-      if (index !== activeIndex) slide.classList.remove("scale-up");
-      else slides[leftSlideIndex].classList.add("scale-up");
-    });
+      1311: {
+        slidesPerView: 1.4,
+        spaceBetween: 10,
+      },
+    };
   };
 
   return (
-    <Swiper
-      ref={swiperRef}
-      slidesPerView={4}
-      spaceBetween={30}
-      loop
-      onInit={(swiper) => {
-        scaleLeftSlide(swiper);
-        swiperRef.current = swiper;
-      }}
-      onSlideChange={(swiper) => scaleLeftSlide(swiper)}
-      breakpoints={{
-        // when window width is >= 320px
-        320: {
-          slidesPerView: 1,
-          spaceBetween: 10,
-        },
-
-        764: {
-          slidesPerView: 2,
-          spaceBetween: 10,
-        },
-        // // when window width is >= 640px
-        // 640: {
-        //   slidesPerView: 2,
-        //   spaceBetween: 20,
-        // },
-        // // when window width is >= 768px
-        // 768: {
-        //   slidesPerView: 3,
-        //   spaceBetween: 30,
-        // },
-        // when window width is >= 1024px
-        1024: {
-          slidesPerView: 4,
-          spaceBetween: 30,
-        },
-      }}
-    >
-      {data.map((item, index) => (
-        <SwiperSlide>
-          <CarousalItem
-            onLoad={(e) => {
-              setChildWidth(e);
-            }}
-            key={index}
-            index={index}
-            item={item}
-            isActive={swiper.activeIndex == index}
-          />
-        </SwiperSlide>
-      ))}
-    </Swiper>
+    <div className="px-10">
+      {" "}
+      <h3 className="text-[clamp(24px,9vw,36px)] font-[lust-text] font-light ">
+        <span className=" text-input/50">Our </span> <br />
+        customers
+      </h3>
+      <Swiper breakpoints={getBreakPoints()} loop>
+        {data.map((item, index) => (
+          <SwiperSlide className="mt-auto" key={index}>
+            <CarousalItem key={index} index={index} item={item} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
   );
 }

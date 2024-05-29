@@ -1,44 +1,69 @@
 "use client";
-import { useRef, useState } from "react";
+import React from "react";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/css";
+
 import CarousalItem from "./CarousalItem";
-import useTranslatexDraggable from "@/components/hooks/useTranslatexDrag";
-import { useMediaQuery } from "./hooks/useMediaQuery";
-export function CustumCarousal({ data }) {
-  const isDesktop = useMediaQuery("(min-width: 1024px)");
 
-  const {
-    ref: containerRef,
-    style,
+export default function CustumCarousal({ data }) {
+  const getBreakPoints = () => {
+    return {
+      0: {
+        slidesPerView: 1.2,
+        spaceBetween: 10,
+      },
+      534: {
+        slidesPerView: 1.3,
+        spaceBetween: 10,
+      },
+      648: {
+        slidesPerView: 1.5,
+        spaceBetween: 10,
+      },
+      700: {
+        slidesPerView: 1.7,
+        spaceBetween: 10,
+      },
+      765: {
+        slidesPerView: 1,
+        spaceBetween: 10,
+      },
+      880: {
+        slidesPerView: 1.1,
+        spaceBetween: 10,
+      },
+      1024: {
+        slidesPerView: 1.2,
+        spaceBetween: 10,
+      },
+      1111: {
+        slidesPerView: 1.3,
+        spaceBetween: 10,
+      },
 
-    parentRef,
-  } = useTranslatexDraggable();
+      1311: {
+        slidesPerView: 1.4,
+        spaceBetween: 10,
+      },
+    };
+  };
+
   return (
-    <div className=" lg:mr-[calc(-49vw+50%)]   flex-1 relative  lg:w-[100%]">
-      <div
-        ref={parentRef}
-        style={{
-          WebkitOverflowScrolling: "touch",
-          scrollbarWidth: "none",
-          msOverflowStyle: "none",
-        }}
-        className="  lg:mt-[70px]  w-full  overflow-hidden "
-      >
-        <div style={style} ref={containerRef} className=" flex w-max gap-5">
-          {data.concat(data).map((item, index) => (
-            <CarousalItem
-              isDesktop={isDesktop}
-              onLoad={(e) => {
-                setChildWidth(e);
-              }}
-              key={index}
-              index={index}
-              item={item}
-              parentRef={parentRef}
-              scrollref={containerRef}
-            />
-          ))}
-        </div>
-      </div>
+    <div className="">
+      {" "}
+      <h3 className="text-[clamp(24px,9vw,36px)] font-[lust-text] font-light ">
+        <span className=" text-input/50">Our </span> <br />
+        customers
+      </h3>
+      <Swiper breakpoints={getBreakPoints()} loop>
+        {data.map((item, index) => (
+          <SwiperSlide className="mt-auto" key={index}>
+            <CarousalItem key={index} index={index} item={item} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
 }
