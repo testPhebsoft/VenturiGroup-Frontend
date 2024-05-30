@@ -87,3 +87,8 @@
 /* .swiper-wrapper {
   transition: transform 0.5s ease-in-out !important;
 } */
+
+.ourCustomers strong {
+  font-weight: 500;
+  color: var(--primary);
+}

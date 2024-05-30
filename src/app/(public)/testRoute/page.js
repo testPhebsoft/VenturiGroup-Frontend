@@ -3,6 +3,7 @@ import {
   getLocations,
   getLocationsByCode,
   getPartners,
+  getTestimonials,
 } from "@/actions/Getdata";
 import { Final } from "./Final";
 import { CustumCarousal } from "./testComponent";
@@ -48,7 +49,7 @@ export default async function Page() {
     },
   ];
 
-  let res = await getPartners();
+  let res = await getTestimonials();
   console.log(res);
   // let res = await getLocationsByCode();
   // console.log(res);

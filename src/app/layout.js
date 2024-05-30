@@ -33,6 +33,7 @@ import {
   AntarcticanMonoSemiBold,
   AntarcticanMonoSemiBoldItalic,
 } from "@/fonts/AntarcticanMono";
+import InitStoreFunctions from "@/components/IntialiseStore";
 
 export const metadata = {
   title: "Venturi Group",
@@ -49,6 +50,7 @@ export default function RootLayout({ children }) {
           `${ArticulateRegular.variable} ${ArticulateRegularOblique.variable} ${ArticulateMedium.variable} ${ArticulateMediumOblique.variable} ${ArticulateThin.variable} ${ArticulateThinOblique.variable} ${ArticulateBold.variable} ${ArticulateBoldOblique.variable} ${ArticulateDemiBold.variable} ${ArticulateDemiBoldOblique.variable} ${ArticulateExtraBold.variable} ${ArticulateExtraBoldOblique.variable} ${ArticulateExtraLight.variable} ${ArticulateExtraLightOblique.variable} ${ArticulateHeavy.variable} ${ArticulateHeavyOblique.variable} ${ArticulateNormal.variable} ${ArticulateNormalOblique.variable} ${ArticulateLight.variable} ${ArticulateLightOblique.variable} ${AntarcticanMonoBook.variable} ${AntarcticanMonoBookItalic.variable} ${AntarcticanMonoMedium.variable} ${AntarcticanMonoMediumItalic.variable} ${AntarcticanMonoSemiBold.variable} ${AntarcticanMonoSemiBoldItalic.variable} ${AntarcticanMonoBold.variable} ${AntarcticanMonoBoldItalic.variable}`
         )}
       >
+        <InitStoreFunctions />
         {children}
       </body>
     </html>

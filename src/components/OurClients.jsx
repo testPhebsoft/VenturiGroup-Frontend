@@ -3,41 +3,59 @@ import ImageStack from "./ImageStack";
 import MaxWidthWrapper from "./MaxWidthWraper";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
+import { getPartners } from "@/actions/Getdata";
 
-export default function OurClients() {
-  const myImages = [
-    "/redkite.png",
-    "/moneysupermarket.png",
-    "/cinch.png",
-    "/bet365.png",
-    "/smart.png",
-  ];
+export default async function OurClients() {
+  let res = await getPartners();
+  res = res.data;
+
   return (
     <div className="bg-background py-32  max-[984px]:pb-5">
       <MaxWidthWrapper className={"flex max-[984px]:flex-col  justify-between"}>
-        <div className="w-full  min-[984px]:max-w-[200px] max-[984px]:h-[500px] relative ">
-          {renderClientTags(
-            "/moneysupermarket.png",
-            "Money supermarket",
-            "absolute max-[984px]:left-[25%]  left-[125%] top-[-15%]"
-          )}
-          {renderClientTags("/cinch.png", "Cinch ", "absolute left-[60%] ")}
-          {renderClientTags(
-            "/bet365.png",
-            "Bet 365",
-            "absolute max-[984px]:left-[30%] left-[130%] top-[25%]"
-          )}
-          {renderClientTags(
-            "/smart.png",
-            "Smart Pension",
-            "absolute left-[10%] top-[50%]"
-          )}
-          {renderClientTags(
-            "/redkite.png",
-            "Redkite",
-            "absolute max-[984px]:left-[50%] left-[150%] top-[75%]"
-          )}
-        </div>
+        {
+          <div className="w-full  min-[984px]:max-w-[200px] max-[984px]:h-[500px] relative ">
+            {res.length !== 0 &&
+              res[0] &&
+              renderClientTags(
+                res[0].logo.original_url,
+                res[0].partner_name,
+                "absolute max-[984px]:left-[25%]  left-[125%] top-[-15%]"
+              )}
+            {res.length !== 0 &&
+              res[1] &&
+              renderClientTags(
+                res[1].logo.original_url,
+                res[1].partner_name,
+                "absolute left-[60%] "
+              )}
+            {res.length !== 0 &&
+              res[2] &&
+              renderClientTags(
+                res[2].logo.original_url,
+                res[2].partner_name,
+                "absolute max-[984px]:left-[30%] left-[130%] top-[25%]"
+              )}
+            {res.length !== 0 &&
+              res[3] &&
+              renderClientTags(
+                res[3].logo.original_url,
+                res[3].partner_name,
+                "absolute left-[10%] top-[50%]"
+              )}
+            {res.length !== 0 &&
+              res[4] &&
+              renderClientTags(
+                res[4].logo.original_url,
+                res[4].partner_name,
+                "absolute max-[984px]:left-[50%] left-[150%] top-[75%]"
+              )}
+            {res.length == 0 && (
+              <div className="absolute  w-[200px] max-[984px]:left-[30%] left-[100%] top-[55%] ">
+                No Clients available!{" "}
+              </div>
+            )}
+          </div>
+        }
         <div className=" min-[984px]:w-1/2    max-[984px]:w-full min-[984px]:max-w-[496px] flex flex-col gap-10 ">
           <h3 className="text-[clamp(24px,9vw,36px)] font-[lust-text] font-light ">
             <span className=" text-input/50">Our </span> <br />

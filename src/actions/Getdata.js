@@ -1,4 +1,5 @@
 "use server";
+import { getCooKies } from "@/lib/actions";
 import { fetchDataFromApi } from "@/lib/fetchDataFromApi";
 import { cache } from "react";
 
@@ -476,10 +477,30 @@ export async function Name() {
   }
 }
 
-export async function getPartners({ code } = { code: "GB" }) {
+export async function getTestimonials() {
+  let code = await getCooKies("selectedLocationCode");
+  code = code.value;
+  let config = {
+    url: `${serverUrl}/testimonials?location=${code}`,
+    next: { revalidate: revalidate, tags: ["all", "testimonials"] },
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+  };
+  try {
+    let response = await fetchDataFromApi(config);
+    return response;
+  } catch (e) {
+    console.log("error at getTestimonials", e);
+  }
+}
+export async function getPartners() {
+  let code = await getCooKies("selectedLocationCode");
+  code = code.value;
   let config = {
     url: `${serverUrl}/partners?location=${code}`,
-    next: { revalidate: revalidate, tags: ["all", "locations"] },
+    next: { revalidate: revalidate, tags: ["all", "partners"] },
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json",

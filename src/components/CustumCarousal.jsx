@@ -51,11 +51,11 @@ export default function CustumCarousal({ data }) {
   };
 
   return (
-    <div className="">
+    <div className="ourCustomers">
       {" "}
       <h3 className="text-[clamp(24px,9vw,36px)] font-[lust-text] font-light ">
         <span className=" text-input/50">Our </span> <br />
-        customers
+        <strong>customers</strong>
       </h3>
       <Swiper
         modules={[Autoplay]}

@@ -32,7 +32,9 @@ export function Languages({ data, className }) {
       {data && (
         <div>
           <Select defaultValue={"1"}>
-            <SelectTrigger className={cn(" bg-transparent", className)}>
+            <SelectTrigger
+              className={cn(" w-[50px] bg-transparent", className)}
+            >
               <SelectValue></SelectValue>
             </SelectTrigger>
             <SelectContent className=" bg-background">
@@ -45,7 +47,6 @@ export function Languages({ data, className }) {
           </Select>
         </div>
       )}
-      {!data && <div> Unable to load</div>}
     </>
   );
 }
