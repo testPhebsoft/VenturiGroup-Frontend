@@ -1,4 +1,3 @@
-"use server";
 import { getCooKies, setCookies } from "@/lib/actions";
 
 export const getCode = async () => {
