@@ -1,7 +1,7 @@
 "use server";
 import { fetchDataFromApi } from "@/lib/fetchDataFromApi";
 import { cache } from "react";
-import { getCode } from "@/lib/serverUtils/getCode";
+import { getCode, getCodeServer } from "@/lib/serverUtils/getCode";
 
 const serverUrl = process.env.SERVER_URL || "";
 const revalidate = 4;
@@ -474,7 +474,7 @@ export async function Name() {
 }
 
 export async function getTestimonials() {
-  const code = await getCode();
+  const code = await getCodeServer();
   let config = {
     url: `${serverUrl}/testimonials?location=${code}`,
     next: { revalidate: revalidate, tags: ["all", "testimonials"] },
@@ -491,7 +491,7 @@ export async function getTestimonials() {
   }
 }
 export async function getPartners() {
-  const code = await getCode();
+  const code = await getCodeServer();
   console.log(code);
   let config = {
     url: `${serverUrl}/partners?location=${code}`,

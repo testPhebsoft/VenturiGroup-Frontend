@@ -12,3 +12,14 @@ export const getCode = async () => {
 
   return code;
 };
+export const getCodeServer = async () => {
+  let code = await getCooKies("selectedLocationCode");
+
+  if (code) {
+    code = code.value;
+  } else {
+    code = "GB";
+  }
+
+  return code;
+};
