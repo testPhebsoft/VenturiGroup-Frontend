@@ -1,4 +1,9 @@
-import { Print, getLocations, getLocationsByCode } from "@/actions/Getdata";
+import {
+  Print,
+  getLocations,
+  getLocationsByCode,
+  getPartners,
+} from "@/actions/Getdata";
 import { Final } from "./Final";
 import { CustumCarousal } from "./testComponent";
 
@@ -43,6 +48,8 @@ export default async function Page() {
     },
   ];
 
+  let res = await getPartners();
+  console.log(res);
   // let res = await getLocationsByCode();
   // console.log(res);
   // try {

@@ -476,6 +476,23 @@ export async function Name() {
   }
 }
 
+export async function getPartners({ code } = { code: "GB" }) {
+  let config = {
+    url: `${serverUrl}/partners?location=${code}`,
+    next: { revalidate: revalidate, tags: ["all", "locations"] },
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+  };
+  try {
+    let response = await fetchDataFromApi(config);
+    return response;
+  } catch (e) {
+    console.log("error at getPartners", e);
+  }
+}
+
 export async function getLocationsByCode({ code } = { code: "GB" }) {
   let config = {
     url: `${serverUrl}/locations/${code}`,

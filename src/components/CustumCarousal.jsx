@@ -61,6 +61,8 @@ export default function CustumCarousal({ data }) {
         modules={[Autoplay]}
         autoplay={{ delay: 3000 }}
         slideToClickedSlide
+        effect="fade"
+        fadeEffect={true}
         breakpoints={getBreakPoints()}
         loop
       >

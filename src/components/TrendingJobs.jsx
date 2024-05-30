@@ -35,8 +35,9 @@ export default function TrendingJobs({ label = "Trending Jobs" }) {
             WebkitOverflowScrolling: "touch",
             scrollbarWidth: "none",
             msOverflowStyle: "none",
+            // mr-[calc(-50vw+51%)]
           }}
-          className="max-lg:snap-x snap-mandatory lg:snap-proximity  scroll-smooth overflow-y-hidden mt-10 relative max-lg:overflow-x-scroll overflow-hidden  whitespace-nowrap mr-[calc(-50vw+51%)]"
+          className="max-lg:snap-x snap-mandatory lg:snap-proximity  scroll-smooth overflow-y-hidden mt-10 relative max-lg:overflow-x-scroll overflow-hidden  whitespace-nowrap "
         >
           <div
             style={style}

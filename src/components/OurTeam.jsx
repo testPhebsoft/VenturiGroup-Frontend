@@ -160,7 +160,11 @@ export default function OurTeam({
 
   return (
     <MaxWidthWrapper className={" shrink-0 w-full "}>
-      <div className="flex mr-[calc(-50vw+60%)] ">
+      <div
+        //mr-[calc(-50vw+60%)]
+        //lg:mr-[calc(-50vw+60%)]
+        className="flex  "
+      >
         <h1 className="mt-10  max-sm:mx-auto  max-sm:w-fit w-[clamp(221px,50vw,367px)] text-[clamp(24px,5vw,36px)] leading-[clamp(24px,5vw,36px)]  text-input/50 font-[lust-text]">
           {heading}
         </h1>
@@ -173,7 +177,7 @@ export default function OurTeam({
           scrollbarWidth: "none",
           msOverflowStyle: "none",
         }}
-        className="max-lg:snap-x lg:mr-[calc(-50vw+60%)] relative max-lg:scroll-smooth  max-lg:snap-mandatory    scroll-m-5 whitespace-nowrap max-lg:overflow-x-scroll  overflow-hidden  mt-10 px-5  sm:px-0 "
+        className="max-lg:snap-x  relative max-lg:scroll-smooth  max-lg:snap-mandatory    scroll-m-5 whitespace-nowrap max-lg:overflow-x-scroll  overflow-hidden  mt-10 px-5  sm:px-0 "
       >
         <div style={style} ref={ref} className="flex w-max gap-5">
           {renderCard()}
