@@ -1,14 +1,10 @@
 "use server";
-import { getCooKies } from "@/lib/actions";
 import { fetchDataFromApi } from "@/lib/fetchDataFromApi";
 import { cache } from "react";
+import { getCode } from "@/lib/serverUtils/getCode";
 
 const serverUrl = process.env.SERVER_URL || "";
 const revalidate = 4;
-// export const Print = () => {
-//   console.log(serverUrl);
-// };
-
 export async function getCategories() {
   return [
     { slug: "insights", name: "All" },
@@ -478,8 +474,7 @@ export async function Name() {
 }
 
 export async function getTestimonials() {
-  let code = await getCooKies("selectedLocationCode");
-  code = code.value;
+  const code = await getCode();
   let config = {
     url: `${serverUrl}/testimonials?location=${code}`,
     next: { revalidate: revalidate, tags: ["all", "testimonials"] },
@@ -496,8 +491,8 @@ export async function getTestimonials() {
   }
 }
 export async function getPartners() {
-  let code = await getCooKies("selectedLocationCode");
-  code = code.value;
+  const code = await getCode();
+  console.log(code);
   let config = {
     url: `${serverUrl}/partners?location=${code}`,
     next: { revalidate: revalidate, tags: ["all", "partners"] },

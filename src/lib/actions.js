@@ -1,6 +1,7 @@
 "use server";
 
 import { cookies } from "next/headers";
+import { getCode } from "@/lib/serverUtils/getCode";
 const revalidate = 4;
 export async function setCookies(cookiesName, value, numberOfDays = 1) {
   const oneDay = 24 * 60 * 60 * 1000;
@@ -18,8 +19,7 @@ export async function getCooKies(name) {
 }
 
 export async function getLocation() {
-  let selectedLocationCodeCokkie = await getCooKies("selectedLocationCode");
-  let selectedLocationCode = selectedLocationCodeCokkie.value;
+  let selectedLocationCode = getCode();
 
   if (!selectedLocationCode) {
     setCookies("selectedLocationCode", "GB");

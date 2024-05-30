@@ -7,11 +7,10 @@ export function Locations({ className, data = ["UK", "US", "DE", "NL"] }) {
   const selectedLocationCode = useLocationStore(
     (state) => state.selectedLocationCode
   );
+
   const setSelectedLocationCode = useLocationStore(
     (state) => state.setSelectedLocationCode
   );
-
-  // console.log(selectedLocationCode);
   return (
     <div className={cn(" flex gap-2 items-center", className)}>
       {data.map((item, index) => (

@@ -1,6 +1,5 @@
 import Image from "next/image";
-import MaxWidthWrapper from "./MaxWidthWraper";
-import { Button, buttonVariants } from "./ui/button";
+import { buttonVariants } from "./ui/button";
 import { Languages } from "./Languages";
 import Link from "next/link";
 import HeaderMenu from "./HeaderMenu";
