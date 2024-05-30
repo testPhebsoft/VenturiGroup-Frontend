@@ -57,7 +57,7 @@ export default function CustumCarousal({ data }) {
         <span className=" text-input/50">Our </span> <br />
         customers
       </h3>
-      <Swiper breakpoints={getBreakPoints()} loop>
+      <Swiper slideToClickedSlide breakpoints={getBreakPoints()} loop>
         {data.map((item, index) => (
           <SwiperSlide className="mt-auto" key={index}>
             <CarousalItem key={index} index={index} item={item} />
