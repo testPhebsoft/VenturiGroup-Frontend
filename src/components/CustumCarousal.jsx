@@ -2,9 +2,9 @@
 import React from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import { Autoplay } from "swiper/modules";
 import "swiper/css";
-
+import "swiper/css/autoplay";
 import CarousalItem from "./CarousalItem";
 
 export default function CustumCarousal({ data }) {
@@ -57,7 +57,13 @@ export default function CustumCarousal({ data }) {
         <span className=" text-input/50">Our </span> <br />
         customers
       </h3>
-      <Swiper slideToClickedSlide breakpoints={getBreakPoints()} loop>
+      <Swiper
+        modules={[Autoplay]}
+        autoplay={{ delay: 3000 }}
+        slideToClickedSlide
+        breakpoints={getBreakPoints()}
+        loop
+      >
         {data.map((item, index) => (
           <SwiperSlide className="mt-auto" key={index}>
             <CarousalItem key={index} index={index} item={item} />

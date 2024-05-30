@@ -18,7 +18,7 @@ export default function HomeBanner() {
           muted
           autoPlay
         >
-          <source src="https://venturi.gitwork.tech/video/storage/-e78b-4017-9db2-5f993aaf3743.mp4" />
+          <source src="https://venturi.gitwork.tech/storage/videos/-e78b-4017-9db2-5f993aaf3743.mp4" />
         </video>
         <MaxWidthWrapper className={" absolute lg:relative max-w-[1473px]  "}>
           <div className="lg:absolute z-10  w-full sm:max-w-[clamp(200px,70vw,1026px)] lg:max-w-[clamp(200px,45vw,1026px)] font-[lust-text] leading-[clamp(18px,12vw,110px)] text-[clamp(18px,12vw,110px)] sm:leading-[clamp(18px,8vw,110px)] sm:text-[clamp(18px,8vw,110px)]  lg:text-[clamp(18px,5vw,110px)] lg:leading-[clamp(18px,5vw,110px)] lg:-translate-x-[20%] lg:left-[20%]  mt-[120px] lg:mt-[15%] ">
