@@ -32,10 +32,10 @@ export function Languages({ data, className }) {
       {data && (
         <div>
           <Select defaultValue={"1"}>
-            <SelectTrigger className={cn("", className)}>
+            <SelectTrigger className={cn(" bg-transparent", className)}>
               <SelectValue></SelectValue>
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className=" bg-background">
               {FlagList.map((flag, index) => (
                 <SelectItem key={`${index}`} value={`${index}`}>
                   {flag}
