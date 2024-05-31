@@ -13,7 +13,8 @@ import {
 } from "@/components/ui/dialog";
 import { useState } from "react";
 import useTranslatexDraggable from "./hooks/useTranslatexDrag";
-export default function TrendingJobs({ label = "Trending Jobs" }) {
+import { addPrefix, convertToCapitalizedString } from "@/lib/utils";
+export default function TrendingJobs({ label = "Trending Jobs", data }) {
   const {
     ref: scrollContainerRef,
     parentRef,
@@ -44,11 +45,23 @@ export default function TrendingJobs({ label = "Trending Jobs" }) {
             ref={scrollContainerRef}
             className="flex w-fit gap-5"
           >
-            {Array(10)
-              .fill(0)
-              .map((value, index) => (
-                <JobCard key={index} />
-              ))}
+            {data.map((value, index) => (
+              <JobCard
+                title={value.title}
+                company={value.company.company_name}
+                salaryType={convertToCapitalizedString(value.salary_type)}
+                employmentType={value.job_type}
+                salary={`${addPrefix(value.salary_min)} - ${addPrefix(
+                  value.salary_max
+                )}  `}
+                description2={value.job_description}
+                description1={value.job_requirement}
+                toStart={value.to_start}
+                toApply={value.apply_at}
+                location={value.location.name}
+                key={index}
+              />
+            ))}
           </div>
         </div>
       </MaxWidthWrapper>
@@ -66,6 +79,10 @@ const JobCard = ({
   heading2 = "job description",
   description2 = "Lorem ipsum dolor sit amet consectetur. Velit lectus fringilla iaculis velit consequat. Ut sed ac mi eget ultricies nulla. Pretium etiam sed nulla quam nulla. Cras velit tincidunt adipiscing orci varius quam ridiculus.",
   description1 = "Lorem ipsum dolor sit amet consectetur. Velit lectus fringilla iaculis velit consequat. Ut sed ac mi eget ultricies nulla. Pretium etiam sed nulla quam nulla. Cras velit tincidunt adipiscing orci varius quam ridiculus.",
+  salaryType = "per annum",
+  toStart = "01 May 2024",
+  toApply = "21 Apr 2024",
+  location = "Dusseldorf, Germany",
 
   ...props
 }) => {
@@ -83,10 +100,14 @@ const JobCard = ({
       </div>
     );
   }
+  let url = "https://venturi.gitwork.tech/storage/10/6659aa05a45f9_jobCard.png";
   return (
     <div
+      style={{
+        backgroundImage: `url(${url})`,
+      }}
       {...props}
-      className={`mx-2   shrink-0 select-none inline-block snap-start w-[clamp(305px,30vw,367px)] aspect-[0.812] bg-cover bg-no-repeat border rounded-[24px] bg-[url('../../public/jobsbg.svg')]`}
+      className={`mx-2   shrink-0 select-none inline-block snap-start w-[clamp(305px,30vw,367px)] aspect-[0.812] bg-cover bg-no-repeat border rounded-[24px] `}
     >
       <div className="p-10 py-10 flex flex-col h-full">
         <div className="text-white">
@@ -98,7 +119,7 @@ const JobCard = ({
             {employmentType}
           </p>
           <p className=" mt-5 text-[clamp(12px,1.29vw,16px)]">€{salary}</p>
-          <p className="text-[clamp(12px,1.29vw,16px)]">per annum</p>
+          <p className="text-[clamp(12px,1.29vw,16px)]">{salaryType}</p>
         </div>
         <div className=" flex-1 flex flex-col justify-end">
           <p className="uppercase text-[clamp(12px,1.29vw,16px)] text-white font-AntarcticanMonoMedium">
@@ -112,24 +133,6 @@ const JobCard = ({
             <p className="h-[clamp(12px,1.29vw,16px)] text-center  text-[clamp(12px,1.29vw,16px)]">
               {buttonText}
             </p>
-            <svg
-              className=" ml-5"
-              width="30"
-              height="30"
-              viewBox="0 0 30 30"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle cx="15" cy="15" r="15" fill="#F5F5F5" />
-              <path
-                d="M9.10331 10.9998C10.1517 10.9998 11.0017 10.1499 11.0017 9.10148C11.0017 8.05305 10.1517 7.20312 9.10331 7.20312C8.05488 7.20312 7.20496 8.05305 7.20496 9.10148C7.20496 10.1499 8.05488 10.9998 9.10331 10.9998Z"
-                fill="#9E76E9"
-              />
-              <path
-                d="M12.7941 12.438V22.9701H16.0642V17.7617C16.0642 16.3874 16.3227 15.0565 18.0267 15.0565C19.7073 15.0565 19.7282 16.6278 19.7282 17.8485V22.9709H22.9999V17.1952C22.9999 14.3581 22.3891 12.1777 19.0731 12.1777C17.481 12.1777 16.4138 13.0514 15.9774 13.8783H15.9332V12.438H12.7941V12.438ZM7.46521 12.438H10.7405V22.9701H7.46521V12.438Z"
-                fill="#9E76E9"
-              />
-            </svg>
           </Button>
         </div>
       </div>
@@ -147,28 +150,34 @@ const JobCard = ({
           </h2>
           <div className=" mt-10   flex justify-between gap-5  max-md:flex-col w-full ">
             <div className=" flex flex-col w-full gap-5 ">
-              {renderProperties("company", "Cinch")}
+              {renderProperties("company", company)}
 
-              {renderProperties("LOCATION", "Dusseldorf, Germany")}
+              {renderProperties("LOCATION", location)}
               {renderProperties(
                 "SALARY",
-                "€45-55,000 per annum Dependent on experience"
+                `€${salary} per ${salaryType.toLocaleLowerCase()} Dependent on experience`
               )}
-              {renderProperties("to start", "01 May 2024")}
-              {renderProperties("apply by", "21 Apr 2024")}
+              {renderProperties("to start", toStart)}
+              {renderProperties("apply by", toApply)}
             </div>
             <div className=" flex flex-col gap-8 w-full max-w-[629px]">
               <div className=" flex flex-col gap-8 w-full ">
                 <h3 className=" capitalize  font-AntarcticanMonoMedium text-primary text-[clamp(12px,1.1vw,16px)]">
                   {heading1}
                 </h3>
-                <p className="text-[#8B8B8B]">{description1}</p>
+                <p
+                  dangerouslySetInnerHTML={{ __html: description1 }}
+                  className="text-[#8B8B8B]"
+                ></p>
               </div>
               <div>
                 <h3 className="  capitalize  font-AntarcticanMonoMedium text-primary text-[clamp(12px,1.1vw,16px)]">
                   {heading2}
                 </h3>
-                <p className="text-[#8B8B8B]">{description2}</p>
+                <p
+                  dangerouslySetInnerHTML={{ __html: description2 }}
+                  className="text-[#8B8B8B]"
+                ></p>
               </div>
               <Button className="uppercase flex  w-fit justify-center items-center h-10 gap-6">
                 <p className="h-[clamp(12px,1.29vw,16px)] text-center  text-[clamp(12px,1.29vw,16px)]">

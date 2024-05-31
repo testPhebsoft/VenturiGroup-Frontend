@@ -3,7 +3,7 @@ import EmployeeRefral from "@/components/EmployeRefrel";
 import ExploreNext from "@/components/ExploreNext";
 import JoinUsBanner from "@/components/JoinUsBanner";
 import OurBenifit from "@/components/OurBenifits";
-import TrendingJobs from "@/components/TrendingJobs";
+import TrendingJobsWrapper from "@/components/TrendingJobsWrapper";
 
 export default function Page() {
   return (
@@ -31,7 +31,7 @@ export default function Page() {
 
       <OurBenifit />
 
-      <TrendingJobs label="Jobs at Venturi" />
+      <TrendingJobsWrapper label="Jobs at Venturi" />
       <EmployeeRefral />
     </div>
   );

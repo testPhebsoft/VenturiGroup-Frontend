@@ -5,7 +5,7 @@ import OurClients from "@/components/OurClients";
 import OurCustomers from "@/components/OurCustomers";
 import OurSector from "@/components/OurSectors";
 import TailoredRecuritment from "@/components/TailoredRecruitment";
-import TrendingJobs from "@/components/TrendingJobs";
+import TrendingJobsWrapper from "@/components/TrendingJobsWrapper";
 
 function sleep(delay) {
   return new Promise((resolve) => setTimeout(resolve, delay));
@@ -19,7 +19,8 @@ export default async function Home() {
       <OurCustomers />
       <ExploreNext />
       <OurClients />
-      <TrendingJobs />
+      <TrendingJobsWrapper />
+
       <BringUsOn />
     </main>
   );

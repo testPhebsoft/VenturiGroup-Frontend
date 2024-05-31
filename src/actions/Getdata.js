@@ -473,6 +473,25 @@ export async function Name() {
   }
 }
 
+export async function getJobs() {
+  const code = await getCodeServer();
+  console.log(code);
+  let config = {
+    url: `${serverUrl}/jobs?location=${code}`,
+    next: { revalidate: revalidate, tags: ["all", "jobs"] },
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+  };
+  try {
+    let response = await fetchDataFromApi(config);
+    return response;
+  } catch (e) {
+    console.log("error at getJobs", e);
+  }
+}
+
 export async function getTestimonials() {
   const code = await getCodeServer();
   let config = {
