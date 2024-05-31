@@ -26,7 +26,7 @@ export default async function OurClients() {
               renderClientTags(
                 res[1].logo.original_url,
                 res[1].partner_name,
-                "absolute left-[60%] "
+                "absolute max-[984px]:left-[30%] left-[60%] "
               )}
             {res.length !== 0 &&
               res[2] &&
@@ -47,7 +47,7 @@ export default async function OurClients() {
               renderClientTags(
                 res[4].logo.original_url,
                 res[4].partner_name,
-                "absolute max-[984px]:left-[50%] left-[150%] top-[75%]"
+                "absolute max-[984px]:left-[20%] left-[50%] top-[75%]"
               )}
             {res.length == 0 && (
               <div className="absolute  w-[200px] max-[984px]:left-[30%] left-[100%] top-[55%] ">
