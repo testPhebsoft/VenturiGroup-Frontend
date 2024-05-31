@@ -59,6 +59,7 @@ export default function TrendingJobs({ label = "Trending Jobs", data }) {
                 toStart={value.to_start}
                 toApply={value.apply_at}
                 location={value.location.name}
+                backgroundImage={value.location.image.url}
                 key={index}
               />
             ))}
@@ -83,7 +84,7 @@ const JobCard = ({
   toStart = "01 May 2024",
   toApply = "21 Apr 2024",
   location = "Dusseldorf, Germany",
-
+  backgroundImage = "",
   ...props
 }) => {
   const [open, setOpen] = useState(false);
@@ -104,7 +105,7 @@ const JobCard = ({
   return (
     <div
       style={{
-        backgroundImage: `url(${url})`,
+        backgroundImage: `url(${backgroundImage})`,
       }}
       {...props}
       className={`mx-2   shrink-0 select-none inline-block snap-start w-[clamp(305px,30vw,367px)] aspect-[0.812] bg-cover bg-no-repeat border rounded-[24px] `}

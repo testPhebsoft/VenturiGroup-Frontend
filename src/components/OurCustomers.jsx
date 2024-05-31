@@ -2,7 +2,7 @@ import MaxWidthWrapper from "./MaxWidthWraper";
 import CustumCarousal from "./CustumCarousal";
 import { getTestimonials } from "@/actions/Getdata";
 
-export default async function OurCustomers() {
+export default async function OurCustomers({ type = "client" }) {
   let res;
   let data = [
     {
@@ -18,6 +18,8 @@ export default async function OurCustomers() {
   try {
     res = await getTestimonials();
     data = res.data;
+    data = data.filter((item) => item.type == type);
+    console.log(data.length);
   } catch (e) {
     console.log(e);
   }
@@ -27,7 +29,7 @@ export default async function OurCustomers() {
       {data && (
         <div className="bg-background py-[50px]">
           <MaxWidthWrapper className={""}>
-            <CustumCarousal data={data && data} />
+            <CustumCarousal type={type} data={data && data} />
           </MaxWidthWrapper>
         </div>
       )}

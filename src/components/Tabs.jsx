@@ -7,8 +7,8 @@ const TabHeader = ({ label, onClick, isActive, className, ...props }) => {
     <div
       {...props}
       className={cn(
-        `flex justify-between items-center  py-2 px-4 cursor-pointer border w-full border-black border-b-1 border-t-0 border-r-0 border-l-0  h-full max-w-[500px]  font-[text-lust] text-[clamp(24px,5vw,36px)] ${
-          isActive ? "font-bold  " : "text-input/50"
+        `flex justify-between items-center py-2 px-4 cursor-pointer border w-full border-black border-b-1 border-t-0 border-r-0 border-l-0 h-full max-w-[500px] font-[text-lust] text-[clamp(24px,5vw,36px)] ${
+          isActive ? "font-bold" : "text-input/50"
         }`,
         className
       )}
@@ -23,7 +23,7 @@ const TabHeader = ({ label, onClick, isActive, className, ...props }) => {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <circle cx="25" cy="25" r="25" fill="#1A1B1D" fill-opacity="0.05" />
+          <circle cx="25" cy="25" r="25" fill="#1A1B1D" fillOpacity="0.05" />
           <path
             d="M30.9623 28.1629L23.4316 35.6936L24.8388 37.1007L32.3695 29.5701L30.9623 28.1629Z"
             fill="#1A1B1D"
@@ -47,33 +47,48 @@ const TabContent = ({ children, isActive, index, className, ...props }) => {
 };
 
 const Tabs = ({ children }) => {
-  const [activeTab, setActiveTab] = useState(1);
+  const [activeTab, setActiveTab] = useState(0);
 
   const handleTabClick = (index) => {
-    setActiveTab(index + 1);
+    setActiveTab(index);
   };
+
+  const headers = [];
+  const contents = [];
+
+  React.Children.forEach(children, (child) => {
+    if (child.type === TabHeader) {
+      headers.push(child);
+    } else if (child.type === TabContent) {
+      contents.push(child);
+    } else if (child.props && child.props.children) {
+      React.Children.forEach(child.props.children, (nestedChild) => {
+        if (nestedChild.type === TabHeader) {
+          headers.push(nestedChild);
+        } else if (nestedChild.type === TabContent) {
+          contents.push(nestedChild);
+        }
+      });
+    }
+  });
 
   return (
     <div className="flex max-md:flex-col-reverse gap-5">
-      <div className="flex flex-col w-full  ">
-        {React.Children.map(children, (child, index) => {
-          if (child.type === TabHeader) {
-            return React.cloneElement(child, {
-              onClick: () => handleTabClick(index),
-              isActive: index + 1 === Number(activeTab),
-            });
-          }
-        })}
+      <div className="flex flex-col w-full">
+        {headers.map((child, index) =>
+          React.cloneElement(child, {
+            onClick: () => handleTabClick(index),
+            isActive: index === activeTab,
+          })
+        )}
       </div>
       <div className="w-full">
-        {React.Children.map(children, (child, index) => {
-          if (child.type === TabContent) {
-            return React.cloneElement(child, {
-              isActive: index == Number(activeTab),
-              index,
-            });
-          }
-        })}
+        {contents.map((child, index) =>
+          React.cloneElement(child, {
+            isActive: index === activeTab,
+            index,
+          })
+        )}
       </div>
     </div>
   );

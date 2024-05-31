@@ -1,8 +1,8 @@
-import CompanyCulture from "@/components/CompanyCulture";
 import EmployeeRefral from "@/components/EmployeRefrel";
 import ExploreNext from "@/components/ExploreNext";
 import JoinUsBanner from "@/components/JoinUsBanner";
 import OurBenifit from "@/components/OurBenifits";
+import TabsWrapper from "@/components/TabsWraper";
 import TrendingJobsWrapper from "@/components/TrendingJobsWrapper";
 
 export default function Page() {
@@ -27,8 +27,7 @@ export default function Page() {
           </>
         }
       />
-      <CompanyCulture />
-
+      <TabsWrapper />
       <OurBenifit />
 
       <TrendingJobsWrapper label="Jobs at Venturi" />

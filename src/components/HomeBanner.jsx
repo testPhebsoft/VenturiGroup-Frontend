@@ -11,9 +11,9 @@ import { cn } from "@/lib/utils";
 export default function HomeBanner() {
   return (
     <div className="">
-      <div className="  after:bg-[linear-gradient(180deg,rgba(245,245,245,0)0%,#F5F5F5)] after:absolute after:z-[-1] w-full  max-sm:h-[clamp(745px,60vmax,1335px)]  max-sm:after:h-[clamp(745px,60vmax,1335px)] h-[clamp(850px,60vmax,1335px)] lg:aspect-video after:h-[clamp(850px,60vmax,1335px)]  after:top-0  after:w-full">
+      <div className=" w-[99.19vw] after:bg-[linear-gradient(180deg,rgba(245,245,245,0)0%,#F5F5F5)] after:absolute after:z-[-1]   max-sm:h-[clamp(745px,60vmax,1335px)]  max-sm:after:h-[clamp(745px,60vmax,1335px)] h-[clamp(850px,60vmax,1335px)] lg:aspect-video after:h-[clamp(850px,60vmax,1335px)]  after:top-0  after:w-[99.19vw]">
         <video
-          className="fixed w-full z-[-2]  h-[100vh] object-cover  bg-[linear-gradient(180deg,rgba(245,245,245,0)0%,#F5F5F5)]"
+          className="fixed w-[99.19vw] z-[-2]  h-[100vh] object-cover  bg-[linear-gradient(180deg,rgba(245,245,245,0)0%,#F5F5F5)]"
           loop
           muted
           autoPlay

@@ -7,7 +7,7 @@ import "swiper/css";
 import "swiper/css/autoplay";
 import CarousalItem from "./CarousalItem";
 
-export default function CustumCarousal({ data }) {
+export default function CustumCarousal({ data, type }) {
   const getBreakPoints = () => {
     return {
       0: {
@@ -53,10 +53,13 @@ export default function CustumCarousal({ data }) {
   return (
     <div className="ourCustomers">
       {" "}
-      <h3 className="text-[clamp(24px,9vw,36px)] font-[lust-text] font-light ">
-        <span className=" text-input/50">Our </span> <br />
-        <strong>customers</strong>
-      </h3>
+      {type && (
+        <h3 className="text-[clamp(24px,9vw,36px)] font-[lust-text] font-light ">
+          <span className=" text-input/50">Our </span> <br />
+          {type == "client" && <strong>customers</strong>}
+          {type == "candidate" && <strong>Candidates</strong>}
+        </h3>
+      )}
       <Swiper
         modules={[Autoplay]}
         autoplay={{ delay: 3000 }}

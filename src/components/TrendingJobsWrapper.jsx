@@ -11,8 +11,7 @@ export default async function TrendingJobsWrapper({ label }) {
   } catch (error) {}
   return (
     res &&
-    res.data &&
-    res.data.length !== 0 && (
+    res.length !== 0 && (
       <TrendingJobs data={res && res} label={label && label} />
     )
   );

@@ -4,7 +4,7 @@ import { cache } from "react";
 import { getCode, getCodeServer } from "@/lib/serverUtils/getCode";
 
 const serverUrl = process.env.SERVER_URL || "";
-const revalidate = 4;
+const revalidate = 80;
 export async function getCategories() {
   return [
     { slug: "insights", name: "All" },
@@ -470,6 +470,23 @@ export async function Name() {
     return response;
   } catch (e) {
     console.log("error at Name", e);
+  }
+}
+
+export async function getTabs() {
+  let config = {
+    url: `${serverUrl}/tabs`,
+    next: { revalidate: revalidate, tags: ["all", "tabs"] },
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+  };
+  try {
+    let response = await fetchDataFromApi(config);
+    return response;
+  } catch (e) {
+    console.log("error at getTabs", e);
   }
 }
 

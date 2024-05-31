@@ -10,8 +10,9 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import React from "react";
 
-export default function CompanyCulture() {
+export default function CompanyCulture({ data }) {
   const isDesktop = useMediaQuery("(min-width: 768px)");
 
   console.log("isDesktop", isDesktop);
@@ -19,83 +20,45 @@ export default function CompanyCulture() {
     return (
       <MaxWidthWrapper className={"py-10"}>
         <Tabs>
-          <TabHeader
-            className={"w-full  h-full max-w-[500px] "}
-            label="Company culture"
-          />
-          <TabContent>
-            <RenderContent />
-          </TabContent>
-          <TabHeader label="Earning potential & rewards" />
-          <TabContent>
-            {" "}
-            <RenderContent />
-          </TabContent>
-          <TabHeader label="Career progression" />
-          <TabContent>
-            {" "}
-            <RenderContent />
-          </TabContent>
-          <TabHeader label="The Venturi approach" />
-          <TabContent>
-            {" "}
-            <RenderContent />
-          </TabContent>
+          {data.map((tab, index) => (
+            <>
+              <TabHeader
+                className={"w-full h-full max-w-[500px]"}
+                label={tab.title}
+              />
+              <TabContent>
+                <RenderContent
+                  imagesrc={tab.image.url}
+                  text={tab.description}
+                />
+              </TabContent>
+            </>
+          ))}
         </Tabs>
       </MaxWidthWrapper>
     );
   } else if (isDesktop === false) {
     return (
       <>
-        <Accordion type="single" defaultValue="item-1" collapsible>
-          <AccordionItem value="item-1">
-            <AccordionTrigger
-              className={cn(
-                `flex justify-between items-center  decoration-transparent py-2 px-4 cursor-pointer border w-full border-black border-b-1 border-t-0 border-r-0 border-l-0  h-full   font-[text-lust] text-[clamp(24px,5vw,36px)]`
-              )}
-            >
-              Company culture
-            </AccordionTrigger>
-            <AccordionContent>
-              <RenderContent className={"max-w-[1200px] px-5 mt-5"} />
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem value="item-2">
-            <AccordionTrigger
-              className={cn(
-                `flex justify-between items-center  decoration-transparent py-2 px-4 cursor-pointer border w-full border-black border-b-1 border-t-0 border-r-0 border-l-0  h-full   font-[text-lust] text-[clamp(24px,5vw,36px)]`
-              )}
-            >
-              Earning potential & rewards
-            </AccordionTrigger>
-            <AccordionContent>
-              <RenderContent className={"max-w-[1200px] px-5 mt-5"} />
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem value="item-3">
-            <AccordionTrigger
-              className={cn(
-                `flex justify-between items-center  decoration-transparent py-2 px-4 cursor-pointer border w-full border-black border-b-1 border-t-0 border-r-0 border-l-0  h-full   font-[text-lust] text-[clamp(24px,5vw,36px)]`
-              )}
-            >
-              Career progression
-            </AccordionTrigger>
-            <AccordionContent>
-              <RenderContent className={"max-w-[1200px] px-5 mt-5"} />
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem value="item-4">
-            <AccordionTrigger
-              className={cn(
-                `flex justify-between items-center  decoration-transparent py-2 px-4 cursor-pointer border w-full border-black border-b-1 border-t-0 border-r-0 border-l-0  h-full   font-[text-lust] text-[clamp(24px,5vw,36px)]`
-              )}
-            >
-              The Venturi approach
-            </AccordionTrigger>
-            <AccordionContent>
-              <RenderContent className={"max-w-[1200px] px-5 mt-5"} />
-            </AccordionContent>
-          </AccordionItem>
+        <Accordion type="single" defaultValue="0" collapsible>
+          {data.map((tab, index) => (
+            <AccordionItem value={index.toString()}>
+              <AccordionTrigger
+                className={cn(
+                  `flex justify-between items-center  decoration-transparent py-2 px-4 cursor-pointer border w-full border-black border-b-1 border-t-0 border-r-0 border-l-0  h-full   font-[text-lust] text-[clamp(24px,5vw,36px)]`
+                )}
+              >
+                {tab.title}
+              </AccordionTrigger>
+              <AccordionContent>
+                <RenderContent
+                  className={"max-w-[1200px] px-5 mt-5"}
+                  imagesrc={tab.image.url}
+                  text={tab.description}
+                />
+              </AccordionContent>
+            </AccordionItem>
+          ))}
         </Accordion>
       </>
     );
@@ -127,7 +90,10 @@ function RenderContent({
       >
         <Image fill src={imagesrc} className="rounded-xl" alt={imagesrc} />
       </div>
-      <p className=" font-ArticulateMedium">{text}</p>
+      <p
+        dangerouslySetInnerHTML={{ __html: text }}
+        className=" font-ArticulateMedium"
+      ></p>
     </div>
   );
 }
