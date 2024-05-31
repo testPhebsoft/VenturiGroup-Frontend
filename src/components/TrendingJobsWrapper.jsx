@@ -1,7 +1,7 @@
 import { getJobs } from "@/actions/Getdata";
 import TrendingJobs from "./TrendingJobs";
 
-export default async function ({ label }) {
+export default async function TrendingJobsWrapper({ label }) {
   let res;
 
   try {
