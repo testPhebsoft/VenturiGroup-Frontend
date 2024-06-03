@@ -67,10 +67,10 @@ export default function OurTeam({
               "flex max-lg:flex-col  max-lg:py-5 justify-between max-lg:gap-5 max-lg:px-5 gap-20"
             }
           >
-            <div className="  lg:w-[40%] max-lg:flex max-lg:gap-5  ">
-              <div className="relative max-lg:h-[155px]     w-auto h-full  aspect-[0.8] ">
+            <div className="  lg:w-[45%] max-lg:flex max-lg:gap-5   ">
+              <div className="relative max-lg:h-[155px]  lg:w-full overflow-hidden     w-auto h-full  aspect-[0.8] ">
                 <Image
-                  className="rounded-lg"
+                  className="rounded-lg object-cover "
                   fill
                   src={imagesrc ? imagesrc : "/sector1.jpg"}
                   alt="sector1"
@@ -103,7 +103,7 @@ export default function OurTeam({
                   scrollbarWidth: "none",
                   msOverflowStyle: "none",
                 }}
-                className="text-[clamp(12px,3vw,16px)] mb-10 w-full lg:max-w-[521px] mt-5  "
+                className="text-[clamp(12px,3vw,16px)] mb-10 w-full lg:pr-10 lg:max-w-[521px] mt-5  "
               >
                 {details || (
                   <>
