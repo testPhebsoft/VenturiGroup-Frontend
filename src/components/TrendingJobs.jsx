@@ -38,12 +38,12 @@ export default function TrendingJobs({ label = "Trending Jobs", data }) {
             msOverflowStyle: "none",
             // mr-[calc(-50vw+51%)]
           }}
-          className="max-lg:snap-x snap-mandatory lg:snap-proximity  scroll-smooth overflow-y-hidden mt-10 relative max-lg:overflow-x-scroll overflow-hidden  whitespace-nowrap "
+          className="   overflow-y-hidden mt-10 relative  overflow-hidden "
         >
           <div
             style={style}
             ref={scrollContainerRef}
-            className="flex w-fit gap-5"
+            className="flex w-fit gap-1"
           >
             {data.map((value, index) => (
               <JobCard

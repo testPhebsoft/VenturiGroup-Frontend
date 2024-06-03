@@ -54,7 +54,7 @@ export default function CustumCarousal({ data, type }) {
     <div className="ourCustomers">
       {" "}
       {type && (
-        <h3 className="text-[clamp(24px,9vw,36px)] font-[lust-text] font-light ">
+        <h3 className="text-[clamp(24px,9vw,36px)] -mb-10 font-[lust-text] font-light ">
           <span className=" text-input/50">Our </span> <br />
           {type == "client" && <strong>customers</strong>}
           {type == "candidate" && <strong>Candidates</strong>}

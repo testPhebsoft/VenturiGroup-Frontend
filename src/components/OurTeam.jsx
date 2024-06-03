@@ -72,7 +72,7 @@ export default function OurTeam({
                 <Image
                   className="rounded-lg object-cover "
                   fill
-                  src={imagesrc ? imagesrc : "/sector1.jpg"}
+                  src={imagesrc ? imagesrc : "/ourteam.png"}
                   alt="sector1"
                 />
               </div>
