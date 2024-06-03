@@ -42,7 +42,7 @@ export default function CompanyCulture({ data }) {
       <>
         <Accordion type="single" defaultValue="0" collapsible>
           {data.map((tab, index) => (
-            <AccordionItem value={index.toString()}>
+            <AccordionItem key={index} value={index.toString()}>
               <AccordionTrigger
                 className={cn(
                   `flex justify-between items-center  decoration-transparent py-2 px-4 cursor-pointer border w-full border-black border-b-1 border-t-0 border-r-0 border-l-0  h-full   font-[text-lust] text-[clamp(24px,5vw,36px)]`

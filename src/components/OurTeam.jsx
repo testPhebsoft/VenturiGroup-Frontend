@@ -145,7 +145,10 @@ export default function OurTeam({
                   <div className="flex mt-10 flex-wrap  gap-3 -ml-2 ">
                     {tags &&
                       tags.map((tag) => (
-                        <div className="uppercase min-w-[61px] h-fit text-center text-[16px] leading-[16px] px-3 py-2  border-2 border-black rounded-[24px] ">
+                        <div
+                          key={tag}
+                          className="uppercase min-w-[61px] h-fit text-center text-[16px] leading-[16px] px-3 py-2  border-2 border-black rounded-[24px] "
+                        >
                           {tag}
                         </div>
                       ))}
