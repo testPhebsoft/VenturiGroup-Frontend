@@ -3,6 +3,7 @@ import {
   getLocations,
   getLocationsByCode,
   getPartners,
+  getTeamMembersByLocations,
   getTestimonials,
 } from "@/actions/Getdata";
 import { Final } from "./Final";
@@ -49,7 +50,7 @@ export default async function Page() {
     },
   ];
 
-  let res = await getTestimonials();
+  let res = await getTeamMembersByLocations();
   console.log(res);
   // let res = await getLocationsByCode();
   // console.log(res);

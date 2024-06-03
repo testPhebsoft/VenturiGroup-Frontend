@@ -8,6 +8,7 @@ import OurClients from "@/components/OurClients";
 import OurCustomers from "@/components/OurCustomers";
 import OurSector from "@/components/OurSectors";
 import OurTeam from "@/components/OurTeam";
+import OurTeamsWrapper from "@/components/OurTeamsWrapper";
 import TailoredRecuritment from "@/components/TailoredRecruitment";
 import TrendingJobs from "@/components/TrendingJobs";
 
@@ -19,9 +20,11 @@ export default async function Home() {
     <main>
       <AboutBanner />
       <Evolution />
-      <OurTeam />
+
+      <OurTeamsWrapper />
       <OurSector />
-      <OurTeam
+      <OurTeamsWrapper
+        isGlobal
         heading={
           <>
             Meet <br className=" max-sm:hidden" />
@@ -33,7 +36,7 @@ export default async function Home() {
       />
 
       <OurClients />
-      <Medals />
+      {/* <Medals /> */}
     </main>
   );
 }

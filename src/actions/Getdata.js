@@ -473,6 +473,39 @@ export async function Name() {
   }
 }
 
+export async function getTeamMembersGlobal() {
+  let config = {
+    url: `${serverUrl}/team-members`,
+    next: { revalidate: revalidate, tags: ["all", "team-members"] },
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+  };
+  try {
+    let response = await fetchDataFromApi(config);
+    return response;
+  } catch (e) {
+    console.log("error at getTeamMembersByLocations", e);
+  }
+}
+export async function getTeamMembersByLocations() {
+  const code = await getCodeServer();
+  let config = {
+    url: `${serverUrl}/team-members?location=${code}`,
+    next: { revalidate: revalidate, tags: ["all", "team-members"] },
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+  };
+  try {
+    let response = await fetchDataFromApi(config);
+    return response;
+  } catch (e) {
+    console.log("error at getTeamMembersByLocations", e);
+  }
+}
 export async function getTabs() {
   let config = {
     url: `${serverUrl}/tabs`,

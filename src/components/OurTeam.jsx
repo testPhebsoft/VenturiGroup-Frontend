@@ -4,11 +4,7 @@ import { Plus } from "lucide-react";
 import Image from "next/image";
 import MaxWidthWrapper from "./MaxWidthWraper";
 import { Dialog, DialogContent, DialogTrigger } from "./ui/dialog";
-import { Button } from "./ui/button";
-import useScrollDragable from "./hooks/useScrollDragable";
 import { cn } from "@/lib/utils";
-import useClickToTouch from "./hooks/useClickToTouch";
-import { useRef } from "react";
 import useTranslatexDraggable from "./hooks/useTranslatexDrag";
 export default function OurTeam({
   heading = (
@@ -20,6 +16,7 @@ export default function OurTeam({
       <span className=" text-input"> UK</span> Team
     </>
   ),
+  data = [],
 }) {
   const { ref, parentRef, style } = useTranslatexDraggable();
 
@@ -27,7 +24,10 @@ export default function OurTeam({
     imagesrc = "/ourteam.png",
     jobTitle = "Job title",
     name = "Isabella   Montgomery-Smith",
-    details
+    details,
+    tags,
+    instaLink,
+    linkdinLink
   ) => {
     return (
       <Dialog className="  ">
@@ -103,7 +103,7 @@ export default function OurTeam({
                   scrollbarWidth: "none",
                   msOverflowStyle: "none",
                 }}
-                className="text-[clamp(12px,3vw,16px)] w-full lg:max-w-[521px] mt-5  "
+                className="text-[clamp(12px,3vw,16px)] mb-10 w-full lg:max-w-[521px] mt-5  "
               >
                 {details || (
                   <>
@@ -121,33 +121,34 @@ export default function OurTeam({
                   <div
                     className={cn("flex gap-5  self-baseline items-center  ")}
                   >
-                    <div className="relative before:absolute before:block before:rounded-full before:size-8 before:-inset-[6px] before:bottom-[50%] size-5   before:bg-[#1A1B1D1A]  ">
-                      <Image
-                        alt="Linkedin"
-                        height={20}
-                        width={20}
-                        src="/LinkedIn.svg"
-                      />
-                    </div>
-                    <div className="relative before:absolute before:block before:rounded-full before:size-8 before:-inset-[6px] before:bottom-[50%] size-5   before:bg-[#1A1B1D1A]  ">
-                      <Image
-                        className="  "
-                        alt="Instagram"
-                        fill
-                        src="/instagram.svg"
-                      />
-                    </div>
+                    <a href={instaLink || "#"} target="_blank" tabIndex={1}>
+                      <div className="relative before:absolute before:block before:rounded-full before:size-8 before:-inset-[6px] before:bottom-[50%] size-5   before:bg-[#1A1B1D1A]  ">
+                        <Image
+                          alt="Linkedin"
+                          height={20}
+                          width={20}
+                          src="/LinkedIn.svg"
+                        />
+                      </div>
+                    </a>
+                    <a href={linkdinLink || "#"} target="_blank" tabIndex={1}>
+                      <div className="relative before:absolute before:block before:rounded-full before:size-8 before:-inset-[6px] before:bottom-[50%] size-5   before:bg-[#1A1B1D1A]  ">
+                        <Image
+                          className="  "
+                          alt="Instagram"
+                          fill
+                          src="/instagram.svg"
+                        />
+                      </div>
+                    </a>
                   </div>
                   <div className="flex mt-10 flex-wrap  gap-3 -ml-2 ">
-                    <div className="uppercase min-w-[61px] h-fit text-center text-[16px] leading-[16px] px-3 py-2  border-2 border-black rounded-[24px] ">
-                      PR
-                    </div>
-                    <div className="uppercase min-w-[61px] h-fit text-center text-[16px] leading-[16px] px-3 py-2  border-2 border-black rounded-[24px] ">
-                      Social Media
-                    </div>
-                    <div className="uppercase min-w-[61px] h-fit text-center text-[16px] leading-[16px] px-3 py-2  border-2 border-black rounded-[24px]   ">
-                      Marketing
-                    </div>
+                    {tags &&
+                      tags.map((tag) => (
+                        <div className="uppercase min-w-[61px] h-fit text-center text-[16px] leading-[16px] px-3 py-2  border-2 border-black rounded-[24px] ">
+                          {tag}
+                        </div>
+                      ))}
                   </div>
                 </div>
               </div>
@@ -180,17 +181,19 @@ export default function OurTeam({
         className="max-lg:snap-x  relative max-lg:scroll-smooth  max-lg:snap-mandatory    scroll-m-5 whitespace-nowrap max-lg:overflow-x-scroll  overflow-hidden  mt-10 px-5  sm:px-0 "
       >
         <div style={style} ref={ref} className="flex w-max gap-5">
-          {renderCard()}
-          {renderCard()}
-          {renderCard()}
-          {renderCard()}
-          {renderCard()}
-          {renderCard()}
-          {renderCard()}
-          {renderCard()}
-          {renderCard()}
-          {renderCard()}
-          {renderCard()}
+          {data.map((item) => (
+            <>
+              {renderCard(
+                item.image && item.image.url,
+                item.job_title,
+                item.user.name,
+                item.description,
+                item.tags && item.tags,
+                item.instagram_link,
+                item.linkedin_link
+              )}
+            </>
+          ))}
         </div>
       </div>
     </MaxWidthWrapper>
