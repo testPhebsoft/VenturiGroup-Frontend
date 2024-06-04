@@ -63,32 +63,23 @@
   font-stretch: normal;
 }
 
-/* .swiper-slide-active {
-  width: 861px !important;
-}
-
-@media (max-width: 861px) {
-  .swiper-slide-active {
-    width: 461px !important;
-  }
-} */
-/* 
-.swiper-wrapper {
-  align-items: flex-end !important;
-}
-.swiper-slide {
-  height: fit-content !important;
-} */
-
-/* .swiper-slide {
-  width: 420 !important;
-} */
-
-/* .swiper-wrapper {
-  transition: transform 2s ease-in-out !important;
-} */
-
 .ourCustomers strong {
   font-weight: 500;
   color: var(--primary);
+}
+
+.Posts h3 {
+  width: 100%;
+  font-family: "lust-text";
+  font-size: clamp(24px, 3.2vw, 36px);
+  line-height: clamp(28px, 4vw, 40px);
+}
+
+.Posts h2 {
+  margin-top: 10px;
+  width: 100%;
+  max-width: 754px;
+  font-size: clamp(24px, 3.2vw, 36px);
+  line-height: clamp(28px, 4vw, 40px);
+  font-family: "lust-text";
 }

@@ -1,5 +1,7 @@
 import {
   Print,
+  getCategories,
+  getCategoriesBlog,
   getLocations,
   getLocationsByCode,
   getPartners,
@@ -50,7 +52,7 @@ export default async function Page() {
     },
   ];
 
-  let res = await getTeamMembersByLocations();
+  let res = await getCategoriesBlog({ slug: "blogs" });
   console.log(res);
   // let res = await getLocationsByCode();
   // console.log(res);

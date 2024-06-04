@@ -150,9 +150,9 @@ const RenderAddress = ({
       <p className="text-input mt-10 w-full max-w-[clamp(191px,2vw,235px)] ">
         {addressLine}
       </p>
-      <p className="text-input mt-10 h-full items-end flex flex-1">
+      <div className="text-input mt-10 h-full items-end flex flex-1">
         <p className=" h-fit  "> {number}</p>
-      </p>
+      </div>
     </div>
   );
 };

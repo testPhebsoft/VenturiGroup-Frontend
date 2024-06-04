@@ -1,13 +1,23 @@
-import { getCategoriesBlog } from "@/actions/Getdata";
+import {
+  getCategoriesBlog,
+  getCategoriesBlogAll,
+  getPostData,
+} from "@/actions/Getdata";
 import MaxWidthWrapper from "@/components/MaxWidthWraper";
 import { RenderBlogs } from "@/components/RenderBlogs";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import AudioPlayer from "@/components/AudioPlayer";
+import { RenderBlogCard } from "@/components/RenderBlogCard";
+import { timeDifference } from "@/lib/utils";
 
 export default async function Page({ params }) {
   let post = params.post;
-  let latestBlogs = await getCategoriesBlog({ slug: "random3" });
+  let latestBlogs = await getCategoriesBlogAll({ page: 1, per_page: 3 });
+  let postdata = await getPostData({ slug: post });
+  postdata = postdata.data;
+  latestBlogs = latestBlogs.data;
+
   let data = {
     tag: "data",
     icon: (
@@ -75,90 +85,64 @@ export default async function Page({ params }) {
       </svg>
     ),
   };
-  if (post == "blog" || post == "data")
+
+  if (postdata.category.slug !== "podcasts") {
     return (
       <>
-        <MaxWidthWrapper className={"mt-40"}>
+        <MaxWidthWrapper className={" Posts mt-40"}>
           <p className=" text-[clamp(12px,1.1vw,16px)] font-semibold  font-AntarcticanMonoSemiBold">
-            Posted over 1 year ago • by Daryl Gorman
+            Posted over {timeDifference(postdata.created_at)} • by{" "}
+            {postdata.written_by}
           </p>
           <div className=" flex justify-between w-full">
             <h2 className=" mt-10 w-full max-w-[754px] text-[clamp(24px,3.2vw,36px)] leading-[clamp(28px,4vw,40px)] font-[lust-text]">
-              15 Inspirational Emerging Technology & Business Podcasts
+              {postdata.title ||
+                "  Inspirational Emerging Technology & Business Podcasts"}
             </h2>
-            {post == "blog" && (
+            {postdata.category && (
               <p className=" h-fit flex  self-end items-center justify-center gap-4 px-3 py-1 text-primary bg-white rounded-[24px] w-fit  capitalize font-AntarcticanMonoSemiBold text-[clamp(12px,1.1vw,16px)] ">
                 {" "}
-                {blog.tag} {blog.icon}{" "}
-              </p>
-            )}
-            {post == "data" && (
-              <p className=" h-fit flex  self-end items-center justify-center gap-4 px-3 py-1 text-primary bg-white rounded-[24px] w-fit  capitalize font-AntarcticanMonoSemiBold text-[clamp(12px,1.1vw,16px)] ">
-                {" "}
-                {data.tag} {data.icon}{" "}
+                {postdata.category.name}
+                {
+                  <span className=" relative size-5">
+                    <Image src={postdata.category.icon.url} fill />
+                  </span>
+                }
               </p>
             )}
           </div>
           <div className=" mt-10 relative w-full aspect-[2.2]">
             <Image
               fill
-              src={"/blogfull.jpg"}
+              src={postdata.image.url}
               className="object-cover rounded-3xl"
             />
           </div>
 
           <div className="flex max-md:gap-10 max-md:flex-col justify-between mt-20">
             <div className="flex w-full max-w-[236px] flex-col gap-5">
-              <RenderSideDetails />
-              <RenderSideDetails heading=" Written by" text=" Daryl Gorman" />
-              <RenderSideDetails heading="Published" text="Over 1 year ago" />
+              <RenderSideDetails text={postdata.category.name} />
+              <RenderSideDetails
+                heading=" Written by"
+                text={postdata.written_by}
+              />
+              <RenderSideDetails
+                heading="Published"
+                text={timeDifference(postdata.created_at)}
+              />
             </div>
-            <div className="w-full max-w-[1008px]">
-              <h1 className="  w-full  text-[clamp(24px,3.2vw,36px)] leading-[clamp(28px,4vw,40px)] font-[lust-text]">
-                Technology is always advancing, if you don&apos;t advance with
-                it, your competition will end up leaving you behind. With
-                advances in Artificial Intelligence, Machine Learning, Augmented
-                Reality and the Internet of Things there are numerous new
-                technologies available to solve any issue that your business may
-                be having.
-              </h1>
-              <div className="flex flex-col w-full gap-10 mt-10">
-                <p>
-                  Emerging technologies, if used appropriately, can be used to
-                  reach new goals. These technologies can be used to help
-                  organisations scale rapidly, minimise infrastructure
-                  investment, automate long-standing processes, enrich their
-                  data sets and reach new capabilities.
-                </p>
-                <p>
-                  But instead of telling you what businesses can do, we&apos;ve
-                  gone and asked business leaders to demonstrate the
-                  capabilities of their Emerging Technology, listen to these 15
-                  podcasts and see what new heights you can reach.
-                </p>
+            <div>
+              <div
+                dangerouslySetInnerHTML={{ __html: postdata.description }}
+                className="w-full max-w-[1008px]"
+              ></div>
+              <div className="w-full max-w-[1008px]">
+                {" "}
+                <AudioPlayer
+                  audioSrc={postdata.file.original_url}
+                  className={"my-5"}
+                />{" "}
               </div>
-              <h2 className=" mt-10 w-full max-w-[754px] text-[clamp(24px,3.2vw,36px)] leading-[clamp(28px,4vw,40px)] font-[lust-text]">
-                1. Dev Stories: The Coding Journey with Ashley Firth | Octopus
-                Energys
-              </h2>
-              <div className="flex flex-col w-full gap-10 mt-10">
-                <p>
-                  Ashley Firth built and leads the Front-end department at
-                  Octopus Energy, crafting sites and internal tools, building
-                  new products and campaigns, and expanding into other
-                  countries. Their aim is to combat climate change, use
-                  technology to build a better standard of energy supplier, and
-                  make renewable energy more affordable for everyone. In May
-                  2020, Octopus Energy became the 15th UK tech “unicorn” after
-                  achieving a valuation of over £1 billion
-                </p>
-                <p>
-                  Ashley has also written a book: &apos;Practical Web Inclusion
-                  & Accessibility&apos;, a new book, designed as a practical
-                  guide to access needs, which is a huge passion for Ashley.
-                </p>
-              </div>
-              <AudioPlayer className={"my-5"} />
             </div>
           </div>
         </MaxWidthWrapper>
@@ -172,13 +156,53 @@ export default async function Page({ params }) {
             </h2>
             <Button className=" uppercase ">see more +</Button>
           </div>
-          <RenderBlogs blogs={latestBlogs} />
+          <MaxWidthWrapper className=" grid mt-10 gap-x-3 gap-y-20 grid-cols-2 lg:grid-cols-3 ">
+            {latestBlogs.map((post, index) => (
+              <RenderBlogCard
+                key={index}
+                imagesrc={post.image.url}
+                tag={post.category.name}
+                icon={post.category.icon.url}
+                title={post.title}
+                btntext={post.category.slug !== "podcasts" && "Read"}
+                btnicon={
+                  post.category.slug !== "podcasts" && (
+                    <svg
+                      width="12"
+                      height="13"
+                      viewBox="0 0 12 13"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g clip-path="url(#clip0_2013_2077)">
+                        <path
+                          d="M9.09474 8.36786L5.28174 12.2667L5.99422 12.9952L9.80722 9.09637L9.09474 8.36786Z"
+                          fill="white"
+                        />
+                        <path
+                          d="M5.99494 0L5.28101 0.729988L10.4152 5.97969H0V7.01513H11.6405L12 6.13501L5.99494 0Z"
+                          fill="white"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_2013_2077">
+                          <rect width="12" height="13" fill="white" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  )
+                }
+                blogLink={`/insights/${post.category.slug}/${post.slug}`}
+              />
+            ))}
+          </MaxWidthWrapper>
         </MaxWidthWrapper>
       </>
     );
-  if (post == "podcast")
+  }
+  if (postdata.category.slug == "podcasts")
     return (
-      <MaxWidthWrapper className={"mt-40"}>
+      <MaxWidthWrapper className={"Posts  mt-40"}>
         <div className=" flex max-md:flex-col w-full gap-5 ">
           <div className=" mt-10 w-full max-w-[376px] relative  aspect-square">
             <Image
@@ -189,52 +213,36 @@ export default async function Page({ params }) {
           </div>
           <div className="flex flex-1  flex-col   justify-end w-full max-w-[747px]">
             <p className=" text-[clamp(12px,1.1vw,16px)] font-semibold  font-AntarcticanMonoSemiBold">
-              Posted over 1 year ago • by Daryl Gorman
+              Posted over {timeDifference(postdata.created_at)} • by{" "}
+              {postdata.written_by}
             </p>
             <div className=" flex justify-between w-full ">
               <h2 className=" mt-10 w-full max-w-[754px] text-[clamp(24px,3.2vw,36px)] leading-[clamp(28px,4vw,40px)] font-[lust-text]">
-                The Daemon Way: Henry Ayres - Head of Engineering
+                {postdata.title || "The Daemon Way: Henry Ayres"}
               </h2>
-              {post == "blog" && (
+              {postdata.category && (
                 <p className=" h-fit flex  self-end items-center justify-center gap-4 px-3 py-1 text-primary bg-white rounded-[24px] w-fit  capitalize font-AntarcticanMonoSemiBold text-[clamp(12px,1.1vw,16px)] ">
                   {" "}
-                  {blog.tag} {blog.icon}{" "}
-                </p>
-              )}
-              {post == "data" && (
-                <p className=" h-fit flex  self-end items-center justify-center gap-4 px-3 py-1 text-primary bg-white rounded-[24px] w-fit  capitalize font-AntarcticanMonoSemiBold text-[clamp(12px,1.1vw,16px)] ">
-                  {" "}
-                  {data.tag} {data.icon}{" "}
+                  {postdata.category.name}
+                  {
+                    <span className=" relative size-5">
+                      <Image src={postdata.category.icon.url} fill />
+                    </span>
+                  }
                 </p>
               )}
             </div>
-            <AudioPlayer className={"my-5"} />
+            <AudioPlayer
+              audioSrc={postdata.file.original_url}
+              className={"my-5"}
+            />
           </div>
         </div>
 
-        <div className="w-full max-md:mt-10 mt-20 ">
-          <h1 className="  w-full  text-[clamp(24px,3.2vw,36px)] leading-[clamp(28px,4vw,40px)] font-[lust-text]">
-            Join us for the insightful episode as we sit down with Henry Ayres,
-            Head of Engineering at Daemon Solutions, to capture exclusive
-            insights into the way that works.
-          </h1>
-          <div className="flex flex-col w-full gap-10 mt-20">
-            <p>
-              In this interview, Henry shares his knowledge and experience for
-              discovering the right path of deciphering what their clients
-              actually want and who wants it, combating the changes that may
-              come along with the project(s) to keep it moving forward, and how
-              to make sure they are recruiting the right people into the team
-              for success.
-            </p>
-            <p>For more info on Daemon Solutions here are some useful links:</p>
-            <p>
-              https://www.dae.mn/ <br />
-              https://www.linkedin.com/company/daemon-solutions/ <br />
-              https://www.linkedin.com/in/henryayres/ <br />
-            </p>
-          </div>
-        </div>
+        <div
+          dangerouslySetInnerHTML={{ __html: postdata.description }}
+          className="w-full max-md:mt-10 mt-20 "
+        ></div>
       </MaxWidthWrapper>
     );
 

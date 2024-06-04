@@ -1,4 +1,8 @@
-import { getCategories, getCategoriesBlog } from "@/actions/Getdata";
+import {
+  getCategories,
+  getCategoriesBlog,
+  getCategoriesBlogAll,
+} from "@/actions/Getdata";
 import { notFound } from "next/navigation";
 import { RenderBlogs } from "@/components/RenderBlogs";
 import { Suspense } from "react";
@@ -13,18 +17,26 @@ export default function Page({}) {
   );
 }
 async function Renderer() {
-  let blogs = [];
+  let blogs = {};
 
   try {
-    blogs = await getCategoriesBlog({ slug: "insights" });
+    blogs = await getCategoriesBlogAll({ page: 1 });
+    console.log(blogs);
   } catch (e) {}
 
-  if (blogs.length == 0) {
+  if (blogs && blogs.data.length == 0) {
     return (
       <div className=" h-[50vh] flex items-center justify-center ">
         <p className=" font-[text-lust] text-[16px]"> No available data</p>
       </div>
     );
   }
-  if (blogs.length !== 0) return <RenderBlogs blogs={blogs} />;
+  if (blogs.data.length !== 0)
+    return (
+      <RenderBlogs
+        blogs={blogs.data}
+        currentCategoryPath={"/insights"}
+        CategoryBlogs={blogs}
+      />
+    );
 }

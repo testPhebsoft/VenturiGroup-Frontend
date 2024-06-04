@@ -6,68 +6,7 @@ import Link from "next/link";
 export function RenderBlogCard({
   imagesrc = "/podcast.jpg",
   tag = "podcast",
-  icon = (
-    <svg
-      width="12"
-      height="14"
-      viewBox="0 0 12 14"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <g clip-path="url(#clip0_4249_767)">
-        <path
-          d="M3.35547 4.18683C3.35547 2.56458 4.67081 1.24924 6.29307 1.24924C7.91532 1.24924 9.23066 2.56458 9.23066 4.18683V5.94689C9.23066 7.56914 7.91532 8.88449 6.29307 8.88449C4.67081 8.88449 3.35547 7.56914 3.35547 5.94689V4.18683Z"
-          stroke="#9E76E9"
-          stroke-miterlimit="133.33"
-        />
-        <path
-          opacity="0.5"
-          d="M7.1731 4.18684H9.22754"
-          stroke="#9E76E9"
-          stroke-miterlimit="133.33"
-          stroke-linecap="round"
-        />
-        <path
-          opacity="0.5"
-          d="M7.1731 5.94688H9.22754"
-          stroke="#9E76E9"
-          stroke-miterlimit="133.33"
-          stroke-linecap="round"
-        />
-        <path
-          opacity="0.5"
-          d="M3.35547 4.18684H4.52988"
-          stroke="#9E76E9"
-          stroke-miterlimit="133.33"
-          stroke-linecap="round"
-        />
-        <path
-          opacity="0.5"
-          d="M3.35547 5.94688H4.52988"
-          stroke="#9E76E9"
-          stroke-miterlimit="133.33"
-          stroke-linecap="round"
-        />
-        <path
-          opacity="0.5"
-          d="M10.9908 5.35812V5.9469C10.9908 8.54 8.88621 10.6445 6.29311 10.6445M6.29311 10.6445C3.70001 10.6445 1.59546 8.54 1.59546 5.9469V5.35812M6.29311 10.6445V12.4046"
-          stroke="#9E76E9"
-          stroke-miterlimit="133.33"
-          stroke-linecap="round"
-        />
-      </g>
-      <defs>
-        <clipPath id="clip0_4249_767">
-          <rect
-            width="10.8951"
-            height="12.6154"
-            fill="white"
-            transform="translate(0.865479 0.519226)"
-          />
-        </clipPath>
-      </defs>
-    </svg>
-  ),
+  icon,
   title = "The Daemon Way: Henry Ayres - Head of Engineering",
   btntext = "listen",
   btnicon = (
@@ -98,12 +37,17 @@ export function RenderBlogCard({
           fill
           src={imagesrc}
           alt={imagesrc}
-          className=" max-md:rounded-[5px] rounded-[10px]"
+          className=" max-md:rounded-[5px] object-cover rounded-[10px]"
         />
       </div>
       <p className=" flex  items-center justify-center gap-4 px-3 py-1 text-primary bg-white rounded-[24px] w-fit  capitalize font-AntarcticanMonoSemiBold text-[clamp(12px,1.1vw,16px)] ">
         {" "}
-        {tag} {icon}{" "}
+        {tag}{" "}
+        {
+          <span className=" relative size-5">
+            <Image src={icon} fill />
+          </span>
+        }{" "}
       </p>
       <h3 className="font-[lust-text] text-[clamp(16px,4vw,24px)]">{title}</h3>
       <div className="flex-1 flex items-end">

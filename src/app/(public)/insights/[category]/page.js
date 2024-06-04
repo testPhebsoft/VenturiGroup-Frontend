@@ -19,23 +19,34 @@ async function Renderer({ params }) {
   let blogs = [];
   try {
     categories = await getCategories();
+    categories = categories.data;
+    console.log("categories", categories);
   } catch (e) {}
   let currentCategory = categories.filter((data) => data.slug == category);
   if (currentCategory.length == 0) {
     return notFound();
   }
   currentCategory = currentCategory[0];
+  console.log(currentCategory, "currentCategory");
   try {
     blogs = await getCategoriesBlog({ slug: category });
+    blogs = blogs.data;
   } catch (e) {
     console.log(e);
   }
-  if (blogs.length == 0) {
+  if (blogs && blogs.data.length == 0) {
     return (
       <div className=" h-[50vh] flex items-center justify-center ">
         <p className=" font-[text-lust] text-[16px]"> No available data</p>
       </div>
     );
   }
-  if (blogs.length !== 0) return <RenderBlogs blogs={blogs} />;
+  if (blogs.length !== 0)
+    return (
+      <RenderBlogs
+        CategoryBlogs={blogs}
+        blogs={blogs.data}
+        currentCategoryPath={`/insights/${currentCategory.slug}`}
+      />
+    );
 }
