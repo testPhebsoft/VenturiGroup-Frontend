@@ -8,7 +8,7 @@ const TabHeader = ({ label, onClick, isActive, className, ...props }) => {
       {...props}
       className={cn(
         `flex justify-between items-center py-2 px-4 cursor-pointer border w-full border-black border-b-1 border-t-0 border-r-0 border-l-0 h-full max-w-[500px] font-[text-lust] text-[clamp(24px,5vw,36px)] ${
-          isActive ? "font-bold" : "text-input/50"
+          isActive ? "" : "text-input/50"
         }`,
         className
       )}

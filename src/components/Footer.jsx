@@ -2,8 +2,9 @@ import Link from "next/link";
 import MaxWidthWrapper from "./MaxWidthWraper";
 import Image from "next/image";
 import { Socials } from "./Socials";
+import { getCodeServer } from "@/lib/serverUtils/getCode";
 
-export default function Footer({
+export default async function Footer({
   data = [
     {
       city: "manchester",
@@ -28,6 +29,7 @@ export default function Footer({
     },
   ],
 }) {
+  const code = await getCodeServer();
   return (
     <div className="bg-background pt-20 pb-10">
       <MaxWidthWrapper className={" relative"}>
@@ -94,8 +96,23 @@ export default function Footer({
             </div>
           </Socials>
           <div className=" mt-10 flex w-full max-lg:max-w-[250px]  justify-between gap-5 ">
-            <p className="text-input lg:hidden ">Cookies</p>
-            <p className="text-input  lg:hidden">Diversity & Inclusion</p>
+            <Link className=" lg:hidden hover:text-input/60" href={"/cookies"}>
+              Cookies
+            </Link>
+            <Link
+              className="hover:text-input/60 lg:hidden"
+              href={"/privacy-policy"}
+            >
+              Privacy policy
+            </Link>
+            {code === "DE" && (
+              <Link
+                className="hover:text-input/60 lg:hidden"
+                href={"/impressum"}
+              >
+                Impressum
+              </Link>
+            )}
           </div>
           <div className=" mt-10 flex w-full max-lg:max-w-[500px] justify-between max-lg:justify-center gap-5 ">
             <p className="text-input">Copyright © 2024 Venturi Group</p>
@@ -107,13 +124,21 @@ export default function Footer({
             </Link>
             <Link
               className="hover:text-input/60 max-lg:hidden"
-              href={"/diversity-inclusion"}
+              href={"/privacy-policy"}
             >
               {" "}
               <p className="text-input hover:text-input/60 max-lg:hidden">
-                Diversity & Inclusion
+                Privacy policy
               </p>
             </Link>
+            {code === "DE" && (
+              <Link
+                className="text-input hover:text-input/60 max-lg:hidden"
+                href={"/impressum"}
+              >
+                Impressum
+              </Link>
+            )}
             <p className="w-[366px] max-lg:hidden"></p>
           </div>
         </div>

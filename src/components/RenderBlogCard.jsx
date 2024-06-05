@@ -30,7 +30,7 @@ export function RenderBlogCard({
   return (
     <div
       style={{ transitionDuration: "0.5s" }}
-      className="hover:scale-105 w-full max-w-[401px] flex flex-col gap-4"
+      className=" w-full max-w-[401px] flex flex-col gap-4"
     >
       <div className=" relative w-full   aspect-[1] ">
         <Image
@@ -55,10 +55,14 @@ export function RenderBlogCard({
           href={blogLink}
           className={cn(
             buttonVariants(),
-            " uppercase w-fit gap-3 rounded-full h-[30px]"
+            " uppercase w-fit  flex gap-2  h-[30px]  hover:scale-105 rounded-full "
           )}
         >
-          {btntext} {btnicon}
+          <span className="text-[16px] leading-[14px] mb-[-4px]">
+            {" "}
+            {btntext}{" "}
+          </span>{" "}
+          <span> {btnicon}</span>
         </Link>
       </div>
     </div>

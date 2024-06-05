@@ -5,15 +5,17 @@ import { Suspense } from "react";
 import Loading from "@/app/loading";
 import { Loader, LoaderTwo } from "@/components/Loader";
 
-export default async function Page({ params }) {
+export default async function Page({ params, searchParams }) {
+  const { page } = searchParams;
+
   return (
     <Suspense fallback={<LoaderTwo className={" h-[50vh]"} />}>
-      <Renderer params={params} />
+      <Renderer page={page} params={params} />
     </Suspense>
   );
 }
 
-async function Renderer({ params }) {
+async function Renderer({ params, page = 1 }) {
   let category = params.category;
   let categories;
   let blogs = [];
@@ -29,7 +31,7 @@ async function Renderer({ params }) {
   currentCategory = currentCategory[0];
   console.log(currentCategory, "currentCategory");
   try {
-    blogs = await getCategoriesBlog({ slug: category });
+    blogs = await getCategoriesBlog({ slug: category, page: page });
     blogs = blogs.data;
   } catch (e) {
     console.log(e);

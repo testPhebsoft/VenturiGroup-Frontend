@@ -42,21 +42,26 @@ export const getPostData = async function ({ slug }) {
   }
 };
 
-export const getCategoriesBlogAll = async function ({
-  per_page = 8,
-  page = 1,
-}) {
+export const getCategoriesBlogAll = async function (
+  { per_page, page } = {
+    per_page: 8,
+    page: 1,
+  }
+) {
+  console.log(`posts?page=${page}&per_page=${per_page}`);
   let config = {
-    url: `${serverUrl}/posts?page=${page}`,
+    url: `${serverUrl}/posts?page=${page}&per_page=${per_page}`,
     next: {
       revalidate: revalidate,
-      tags: ["all", `posts?page=${page}`],
+      tags: ["all", `posts?page=${page}&per_page=${per_page}`],
     },
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json",
     },
   };
+
+  console.log(config.url);
   try {
     let response = await fetchDataFromApi(config);
     return response;

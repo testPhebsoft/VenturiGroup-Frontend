@@ -30,7 +30,7 @@ export function InsightsNavs({ categories }) {
                   slug={slug}
                   isActive={
                     pathName == `/insights/${slug}` ||
-                    (pathName == "/insights" && name == "All")
+                    (pathName == "/insights?page=1" && name == "All")
                   }
                   name={name}
                 />
