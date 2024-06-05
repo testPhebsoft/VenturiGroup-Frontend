@@ -1,11 +1,20 @@
-import { getJobs } from "@/actions/Getdata";
+import { getJobs, getJobsInternal } from "@/actions/Getdata";
 import TrendingJobs from "./TrendingJobs";
 
-export default async function TrendingJobsWrapper({ label }) {
+export default async function TrendingJobsWrapper({ isInternal, label }) {
   let res;
 
   try {
-    res = await getJobs();
+    if (!isInternal) res = await getJobs();
+    if (isInternal) {
+      res = await getJobsInternal();
+
+      res.data = res.data.map((job) => ({
+        ...job,
+        company: { company_name: job.company_name },
+      }));
+      console.log(res);
+    }
     console.log(res);
     res = res.data;
   } catch (error) {}

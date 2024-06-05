@@ -30,7 +30,7 @@ export default function Page() {
       <TabsWrapper />
       <OurBenifit />
 
-      <TrendingJobsWrapper label="Jobs at Venturi" />
+      <TrendingJobsWrapper isInternal label="Jobs at Venturi" />
       <EmployeeRefral />
     </div>
   );

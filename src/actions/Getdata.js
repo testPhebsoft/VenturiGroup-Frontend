@@ -169,7 +169,7 @@ export async function getJobs() {
   console.log(code);
   let config = {
     url: `${serverUrl}/jobs?location=${code}`,
-    next: { revalidate: revalidate, tags: ["all", "jobs"] },
+    next: { revalidate: revalidate, tags: ["all", `jobs?location=${code}`] },
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json",
@@ -180,6 +180,23 @@ export async function getJobs() {
     return response;
   } catch (e) {
     console.log("error at getJobs", e);
+  }
+}
+
+export async function getJobsInternal() {
+  let config = {
+    url: `${serverUrl}/internal-jobs`,
+    next: { revalidate: revalidate, tags: ["all", "internal-jobs"] },
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+  };
+  try {
+    let response = await fetchDataFromApi(config);
+    return response;
+  } catch (e) {
+    console.log("error at getJobsInternal", e);
   }
 }
 

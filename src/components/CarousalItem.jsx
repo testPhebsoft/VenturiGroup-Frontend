@@ -62,7 +62,7 @@ export default function CarousalItem({ index, item }) {
           src={item.image.original_url}
           alt={`Carousel item ${index}`}
         />
-        <div className="top-[15px] absolute w-[55px] text-black"></div>
+        <div className="top-[15px] absolute w-[55px] object-cover text-black"></div>
       </div>
     </div>
   );

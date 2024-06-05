@@ -8,16 +8,40 @@ import {
   SelectValue,
 } from "./ui/select";
 import { cn } from "@/lib/utils";
+import { useEffect } from "react";
+import Script from "next/script";
+// import { useEffect } from "react/cjs/react.production.min";
 export function Languages({ data, className }) {
   let FlagList = [];
+
+  useEffect(() => {
+    const includedLanguages = data
+      .map((lang) => lang.code.toLowerCase())
+      .join(",");
+
+    function googleTranslateElementInit() {
+      new window.google.translate.TranslateElement(
+        {
+          pageLanguage: "auto",
+          includedLanguages,
+        },
+        "google_translate_element"
+      );
+    }
+
+    window.googleTranslateElementInit = googleTranslateElementInit;
+  }, []);
+
+  const onChange = (value) => {
+    // console.log("i rand=");
+    // const lang = "/en/" + value;
+    // // setLangCookie(lang);
+    // const element = document.querySelector(".goog-te-combo");
+    // element.value = value;
+    // element.dispatchEvent(new Event("change"));
+  };
   if (data) {
-    FlagList = data.map((item) => (
-      <Flag
-        key={"gb"}
-        className="size-5"
-        code={String(item.code).toLowerCase()}
-      />
-    ));
+    FlagList = data;
   } else {
     FlagList = [
       <Flag key={"gb"} className="size-5" code={"gb"} />,
@@ -31,7 +55,7 @@ export function Languages({ data, className }) {
     <>
       {data && (
         <div>
-          <Select defaultValue={"1"}>
+          <Select onValueChange={onChange} defaultValue={"1"}>
             <SelectTrigger
               className={cn(" w-[50px] bg-transparent", className)}
             >
@@ -40,7 +64,7 @@ export function Languages({ data, className }) {
             <SelectContent className=" bg-background">
               {FlagList.map((flag, index) => (
                 <SelectItem key={`${index}`} value={`${index}`}>
-                  {flag}
+                  <Flag key={flag.code} className="size-5" code={flag.code} />
                 </SelectItem>
               ))}
             </SelectContent>

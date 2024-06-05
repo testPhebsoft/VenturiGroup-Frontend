@@ -45,7 +45,7 @@ export function RenderBlogCard({
         {tag}{" "}
         {
           <span className=" relative size-5">
-            <Image src={icon} fill />
+            <Image src={icon} fill className="object-cover " />
           </span>
         }{" "}
       </p>
