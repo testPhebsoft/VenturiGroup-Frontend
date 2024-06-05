@@ -34,6 +34,7 @@ import {
   AntarcticanMonoSemiBoldItalic,
 } from "@/fonts/AntarcticanMono";
 import InitStoreFunctions from "@/components/IntialiseStore";
+import Head from "next/head";
 
 export const metadata = {
   title: "Venturi Group",
@@ -43,9 +44,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <Head></Head>
       <body
         className={cn(
-          "text-[#1A1B1D]  bg-background",
+          "text-[#1A1B1D] overflow-x-hidden  bg-background",
           ArticulateRegular.className,
           `${ArticulateRegular.variable} ${ArticulateRegularOblique.variable} ${ArticulateMedium.variable} ${ArticulateMediumOblique.variable} ${ArticulateThin.variable} ${ArticulateThinOblique.variable} ${ArticulateBold.variable} ${ArticulateBoldOblique.variable} ${ArticulateDemiBold.variable} ${ArticulateDemiBoldOblique.variable} ${ArticulateExtraBold.variable} ${ArticulateExtraBoldOblique.variable} ${ArticulateExtraLight.variable} ${ArticulateExtraLightOblique.variable} ${ArticulateHeavy.variable} ${ArticulateHeavyOblique.variable} ${ArticulateNormal.variable} ${ArticulateNormalOblique.variable} ${ArticulateLight.variable} ${ArticulateLightOblique.variable} ${AntarcticanMonoBook.variable} ${AntarcticanMonoBookItalic.variable} ${AntarcticanMonoMedium.variable} ${AntarcticanMonoMediumItalic.variable} ${AntarcticanMonoSemiBold.variable} ${AntarcticanMonoSemiBoldItalic.variable} ${AntarcticanMonoBold.variable} ${AntarcticanMonoBoldItalic.variable}`
         )}
