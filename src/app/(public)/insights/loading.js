@@ -1,5 +1,4 @@
-import { Loader, LoaderTwo } from "@/components/Loader";
-import { Loader2 } from "lucide-react";
+import { LoaderTwo } from "@/components/Loader";
 
 export default function Loading() {
   return <LoaderTwo />;

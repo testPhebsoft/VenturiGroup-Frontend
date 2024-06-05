@@ -48,7 +48,7 @@ export const getCategoriesBlogAll = async function (
     page: 1,
   }
 ) {
-  console.log(`posts?page=${page}&per_page=${per_page}`);
+  // console.log(`posts?page=${page}&per_page=${per_page}`);
   let config = {
     url: `${serverUrl}/posts?page=${page}&per_page=${per_page}`,
     next: {
@@ -61,7 +61,7 @@ export const getCategoriesBlogAll = async function (
     },
   };
 
-  console.log(config.url);
+  // console.log(config.url);
   try {
     let response = await fetchDataFromApi(config);
     return response;

@@ -46,7 +46,7 @@ export default async function Header() {
               {" "}
               <li>join us</li>
             </Link>
-            <Link className="hover:text-input/50" href={"/insights?page=1"}>
+            <Link className="hover:text-input/50" href={"/insights"}>
               {" "}
               <li>insights</li>
             </Link>

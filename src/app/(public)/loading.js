@@ -1,5 +1,5 @@
-import { Loader } from "@/components/Loader";
+import { LoaderTwo } from "@/components/Loader";
 
 export default function Loading() {
-  return <Loader />;
+  return <LoaderTwo />;
 }

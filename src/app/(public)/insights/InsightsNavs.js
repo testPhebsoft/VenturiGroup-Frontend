@@ -29,8 +29,11 @@ export function InsightsNavs({ categories }) {
                   key={slug}
                   slug={slug}
                   isActive={
-                    pathName == `/insights/${slug}` ||
-                    (pathName == "/insights?page=1" && name == "All")
+                    (pathName.includes(`/insights/${slug}`) &&
+                      name !== "All") ||
+                    (pathName.split("/").length == 2 &&
+                      pathName.includes(`/insights`) &&
+                      name == "All")
                   }
                   name={name}
                 />
