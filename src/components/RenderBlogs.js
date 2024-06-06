@@ -19,7 +19,7 @@ export function RenderBlogs({ blogs, CategoryBlogs, currentCategoryPath }) {
             key={index}
             imagesrc={post?.image?.url}
             tag={post.category.name}
-            icon={post.category.icon.url}
+            icon={post.category.icon.url && post.category.icon.url}
             title={post.title}
             btntext={post.category.slug !== "podcasts" ? "Read" : "listen"}
             btnicon={
