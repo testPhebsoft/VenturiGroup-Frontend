@@ -14,31 +14,37 @@ import Script from "next/script";
 export function Languages({ data, className }) {
   let FlagList = [];
 
-  useEffect(() => {
-    const includedLanguages = data
-      .map((lang) => lang.code.toLowerCase())
-      .join(",");
-    console.log(includedLanguages);
-    function googleTranslateElementInit() {
-      new window.google.translate.TranslateElement(
-        {
-          pageLanguage: "auto",
-          includedLanguages,
-        },
-        "google_translate_element"
-      );
-    }
+  // useEffect(() => {
+  //   const includedLanguages = data
+  //     .map((lang) => lang.code.toLowerCase())
+  //     .join(",");
+  //   console.log(includedLanguages);
+  //   function googleTranslateElementInit() {
+  //     new window.google.translate.TranslateElement(
+  //       {
+  //         pageLanguage: "auto",
+  //         includedLanguages,
+  //       },
+  //       "google_translate_element"
+  //     );
+  //   }
 
-    window.googleTranslateElementInit = googleTranslateElementInit;
-  }, []);
+  //   window.googleTranslateElementInit = googleTranslateElementInit;
+  // }, []);
 
   const onChange = (value) => {
     console.log("i rand=");
-    const lang = "/en/" + value;
+    // const lang = "/en/" + value;
     // setLangCookie(lang);
-    const element = document.querySelector(".goog-te-combo");
-    element.value = value;
-    element.dispatchEvent(new Event("change"));
+    const element = document.querySelectorAll(".goog-te-combo");
+    console.log(element);
+    element[0].value = value;
+    element[1].value = value;
+    console.log(value);
+    element[0].dispatchEvent(new Event("change"));
+    element[1].dispatchEvent(new Event("change"));
+
+    console.log();
   };
   if (data) {
     FlagList = data;
@@ -55,7 +61,8 @@ export function Languages({ data, className }) {
     <>
       {data && (
         <div>
-          <Select onValueChange={onChange} defaultValue={"1"}>
+          {/* <div id="google_translate_element"> </div> */}
+          <Select onValueChange={onChange} defaultValue={"gb"}>
             <SelectTrigger
               className={cn(" w-[50px] bg-transparent", className)}
             >
@@ -63,7 +70,10 @@ export function Languages({ data, className }) {
             </SelectTrigger>
             <SelectContent className=" bg-background">
               {FlagList.map((flag, index) => (
-                <SelectItem key={`${index}`} value={`${index}`}>
+                <SelectItem
+                  key={`${index}`}
+                  value={String(flag.code).toLowerCase()}
+                >
                   <Flag key={flag.code} className="size-5" code={flag.code} />
                 </SelectItem>
               ))}

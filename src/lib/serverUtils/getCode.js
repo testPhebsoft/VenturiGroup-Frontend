@@ -23,3 +23,28 @@ export const getCodeServer = async () => {
 
   return code;
 };
+
+export const getLangCodeServer = async () => {
+  let code = await getCooKies("selectedLangLocationCode");
+
+  if (code) {
+    code = code.value;
+  } else {
+    code = "GB";
+  }
+
+  return code;
+};
+
+export const getLangCode = async () => {
+  let code = await getCooKies("selectedLangLocationCode");
+
+  if (code) {
+    code = code.value;
+  } else {
+    code = "GB";
+    setCookies("selectedLangLocationCode", "GB");
+  }
+
+  return code;
+};
