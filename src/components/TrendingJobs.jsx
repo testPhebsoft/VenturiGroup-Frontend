@@ -20,7 +20,6 @@ export default function TrendingJobs({ label = "Trending Jobs", data }) {
     parentRef,
     style,
   } = useTranslatexDraggable();
-
   return (
     <div className=" bg-background py-10 ">
       <MaxWidthWrapper>
@@ -50,7 +49,7 @@ export default function TrendingJobs({ label = "Trending Jobs", data }) {
                 title={value.title}
                 company={value.company.company_name}
                 salaryType={convertToCapitalizedString(value.salary_type)}
-                employmentType={value.job_type}
+                employmentType={convertToCapitalizedString(value.job_type)}
                 salary={`${addPrefix(value.salary_min)} - ${addPrefix(
                   value.salary_max
                 )}  `}
