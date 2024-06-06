@@ -43,11 +43,11 @@ export function RenderBlogCard({
       <p className=" flex  items-center justify-center gap-4 px-3 py-1 text-primary bg-white rounded-[24px] w-fit  capitalize font-AntarcticanMonoSemiBold text-[clamp(12px,1.1vw,16px)] ">
         {" "}
         {tag}{" "}
-        {
+        {icon && (
           <span className=" relative size-5">
             <Image src={icon} fill className="object-cover " />
           </span>
-        }{" "}
+        )}{" "}
       </p>
       <h3 className="font-[lust-text] text-[clamp(16px,4vw,24px)]">{title}</h3>
       <div className="flex-1 flex items-end">

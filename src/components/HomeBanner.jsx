@@ -39,7 +39,7 @@ export default async function HomeBanner() {
         <MaxWidthWrapper className={" absolute lg:relative max-w-[1473px]  "}>
           <div className="lg:absolute z-10  w-full sm:max-w-[clamp(200px,70vw,1026px)] lg:max-w-[clamp(200px,45vw,1026px)] font-[lust-text] leading-[clamp(18px,12vw,110px)] text-[clamp(18px,12vw,110px)] sm:leading-[clamp(18px,8vw,110px)] sm:text-[clamp(18px,8vw,110px)]  lg:text-[clamp(18px,5vw,110px)] lg:leading-[clamp(18px,5vw,110px)] lg:-translate-x-[20%] lg:left-[20%]  mt-[120px] lg:mt-[15%] ">
             {" "}
-            Conneting <span className="text-[#9E76E9]">great minds</span>,
+            Connecting <span className="text-[#9E76E9]">great minds</span>,
             igniting success
           </div>
           <div className="md:absolute  w-full md:max-w-[clamp(100px,45vw,496px)] z-10 right-5 mx-auto mt-10 lg:mt-[clamp(32%,22vmax,540px)]">
