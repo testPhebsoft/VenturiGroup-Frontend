@@ -7,8 +7,19 @@ import HorizenatalLine from "./horizentalLine";
 import { Socials } from "./Socials";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { getLocation } from "@/lib/actions";
+import { getCodeServer } from "@/lib/serverUtils/getCode";
+import { getLocationsByCode } from "@/actions/Getdata";
 
-export default function HomeBanner() {
+export default async function HomeBanner() {
+  let res;
+  try {
+    res = await getLocationsByCode();
+    console.log("DATA");
+    console.log(res);
+  } catch (error) {
+    console.log(error);
+  }
   return (
     <div className="">
       <div className=" w-[99.19vw] after:bg-[linear-gradient(180deg,rgba(245,245,245,0)0%,#F5F5F5)] after:absolute after:z-[-1]   max-sm:h-[clamp(745px,60vmax,1335px)]  max-sm:after:h-[clamp(745px,60vmax,1335px)] h-[clamp(850px,60vmax,1335px)] lg:aspect-video after:h-[clamp(850px,60vmax,1335px)]  after:top-0  after:w-[99.19vw]">
@@ -18,12 +29,17 @@ export default function HomeBanner() {
           muted
           autoPlay
         >
-          <source src="https://venturi.gitwork.tech/storage/videos/-e78b-4017-9db2-5f993aaf3743.mp4" />
+          <source
+            src={
+              (res && res.data && res.data.video.original_url) ||
+              "https://venturi.gitwork.tech/storage/videos/-e78b-4017-9db2-5f993aaf3743.mp4"
+            }
+          />
         </video>
         <MaxWidthWrapper className={" absolute lg:relative max-w-[1473px]  "}>
           <div className="lg:absolute z-10  w-full sm:max-w-[clamp(200px,70vw,1026px)] lg:max-w-[clamp(200px,45vw,1026px)] font-[lust-text] leading-[clamp(18px,12vw,110px)] text-[clamp(18px,12vw,110px)] sm:leading-[clamp(18px,8vw,110px)] sm:text-[clamp(18px,8vw,110px)]  lg:text-[clamp(18px,5vw,110px)] lg:leading-[clamp(18px,5vw,110px)] lg:-translate-x-[20%] lg:left-[20%]  mt-[120px] lg:mt-[15%] ">
             {" "}
-            Conneting <span className="text-[#9E76E9]">great minds</span>,
+            Connecting <span className="text-[#9E76E9]">great minds</span>,
             igniting success
           </div>
           <div className="md:absolute  w-full md:max-w-[clamp(100px,45vw,496px)] z-10 right-5 mx-auto mt-10 lg:mt-[clamp(32%,22vmax,540px)]">

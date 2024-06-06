@@ -33,6 +33,7 @@ async function Renderer({ params, page = 1 }) {
   try {
     blogs = await getCategoriesBlog({ slug: category, page: page });
     blogs = blogs.data;
+    console.log(blogs, "blogs");
   } catch (e) {
     console.log(e);
   }

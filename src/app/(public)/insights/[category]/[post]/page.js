@@ -162,7 +162,7 @@ export default async function Page({ params }) {
                 key={index}
                 imagesrc={post.image.url}
                 tag={post.category.name}
-                icon={post.category.icon.url}
+                icon={post.category.icon && post.category?.icon?.url}
                 title={post.title}
                 btntext={post.category.slug !== "podcasts" && "Read"}
                 btnicon={
