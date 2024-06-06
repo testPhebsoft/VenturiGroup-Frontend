@@ -18,7 +18,7 @@ export function Languages({ data, className }) {
     const includedLanguages = data
       .map((lang) => lang.code.toLowerCase())
       .join(",");
-
+    console.log(includedLanguages);
     function googleTranslateElementInit() {
       new window.google.translate.TranslateElement(
         {
@@ -33,12 +33,12 @@ export function Languages({ data, className }) {
   }, []);
 
   const onChange = (value) => {
-    // console.log("i rand=");
-    // const lang = "/en/" + value;
-    // // setLangCookie(lang);
-    // const element = document.querySelector(".goog-te-combo");
-    // element.value = value;
-    // element.dispatchEvent(new Event("change"));
+    console.log("i rand=");
+    const lang = "/en/" + value;
+    // setLangCookie(lang);
+    const element = document.querySelector(".goog-te-combo");
+    element.value = value;
+    element.dispatchEvent(new Event("change"));
   };
   if (data) {
     FlagList = data;
