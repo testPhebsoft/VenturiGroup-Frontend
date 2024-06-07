@@ -207,7 +207,7 @@ const JobCard = ({
                 </h3>
                 <p
                   dangerouslySetInnerHTML={{ __html: description1 }}
-                  className="text-[#8B8B8B]"
+                  className="text-[#8B8B8B] ck-content"
                 ></p>
               </div>
               <div>
@@ -216,7 +216,7 @@ const JobCard = ({
                 </h3>
                 <p
                   dangerouslySetInnerHTML={{ __html: description2 }}
-                  className="text-[#8B8B8B]"
+                  className="text-[#8B8B8B] ck-content"
                 ></p>
               </div>
               <Button className="uppercase flex  w-fit justify-center items-center h-10 gap-6">
