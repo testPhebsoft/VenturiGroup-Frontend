@@ -31,7 +31,7 @@ export default function AboutBanner() {
                   Our <br />
                   <span className="text-primary"> Story </span>
                 </h1>
-                <div className="w-fit  max-lg:mt-10 ml-auto">
+                <div className="w-fit  max-lg:mt-10 ml-auto max-sm:mr-10 mr-20">
                   <h3 className="uppercase font-semibold text-[16px] font-AntarcticanMonoSemiBold">
                     About Venturi
                   </h3>
