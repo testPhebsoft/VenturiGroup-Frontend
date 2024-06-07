@@ -157,26 +157,30 @@ const RenderCard = ({
             <div className="flex flex-1 flex-col  gap-5">
               <div className="mt-auto max-lg:mt-10">
                 <div className={cn("flex gap-5  self-baseline items-center  ")}>
-                  <a href={instaLink || "#"} target="_blank" tabIndex={1}>
-                    <div className="relative before:absolute before:block before:rounded-full before:size-8 before:-inset-[6px] before:bottom-[50%] size-5   before:bg-[#1A1B1D1A]  ">
-                      <Image
-                        alt="Linkedin"
-                        height={20}
-                        width={20}
-                        src="/LinkedIn.svg"
-                      />
-                    </div>
-                  </a>
-                  <a href={linkdinLink || "#"} target="_blank" tabIndex={1}>
-                    <div className="relative before:absolute before:block before:rounded-full before:size-8 before:-inset-[6px] before:bottom-[50%] size-5   before:bg-[#1A1B1D1A]  ">
-                      <Image
-                        className="  "
-                        alt="Instagram"
-                        fill
-                        src="/instagram.svg"
-                      />
-                    </div>
-                  </a>
+                  {instaLink && (
+                    <a href={instaLink || "#"} target="_blank" tabIndex={1}>
+                      <div className="relative before:absolute before:block before:rounded-full before:size-8 before:-inset-[6px] before:bottom-[50%] size-5   before:bg-[#1A1B1D1A]  ">
+                        <Image
+                          alt="Linkedin"
+                          height={20}
+                          width={20}
+                          src="/LinkedIn.svg"
+                        />
+                      </div>
+                    </a>
+                  )}
+                  {linkdinLink && (
+                    <a href={linkdinLink || "#"} target="_blank" tabIndex={1}>
+                      <div className="relative before:absolute before:block before:rounded-full before:size-8 before:-inset-[6px] before:bottom-[50%] size-5   before:bg-[#1A1B1D1A]  ">
+                        <Image
+                          className="  "
+                          alt="Instagram"
+                          fill
+                          src="/instagram.svg"
+                        />
+                      </div>
+                    </a>
+                  )}
                 </div>
                 <div className="flex mt-10 flex-wrap  gap-3 -ml-2 ">
                   {tags &&
