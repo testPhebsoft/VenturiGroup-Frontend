@@ -87,6 +87,16 @@ export default function TrendingJobs({ label = "Trending Jobs", data }) {
                     curancySymbol={
                       currencySymbols[value.location && value.location.code]
                     }
+                    locationBase={
+                      (value.location_base &&
+                        convertToCapitalizedString(value.location_base)) ||
+                      ""
+                    }
+                    jobContract={
+                      (value.job_contract &&
+                        convertToCapitalizedString(value.job_contract)) ||
+                      ""
+                    }
                   />
                 )}{" "}
               </>
@@ -115,6 +125,9 @@ const JobCard = ({
   backgroundImage = "",
   curancySymbol = "€",
   city = "Dusseldorf",
+  jobContract,
+  locationBase,
+
   ...props
 }) => {
   const [open, setOpen] = useState(false);
@@ -146,14 +159,18 @@ const JobCard = ({
             {title}
           </h3>
           <p className="uppercase text-[clamp(12px,1.29vw,16px)]">{company}</p>
-          <p className=" mt-5 text-[clamp(18px,1.95vw,24px)]  font-[lust-text] font-light">
-            {employmentType}
-          </p>
           <p className=" mt-5 text-[clamp(12px,1.29vw,16px)]">
             {curancySymbol}
             {salary}
           </p>
           <p className="text-[clamp(12px,1.29vw,16px)]">{salaryType}</p>
+
+          <p className=" mt-5 text-[clamp(18px,1.95vw,24px)]  font-[lust-text] font-light">
+            {employmentType}
+          </p>
+          <p className=" mt-5 text-[clamp(18px,1.95vw,24px)]  font-[lust-text] font-light">
+            {locationBase}
+          </p>
           <p className=" mt-5 text-[clamp(12px,1.29vw,16px)]">
             {city + ", " + location}
           </p>
@@ -195,10 +212,10 @@ const JobCard = ({
               {renderProperties("LOCATION", city + ", " + location)}
               {renderProperties(
                 "SALARY",
-                `${curancySymbol}${salary} per ${salaryType.toLocaleLowerCase()} Dependent on experience`
+                `${curancySymbol}${salary}  ${salaryType.toLocaleLowerCase()} Dependent on experience`
               )}
-              {/* {renderProperties("to start", toStart)}
-              {renderProperties("apply by", toApply)} */}
+              {renderProperties("Job contract", jobContract)}
+              {renderProperties("Work style", locationBase)}
             </div>
             <div className=" flex flex-col gap-8 w-full max-w-[629px]">
               <div className=" flex flex-col gap-8 w-full ">
