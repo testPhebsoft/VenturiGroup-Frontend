@@ -47,12 +47,14 @@ export default function InitStoreFunctions() {
       }
 
       const script = document.createElement("script");
+      script.id = "google_translateScript";
       script.type = "text/javascript";
       script.src =
         "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
       script.setAttribute("strategy", "afterInteractive");
-      // console.log(script);
-      document.head.appendChild(script);
+      if (!document.querySelectorAll("#google_translateScript")) {
+        document.head.appendChild(script);
+      }
 
       window.googleTranslateElementInit = googleTranslateElementInit;
     };

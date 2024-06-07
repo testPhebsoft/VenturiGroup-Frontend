@@ -77,7 +77,7 @@ const JobCard = ({
   salary = "45 - 55,000",
   buttonText = "quick apply",
   heading1 = "job description",
-  heading2 = "job description",
+  heading2 = "job Requirements ",
   description2 = "Lorem ipsum dolor sit amet consectetur. Velit lectus fringilla iaculis velit consequat. Ut sed ac mi eget ultricies nulla. Pretium etiam sed nulla quam nulla. Cras velit tincidunt adipiscing orci varius quam ridiculus.",
   description1 = "Lorem ipsum dolor sit amet consectetur. Velit lectus fringilla iaculis velit consequat. Ut sed ac mi eget ultricies nulla. Pretium etiam sed nulla quam nulla. Cras velit tincidunt adipiscing orci varius quam ridiculus.",
   salaryType = "per annum",
@@ -122,7 +122,10 @@ const JobCard = ({
           <p className="text-[clamp(12px,1.29vw,16px)]">{salaryType}</p>
         </div>
         <div className=" flex-1 flex flex-col justify-end">
-          <p className="uppercase text-[clamp(12px,1.29vw,16px)] text-white font-AntarcticanMonoMedium">
+          <p
+            onClick={() => setOpen(true)}
+            className="uppercase cursor-pointer text-[clamp(12px,1.29vw,16px)] text-white font-AntarcticanMonoMedium"
+          >
             more info +
           </p>
           <Button
@@ -184,22 +187,24 @@ const JobCard = ({
                   {" "}
                   quick apply
                 </p>{" "}
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M2.10331 3.99983C3.15174 3.99983 4.00166 3.14991 4.00166 2.10148C4.00166 1.05305 3.15174 0.203125 2.10331 0.203125C1.05488 0.203125 0.204956 1.05305 0.204956 2.10148C0.204956 3.14991 1.05488 3.99983 2.10331 3.99983Z"
-                    fill="white"
-                  />
-                  <path
-                    d="M5.79413 5.43802V15.9701H9.06419V10.7617C9.06419 9.38743 9.32274 8.0565 11.0267 8.0565C12.7073 8.0565 12.7282 9.62776 12.7282 10.8485V15.9709H15.9999V10.1952C15.9999 7.35806 15.3891 5.17773 12.0731 5.17773C10.481 5.17773 9.41384 6.05143 8.97743 6.87827H8.93318V5.43802H5.79413ZM0.46521 5.43802H3.74048V15.9701H0.46521V5.43802Z"
-                    fill="white"
-                  />
-                </svg>
+                {false && (
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M2.10331 3.99983C3.15174 3.99983 4.00166 3.14991 4.00166 2.10148C4.00166 1.05305 3.15174 0.203125 2.10331 0.203125C1.05488 0.203125 0.204956 1.05305 0.204956 2.10148C0.204956 3.14991 1.05488 3.99983 2.10331 3.99983Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M5.79413 5.43802V15.9701H9.06419V10.7617C9.06419 9.38743 9.32274 8.0565 11.0267 8.0565C12.7073 8.0565 12.7282 9.62776 12.7282 10.8485V15.9709H15.9999V10.1952C15.9999 7.35806 15.3891 5.17773 12.0731 5.17773C10.481 5.17773 9.41384 6.05143 8.97743 6.87827H8.93318V5.43802H5.79413ZM0.46521 5.43802H3.74048V15.9701H0.46521V5.43802Z"
+                      fill="white"
+                    />
+                  </svg>
+                )}
               </Button>
             </div>
           </div>
