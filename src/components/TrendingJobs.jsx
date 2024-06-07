@@ -197,8 +197,8 @@ const JobCard = ({
                 "SALARY",
                 `${curancySymbol}${salary} per ${salaryType.toLocaleLowerCase()} Dependent on experience`
               )}
-              {renderProperties("to start", toStart)}
-              {renderProperties("apply by", toApply)}
+              {/* {renderProperties("to start", toStart)}
+              {renderProperties("apply by", toApply)} */}
             </div>
             <div className=" flex flex-col gap-8 w-full max-w-[629px]">
               <div className=" flex flex-col gap-8 w-full ">
