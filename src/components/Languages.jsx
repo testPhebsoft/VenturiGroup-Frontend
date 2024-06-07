@@ -39,12 +39,10 @@ export function Languages({ data, className }) {
     const element = document.querySelectorAll(".goog-te-combo");
     // console.log(element);
 
-    element[0].value = value;
-    element[1].value = value;
-
-    // console.log(value);
-    element[0].dispatchEvent(new Event("change"));
-    element[1].dispatchEvent(new Event("change"));
+    [...element].forEach((el, index) => {
+      el.value = value;
+      el.dispatchEvent(new Event("change"));
+    });
 
     // console.log();
   };
