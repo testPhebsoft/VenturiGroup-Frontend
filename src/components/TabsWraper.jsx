@@ -1,10 +1,10 @@
-import { getTabs } from "@/actions/Getdata";
+import { getTabsLocation } from "@/actions/Getdata";
 import CompanyCulture from "./CompanyCulture";
 
 export default async function TabsWrapper() {
   let res;
   try {
-    res = await getTabs();
+    res = await getTabsLocation();
     res = res.data;
     // console.log("res", res);
   } catch (error) {}

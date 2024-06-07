@@ -147,10 +147,11 @@ export async function getTeamMembersByLocations() {
     console.log("error at getTeamMembersByLocations", e);
   }
 }
-export async function getTabs() {
+export async function getTabsLocation() {
+  const code = await getCodeServer();
   let config = {
-    url: `${serverUrl}/tabs`,
-    next: { revalidate: revalidate, tags: ["all", "tabs"] },
+    url: `${serverUrl}/tabs?location=${code}`,
+    next: { revalidate: revalidate, tags: ["all", `/tabs?location=${code}`] },
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json",
@@ -160,7 +161,7 @@ export async function getTabs() {
     let response = await fetchDataFromApi(config);
     return response;
   } catch (e) {
-    console.log("error at getTabs", e);
+    console.log("error at getTabsLocation", e);
   }
 }
 
