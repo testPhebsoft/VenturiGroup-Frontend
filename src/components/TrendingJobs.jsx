@@ -83,7 +83,7 @@ export default function TrendingJobs({ label = "Trending Jobs", data }) {
                         : ""
                     }
                     key={index}
-                    city={value.city && value.city.name}
+                    city={(value.city && value.city.name) || ""}
                     curancySymbol={
                       currencySymbols[value.location && value.location.code]
                     }
@@ -114,6 +114,7 @@ const JobCard = ({
   location = "Dusseldorf, Germany",
   backgroundImage = "",
   curancySymbol = "€",
+  city = "Dusseldorf",
   ...props
 }) => {
   const [open, setOpen] = useState(false);
@@ -153,6 +154,9 @@ const JobCard = ({
             {salary}
           </p>
           <p className="text-[clamp(12px,1.29vw,16px)]">{salaryType}</p>
+          <p className=" mt-5 text-[clamp(12px,1.29vw,16px)]">
+            {city + ", " + location}
+          </p>
         </div>
         <div className=" flex-1 flex flex-col justify-end">
           <p
@@ -188,7 +192,7 @@ const JobCard = ({
             <div className=" flex flex-col w-full gap-5 ">
               {renderProperties("company", company)}
 
-              {renderProperties("LOCATION", location)}
+              {renderProperties("LOCATION", city + ", " + location)}
               {renderProperties(
                 "SALARY",
                 `${curancySymbol}${salary} per ${salaryType.toLocaleLowerCase()} Dependent on experience`
