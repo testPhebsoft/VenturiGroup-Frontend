@@ -21,6 +21,14 @@ export default function TrendingJobs({ label = "Trending Jobs", data }) {
     style,
   } = useTranslatexDraggable();
 
+  const [open, setOpen] = useState(false);
+  const currencySymbols = {
+    GB: "£", // United Kingdom
+    DE: "€", // Germany
+    NL: "€", // Netherlands
+    US: "$", // United States
+  };
+
   return (
     <div className=" bg-background py-10 ">
       <MaxWidthWrapper>
@@ -46,22 +54,42 @@ export default function TrendingJobs({ label = "Trending Jobs", data }) {
             className="flex w-fit gap-1"
           >
             {data.map((value, index) => (
-              <JobCard
-                title={value.title}
-                company={value.company.company_name}
-                salaryType={convertToCapitalizedString(value.salary_type)}
-                employmentType={convertToCapitalizedString(value.job_type)}
-                salary={`${addPrefix(value.salary_min)} - ${addPrefix(
-                  value.salary_max
-                )}  `}
-                description2={value.job_description}
-                description1={value.job_requirement}
-                toStart={value.to_start}
-                toApply={value.apply_at}
-                location={value.location.name}
-                backgroundImage={value.location.image.url}
-                key={index}
-              />
+              <>
+                {value && (
+                  <JobCard
+                    title={value.title}
+                    company={value.company && value.company.company_name}
+                    salaryType={
+                      value.salary_type &&
+                      convertToCapitalizedString(value.salary_type)
+                    }
+                    employmentType={
+                      value.job_type &&
+                      convertToCapitalizedString(value.job_type)
+                    }
+                    salary={`${
+                      value.salary_min ? addPrefix(value.salary_min) : ""
+                    } - ${
+                      value.salary_max ? addPrefix(value.salary_max) : ""
+                    } `}
+                    description2={value?.job_description || ""}
+                    description1={value?.job_requirement || ""}
+                    toStart={value?.to_start || ""}
+                    toApply={value?.apply_at || ""}
+                    location={value?.location?.name || ""}
+                    backgroundImage={
+                      value.location && value.location.image
+                        ? value.location.image.url
+                        : ""
+                    }
+                    key={index}
+                    city={value.city && value.city.name}
+                    curancySymbol={
+                      currencySymbols[value.location && value.location.code]
+                    }
+                  />
+                )}{" "}
+              </>
             ))}
           </div>
         </div>
@@ -85,6 +113,7 @@ const JobCard = ({
   toApply = "21 Apr 2024",
   location = "Dusseldorf, Germany",
   backgroundImage = "",
+  curancySymbol = "€",
   ...props
 }) => {
   const [open, setOpen] = useState(false);
@@ -101,6 +130,7 @@ const JobCard = ({
       </div>
     );
   }
+
   return (
     <div
       style={{
@@ -118,7 +148,10 @@ const JobCard = ({
           <p className=" mt-5 text-[clamp(18px,1.95vw,24px)]  font-[lust-text] font-light">
             {employmentType}
           </p>
-          <p className=" mt-5 text-[clamp(12px,1.29vw,16px)]">€{salary}</p>
+          <p className=" mt-5 text-[clamp(12px,1.29vw,16px)]">
+            {curancySymbol}
+            {salary}
+          </p>
           <p className="text-[clamp(12px,1.29vw,16px)]">{salaryType}</p>
         </div>
         <div className=" flex-1 flex flex-col justify-end">
@@ -158,7 +191,7 @@ const JobCard = ({
               {renderProperties("LOCATION", location)}
               {renderProperties(
                 "SALARY",
-                `€${salary} per ${salaryType.toLocaleLowerCase()} Dependent on experience`
+                `${curancySymbol}${salary} per ${salaryType.toLocaleLowerCase()} Dependent on experience`
               )}
               {renderProperties("to start", toStart)}
               {renderProperties("apply by", toApply)}
