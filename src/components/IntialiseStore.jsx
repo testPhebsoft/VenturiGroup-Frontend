@@ -32,9 +32,15 @@ export default function InitStoreFunctions() {
       let data = await getLocations();
 
       const selectedLanguage = await getLangCode();
-      const includedLanguages = data.data
-        .map((lang) => lang.code.toLowerCase())
-        .join(",");
+      let includedLanguages;
+      try {
+        includedLanguages = data.data
+          .map((lang) => lang.code.toLowerCase())
+          .join(",");
+      } catch (error) {
+        console.error("Error while handling data.data:", error);
+        includedLanguages = "de,en,nl";
+      }
 
       function googleTranslateElementInit() {
         new window.google.translate.TranslateElement(
