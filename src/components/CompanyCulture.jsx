@@ -15,7 +15,6 @@ import React from "react";
 export default function CompanyCulture({ data }) {
   const isDesktop = useMediaQuery("(min-width: 768px)");
 
-  console.log("isDesktop", isDesktop);
   if (isDesktop) {
     return (
       <MaxWidthWrapper className={"py-10"}>

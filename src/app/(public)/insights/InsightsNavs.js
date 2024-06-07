@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 
 export function InsightsNavs({ categories }) {
   const pathName = usePathname();
-  console.log(pathName, pathName.split("/"));
   if (pathName.split("/").length == 2 || pathName.split("/").length == 3)
     return (
       <>

@@ -5,7 +5,7 @@ import { getCode } from "@/lib/serverUtils/getCode";
 const revalidate = 4;
 export async function setCookies(cookiesName, value, numberOfDays = 1) {
   const oneDay = 24 * 60 * 60 * 1000;
-  console.log(value);
+  // console.log(value);
   cookies().set({
     name: cookiesName,
     value,

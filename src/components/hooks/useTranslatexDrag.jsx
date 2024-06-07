@@ -14,10 +14,10 @@ const useTranslatexDraggable = (fixSnapWidth) => {
       var newX = e.pageX - startX;
       var rightX;
       var firstchildWidth = componentRef.current.firstChild.offsetWidth;
-      console.log(
-        componentRef.current.offsetWidth,
-        parentRef.current.offsetWidth
-      );
+      // console.log(
+      //   componentRef.current.offsetWidth,
+      //   parentRef.current.offsetWidth
+      // );
 
       if (!fixSnapWidth) {
         if (componentRef.current) {
@@ -31,11 +31,11 @@ const useTranslatexDraggable = (fixSnapWidth) => {
           var gap = componentRef.current.offsetWidth - childLength;
           gap = gap / componentRef.current.children.length;
           var childWidth = componentRef.current.firstChild.offsetWidth + gap;
-          console.log(
-            gap,
-            componentRef.current.offsetWidth,
-            parentRef.current.offsetWidth
-          );
+          // console.log(
+          //   gap,
+          //   componentRef.current.offsetWidth,
+          //   parentRef.current.offsetWidth
+          // );
         }
         console.log("not fixsna");
       } else {

@@ -6,7 +6,7 @@ export default async function TabsWrapper() {
   try {
     res = await getTabs();
     res = res.data;
-    console.log("res", res);
+    // console.log("res", res);
   } catch (error) {}
 
   return res && res.length !== 0 && <CompanyCulture data={res} />;

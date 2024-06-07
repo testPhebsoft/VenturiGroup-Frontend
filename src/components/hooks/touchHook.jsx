@@ -26,7 +26,7 @@ function useTouchHandler() {
         changedTouches: [touch],
       })
     );
-    console.log(touch);
+    // console.log(touch);
   };
 
   useEffect(() => {

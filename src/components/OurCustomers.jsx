@@ -19,7 +19,7 @@ export default async function OurCustomers({ type = "client" }) {
     res = await getTestimonials();
     data = res.data;
     data = data.filter((item) => item.type == type);
-    console.log(data.length);
+    // console.log(data.length);
   } catch (e) {
     console.log(e);
   }

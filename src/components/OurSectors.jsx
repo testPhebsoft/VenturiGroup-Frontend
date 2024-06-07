@@ -28,7 +28,7 @@ export default function OurSector() {
               {number}{" "}
             </p>
             <div className="w-full flex justify-between   text-[clamp(24px,5vw,36px)] font-[lust-text]">
-              <p className="w-full self-end  whitespace-normal max-w-[169px]">
+              <p className="w-full text-wrap  break-words self-end  whitespace-normal max-w-[220px]">
                 {heading || "Data & Analytics"}
               </p>
               <DialogTrigger className="">

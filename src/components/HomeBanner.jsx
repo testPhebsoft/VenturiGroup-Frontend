@@ -15,8 +15,8 @@ export default async function HomeBanner() {
   let res;
   try {
     res = await getLocationsByCode();
-    console.log("DATA");
-    console.log(res);
+    // console.log("DATA");
+    // console.log(res);
   } catch (error) {
     console.log(error);
   }
@@ -31,7 +31,10 @@ export default async function HomeBanner() {
         >
           <source
             src={
-              (res && res.data && res.data.video.original_url) ||
+              (res &&
+                res.data &&
+                res.data.video &&
+                res.data.video.original_url) ||
               "https://venturi.gitwork.tech/storage/videos/-e78b-4017-9db2-5f993aaf3743.mp4"
             }
           />

@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/pagination";
 import Link from "next/link";
 export function RenderBlogs({ blogs, CategoryBlogs, currentCategoryPath }) {
-  console.log(blogs, "blogs");
+  // console.log(blogs, "blogs");
   return (
     <div className="w-full mt-10">
       <MaxWidthWrapper className=" grid gap-x-3 gap-y-20 grid-cols-2 lg:grid-cols-3 ">

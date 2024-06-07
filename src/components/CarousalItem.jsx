@@ -59,7 +59,11 @@ export default function CarousalItem({ index, item }) {
         <Image
           className="rounded-[18px] select-none pointer-events-none"
           fill
-          src={item.image.original_url}
+          src={
+            item && item.image && item.image.original_url
+              ? item.image.original_url
+              : ""
+          }
           alt={`Carousel item ${index}`}
         />
         <div className="top-[15px] absolute w-[55px] object-cover text-black"></div>

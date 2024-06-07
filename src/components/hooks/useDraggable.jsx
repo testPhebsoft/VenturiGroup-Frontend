@@ -11,7 +11,7 @@ const useDraggable = () => {
       console.log(e);
       const startX = e.pageX - position.x;
       const startY = e.pageY - position.y;
-      console.log(startX, startY);
+      // console.log(startX, startY);
       const handleMouseMove = (e) => {
         e.preventDefault();
         setPosition({

@@ -20,6 +20,7 @@ export default function TrendingJobs({ label = "Trending Jobs", data }) {
     parentRef,
     style,
   } = useTranslatexDraggable();
+
   return (
     <div className=" bg-background py-10 ">
       <MaxWidthWrapper>

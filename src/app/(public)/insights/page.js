@@ -24,7 +24,6 @@ async function Renderer({ page = 1 }) {
 
   try {
     blogs = await getCategoriesBlogAll({ page: page, per_page: 6 });
-    console.log("Here");
   } catch (e) {
     return (
       <div className=" h-[50vh] flex items-center justify-center ">
@@ -32,7 +31,6 @@ async function Renderer({ page = 1 }) {
       </div>
     );
   }
-  // console.log(blogs);
 
   if (blogs && blogs.data.length == 0) {
     return (

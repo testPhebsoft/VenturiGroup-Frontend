@@ -22,18 +22,17 @@ async function Renderer({ params, page = 1 }) {
   try {
     categories = await getCategories();
     categories = categories.data;
-    console.log("categories", categories);
   } catch (e) {}
   let currentCategory = categories.filter((data) => data.slug == category);
   if (currentCategory.length == 0) {
     return notFound();
   }
   currentCategory = currentCategory[0];
-  console.log(currentCategory, "currentCategory");
+  // console.log(currentCategory, "currentCategory");
   try {
     blogs = await getCategoriesBlog({ slug: category, page: page });
     blogs = blogs.data;
-    console.log(blogs, "blogs");
+    // console.log(blogs, "blogs");
   } catch (e) {
     console.log(e);
   }

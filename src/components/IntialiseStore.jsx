@@ -51,7 +51,7 @@ export default function InitStoreFunctions() {
       script.src =
         "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
       script.setAttribute("strategy", "afterInteractive");
-      console.log(script);
+      // console.log(script);
       document.head.appendChild(script);
 
       window.googleTranslateElementInit = googleTranslateElementInit;

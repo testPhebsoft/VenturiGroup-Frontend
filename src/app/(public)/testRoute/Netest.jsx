@@ -60,14 +60,13 @@ export function CustumCarousal({ data }) {
       threshold: 0.99999,
       // Any part of the target coming into view triggers the callback
     };
-    console.log("I am running");
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        console.log(
-          entry
-          // entry.boundingClientRect.left,
-          // entry.rootBounds.left
-        );
+        // console.log(
+        //   entry
+        //   // entry.boundingClientRect.left,
+        //   // entry.rootBounds.left
+        // );
 
         if (entry.boundingClientRect.left >= 50) {
           setIsOutsideViewport(false);

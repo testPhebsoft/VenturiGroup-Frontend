@@ -59,7 +59,7 @@ function useClickToTouch() {
         changedTouches: [touch],
         targetTouches: [touch],
       });
-      console.log(te);
+      // console.log(te);
       e.target.dispatchEvent(te);
     };
 

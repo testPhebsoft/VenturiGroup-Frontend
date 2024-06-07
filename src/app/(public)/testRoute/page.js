@@ -53,7 +53,7 @@ export default async function Page() {
   ];
 
   let res = await getCategoriesBlog({ slug: "blogs" });
-  console.log(res);
+  // console.log(res);
   // let res = await getLocationsByCode();
   // console.log(res);
   // try {

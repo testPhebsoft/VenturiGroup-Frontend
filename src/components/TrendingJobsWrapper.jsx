@@ -13,9 +13,9 @@ export default async function TrendingJobsWrapper({ isInternal, label }) {
         ...job,
         company: { company_name: job.company_name },
       }));
-      console.log(res);
+      // console.log(res);
     }
-    console.log(res);
+    // console.log(res);
     res = res.data;
   } catch (error) {}
   return (
