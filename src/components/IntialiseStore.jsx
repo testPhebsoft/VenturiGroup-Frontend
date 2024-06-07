@@ -35,12 +35,20 @@ export default function InitStoreFunctions() {
       let includedLanguages;
       try {
         includedLanguages = data.data
-          .map((lang) => lang.code.toLowerCase())
+          .map((lang) =>
+            lang.code == "US"
+              ? "en"
+              : lang.code == "GB"
+              ? "en-GB"
+              : lang.code.toLowerCase()
+          )
           .join(",");
+        console.log(includedLanguages);
       } catch (error) {
         console.error("Error while handling data.data:", error);
-        includedLanguages = "de,en,nl";
       }
+
+      // includedLanguages = "de,en,nl,en-gb";
 
       function googleTranslateElementInit() {
         new window.google.translate.TranslateElement(

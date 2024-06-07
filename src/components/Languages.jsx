@@ -33,18 +33,12 @@ export function Languages({ data, className }) {
   // }, []);
 
   const onChange = (value) => {
-    // console.log("i rand=");
-    // const lang = "/en/" + value;
-    // setLangCookie(lang);
     const element = document.querySelectorAll(".goog-te-combo");
-    // console.log(element);
 
     [...element].forEach((el, index) => {
-      el.value = value;
+      el.value = value == "us" ? "en" : value == "gb" ? "en" : value;
       el.dispatchEvent(new Event("change"));
     });
-
-    // console.log();
   };
   if (data) {
     FlagList = data;
