@@ -26,7 +26,7 @@ export default async function OurCustomers({ type = "client" }) {
 
   return (
     <>
-      {data && (
+      {data && data.length > 0 && (
         <div className="bg-background py-[50px]">
           <MaxWidthWrapper className={""}>
             <CustumCarousal type={type} data={data && data} />
