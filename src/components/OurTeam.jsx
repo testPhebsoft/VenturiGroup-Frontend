@@ -42,16 +42,16 @@ export default function OurTeam({
         className="  relative   overflow-hidden  mt-10 px-5  sm:px-0 "
       >
         <div style={style} ref={ref} className="flex w-max gap-5">
-          {data.map((item) => (
+          {data.map((item, index) => (
             <RenderCard
-              key={item.user.name}
-              imagesrc={item.image && item.image.url}
+              key={index}
+              imagesrc={item.image ? item.image.url : ""}
               jobTitle={item.job_title}
-              name={item.user.name}
-              details={item.description}
-              tags={item.tags && item.tags}
-              instaLink={item.instagram_link}
-              linkdinLink={item.linkedin_link}
+              name={item.user?.name ?? ""}
+              details={item.description ?? ""}
+              tags={item.tags ? item.tags : ""}
+              instaLink={item.instagram_link ? item.instagram_link : ""}
+              linkdinLink={item.linkedin_link ? item.linkedin_link : ""}
             />
           ))}
         </div>
