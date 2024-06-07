@@ -72,8 +72,8 @@ export default function TrendingJobs({ label = "Trending Jobs", data }) {
                     } - ${
                       value.salary_max ? addPrefix(value.salary_max) : ""
                     } `}
-                    description2={value?.job_description || ""}
-                    description1={value?.job_requirement || ""}
+                    description1={value?.job_description || ""}
+                    description2={value?.job_requirement || ""}
                     toStart={value?.to_start || ""}
                     toApply={value?.apply_at || ""}
                     location={value?.location?.name || ""}
