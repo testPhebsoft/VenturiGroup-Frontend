@@ -68,6 +68,10 @@
   color: var(--primary);
 }
 
+body {
+  top: 0px !important;
+}
+
 .Posts h3 {
   width: 100%;
   font-family: "lust-text";
@@ -76,6 +80,9 @@
 }
 .skiptranslate {
   display: none;
+}
+.VIpgJd-ZVi9od-ORHb {
+  background-color: transparent !important;
 }
 .Posts h2 {
   margin-top: 10px;
