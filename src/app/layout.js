@@ -34,7 +34,7 @@ import {
   AntarcticanMonoSemiBoldItalic,
 } from "@/fonts/AntarcticanMono";
 import InitStoreFunctions from "@/components/IntialiseStore";
-import Head from "next/head";
+import GoogleTranslate from "@/components/GoogleTranslate";
 
 export const metadata = {
   title: "Venturi Group",
@@ -44,7 +44,6 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <Head></Head>
       <body
         className={cn(
           "text-[#1A1B1D] overflow-x-hidden  bg-background",
@@ -57,6 +56,7 @@ export default function RootLayout({ children }) {
         </div>
 
         <InitStoreFunctions />
+        <GoogleTranslate />
         {children}
       </body>
     </html>

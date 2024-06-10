@@ -12,7 +12,7 @@ export function Locations({ className, data = ["UK", "US", "DE", "NL"] }) {
     (state) => state.setSelectedLocationCode
   );
   return (
-    <div className={cn(" flex gap-2 items-center", className)}>
+    <div className={cn("notranslate flex gap-2 items-center", className)}>
       {data.map((item, index) => (
         <div
           key={index}
