@@ -41,12 +41,14 @@ export const getLangCode = async () => {
   if (code == "GB") {
     console.log("Hereeeeeeeeeeeeee");
     setCookies("selectedLangLocationCode", "en");
+    setCookies("googtrans", "/en/en");
   }
   if (code) {
     code = code.value;
   } else {
     code = "en";
     setCookies("selectedLangLocationCode", "en");
+    setCookies("googtrans", "/en/en");
   }
 
   return code;

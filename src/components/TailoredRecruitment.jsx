@@ -1,6 +1,7 @@
 import Image from "next/image";
 import MaxWidthWrapper from "./MaxWidthWraper";
 import { Button } from "./ui/button";
+import Link from "next/link";
 
 export default function TailoredRecuritment() {
   return (
@@ -41,7 +42,10 @@ export default function TailoredRecuritment() {
             us. We can tailor our support around your needs, ambitions and
             timeframes – whatever the work requires.
           </p>
-          <Button className="w-fit">get in touch +</Button>
+          <Link href={"/contact"}>
+            {" "}
+            <Button className="w-fit uppercase">get in touch +</Button>{" "}
+          </Link>
         </div>
       </MaxWidthWrapper>{" "}
     </div>

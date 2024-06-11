@@ -7,7 +7,7 @@ export const useLanguageStore = create((set) => ({
   setSelectedLangLocationCode: (incomingLocationCode) => {
     set((state) => {
       setCookies("selectedLangLocationCode", incomingLocationCode);
-
+      setCookies("googtrans", `/en/${incomingLocationCode}`);
       return { selectedLangLocationCode: incomingLocationCode };
     });
   },

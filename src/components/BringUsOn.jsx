@@ -1,6 +1,7 @@
 import Image from "next/image";
 import MaxWidthWrapper from "./MaxWidthWraper";
 import { Button } from "./ui/button";
+import Link from "next/link";
 
 export default function BringUsOn() {
   return (
@@ -17,7 +18,10 @@ export default function BringUsOn() {
             backgrounds. Disruptors looking for a new challenge. We&apos;ll help
             you uncover incredible talent, whatever your hiring plans.
           </p>
-          <Button className="uppercase mt-10">make it happen + </Button>
+          <Link href={"/contact"}>
+            {" "}
+            <Button className="uppercase mt-10">make it happen + </Button>
+          </Link>
         </div>
       </MaxWidthWrapper>
     </div>

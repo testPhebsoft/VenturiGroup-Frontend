@@ -28,6 +28,6 @@ export default function InitStoreFunctions() {
     run();
   }, [initializeLanguageCode]);
 
-  // useEffect(() => {}, []);
+  useEffect(() => {}, []);
   return;
 }

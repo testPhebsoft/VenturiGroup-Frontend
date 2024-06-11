@@ -28,14 +28,7 @@ export function Languages({ data, className }) {
   let FlagList = [];
 
   const onChange = (value) => {
-    // const element = document.querySelectorAll(".goog-te-combo");
     setSelectedLangLocationCode(value);
-
-    // [...element].forEach((el) => {
-    //   el.value = value;
-    //   el.dispatchEvent(new Event("change"));
-    //   setSelectedLangLocationCode(value);
-    // });
   };
 
   useEffect(() => {
@@ -82,9 +75,8 @@ export function Languages({ data, className }) {
     const observer = new MutationObserver((mutationsList, observer) => {
       for (const mutation of mutationsList) {
         if (mutation.type === "childList") {
-          console.log(mutation.target.className);
           if (mutation.target.className == "goog-te-combo") {
-            // handleChange();
+            handleChange();
           }
         }
       }

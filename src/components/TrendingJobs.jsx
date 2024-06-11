@@ -62,6 +62,7 @@ export default function TrendingJobs({
               <>
                 {value && (
                   <JobCard
+                    id={value.id}
                     title={value.title}
                     company={value.company && value.company.company_name}
                     salaryType={
@@ -115,6 +116,7 @@ export default function TrendingJobs({
 }
 
 const JobCard = ({
+  id,
   title = "Software Engineer",
   company = "Dusseldorf",
   employmentType = "Full-time",
@@ -151,7 +153,7 @@ const JobCard = ({
       </div>
     );
   }
-
+  const [typeformOpen, setTypeformOpen] = useState(false);
   return (
     <div
       style={{
@@ -200,82 +202,144 @@ const JobCard = ({
           </Button>
         </div>
       </div>
-      <Dialog open={open} onOpenChange={(e) => setOpen(e)}>
-        <DialogContent
-          style={{
-            WebkitOverflowScrolling: "touch",
-            scrollbarWidth: "none",
-            msOverflowStyle: "none",
-          }}
-          className="overflow-y-scroll py-20 sm:px-20 px-10 w-[95%]  max-h-[100vh] sm:max-w-screen-maxScreenSize "
-        >
-          <h2 className="max-[839px]:text-[clamp(16px,10vw,48px)] max-[839px]:leading-[clamp(24px,10vw,51px)] text-[clamp(16px,3.2vw,51px)] leading-[clamp(24px,3.3vw,51px)] font-[lust-text] ">
-            {title}
-          </h2>
-          <div className=" mt-10   flex justify-between gap-5  max-md:flex-col w-full ">
-            <div className=" flex flex-col w-full gap-5 ">
-              {renderProperties("company", company)}
+      <Dialog
+        open={open}
+        onOpenChange={(e) => {
+          setTypeformOpen(e);
+          setOpen(e);
+        }}
+      >
+        {!typeformOpen && (
+          <DialogContent
+            style={{
+              WebkitOverflowScrolling: "touch",
+              scrollbarWidth: "none",
+              msOverflowStyle: "none",
+            }}
+            className="overflow-y-scroll py-20 sm:px-20 px-10 w-[95%]  max-h-[100vh] sm:max-w-screen-maxScreenSize "
+          >
+            <h2 className="max-[839px]:text-[clamp(16px,10vw,48px)] max-[839px]:leading-[clamp(24px,10vw,51px)] text-[clamp(16px,3.2vw,51px)] leading-[clamp(24px,3.3vw,51px)] font-[lust-text] ">
+              {title}
+            </h2>
+            <div className=" mt-10   flex justify-between gap-5  max-md:flex-col w-full ">
+              <div className=" flex flex-col w-full gap-5 ">
+                {renderProperties("company", company)}
 
-              {renderProperties("LOCATION", city + ", " + location)}
-              {renderProperties(
-                "SALARY",
-                `${curancySymbol}${salary}  ${salaryType.toLocaleLowerCase()} Dependent on experience`
-              )}
-              {renderProperties("Job contract", jobContract)}
-              {renderProperties("Work style", locationBase)}
-            </div>
-            <div className=" flex flex-col gap-8 w-full max-w-[629px]">
-              <div className=" flex flex-col gap-8 w-full ">
-                <h3 className=" capitalize  font-AntarcticanMonoMedium text-primary text-[clamp(12px,1.1vw,16px)]">
-                  {heading1}
-                </h3>
-                <p
-                  dangerouslySetInnerHTML={{ __html: description1 }}
-                  className="text-[#8B8B8B] ck-content"
-                ></p>
+                {renderProperties("LOCATION", city + ", " + location)}
+                {renderProperties(
+                  "SALARY",
+                  `${curancySymbol}${salary}  ${salaryType.toLocaleLowerCase()} Dependent on experience`
+                )}
+                {renderProperties("Job contract", jobContract)}
+                {renderProperties("Work style", locationBase)}
               </div>
-              <div>
-                <h3 className="  capitalize  font-AntarcticanMonoMedium text-primary text-[clamp(12px,1.1vw,16px)]">
-                  {heading2}
-                </h3>
-                <p
-                  dangerouslySetInnerHTML={{ __html: description2 }}
-                  className="text-[#8B8B8B] ck-content"
-                ></p>
-              </div>
+              <div className=" flex flex-col gap-8 w-full max-w-[629px]">
+                <div className=" flex flex-col gap-8 w-full ">
+                  <h3 className=" capitalize  font-AntarcticanMonoMedium text-primary text-[clamp(12px,1.1vw,16px)]">
+                    {heading1}
+                  </h3>
+                  <p
+                    dangerouslySetInnerHTML={{ __html: description1 }}
+                    className="text-[#8B8B8B] ck-content"
+                  ></p>
+                </div>
+                <div>
+                  <h3 className="  capitalize  font-AntarcticanMonoMedium text-primary text-[clamp(12px,1.1vw,16px)]">
+                    {heading2}
+                  </h3>
+                  <p
+                    dangerouslySetInnerHTML={{ __html: description2 }}
+                    className="text-[#8B8B8B] ck-content"
+                  ></p>
+                  {/* </div>
               <Link
+
                 href={
                   isInternal ? "/job-application-internal " : "/job-application"
                 }
-              >
-                <Button className="uppercase flex  w-fit justify-center items-center h-10 gap-6">
-                  <p className="h-[clamp(12px,1.29vw,16px)] text-center  text-[clamp(12px,1.29vw,16px)]">
-                    {" "}
-                    quick apply
-                  </p>{" "}
-                  {false && (
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 16 16"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M2.10331 3.99983C3.15174 3.99983 4.00166 3.14991 4.00166 2.10148C4.00166 1.05305 3.15174 0.203125 2.10331 0.203125C1.05488 0.203125 0.204956 1.05305 0.204956 2.10148C0.204956 3.14991 1.05488 3.99983 2.10331 3.99983Z"
-                        fill="white"
-                      />
-                      <path
-                        d="M5.79413 5.43802V15.9701H9.06419V10.7617C9.06419 9.38743 9.32274 8.0565 11.0267 8.0565C12.7073 8.0565 12.7282 9.62776 12.7282 10.8485V15.9709H15.9999V10.1952C15.9999 7.35806 15.3891 5.17773 12.0731 5.17773C10.481 5.17773 9.41384 6.05143 8.97743 6.87827H8.93318V5.43802H5.79413ZM0.46521 5.43802H3.74048V15.9701H0.46521V5.43802Z"
-                        fill="white"
-                      />
-                    </svg>
-                  )}
-                </Button>
-              </Link>
+              > */}
+                  <Button
+                    onClick={() => setTypeformOpen(true)}
+                    className="uppercase flex  w-fit justify-center items-center h-10 gap-6"
+                  >
+                    <p className="h-[clamp(12px,1.29vw,16px)] text-center  text-[clamp(12px,1.29vw,16px)]">
+                      {" "}
+                      quick apply
+                    </p>{" "}
+                    {false && (
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M2.10331 3.99983C3.15174 3.99983 4.00166 3.14991 4.00166 2.10148C4.00166 1.05305 3.15174 0.203125 2.10331 0.203125C1.05488 0.203125 0.204956 1.05305 0.204956 2.10148C0.204956 3.14991 1.05488 3.99983 2.10331 3.99983Z"
+                          fill="white"
+                        />
+                        <path
+                          d="M5.79413 5.43802V15.9701H9.06419V10.7617C9.06419 9.38743 9.32274 8.0565 11.0267 8.0565C12.7073 8.0565 12.7282 9.62776 12.7282 10.8485V15.9709H15.9999V10.1952C15.9999 7.35806 15.3891 5.17773 12.0731 5.17773C10.481 5.17773 9.41384 6.05143 8.97743 6.87827H8.93318V5.43802H5.79413ZM0.46521 5.43802H3.74048V15.9701H0.46521V5.43802Z"
+                          fill="white"
+                        />
+                      </svg>
+                    )}
+                  </Button>
+                  {/* </Link> */}
+                </div>
+              </div>
             </div>
-          </div>
-        </DialogContent>
+          </DialogContent>
+        )}
+
+        {typeformOpen && isInternal && (
+          <DialogContent
+            style={{
+              WebkitOverflowScrolling: "touch",
+              scrollbarWidth: "none",
+              msOverflowStyle: "none",
+            }}
+            className="overflow-y-scroll  w-[95%]  max-h-[100vh] sm:max-w-screen-maxScreenSize "
+          >
+            <div className=" h-[100vh] ">
+              <iframe
+                style={{
+                  WebkitOverflowScrolling: "touch",
+                  scrollbarWidth: "none",
+                  msOverflowStyle: "none",
+                }}
+                className=" w-full h-full border-none"
+                src={`https://jcdqujpmxoo.typeform.com/to/TDman6EV#venturi_admin_job_id=${id}&job_location=${location}`}
+                width="100%"
+                height="100vh"
+              ></iframe>
+            </div>
+          </DialogContent>
+        )}
+        {typeformOpen && !isInternal && (
+          <DialogContent
+            style={{
+              WebkitOverflowScrolling: "touch",
+              scrollbarWidth: "none",
+              msOverflowStyle: "none",
+            }}
+            className="overflow-y-scroll  w-[95%]  max-h-[100vh] sm:max-w-screen-maxScreenSize "
+          >
+            <div className=" h-[100vh] ">
+              <iframe
+                style={{
+                  WebkitOverflowScrolling: "touch",
+                  scrollbarWidth: "none",
+                  msOverflowStyle: "none",
+                }}
+                className=" w-full h-full border-none"
+                src={`https://jcdqujpmxoo.typeform.com/to/LoZIEIyD#venturi_admin_job_id=${id}&job_location=${location}`}
+                width="100%"
+                height="100vh"
+              ></iframe>
+            </div>
+          </DialogContent>
+        )}
       </Dialog>
     </div>
   );

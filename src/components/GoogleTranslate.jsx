@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { getLocations } from "@/actions/Getdata";
 import { getLangCode } from "@/lib/serverUtils/getCode";
+import { setCookies } from "@/lib/actions";
 
 const GoogleTranslate = () => {
   const pathname = usePathname();
@@ -66,7 +67,9 @@ const GoogleTranslate = () => {
 
           el.value = "en";
           el.dispatchEvent(new Event("change"));
-          console.log("Value change");
+          setCookies("googtrans", `/en/en`);
+
+          console.log("Value change by Route to English");
         });
       }
     };

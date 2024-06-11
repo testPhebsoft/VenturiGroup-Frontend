@@ -4,6 +4,7 @@ import MaxWidthWrapper from "./MaxWidthWraper";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
 import { getPartners } from "@/actions/Getdata";
+import Link from "next/link";
 
 export default async function OurClients() {
   let res;
@@ -77,7 +78,9 @@ export default async function OurClients() {
                 all of them – be it a global B2C brand or a deep tech startup –
                 is the need for exceptional talent. 
               </p>
-              <Button className="uppercase w-fit">find out more +</Button>
+              <Link href={"/contact"}>
+                <Button className="uppercase w-fit">find out more +</Button>{" "}
+              </Link>
             </div>
           </MaxWidthWrapper>
         </div>
