@@ -13,7 +13,7 @@ export const useLocationStore = create((set) => ({
   },
 
   initializeLocationCode: async () => {
-    const locationCode = (await getCode()) || "GB";
+    const locationCode = (await getCode()) || "en";
     set({ selectedLocationCode: locationCode });
   },
 }));

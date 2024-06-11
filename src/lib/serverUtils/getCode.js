@@ -38,7 +38,10 @@ export const getLangCodeServer = async () => {
 
 export const getLangCode = async () => {
   let code = await getCooKies("selectedLangLocationCode");
-
+  if (code == "GB") {
+    console.log("Hereeeeeeeeeeeeee");
+    setCookies("selectedLangLocationCode", "en");
+  }
   if (code) {
     code = code.value;
   } else {

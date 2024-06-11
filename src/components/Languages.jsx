@@ -13,6 +13,7 @@ import Script from "next/script";
 import { useLanguageStore } from "@/store/LanguageStore";
 import { getLangCode } from "@/lib/serverUtils/getCode";
 import { usePathname } from "next/navigation";
+import { setCookies } from "@/lib/actions";
 
 export function Languages({ data, className }) {
   const pathname = usePathname();
@@ -40,11 +41,11 @@ export function Languages({ data, className }) {
   useEffect(() => {
     const handleChange = async () => {
       const elements = document.querySelectorAll(".goog-te-combo");
-
       if (elements.length > 0) {
         const langCode = await getLangCode();
         elements.forEach((el) => {
-          el.value = langCode;
+          el.value =
+            langCode == "GB" ? "en" : langCode == "en-gb" ? "en" : langCode;
           el.dispatchEvent(new Event("change"));
           console.log("Value change");
           setSelectedLangLocationCode(langCode);
@@ -59,10 +60,15 @@ export function Languages({ data, className }) {
       const elements = document.querySelectorAll(".goog-te-combo");
 
       if (elements.length > 0) {
-        const langCode = await getLangCode();
-
+        let langCode = await getLangCode();
+        if (langCode == "GB") {
+          setCookies("selectedLangLocationCode", "en");
+        }
+        langCode =
+          langCode == "GB" ? "en" : langCode == "en-gb" ? "en" : langCode;
+        console.log(langCode);
         elements.forEach((el) => {
-          console.log(el.value);
+          console.log("el", el.value);
           if (el.value !== langCode) {
             el.value = langCode;
             el.dispatchEvent(new Event("change"));
@@ -78,7 +84,7 @@ export function Languages({ data, className }) {
         if (mutation.type === "childList") {
           console.log(mutation.target.className);
           if (mutation.target.className == "goog-te-combo") {
-            handleChange();
+            // handleChange();
           }
         }
       }
@@ -125,7 +131,7 @@ export function Languages({ data, className }) {
                     flag.code == "US"
                       ? "en"
                       : flag.code == "GB"
-                      ? "en"
+                      ? "en-gb"
                       : flag.code
                   ).toLowerCase()}
                 >

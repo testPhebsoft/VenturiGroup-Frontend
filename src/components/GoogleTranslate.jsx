@@ -19,7 +19,7 @@ const GoogleTranslate = () => {
             lang.code === "US"
               ? "en"
               : lang.code === "GB"
-              ? "en-GB"
+              ? "en-gb"
               : lang.code.toLowerCase()
           )
           .join(",");
