@@ -1,6 +1,6 @@
 export default function Page() {
   return (
-    <div className=" h-[calc(100vh-96px)] mt-[96px]">
+    <div className=" h-[100vh] ">
       <iframe
         className=" w-full h-full border-none"
         src="https://jcdqujpmxoo.typeform.com/to/A1l2iv9l"
