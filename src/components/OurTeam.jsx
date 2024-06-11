@@ -41,7 +41,7 @@ export default function OurTeam({
       >
         <CarouselContent className="mt-10">
           {data.map((item, index) => (
-            <CarouselItem className="basis-auto">
+            <CarouselItem key={index} className="basis-auto">
               <RenderCard
                 key={index}
                 imagesrc={item.image ? item.image.url : ""}
