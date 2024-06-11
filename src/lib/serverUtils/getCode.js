@@ -30,7 +30,7 @@ export const getLangCodeServer = async () => {
   if (code) {
     code = code.value;
   } else {
-    code = "GB";
+    code = "en";
   }
 
   return code;
@@ -42,8 +42,8 @@ export const getLangCode = async () => {
   if (code) {
     code = code.value;
   } else {
-    code = "GB";
-    setCookies("selectedLangLocationCode", "GB");
+    code = "en";
+    setCookies("selectedLangLocationCode", "en");
   }
 
   return code;

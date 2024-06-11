@@ -11,6 +11,7 @@ export function Locations({ className, data = ["UK", "US", "DE", "NL"] }) {
   const setSelectedLocationCode = useLocationStore(
     (state) => state.setSelectedLocationCode
   );
+
   return (
     <div className={cn("notranslate flex gap-2 items-center", className)}>
       {data.map((item, index) => (

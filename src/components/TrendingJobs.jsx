@@ -166,7 +166,7 @@ const JobCard = ({
           <p className="text-[clamp(12px,1.29vw,16px)]">{salaryType}</p>
 
           <p className=" mt-5 text-[clamp(18px,1.95vw,24px)]  font-[lust-text] font-light">
-            {employmentType}
+            {employmentType} ,{jobContract}
           </p>
           <p className=" mt-5 text-[clamp(18px,1.95vw,24px)]  font-[lust-text] font-light">
             {locationBase}

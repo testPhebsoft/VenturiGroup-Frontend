@@ -10,36 +10,67 @@ import {
 import { cn } from "@/lib/utils";
 import { useEffect } from "react";
 import Script from "next/script";
-// import { useEffect } from "react/cjs/react.production.min";
+import { useLanguageStore } from "@/store/LanguageStore";
+import { getLangCode } from "@/lib/serverUtils/getCode";
+import { usePathname } from "next/navigation";
+
 export function Languages({ data, className }) {
+  const pathname = usePathname();
+
+  const selectedLangLocationCode = useLanguageStore(
+    (state) => state.selectedLangLocationCode
+  );
+  const setSelectedLangLocationCode = useLanguageStore(
+    (state) => state.setSelectedLangLocationCode
+  );
+  console.log(selectedLangLocationCode);
+
   let FlagList = [];
 
-  // useEffect(() => {
-  //   const includedLanguages = data
-  //     .map((lang) => lang.code.toLowerCase())
-  //     .join(",");
-  //   console.log(includedLanguages);
-  //   function googleTranslateElementInit() {
-  //     new window.google.translate.TranslateElement(
-  //       {
-  //         pageLanguage: "auto",
-  //         includedLanguages,
-  //       },
-  //       "google_translate_element"
-  //     );
-  //   }
-
-  //   window.googleTranslateElementInit = googleTranslateElementInit;
-  // }, []);
-
   const onChange = (value) => {
-    const element = document.querySelectorAll(".goog-te-combo");
+    // const element = document.querySelectorAll(".goog-te-combo");
+    setSelectedLangLocationCode(value);
 
-    [...element].forEach((el, index) => {
-      el.value = value == "us" ? "en" : value == "gb" ? "en" : value;
-      el.dispatchEvent(new Event("change"));
-    });
+    // [...element].forEach((el) => {
+    //   el.value = value;
+    //   el.dispatchEvent(new Event("change"));
+    //   setSelectedLangLocationCode(value);
+    // });
   };
+  sdf;
+
+  useEffect(() => {
+    const handleChange = async () => {
+      const elements = document.querySelectorAll(".goog-te-combo");
+      if (elements.length > 0) {
+        const langCode = await getLangCode();
+        elements.forEach((el) => {
+          el.value = "en";
+          el.dispatchEvent(new Event("change"));
+
+          setSelectedLangLocationCode(langCode);
+        });
+      }
+    };
+    handleChange();
+    // const observer = new MutationObserver((mutationsList, observer) => {
+    //   for (const mutation of mutationsList) {
+    //     if (mutation.type === "childList") {
+    //       console.log("here ");
+    //       handleChange();
+    //       observer.disconnect();
+    //     }
+    //   }
+    // });
+
+    // observer.observe(document.body, {
+    //   childList: true,
+    //   subtree: true,
+    // });
+
+    // return () => observer.disconnect();
+  }, [selectedLangLocationCode]);
+
   if (data) {
     FlagList = data;
   } else {
@@ -50,13 +81,16 @@ export function Languages({ data, className }) {
       <Flag key={"nl"} className="size-5" code={"nl"} />,
     ];
   }
+  console.log(selectedLangLocationCode);
 
   return (
     <>
       {data && (
         <div>
-          {/* <div id="google_translate_element"> </div> */}
-          <Select onValueChange={onChange} defaultValue={"gb"}>
+          <Select
+            onValueChange={onChange}
+            defaultValue={selectedLangLocationCode}
+          >
             <SelectTrigger
               className={cn(" w-[50px] bg-transparent", className)}
             >
@@ -66,7 +100,13 @@ export function Languages({ data, className }) {
               {FlagList.map((flag, index) => (
                 <SelectItem
                   key={`${index}`}
-                  value={String(flag.code).toLowerCase()}
+                  value={String(
+                    flag.code == "US"
+                      ? "en"
+                      : flag.code == "GB"
+                      ? "en"
+                      : flag.code
+                  ).toLowerCase()}
                 >
                   <Flag key={flag.code} className="size-5" code={flag.code} />
                 </SelectItem>

@@ -68,9 +68,9 @@
   color: var(--primary);
 }
 
-body {
+/* body {
   top: 0px !important;
-}
+} */
 
 .Posts h3 {
   width: 100%;
@@ -78,9 +78,9 @@ body {
   font-size: clamp(24px, 3.2vw, 36px);
   line-height: clamp(28px, 4vw, 40px);
 }
-.skiptranslate {
+/* .skiptranslate {
   display: none;
-}
+} */
 /* .VIpgJd-ZVi9od-ORHb {
   background-color: transparent !important;
 } */

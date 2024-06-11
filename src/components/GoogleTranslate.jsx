@@ -16,9 +16,9 @@ const GoogleTranslate = () => {
       try {
         includedLanguages = data.data
           .map((lang) =>
-            lang.code == "US"
+            lang.code === "US"
               ? "en"
-              : lang.code == "GB"
+              : lang.code === "GB"
               ? "en-GB"
               : lang.code.toLowerCase()
           )
@@ -31,14 +31,15 @@ const GoogleTranslate = () => {
       function googleTranslateElementInit() {
         new window.google.translate.TranslateElement(
           {
-            pageLanguage: selectedLanguage,
+            pageLanguage: "en",
             includedLanguages,
           },
           "google_translate_element"
         );
       }
 
-      // Check if the script already exists before adding
+      //TODO : testing the google translate element
+
       if (!document.getElementById("google_translateScript")) {
         const script = document.createElement("script");
         script.id = "google_translateScript";
@@ -54,20 +55,30 @@ const GoogleTranslate = () => {
     };
 
     run();
-
-    // Handle removing the script on route change
+  }, []);
+  useEffect(() => {
     const handleRouteChange = () => {
-      const script = document.getElementById("google_translateScript");
-      if (script) {
-        script.remove();
+      const element = document.querySelectorAll(".goog-te-combo");
+
+      if (element.length > 0) {
+        [...element].forEach((el, index) => {
+          console.log(el);
+
+          el.value = "en";
+          el.dispatchEvent(new Event("change"));
+          console.log("Value change");
+        });
       }
     };
 
-    // Cleanup when the pathname changes
-    return handleRouteChange;
-  }, [pathname]);
+    // Call the handleRouteChange function when the pathname changes
+    handleRouteChange();
 
-  return <div id="google_translate_element"></div>;
+    return () => {
+      handleRouteChange();
+    };
+  }, [pathname]);
+  //   return <div id="google_translate_element"></div>;
 };
 
 export default GoogleTranslate;

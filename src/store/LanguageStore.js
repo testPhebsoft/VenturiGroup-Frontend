@@ -4,7 +4,7 @@ import { create } from "zustand";
 
 export const useLanguageStore = create((set) => ({
   selectedLangLocationCode: "init",
-  setSelectedLocationCode: (incomingLocationCode) => {
+  setSelectedLangLocationCode: (incomingLocationCode) => {
     set((state) => {
       setCookies("selectedLangLocationCode", incomingLocationCode);
 
@@ -13,7 +13,8 @@ export const useLanguageStore = create((set) => ({
   },
 
   initializeLanguageCode: async () => {
-    const locationCode = (await getLangCode()) || "GB";
-    set({ selectedLangLocationCode: locationCode });
+    const langCode = (await getLangCode()) || "en";
+    console.log("langCode", langCode);
+    set({ selectedLangLocationCode: langCode });
   },
 }));
