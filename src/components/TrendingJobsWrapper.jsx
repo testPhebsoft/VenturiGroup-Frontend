@@ -21,7 +21,11 @@ export default async function TrendingJobsWrapper({ isInternal, label }) {
   return (
     res &&
     res.length !== 0 && (
-      <TrendingJobs data={res && res} label={label && label} />
+      <TrendingJobs
+        isInternal={isInternal}
+        data={res && res}
+        label={label && label}
+      />
     )
   );
 }
