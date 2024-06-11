@@ -6,6 +6,7 @@ import MaxWidthWrapper from "./MaxWidthWraper";
 import { Dialog, DialogContent, DialogTrigger } from "./ui/dialog";
 import { cn } from "@/lib/utils";
 import useTranslatexDraggable from "./hooks/useTranslatexDrag";
+import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
 export default function OurTeam({
   heading = (
     <>
@@ -32,6 +33,30 @@ export default function OurTeam({
         </h1>
         <div className=" max-sm:hidden border self-end h-0 mb-2  w-full border-1 border-input/50"></div>
       </div>
+      <Carousel
+        opts={{
+          align: "start",
+          loop: true,
+        }}
+      >
+        <CarouselContent className="mt-10">
+          {data.map((item, index) => (
+            <CarouselItem className="basis-auto">
+              <RenderCard
+                key={index}
+                imagesrc={item.image ? item.image.url : ""}
+                jobTitle={item.job_title}
+                name={item.user?.name ?? ""}
+                details={item.description ?? ""}
+                tags={item.tags ? item.tags : ""}
+                instaLink={item.instagram_link ? item.instagram_link : ""}
+                linkdinLink={item.linkedin_link ? item.linkedin_link : ""}
+              />
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </Carousel>
+      {/* 
       <div
         ref={parentRef}
         style={{
@@ -55,7 +80,7 @@ export default function OurTeam({
             />
           ))}
         </div>
-      </div>
+      </div> */}
     </MaxWidthWrapper>
   );
 }
@@ -99,7 +124,7 @@ const RenderCard = ({
           </div>
         </div>
       </div>
-      <DialogContent className="w-full  p-0 sm:p-0 sm:max-w-[clamp(320px,90vw,1478px)] text-left   ">
+      <DialogContent className="w-full  p-0 sm:p-0 sm:max-w-[clamp(320px,90vw,1478px)] overflow-y-auto max-h-[100vh] text-left   ">
         <div
           className={
             "flex max-lg:flex-col  max-lg:py-5 justify-between max-lg:gap-5 max-lg:px-5 gap-20"
