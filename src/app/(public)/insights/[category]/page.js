@@ -19,11 +19,13 @@ async function Renderer({ params, page = 1 }) {
   let category = params.category;
   let categories;
   let blogs = [];
+  let currentCategory;
   try {
     categories = await getCategories();
     categories = categories.data;
+    currentCategory = categories.filter((data) => data.slug == category);
   } catch (e) {}
-  let currentCategory = categories.filter((data) => data.slug == category);
+
   if (currentCategory.length == 0) {
     return notFound();
   }

@@ -7,12 +7,12 @@ import { setCookies } from "@/lib/actions";
 
 const GoogleTranslate = () => {
   const pathname = usePathname();
-
+  // thsi effeect runs two times to set the google translate element
   useEffect(() => {
     const run = async () => {
       let data = await getLocations();
 
-      const selectedLanguage = await getLangCode();
+      // const selectedLanguage = await getLangCode();
       let includedLanguages;
       try {
         includedLanguages = data.data
@@ -57,6 +57,7 @@ const GoogleTranslate = () => {
 
     run();
   }, []);
+
   useEffect(() => {
     const handleRouteChange = () => {
       const element = document.querySelectorAll(".goog-te-combo");

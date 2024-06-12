@@ -41,7 +41,9 @@ export function Languages({ data, className }) {
             langCode == "GB" ? "en" : langCode == "en-gb" ? "en" : langCode;
           el.dispatchEvent(new Event("change"));
           console.log("Value change");
-          setSelectedLangLocationCode(langCode);
+
+          if (selectedLangLocationCode != langCode)
+            setSelectedLangLocationCode(langCode);
         });
       }
     };
@@ -66,7 +68,8 @@ export function Languages({ data, className }) {
             el.value = langCode;
             el.dispatchEvent(new Event("change"));
             console.log("Value change");
-            setSelectedLangLocationCode(langCode);
+            if (selectedLangLocationCode != langCode)
+              setSelectedLangLocationCode(langCode);
           }
         });
       }

@@ -4,7 +4,7 @@ import { cache } from "react";
 import { getCode, getCodeServer } from "@/lib/serverUtils/getCode";
 
 const serverUrl = process.env.SERVER_URL || "";
-const revalidate = 80;
+const revalidate = 800;
 export async function getCategories() {
   let config = {
     url: `${serverUrl}/categories`,
@@ -237,7 +237,8 @@ export async function getPartners() {
   }
 }
 
-export async function getLocationsByCode({ code } = { code: "GB" }) {
+export async function getLocationsByCode() {
+  let code = await getCodeServer();
   let config = {
     url: `${serverUrl}/locations/${code}`,
     next: { revalidate: revalidate, tags: ["all", "locations"] },
@@ -255,6 +256,7 @@ export async function getLocationsByCode({ code } = { code: "GB" }) {
 }
 
 export async function getLocations() {
+  console.log("Locations called");
   let config = {
     url: `${serverUrl}/locations`,
     next: { revalidate: revalidate, tags: ["all", "locations"] },

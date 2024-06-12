@@ -14,6 +14,7 @@ import { getLocationsByCode } from "@/actions/Getdata";
 export default async function HomeBanner() {
   let res;
   try {
+    //TODO:  getLocationsByCode
     res = await getLocationsByCode();
     // console.log("DATA");
     // console.log(res);

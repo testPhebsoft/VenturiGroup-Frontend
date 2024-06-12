@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Button } from "./ui/button";
 
 export default function EmployeeRefral() {
@@ -11,7 +12,9 @@ export default function EmployeeRefral() {
         success, you belong here. In a thriving, inclusive environment that puts
         people first. 
       </p>
-      <Button className="w-fit md:mx-auto">contact us +</Button>
+      <Link href="/contact">
+        <Button className="w-fit md:mx-auto uppercase">contact us +</Button>
+      </Link>
     </div>
   );
 }

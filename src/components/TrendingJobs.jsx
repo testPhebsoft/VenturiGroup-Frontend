@@ -154,6 +154,9 @@ const JobCard = ({
     );
   }
   const [typeformOpen, setTypeformOpen] = useState(false);
+
+  console.log(id, backgroundImage);
+
   return (
     <div
       style={{
@@ -163,28 +166,65 @@ const JobCard = ({
       className={`mx-2   shrink-0 select-none inline-block snap-start w-[clamp(305px,30vw,367px)] aspect-[0.812] bg-cover bg-no-repeat border rounded-[24px] `}
     >
       <div className="p-10 py-10 flex flex-col h-full">
-        <div className="text-white">
-          <h3 className=" text-[clamp(18px,1.95vw,24px)] font-[lust-text] font-light">
-            {title}
-          </h3>
-          <p className="uppercase text-[clamp(12px,1.29vw,16px)]">{company}</p>
-          <p className=" mt-5 text-[clamp(12px,1.29vw,16px)]">
-            {curancySymbol}
-            {salary}
-          </p>
-          <p className="text-[clamp(12px,1.29vw,16px)]">{salaryType}</p>
+        {!isInternal && (
+          <div className="text-white flex flex-col flex-1 justify-between pb-3 ">
+            <h3 className=" font-bold text-[clamp(18px,1.95vw,24px)] font-[lust-text] ">
+              {jobContract}
+            </h3>
+            <h3 className=" text-[clamp(18px,1.95vw,20px)] font-[lust-text] font-light">
+              {title}
+            </h3>
+            <p className="  text-[clamp(12px,1.29vw,16px)]">
+              {curancySymbol}
+              {salary}
+              <span className="ml-2 text-[clamp(12px,1.29vw,16px)]">
+                {salaryType}
+              </span>
+            </p>
 
-          <p className=" mt-5 text-[clamp(18px,1.95vw,24px)]  font-[lust-text] font-light">
-            {employmentType} ,{jobContract}
-          </p>
-          <p className=" mt-5 text-[clamp(18px,1.95vw,24px)]  font-[lust-text] font-light">
-            {locationBase}
-          </p>
-          <p className=" mt-5 text-[clamp(12px,1.29vw,16px)]">
-            {city + ", " + location}
-          </p>
-        </div>
-        <div className=" flex-1 flex flex-col justify-end">
+            <p className="  text-[clamp(18px,1.95vw,24px)]  font-[lust-text] font-light">
+              {locationBase}
+            </p>
+            <p className="text-[clamp(18px,1.95vw,24px)]  font-[lust-text] font-light">
+              {employmentType}
+            </p>
+            {/* <p className="uppercase text-[clamp(12px,1.29vw,16px)]">{company}</p> */}
+
+            <p className="  text-[clamp(12px,1.29vw,16px)]">
+              {city + ", " + location}
+            </p>
+          </div>
+        )}
+        {isInternal && (
+          <div className="text-white flex flex-col flex-1 justify-between pb-3 ">
+            {/* <h3 className=" font-bold text-[clamp(18px,1.95vw,24px)] font-[lust-text] ">
+              {jobContract}
+            </h3> */}
+            <h3 className=" text-[clamp(18px,1.95vw,20px)] font-[lust-text] font-light">
+              {title}
+            </h3>
+            <p className="  text-[clamp(12px,1.29vw,16px)]">
+              {curancySymbol}
+              {salary}
+              <span className="ml-2 text-[clamp(12px,1.29vw,16px)]">
+                {salaryType}
+              </span>
+            </p>
+
+            <p className="  text-[clamp(18px,1.95vw,24px)]  font-[lust-text] font-light">
+              {locationBase}
+            </p>
+            <p className="text-[clamp(18px,1.95vw,24px)]  font-[lust-text] font-light">
+              {employmentType}
+            </p>
+            {/* <p className="uppercase text-[clamp(12px,1.29vw,16px)]">{company}</p> */}
+
+            <p className="  text-[clamp(12px,1.29vw,16px)]">
+              {city + ", " + location}
+            </p>
+          </div>
+        )}
+        <div className="  flex flex-col justify-end">
           <p
             onClick={() => setOpen(true)}
             className="uppercase cursor-pointer text-[clamp(12px,1.29vw,16px)] text-white font-AntarcticanMonoMedium"

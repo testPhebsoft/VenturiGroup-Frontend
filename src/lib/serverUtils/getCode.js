@@ -2,6 +2,7 @@ import { getCooKies, setCookies } from "@/lib/actions";
 
 export const getCode = async () => {
   let code = await getCooKies("selectedLocationCode");
+  console.log("getCode");
 
   if (code) {
     code = code.value;
@@ -14,7 +15,7 @@ export const getCode = async () => {
 };
 export const getCodeServer = async () => {
   let code = await getCooKies("selectedLocationCode");
-
+  console.log("getCodeServer");
   if (code) {
     code = code.value;
   } else {
@@ -26,6 +27,7 @@ export const getCodeServer = async () => {
 
 export const getLangCodeServer = async () => {
   let code = await getCooKies("selectedLangLocationCode");
+  console.log("getLangCodeServer");
 
   if (code) {
     code = code.value;
@@ -37,6 +39,8 @@ export const getLangCodeServer = async () => {
 };
 
 export const getLangCode = async () => {
+  console.log("getLangCode");
+
   let code = await getCooKies("selectedLangLocationCode");
   if (code == "GB") {
     console.log("Hereeeeeeeeeeeeee");
