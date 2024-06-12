@@ -185,9 +185,13 @@ export async function getJobs() {
 }
 
 export async function getJobsInternal() {
+  let code = await getCodeServer();
   let config = {
-    url: `${serverUrl}/internal-jobs`,
-    next: { revalidate: revalidate, tags: ["all", "internal-jobs"] },
+    url: `${serverUrl}/internal-jobs?location=${code}`,
+    next: {
+      revalidate: revalidate,
+      tags: ["all", "internal-jobs?location=${code}"],
+    },
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json",

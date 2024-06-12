@@ -8,6 +8,7 @@ import "swiper/css/autoplay";
 import CarousalItem from "./CarousalItem";
 
 export default function CustumCarousal({ data, type }) {
+  const ref = React.useRef(null);
   const getBreakPoints = () => {
     return {
       0: {
@@ -49,7 +50,13 @@ export default function CustumCarousal({ data, type }) {
       },
     };
   };
-
+  console.log(data);
+  function PauseAutoplay() {
+    ref.current.autoplay.stop();
+  }
+  function StartAutoplay() {
+    ref.current.autoplay.start();
+  }
   return (
     <div className="ourCustomers">
       {" "}
@@ -61,8 +68,14 @@ export default function CustumCarousal({ data, type }) {
         </h3>
       )}
       <Swiper
+        onSwiper={(swiper) => (ref.current = swiper)}
         modules={[Autoplay]}
-        autoplay={{ delay: 3000 }}
+        onClick={(e) => {
+          console.log("Iran");
+          ref.current.autoplay.stop();
+          console.log(ref);
+        }}
+        // autoplay={{ delay: 3000, pauseOnMouseEnter: true }}
         slideToClickedSlide
         effect="fade"
         fadeEffect={true}
@@ -71,7 +84,13 @@ export default function CustumCarousal({ data, type }) {
       >
         {data.map((item, index) => (
           <SwiperSlide className="mt-auto" key={index}>
-            <CarousalItem key={index} index={index} item={item} />
+            <CarousalItem
+              PauseAutoplay={PauseAutoplay}
+              StartAutoplay={StartAutoplay}
+              key={index}
+              index={index}
+              item={item}
+            />
           </SwiperSlide>
         ))}
       </Swiper>
