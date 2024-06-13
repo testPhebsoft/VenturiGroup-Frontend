@@ -159,7 +159,7 @@ const JobCard = ({
 
   return (
     <div
-      data-src={backgroundImage},
+      data-src={backgroundImage}
       style={{
         backgroundImage: `url(${backgroundImage})`,
       }}
