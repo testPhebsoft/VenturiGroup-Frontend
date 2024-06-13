@@ -7,8 +7,10 @@ export const useLanguageStore = create((set) => ({
   setSelectedLangLocationCode: (incomingLocationCode) => {
     set((state) => {
       if (incomingLocationCode == state.selectedLangLocationCode) return state;
+
       setCookies("selectedLangLocationCode", incomingLocationCode);
       // we are setting the location code in the cookies of Google translate not in the language store
+
       let value =
         incomingLocationCode == "GB"
           ? "en"

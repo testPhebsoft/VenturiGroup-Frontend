@@ -55,8 +55,8 @@ export default function RootLayout({ children }) {
           {" "}
         </div>
 
-        <InitStoreFunctions />
         <GoogleTranslate />
+        <InitStoreFunctions />
         {children}
       </body>
     </html>
