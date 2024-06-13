@@ -30,31 +30,7 @@ export function Languages({ data, className }) {
   const onChange = (value) => {
     setSelectedLangLocationCode(value);
   };
-  useEffect(() => {
-    const handleChange = async () => {
-      const elements = document.querySelectorAll(".goog-te-combo");
-      if (elements.length > 0) {
-        const langCode = await getLangCode();
-        elements.forEach((el) => {
-          let newCode =
-            langCode == "GB" ? "en" : langCode == "en-gb" ? "en" : langCode;
-          console.log("newCode el", el.value);
-          if (el.value !== newCode) {
-            el.value = newCode;
-            console.log("Value change");
 
-            el.dispatchEvent(new Event("change"));
-          }
-
-          console.log("langCode", langCode, newCode);
-          if (selectedLangLocationCode != langCode)
-            setSelectedLangLocationCode(langCode);
-        });
-      }
-    };
-    handleChange();
-  }, [selectedLangLocationCode]);
-  asdsd;
   // useEffect(() => {
   //   const handleChange = async () => {
   //     const elements = document.querySelectorAll(".goog-te-combo");
