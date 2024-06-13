@@ -21,8 +21,9 @@ export function Socials({ className, ...props }) {
   return (
     <div className={cn("flex gap-5   items-center  ", className)}>
       {data.length !== 0 &&
-        data.map((item) => (
+        data.map((item, index) => (
           <a
+            key={index}
             target="_blank"
             tabIndex={0}
             href={(item.value && item.value) ?? ""}
