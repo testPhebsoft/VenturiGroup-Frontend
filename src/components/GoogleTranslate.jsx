@@ -20,7 +20,7 @@ const GoogleTranslate = () => {
             lang.code === "US"
               ? "en"
               : lang.code === "GB"
-              ? "en-gb"
+              ? "en"
               : lang.code.toLowerCase()
           )
           .join(",");
@@ -58,30 +58,31 @@ const GoogleTranslate = () => {
     run();
   }, []);
 
-  // useEffect(() => {
-  //   const handleRouteChange = () => {
-  //     const element = document.querySelectorAll(".goog-te-combo");
+  useEffect(() => {
+    const handleRouteChange = () => {
+      const element = document.querySelectorAll(".goog-te-combo");
 
-  //     if (element.length > 0) {
-  //       [...element].forEach((el, index) => {
-  //         console.log(el);
+      if (element.length > 0) {
+        [...element].forEach((el, index) => {
+          if (el.value !== "en") {
+            el.value = "en";
+            el.dispatchEvent(new Event("change"));
 
-  //         el.value = "en";
-  //         el.dispatchEvent(new Event("change"));
-  //         setCookies("googtrans", `/en/en`);
+            setCookies("googtrans", `/en/en`);
 
-  //         console.log("Value change by Route to English");
-  //       });
-  //     }
-  //   };
+            console.log("Value change by Route to English");
+          }
+        });
+      }
+    };
 
-  //   // Call the handleRouteChange function when the pathname changes
-  //   handleRouteChange();
+    // Call the handleRouteChange function when the pathname changes
+    handleRouteChange();
 
-  //   return () => {
-  //     handleRouteChange();
-  //   };
-  // }, [pathname]);
+    return () => {
+      handleRouteChange();
+    };
+  }, [pathname]);
   //   return <div id="google_translate_element"></div>;
 };
 

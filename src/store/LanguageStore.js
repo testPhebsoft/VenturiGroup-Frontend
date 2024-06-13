@@ -7,7 +7,16 @@ export const useLanguageStore = create((set) => ({
   setSelectedLangLocationCode: (incomingLocationCode) => {
     set((state) => {
       setCookies("selectedLangLocationCode", incomingLocationCode);
-      setCookies("googtrans", `/en/${incomingLocationCode}`);
+      // we are setting the location code in the cookies of Google translate not in the language store
+      let value =
+        incomingLocationCode == "GB"
+          ? "en"
+          : incomingLocationCode == "en-gb"
+          ? "en"
+          : incomingLocationCode;
+      value = "/en/" + value.toString();
+      console.log("value", value, value.toString());
+      setCookies("googtrans", value);
       return { selectedLangLocationCode: incomingLocationCode };
     });
   },
