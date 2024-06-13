@@ -31,49 +31,6 @@ export function Languages({ data, className }) {
     setSelectedLangLocationCode(value);
   };
 
-  // useEffect(() => {
-  //   const handleChange = async () => {
-  //     const elements = document.querySelectorAll(".goog-te-combo");
-
-  //     if (elements.length > 0) {
-  //       let langCode = await getLangCode();
-  //       if (langCode == "GB") {
-  //         setCookies("selectedLangLocationCode", "en");
-  //       }
-  //       langCode =
-  //         langCode == "GB" ? "en" : langCode == "en-gb" ? "en" : langCode;
-  //       console.log(langCode);
-  //       elements.forEach((el) => {
-  //         console.log("el", el.value);
-  //         if (el.value !== langCode) {
-  //           el.value = langCode;
-  //           el.dispatchEvent(new Event("change"));
-  //           console.log("Value change");
-  //           if (selectedLangLocationCode != langCode)
-  //             setSelectedLangLocationCode(langCode);
-  //         }
-  //       });
-  //     }
-  //   };
-  //   // handleChange();
-  //   const observer = new MutationObserver((mutationsList, observer) => {
-  //     for (const mutation of mutationsList) {
-  //       if (mutation.type === "childList") {
-  //         if (mutation.target.className == "goog-te-combo") {
-  //           handleChange();
-  //         }
-  //       }
-  //     }
-  //   });
-
-  //   observer.observe(document.body, {
-  //     childList: true,
-  //     subtree: true,
-  //   });
-
-  //   return () => observer.disconnect();
-  // }, []);
-
   if (data) {
     FlagList = data;
   } else {

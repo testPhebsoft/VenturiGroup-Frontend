@@ -184,6 +184,22 @@ export async function getJobs() {
   }
 }
 
+export async function getSocials() {
+  let config = {
+    url: `${serverUrl}/settings`,
+    next: { revalidate: revalidate, tags: ["all", `settings`] },
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+  };
+  try {
+    let response = await fetchDataFromApi(config);
+    return response;
+  } catch (e) {
+    console.log("error at getSocials", e);
+  }
+}
 export async function getJobsInternal() {
   let code = await getCodeServer();
   let config = {
