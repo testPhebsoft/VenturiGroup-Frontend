@@ -71,6 +71,9 @@
 body {
   top: 0px !important;
 }
+goog-gt-vt {
+  display: none !important;
+}
 
 .Posts h3 {
   width: 100%;

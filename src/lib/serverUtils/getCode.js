@@ -42,11 +42,12 @@ export const getLangCode = async () => {
   console.log("getLangCode");
 
   let code = await getCooKies("selectedLangLocationCode");
-
-  if (code.value == "GB") {
-    console.log("Hereeeeeeeeeeeeee");
-    setCookies("selectedLangLocationCode", "en");
-    setCookies("googtrans", "/en/en");
+  if (code) {
+    if (code.value == "GB") {
+      console.log("Hereeeeeeeeeeeeee");
+      setCookies("selectedLangLocationCode", "en");
+      setCookies("googtrans", "/en/en");
+    }
   }
   if (code) {
     code = code.value;

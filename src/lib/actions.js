@@ -15,7 +15,10 @@ export async function setCookies(cookiesName, value, numberOfDays = 1) {
 }
 
 export async function getCooKies(name) {
-  return await cookies().get(name);
+  return cookies().get(name);
+}
+export async function deleteCooKies(name) {
+  cookies().delete(name);
 }
 
 export async function getLocation() {

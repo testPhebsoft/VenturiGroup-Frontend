@@ -17,7 +17,7 @@ export const useLanguageStore = create((set) => ({
           : incomingLocationCode;
       value = "/en/" + value.toString();
       console.log("value", value, value.toString());
-      setCookies("googtrans", value);
+      // setCookies("googtrans", value);
       return { selectedLangLocationCode: incomingLocationCode };
     });
   },

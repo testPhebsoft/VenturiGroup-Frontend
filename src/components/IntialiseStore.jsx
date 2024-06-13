@@ -17,15 +17,11 @@ export default function InitStoreFunctions() {
   );
 
   useEffect(() => {
-    const run = async () => await initializeLocationCode();
-
-    run();
+    initializeLocationCode();
   }, [initializeLocationCode]);
 
   useEffect(() => {
-    const run = async () => await initializeLanguageCode();
-
-    run();
+    initializeLanguageCode();
   }, [initializeLanguageCode]);
 
   return;

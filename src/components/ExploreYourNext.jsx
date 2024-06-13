@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Button } from "./ui/button";
 
 export default function ExploreYourNext() {
@@ -13,7 +14,10 @@ export default function ExploreYourNext() {
         success.
       </p>
 
-      <Button className="w-fit md:mx-auto uppercase">get in touch +</Button>
+      <Link className=" w-fit md:mx-auto" href="/contact">
+        {" "}
+        <Button className="w-fit md:mx-auto uppercase">get in touch +</Button>
+      </Link>
     </div>
   );
 }
