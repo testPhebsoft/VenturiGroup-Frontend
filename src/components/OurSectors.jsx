@@ -3,6 +3,7 @@ import Image from "next/image";
 import MaxWidthWrapper from "./MaxWidthWraper";
 import { Dialog, DialogContent, DialogTrigger } from "./ui/dialog";
 import { Button } from "./ui/button";
+import Link from "next/link";
 
 export default function OurSector() {
   const renderCard = (
@@ -12,8 +13,8 @@ export default function OurSector() {
     details
   ) => {
     return (
-      <Dialog className="w-full ">
-        <div className="w-full  inline-block snap-center mx-1  bg-white max-w-[403px] pb-10 pt-2 px-2 rounded-[18px]">
+      <Dialog className="w-full   ">
+        <div className="w-full flex-none    inline-block snap-center mx-1  bg-white max-w-[403px] pb-10 pt-2 px-2 rounded-[18px]">
           <div className="relative    w-full aspect-[1.8926] ">
             <Image
               className="rounded-[18px]"
@@ -22,7 +23,7 @@ export default function OurSector() {
               alt="sector1"
             />
           </div>
-          <div className="w-full max-w-[311px] mx-auto ">
+          <div className="w-full max-w-[311px]  mx-auto ">
             <p className="font-AntarcticanMonoMedium text-left  mt-5 text-primary">
               {" "}
               {number}{" "}
@@ -86,7 +87,10 @@ export default function OurSector() {
                 </>
               )}
             </p>
-            <Button className="uppercase w-fit "> get in touch +</Button>
+            <Link href="/contact">
+              {" "}
+              <Button className="uppercase w-fit "> get in touch +</Button>
+            </Link>
           </MaxWidthWrapper>
         </DialogContent>
       </Dialog>
@@ -109,7 +113,7 @@ export default function OurSector() {
           scrollbarWidth: "none",
           msOverflowStyle: "none",
         }}
-        className="snap-x scroll-smooth  snap-mandatory  scroll-m-5 whitespace-nowrap overflow-x-scroll mt-10 px-5 mx-auto sm:px-0 max-w-[1250px] "
+        className="snap-x scroll-smooth flex  items-stretch snap-mandatory  scroll-m-5 whitespace-nowrap overflow-x-scroll mt-10 px-5 mx-auto sm:px-0 max-w-[1250px] "
       >
         {renderCard()}
         {renderCard("/sector2.jpg", "02", "Software Engineering")}

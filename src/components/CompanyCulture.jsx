@@ -87,7 +87,12 @@ function RenderContent({
       <div
         className={cn("w-full aspect-[1.85] relative   rounded-xl", className)}
       >
-        <Image fill src={imagesrc} className="rounded-xl" alt={imagesrc} />
+        <Image
+          fill
+          src={imagesrc}
+          className="rounded-xl object-cover"
+          alt={imagesrc}
+        />
       </div>
       <p
         dangerouslySetInnerHTML={{ __html: text }}
