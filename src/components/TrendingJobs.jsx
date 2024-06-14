@@ -15,6 +15,7 @@ import { useState } from "react";
 import useTranslatexDraggable from "./hooks/useTranslatexDrag";
 import { addPrefix, convertToCapitalizedString } from "@/lib/utils";
 import Link from "next/link";
+import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
 export default function TrendingJobs({
   isInternal,
   label = "Trending Jobs",
@@ -43,7 +44,70 @@ export default function TrendingJobs({
           </h2>
           {/* <Button className=" uppercase ">see more +</Button> */}
         </div>
-        <div
+
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+        >
+          <CarouselContent className="mt-10">
+            {data.map((value, index) => (
+              <>
+                {value && (
+                  <CarouselItem className="basis-auto" key={index}>
+                    {" "}
+                    <JobCard
+                      id={value.id}
+                      title={value.title}
+                      company={value.company && value.company.company_name}
+                      salaryType={
+                        value.salary_type &&
+                        convertToCapitalizedString(value.salary_type)
+                      }
+                      employmentType={
+                        value.job_type &&
+                        convertToCapitalizedString(value.job_type)
+                      }
+                      salary={`${
+                        value.salary_min ? addPrefix(value.salary_min) : ""
+                      } - ${
+                        value.salary_max ? addPrefix(value.salary_max) : ""
+                      } `}
+                      description1={value?.job_description || ""}
+                      description2={value?.job_requirement || ""}
+                      toStart={value?.to_start || ""}
+                      toApply={value?.apply_at || ""}
+                      location={value?.location?.name || ""}
+                      backgroundImage={
+                        value.location && value.location.image
+                          ? value.location.image.url
+                          : ""
+                      }
+                      key={index}
+                      city={(value.city && value.city.name) || ""}
+                      curancySymbol={
+                        currencySymbols[value.location && value.location.code]
+                      }
+                      locationBase={
+                        (value.location_base &&
+                          convertToCapitalizedString(value.location_base)) ||
+                        ""
+                      }
+                      jobContract={
+                        (value.job_contract &&
+                          convertToCapitalizedString(value.job_contract)) ||
+                        ""
+                      }
+                      isInternal={isInternal}
+                    />{" "}
+                  </CarouselItem>
+                )}{" "}
+              </>
+            ))}
+          </CarouselContent>
+        </Carousel>
+        {/* <div
           ref={parentRef}
           style={{
             WebkitOverflowScrolling: "touch",
@@ -109,7 +173,7 @@ export default function TrendingJobs({
               </>
             ))}
           </div>
-        </div>
+        </div> */}
       </MaxWidthWrapper>
     </div>
   );
@@ -164,7 +228,7 @@ const JobCard = ({
         backgroundImage: `url(${backgroundImage})`,
       }}
       {...props}
-      className={`mx-2   shrink-0 select-none inline-block snap-start w-[clamp(305px,30vw,367px)] aspect-[0.812] bg-cover bg-no-repeat border rounded-[24px] `}
+      className={`mx-2   shrink-0 select-none inline-block snap-start w-[clamp(300px,30vw,367px)] aspect-[0.812] bg-cover bg-no-repeat border rounded-[24px] `}
     >
       <div className="p-10 py-10 flex flex-col h-full">
         {!isInternal && (
