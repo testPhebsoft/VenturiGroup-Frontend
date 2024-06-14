@@ -328,15 +328,18 @@ const JobCard = ({
             </h2>
             <div className=" mt-10   flex justify-between gap-5  max-md:flex-col w-full ">
               <div className=" flex flex-col w-full gap-5 ">
-                {renderProperties("company", company)}
+                {company && renderProperties("company", company)}
 
-                {renderProperties("LOCATION", city + ", " + location)}
-                {renderProperties(
-                  "SALARY",
-                  `${curancySymbol}${salary}  ${salaryType.toLocaleLowerCase()} Dependent on experience`
-                )}
-                {renderProperties("Job contract", jobContract)}
-                {renderProperties("Work style", locationBase)}
+                {(city || location) &&
+                  renderProperties("LOCATION", city + ", " + location)}
+                {salary &&
+                  salaryType &&
+                  renderProperties(
+                    "SALARY",
+                    `${curancySymbol}${salary}  ${salaryType.toLocaleLowerCase()} Dependent on experience`
+                  )}
+                {jobContract && renderProperties("Job contract", jobContract)}
+                {locationBase && renderProperties("Work style", locationBase)}
               </div>
               <div className=" flex flex-col gap-8 w-full max-w-[629px]">
                 <div className=" flex flex-col gap-8 w-full ">

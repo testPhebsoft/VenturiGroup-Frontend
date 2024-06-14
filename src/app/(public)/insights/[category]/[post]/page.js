@@ -40,7 +40,7 @@ export default async function Page({ params }) {
         <MaxWidthWrapper className={" Posts mt-40"}>
           <p className=" text-[clamp(12px,1.1vw,16px)] font-semibold  font-AntarcticanMonoSemiBold">
             Posted over {timeDifference(postdata.created_at)} • by{" "}
-            {postdata.written_by}
+            {postdata.written_by && postdata.written_by}
           </p>
           <div className=" flex justify-between w-full">
             <h2 className=" mt-10 w-full max-w-[754px] text-[clamp(24px,3.2vw,36px)] leading-[clamp(28px,4vw,40px)] font-[lust-text]">
@@ -62,35 +62,47 @@ export default async function Page({ params }) {
           <div className=" mt-10 relative w-full aspect-[2.2]">
             <Image
               fill
-              src={postdata.image.url}
+              src={(postdata.image && postdata.image.url) ?? ""}
               className="object-cover rounded-3xl"
             />
           </div>
 
           <div className="flex max-md:gap-10 max-md:flex-col justify-between mt-20">
             <div className="flex w-full max-w-[236px] flex-col gap-5">
-              <RenderSideDetails text={postdata.category.name} />
-              <RenderSideDetails
-                heading=" Written by"
-                text={postdata.written_by}
-              />
-              <RenderSideDetails
-                heading="Published"
-                text={timeDifference(postdata.created_at)}
-              />
+              {postdata.category && (
+                <RenderSideDetails
+                  text={postdata.category && postdata.category.name}
+                />
+              )}
+              {postdata.written_by && (
+                <RenderSideDetails
+                  heading=" Written by"
+                  text={postdata.written_by}
+                />
+              )}
+              {postdata.created_at && (
+                <RenderSideDetails
+                  heading="Published"
+                  text={timeDifference(postdata.created_at)}
+                />
+              )}
             </div>
             <div>
-              <div
-                dangerouslySetInnerHTML={{ __html: postdata.description }}
-                className="w-full max-w-[1008px]"
-              ></div>
-              <div className="w-full max-w-[1008px]">
-                {" "}
-                <AudioPlayer
-                  audioSrc={postdata.file.original_url}
-                  className={"my-5"}
-                />{" "}
-              </div>
+              {postdata.description && (
+                <div
+                  dangerouslySetInnerHTML={{ __html: postdata.description }}
+                  className="w-full max-w-[1008px]"
+                ></div>
+              )}
+              {postdata.file.original_url && (
+                <div className="w-full max-w-[1008px]">
+                  {" "}
+                  <AudioPlayer
+                    audioSrc={postdata.file.original_url}
+                    className={"my-5"}
+                  />
+                </div>
+              )}
             </div>
           </div>
         </MaxWidthWrapper>
@@ -176,17 +188,20 @@ export default async function Page({ params }) {
     return (
       <MaxWidthWrapper className={"Posts  mt-40"}>
         <div className=" flex max-md:flex-col w-full gap-5 ">
-          <div className=" mt-10 w-full max-w-[376px] relative  aspect-square">
-            <Image
-              fill
-              src={"/podcast.jpg"}
-              className="object-cover rounded-3xl"
-            />
-          </div>
+          {postdata.image && postdata.image.url && (
+            <div className=" mt-10 w-full max-w-[376px] relative  aspect-square">
+              <Image
+                fill
+                src={(postdata.image && postdata.image.url) ?? ""}
+                className="object-cover rounded-3xl"
+              />
+            </div>
+          )}
           <div className="flex flex-1  flex-col   justify-end w-full max-w-[747px]">
             <p className=" text-[clamp(12px,1.1vw,16px)] font-semibold  font-AntarcticanMonoSemiBold">
-              Posted over {timeDifference(postdata.created_at)} • by{" "}
-              {postdata.written_by}
+              Posted over {timeDifference(postdata.created_at)}{" "}
+              {postdata.written_by && "• by"}{" "}
+              {postdata.written_by && postdata.written_by}
             </p>
             <div className=" flex justify-between w-full ">
               <h2 className=" mt-10 w-full max-w-[754px] text-[clamp(24px,3.2vw,36px)] leading-[clamp(28px,4vw,40px)] font-[lust-text]">
@@ -196,11 +211,18 @@ export default async function Page({ params }) {
                 <p className=" h-fit flex  self-end items-center justify-center gap-4 px-3 py-1 text-primary bg-white rounded-[24px] w-fit  capitalize font-AntarcticanMonoSemiBold text-[clamp(12px,1.1vw,16px)] ">
                   {" "}
                   {postdata.category.name}
-                  {
+                  {postdata.category.icon && (
                     <span className=" relative size-5">
-                      <Image src={postdata.category.icon.url} fill />
+                      <Image
+                        src={
+                          postdata.category.icon.url ??
+                          postdata.category.icon.original_url ??
+                          ""
+                        }
+                        fill
+                      />
                     </span>
-                  }
+                  )}
                 </p>
               )}
             </div>
@@ -216,10 +238,12 @@ export default async function Page({ params }) {
           </div>
         </div>
 
-        <div
-          dangerouslySetInnerHTML={{ __html: postdata.description }}
-          className="w-full max-md:mt-10 mt-20 "
-        ></div>
+        {postdata.description && (
+          <div
+            dangerouslySetInnerHTML={{ __html: postdata.description }}
+            className="w-full max-md:mt-10 mt-20 "
+          ></div>
+        )}
       </MaxWidthWrapper>
     );
 
