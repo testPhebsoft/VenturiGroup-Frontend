@@ -16,6 +16,7 @@ const AudioPlayer = ({
   const audioRef = useRef(null);
   const [progress, setProgress] = useState(0);
   const [isClicked, setIsClicked] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const togglePlay = () => {
     if (isPlaying) {
       audioRef.current.pause();
@@ -92,7 +93,9 @@ const AudioPlayer = ({
           }} // Update audio time on slider change
         />
       </div>
-      <audio ref={audioRef} src={audioSrc} onTimeUpdate={updateProgress} />
+      <audio ref={audioRef} onTimeUpdate={updateProgress}>
+        <source src={audioSrc} type="audio/mpeg" />
+      </audio>
     </div>
   );
 };
