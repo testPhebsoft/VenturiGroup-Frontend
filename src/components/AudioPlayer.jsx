@@ -13,7 +13,8 @@ const AudioPlayer = ({
   const [currentTime, setCurrentTime] = useState(null);
   const [disable, setDisable] = useState(false);
   const audioRef = useRef(null);
-
+  const [progress, setProgress] = useState(0);
+  const [isClicked, setIsClicked] = useState(false);
   const togglePlay = () => {
     if (isPlaying) {
       audioRef.current.pause();
@@ -65,11 +66,22 @@ const AudioPlayer = ({
         <p className="font-ArticulateMedium">
           Dev Stories: The Coding Journey with Ashley Firth | Octopus Energy
         </p>
+
         <Slider
           disabled={!audioSrc} // Enable slider only when audio source is defined
-          value={[currentTime]}
+          value={isClicked ? [progress] : [currentTime]}
           max={audioRef?.current?.duration} // Set max based on audio duration (consider adding a default value if needed)
           className="w-full h-1 fill-black "
+          onValueChange={(value) => {
+            setIsClicked(true);
+            setProgress(value[0]);
+            // audioRef.current.currentTime = value[0];
+          }}
+          onValueCommit={(value) => {
+            console.log("onValueChangeComplete", value);
+            setIsClicked(false);
+            audioRef.current.currentTime = value[0];
+          }}
           onChange={(value) => {
             audioRef.current.currentTime = value;
           }} // Update audio time on slider change
