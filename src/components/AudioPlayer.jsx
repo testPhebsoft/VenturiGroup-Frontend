@@ -6,6 +6,7 @@ import { Play, Pause } from "lucide-react"; // Import both Play and Pause icons
 
 const AudioPlayer = ({
   audioSrc = "https://venturi.gitwork.tech/audio/audio1.mp3",
+  title,
   className,
 }) => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -64,7 +65,8 @@ const AudioPlayer = ({
       </div>
       <div className="flex flex-col items-start gap-3 w-full">
         <p className="font-ArticulateMedium">
-          Dev Stories: The Coding Journey with Ashley Firth | Octopus Energy
+          {title ??
+            "Dev Stories: The Coding Journey with Ashley Firth | Octopus Energy"}
         </p>
 
         <Slider

@@ -10,83 +10,31 @@ import Image from "next/image";
 import AudioPlayer from "@/components/AudioPlayer";
 import { RenderBlogCard } from "@/components/RenderBlogCard";
 import { timeDifference } from "@/lib/utils";
+import { notFound } from "next/navigation";
 
 export default async function Page({ params }) {
   let post = params.post;
-  let latestBlogs = await getCategoriesBlogAll({ page: 1, per_page: 3 });
-  let postdata = await getPostData({ slug: post });
-  postdata = postdata.data;
-  latestBlogs = latestBlogs.data;
+  let latestBlogs;
+  let postdata;
+  try {
+    latestBlogs = await getCategoriesBlogAll({ page: 1, per_page: 3 });
+    postdata = await getPostData({ slug: post });
 
-  let data = {
-    tag: "data",
-    icon: (
-      <svg
-        width="13"
-        height="13"
-        viewBox="0 0 13 13"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M12.1394 11.455H1.54517"
-          stroke="#9E76E9"
-          stroke-miterlimit="133.33"
-          stroke-linecap="round"
-        />
-        <path
-          opacity="0.5"
-          d="M11.6097 11.455V7.48219C11.6097 7.04429 11.253 6.68762 10.8151 6.68762H9.22596C8.78807 6.68762 8.4314 7.04429 8.4314 7.48219V11.455"
-          stroke="#9E76E9"
-          stroke-miterlimit="133.33"
-        />
-        <path
-          d="M8.4312 11.455V2.44991C8.4312 1.70125 8.4312 1.32692 8.19813 1.09385C7.96505 0.860779 7.59072 0.860779 6.84206 0.860779C6.09341 0.860779 5.71908 0.860779 5.486 1.09385C5.25293 1.32692 5.25293 1.70125 5.25293 2.44991V11.455"
-          stroke="#9E76E9"
-          stroke-miterlimit="133.33"
-        />
-        <path
-          opacity="0.5"
-          d="M5.25298 11.455V4.83363C5.25298 4.39573 4.8963 4.03906 4.45841 4.03906H2.86927C2.43138 4.03906 2.07471 4.39573 2.07471 4.83363V11.455"
-          stroke="#9E76E9"
-          stroke-miterlimit="133.33"
-        />
-      </svg>
-    ),
-  };
-  let blog = {
-    tag: "blog",
-    icon: (
-      <svg
-        width="18"
-        height="20"
-        viewBox="0 0 18 20"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M2.34473 8.4703C2.34473 5.58313 2.34473 4.1361 3.24051 3.24032C4.13629 2.34454 5.58331 2.34454 8.47048 2.34454H10.0002C12.8874 2.34454 14.3344 2.34454 15.2302 3.24032C16.126 4.1361 16.1259 5.58313 16.1259 8.4703V11.5297C16.1259 14.4169 16.126 15.8639 15.2302 16.7597C14.3344 17.6555 12.8874 17.6555 10.0002 17.6555H8.47048C5.58331 17.6555 4.13629 17.6555 3.24051 16.7597C2.34473 15.8639 2.34473 14.4169 2.34473 11.5297V8.4703Z"
-          stroke="#9E76E9"
-          stroke-miterlimit="133.33"
-        />
-        <path
-          opacity="0.5"
-          d="M4.63916 10C4.63916 8.91819 4.63916 8.37383 4.9768 8.03619C5.31444 7.69855 5.85191 7.69855 6.94062 7.69855H11.5367C12.6185 7.69855 13.1628 7.69855 13.5005 8.03619C13.8381 8.37383 13.8381 8.91129 13.8381 10V13.0594C13.8381 14.1413 13.8381 14.6856 13.5005 15.0233C13.1628 15.3609 12.6254 15.3609 11.5367 15.3609H6.94062C5.8588 15.3609 5.31444 15.3609 4.9768 15.0233C4.63916 14.6856 4.63916 14.1482 4.63916 13.0594V10Z"
-          stroke="#9E76E9"
-          stroke-miterlimit="133.33"
-        />
-        <path
-          opacity="0.5"
-          d="M5.40381 5.40393H9.23499"
-          stroke="#9E76E9"
-          stroke-miterlimit="133.33"
-          stroke-linecap="round"
-        />
-      </svg>
-    ),
-  };
+    postdata = postdata.data;
+    latestBlogs = latestBlogs.data;
+  } catch (error) {
+    // return notFound();
+  }
 
-  if (postdata.category.slug !== "podcasts") {
+  if (!postdata) {
+    return notFound();
+  }
+
+  if (
+    postdata.category &&
+    postdata.category.slug &&
+    postdata.category.slug !== "podcasts"
+  ) {
     return (
       <>
         <MaxWidthWrapper className={" Posts mt-40"}>
@@ -219,7 +167,12 @@ export default async function Page({ params }) {
       </>
     );
   }
-  if (postdata.category.slug == "podcasts")
+
+  if (
+    postdata.category &&
+    postdata.category.slug &&
+    postdata.category.slug == "podcasts"
+  )
     return (
       <MaxWidthWrapper className={"Posts  mt-40"}>
         <div className=" flex max-md:flex-col w-full gap-5 ">
@@ -252,7 +205,12 @@ export default async function Page({ params }) {
               )}
             </div>
             <AudioPlayer
-              audioSrc={postdata.file.original_url}
+              audioSrc={
+                postdata.file &&
+                postdata.file.original_url &&
+                postdata.file.original_url
+              }
+              title={postdata.title}
               className={"my-5"}
             />
           </div>
