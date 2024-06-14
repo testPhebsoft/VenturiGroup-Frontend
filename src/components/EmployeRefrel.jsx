@@ -12,7 +12,11 @@ export default function EmployeeRefral() {
         success, you belong here. In a thriving, inclusive environment that puts
         people first. 
       </p>
-      <Link href="/contact">
+      <Link
+        target="_blank"
+        tabIndex={0}
+        href="https://jcdqujpmxoo.typeform.com/to/A1l2iv9l"
+      >
         <Button className="w-fit md:mx-auto uppercase">contact us +</Button>
       </Link>
     </div>

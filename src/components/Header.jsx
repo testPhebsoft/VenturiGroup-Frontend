@@ -50,7 +50,12 @@ export default async function Header() {
               {" "}
               <li>insights</li>
             </Link>
-            <Link className="hover:text-input/50" href={"/contact"}>
+            <Link
+              target="_blank"
+              tabIndex={0}
+              className="hover:text-input/50"
+              href={"https://jcdqujpmxoo.typeform.com/to/A1l2iv9l"}
+            >
               {" "}
               <li>contact</li>
             </Link>

@@ -52,7 +52,12 @@ export default async function Footer({
                 {" "}
                 <li>Insights</li>
               </Link>
-              <Link className="hover:text-input/60" href={"/contact"}>
+              <Link
+                target="_blank"
+                tabIndex={0}
+                className="hover:text-input/60"
+                href={"https://jcdqujpmxoo.typeform.com/to/A1l2iv9l"}
+              >
                 {" "}
                 <li>Contact</li>
               </Link>

@@ -64,7 +64,12 @@ export default function HeaderMenu({ LocationsData, ...props }) {
                 <li>Insights</li>
               </SheetClose>
             </Link>{" "}
-            <Link className="hover:text-input/60" href={"/contact"}>
+            <Link
+              target="_blank"
+              tabIndex={0}
+              className="hover:text-input/60"
+              href={"https://jcdqujpmxoo.typeform.com/to/A1l2iv9l"}
+            >
               <SheetClose>
                 <li>Contact</li>
               </SheetClose>

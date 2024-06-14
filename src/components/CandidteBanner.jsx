@@ -45,7 +45,11 @@ export default function CandidateBanner() {
             listen. To your needs, ambitions and the things that set you apart.
             Our goal for you to feel heard, empowered and energised.
           </div>
-          <Link href="/contact">
+          <Link
+            target="_blank"
+            tabIndex={0}
+            href="https://jcdqujpmxoo.typeform.com/to/A1l2iv9l"
+          >
             {" "}
             <Button className="uppercase mt-10 sm:mt-20">
               find out more +

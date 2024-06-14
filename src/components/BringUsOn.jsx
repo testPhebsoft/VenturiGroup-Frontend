@@ -18,7 +18,11 @@ export default function BringUsOn() {
             backgrounds. Disruptors looking for a new challenge. We&apos;ll help
             you uncover incredible talent, whatever your hiring plans.
           </p>
-          <Link href={"/contact"}>
+          <Link
+            target="_blank"
+            tabIndex={0}
+            href={"https://jcdqujpmxoo.typeform.com/to/A1l2iv9l"}
+          >
             {" "}
             <Button className="uppercase mt-10">make it happen + </Button>
           </Link>

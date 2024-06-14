@@ -78,7 +78,11 @@ export default async function OurClients() {
                 all of them – be it a global B2C brand or a deep tech startup –
                 is the need for exceptional talent. 
               </p>
-              <Link href={"/contact"}>
+              <Link
+                target="_blank"
+                tabIndex={0}
+                href={"https://jcdqujpmxoo.typeform.com/to/A1l2iv9l"}
+              >
                 <Button className="uppercase w-fit">find out more +</Button>{" "}
               </Link>
             </div>

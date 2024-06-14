@@ -14,7 +14,12 @@ export default function ExploreYourNext() {
         success.
       </p>
 
-      <Link className=" w-fit md:mx-auto" href="/contact">
+      <Link
+        target="_blank"
+        tabIndex={0}
+        className=" w-fit md:mx-auto"
+        href="https://jcdqujpmxoo.typeform.com/to/A1l2iv9l"
+      >
         {" "}
         <Button className="w-fit md:mx-auto uppercase">get in touch +</Button>
       </Link>

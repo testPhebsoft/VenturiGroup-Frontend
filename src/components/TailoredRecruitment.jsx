@@ -42,7 +42,11 @@ export default function TailoredRecuritment() {
             us. We can tailor our support around your needs, ambitions and
             timeframes – whatever the work requires.
           </p>
-          <Link href={"/contact"}>
+          <Link
+            target="_blank"
+            tabIndex={0}
+            href={"https://jcdqujpmxoo.typeform.com/to/A1l2iv9l"}
+          >
             {" "}
             <Button className="w-fit uppercase">get in touch +</Button>{" "}
           </Link>

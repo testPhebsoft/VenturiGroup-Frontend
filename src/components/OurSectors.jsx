@@ -87,7 +87,11 @@ export default function OurSector() {
                 </>
               )}
             </p>
-            <Link href="/contact">
+            <Link
+              target="_blank"
+              tabIndex={0}
+              href="https://jcdqujpmxoo.typeform.com/to/A1l2iv9l"
+            >
               {" "}
               <Button className="uppercase w-fit "> get in touch +</Button>
             </Link>

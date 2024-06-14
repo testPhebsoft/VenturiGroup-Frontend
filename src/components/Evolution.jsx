@@ -52,7 +52,7 @@ export default function Evolution() {
             and the care and passion they have for what we do. They make the
             difference.
           </p>
-          <Link href={"/job-application-internal"}>
+          <Link href={"/join-us"}>
             {" "}
             <Button className=" uppercase w-fit mt-10">join us +</Button>
           </Link>
