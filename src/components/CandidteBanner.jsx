@@ -1,3 +1,4 @@
+import Link from "next/link";
 import MaxWidthWrapper from "./MaxWidthWraper";
 import { Button } from "./ui/button";
 
@@ -44,7 +45,12 @@ export default function CandidateBanner() {
             listen. To your needs, ambitions and the things that set you apart.
             Our goal for you to feel heard, empowered and energised.
           </div>
-          <Button className="uppercase mt-10 sm:mt-20">find out more +</Button>
+          <Link href="/contact">
+            {" "}
+            <Button className="uppercase mt-10 sm:mt-20">
+              find out more +
+            </Button>{" "}
+          </Link>
         </div>
       </MaxWidthWrapper>
     </div>

@@ -35,15 +35,22 @@ import {
 } from "@/fonts/AntarcticanMono";
 import InitStoreFunctions from "@/components/IntialiseStore";
 import GoogleTranslate from "@/components/GoogleTranslate";
+import { getCooKies } from "@/lib/actions";
 
 export const metadata = {
   title: "Venturi Group",
   description: "Venturi Group",
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  let googe;
+  try {
+    googe = await getCooKies("googtrans");
+    googe = googe.value;
+  } catch (error) {}
+
   return (
-    <html lang="en">
+    <html lang="en" className={googe == "/en/en" ? "notranslate" : ""}>
       <body
         className={cn(
           "text-[#1A1B1D] overflow-x-hidden  bg-background",

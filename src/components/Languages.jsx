@@ -28,6 +28,12 @@ export function Languages({ data, className }) {
   let FlagList = [];
 
   const onChange = (value) => {
+    if (value == "en" || value == "en-gb") {
+      document.documentElement.classList.add("notranslate");
+    } else {
+      document.documentElement.classList.remove("notranslate");
+    }
+
     setSelectedLangLocationCode(value);
   };
 

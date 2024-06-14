@@ -154,7 +154,7 @@ export default async function Page({ params }) {
             <h2 className=" max-[839px]:text-[clamp(16px,10vw,36px)] max-[839px]:leading-[clamp(24px,10vw,36px)] text-[clamp(16px,3.2vw,36px)] leading-[clamp(24px,3.3vw,36px)] font-[lust-text]">
               Latest Insights{" "}
             </h2>
-            <Button className=" uppercase ">see more +</Button>
+            {/* <Button className=" uppercase ">see more +</Button> */}
           </div>
           <MaxWidthWrapper className=" grid mt-10 gap-x-3 gap-y-20 grid-cols-2 lg:grid-cols-3 ">
             {latestBlogs.map((post, index) => (
