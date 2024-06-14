@@ -56,11 +56,14 @@ const AudioPlayer = ({
         className
       )}
     >
-      <div className="before:absolute size-10 inset-2 relative before:rounded-full before:bg-primary before:size-10 before:-inset-2">
+      <div
+        onClick={togglePlay}
+        className="before:absolute cursor-pointer size-10 inset-2 relative before:rounded-full before:bg-primary before:size-10 before:-inset-2"
+      >
         {isPlaying ? (
-          <Pause stroke="white" className="absolute" onClick={togglePlay} />
+          <Pause stroke="white" className="absolute" />
         ) : (
-          <Play stroke="white" className="absolute" onClick={togglePlay} />
+          <Play stroke="white" className="absolute" />
         )}
       </div>
       <div className="flex flex-col items-start gap-3 w-full">
