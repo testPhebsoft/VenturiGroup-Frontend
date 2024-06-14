@@ -186,10 +186,10 @@ const RenderCard = ({
                     <a href={instaLink || "#"} target="_blank" tabIndex={1}>
                       <div className="relative before:absolute before:block before:rounded-full before:size-8 before:-inset-[6px] before:bottom-[50%] size-5   before:bg-[#1A1B1D1A]  ">
                         <Image
-                          alt="Linkedin"
-                          height={20}
-                          width={20}
-                          src="/LinkedIn.svg"
+                          className="  "
+                          alt="Instagram"
+                          fill
+                          src="/instagram.svg"
                         />
                       </div>
                     </a>
@@ -198,10 +198,10 @@ const RenderCard = ({
                     <a href={linkdinLink || "#"} target="_blank" tabIndex={1}>
                       <div className="relative before:absolute before:block before:rounded-full before:size-8 before:-inset-[6px] before:bottom-[50%] size-5   before:bg-[#1A1B1D1A]  ">
                         <Image
-                          className="  "
-                          alt="Instagram"
-                          fill
-                          src="/instagram.svg"
+                          alt="Linkedin"
+                          height={20}
+                          width={20}
+                          src="/LinkedIn.svg"
                         />
                       </div>
                     </a>
