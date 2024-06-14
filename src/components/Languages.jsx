@@ -33,6 +33,7 @@ export function Languages({ data, className }) {
       setSelectedLangLocationCode(value);
     } else {
       document.documentElement.classList.remove("notranslate");
+
       setSelectedLangLocationCode(value);
     }
   };

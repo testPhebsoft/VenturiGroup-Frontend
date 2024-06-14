@@ -265,7 +265,7 @@ const JobCard = ({
             {/* <h3 className=" font-bold text-[clamp(18px,1.95vw,24px)] font-[lust-text] ">
               {jobContract}
             </h3> */}
-            <h3 className=" text-[clamp(18px,1.95vw,20px)] font-[lust-text] font-light">
+            <h3 className=" text-[clamp(18px,1.95vw,24px)] font-[lust-text] font-light">
               {title}
             </h3>
             <p className="  text-[clamp(12px,1.29vw,16px)]">
@@ -356,48 +356,51 @@ const JobCard = ({
                     dangerouslySetInnerHTML={{ __html: description2 }}
                     className="text-[#8B8B8B] ck-content"
                   ></p>
-                  {/* </div>
-              <Link
-
-                href={
-                  isInternal ? "/job-application-internal " : "/job-application"
-                }
-              > */}
-                  <Button
-                    onClick={() => setTypeformOpen(true)}
-                    className="uppercase flex  w-fit justify-center items-center h-10 gap-6"
+                  {/* </div>*/}
+                  <Link
+                    target="_blank"
+                    tabIndex={0}
+                    href={
+                      isInternal
+                        ? `https://jcdqujpmxoo.typeform.com/to/TDman6EV#venturi_admin_job_id=${id}&job_location=${location}`
+                        : `https://jcdqujpmxoo.typeform.com/to/LoZIEIyD#venturi_admin_job_id=${id}&job_location=${location}`
+                    }
                   >
-                    <p className="h-[clamp(12px,1.29vw,16px)] text-center  text-[clamp(12px,1.29vw,16px)]">
-                      {" "}
-                      quick apply
-                    </p>{" "}
-                    {false && (
-                      <svg
-                        width="16"
-                        height="16"
-                        viewBox="0 0 16 16"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M2.10331 3.99983C3.15174 3.99983 4.00166 3.14991 4.00166 2.10148C4.00166 1.05305 3.15174 0.203125 2.10331 0.203125C1.05488 0.203125 0.204956 1.05305 0.204956 2.10148C0.204956 3.14991 1.05488 3.99983 2.10331 3.99983Z"
-                          fill="white"
-                        />
-                        <path
-                          d="M5.79413 5.43802V15.9701H9.06419V10.7617C9.06419 9.38743 9.32274 8.0565 11.0267 8.0565C12.7073 8.0565 12.7282 9.62776 12.7282 10.8485V15.9709H15.9999V10.1952C15.9999 7.35806 15.3891 5.17773 12.0731 5.17773C10.481 5.17773 9.41384 6.05143 8.97743 6.87827H8.93318V5.43802H5.79413ZM0.46521 5.43802H3.74048V15.9701H0.46521V5.43802Z"
-                          fill="white"
-                        />
-                      </svg>
-                    )}
-                  </Button>
-                  {/* </Link> */}
+                    <Button
+                      // onClick={() => setTypeformOpen(true)}
+                      className="uppercase flex  w-fit justify-center items-center h-10 gap-6"
+                    >
+                      <p className="h-[clamp(12px,1.29vw,16px)] text-center  text-[clamp(12px,1.29vw,16px)]">
+                        {" "}
+                        quick apply
+                      </p>{" "}
+                      {false && (
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M2.10331 3.99983C3.15174 3.99983 4.00166 3.14991 4.00166 2.10148C4.00166 1.05305 3.15174 0.203125 2.10331 0.203125C1.05488 0.203125 0.204956 1.05305 0.204956 2.10148C0.204956 3.14991 1.05488 3.99983 2.10331 3.99983Z"
+                            fill="white"
+                          />
+                          <path
+                            d="M5.79413 5.43802V15.9701H9.06419V10.7617C9.06419 9.38743 9.32274 8.0565 11.0267 8.0565C12.7073 8.0565 12.7282 9.62776 12.7282 10.8485V15.9709H15.9999V10.1952C15.9999 7.35806 15.3891 5.17773 12.0731 5.17773C10.481 5.17773 9.41384 6.05143 8.97743 6.87827H8.93318V5.43802H5.79413ZM0.46521 5.43802H3.74048V15.9701H0.46521V5.43802Z"
+                            fill="white"
+                          />
+                        </svg>
+                      )}
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </div>
           </DialogContent>
         )}
 
-        {typeformOpen && isInternal && (
+        {/* {typeformOpen && isInternal && (
           <DialogContent
             style={{
               WebkitOverflowScrolling: "touch",
@@ -444,7 +447,7 @@ const JobCard = ({
               ></iframe>
             </div>
           </DialogContent>
-        )}
+        )} */}
       </Dialog>
     </div>
   );
