@@ -226,15 +226,17 @@ export default async function Page({ params }) {
                 </p>
               )}
             </div>
-            <AudioPlayer
-              audioSrc={
-                postdata.file &&
-                postdata.file.original_url &&
-                postdata.file.original_url
-              }
-              title={postdata.title}
-              className={"my-5"}
-            />
+            {postdata.file && postdata.file.original_url && (
+              <AudioPlayer
+                audioSrc={
+                  postdata.file &&
+                  postdata.file.original_url &&
+                  postdata.file.original_url
+                }
+                title={postdata.title}
+                className={"my-5"}
+              />
+            )}
           </div>
         </div>
 
