@@ -53,7 +53,7 @@ export default function JoinUsBanner() {
       </div>
       <div className="md:text-center px-5 sm:px-10 pb-10 flex flex-col -mt-[100px] relative z-10 gap-10  ">
         <h2 className="font-[lust-text] mt-7 max-[839px]:text-[clamp(16px,10vw,48px)] max-[839px]:leading-[clamp(24px,10vw,51px)] text-[clamp(16px,3.2vw,51px)] leading-[clamp(24px,3.3vw,51px)] text-input/50 font-light">
-          Intrested in <span className="text-input"> joining</span>?
+          Interested in <span className="text-input"> joining</span>?
         </h2>
         <p className="font-[lust-text]  font-light text-[clamp(18px,2.1vw,24px)] leading-[clamp(24px,5vw,36px)] mx-auto w-full max-w-[1011px]">
           If you&apos;re passionate about connecting great minds and igniting
