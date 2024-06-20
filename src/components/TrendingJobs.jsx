@@ -233,7 +233,10 @@ const JobCard = ({
       <div className="p-10 py-10 flex flex-col h-full">
         {!isInternal && (
           <div className="text-white flex flex-col flex-1 justify-between pb-3 ">
-            <h3 className="font-bold text-[clamp(18px,1.95vw,20px)] font-[lust-text] ">
+            <h3
+              translate="no"
+              className="font-bold text-[clamp(18px,1.95vw,20px)] font-[lust-text] "
+            >
               {title}
             </h3>
             <h3 className="  text-[clamp(18px,1.95vw,24px)] font-[lust-text] ">

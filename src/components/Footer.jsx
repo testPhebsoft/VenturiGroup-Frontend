@@ -25,7 +25,7 @@ export default async function Footer({
     {
       city: "amsterdam",
       addressLine: "Prins Hendrikkade 21 - E 1012 TL Amsterdam",
-      number: "+99 999 999",
+      number: "+31 207 870141",
     },
   ],
 }) {

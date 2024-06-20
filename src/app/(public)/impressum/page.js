@@ -8,7 +8,7 @@ export default function Page() {
 
       <div className="my-6">
         <h2 className="text-2xl font-semibold mb-2">Angaben gemäß § 5 TMG:</h2>
-        <p className="text-gray-800">
+        {/* <p className="text-gray-800">
           Max Mustermann
           <br />
           Musterstraße 123
@@ -20,6 +20,33 @@ export default function Page() {
           Telefon: 01234 567890
           <br />
           E-Mail: max.mustermann@example.com
+          <br />
+        </p> */}
+        <p className="text-gray-800">
+          Venturi Germany GmbH
+          <br />
+          Graf-Adolf-Platz 15
+          <br />
+          40213 Düsseldorf
+          <br />
+          Handelsregister: HRB 95440
+          <br />
+          Registergericht: Düsseldorf
+          <br />
+          Vertreten durch:Bradley James Lamb
+          <br />
+          Konstantin Minchin (Prokurist)
+          <br />
+          Kontakt
+          <br />
+          Telefon: [Telefonnummer]
+          <br />
+          Umsatzsteuer-ID
+          <br />
+          Umsatzsteuer-Identifikationsnummer gemäß § 27 a
+          Umsatzsteuergesetz:DE318606138
+          <br />
+          E-Mail: enquiries@venturi-group.com
           <br />
         </p>
       </div>

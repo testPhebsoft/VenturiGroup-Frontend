@@ -16,10 +16,13 @@ export default async function OurCustomers({ type = "client" }) {
     },
   ];
   try {
+    console.log("Tryinf to Fetch");
     res = await getTestimonials();
+    console.log(res, "Fetched testimonials");
     data = res.data;
     data = data.filter((item) => item.type == type);
     // console.log(data.length);
+    console.log(data, "asddddddddddddddddddddddddd");
   } catch (e) {
     console.log(e);
   }

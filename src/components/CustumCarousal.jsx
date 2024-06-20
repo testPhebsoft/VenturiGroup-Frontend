@@ -50,7 +50,7 @@ export default function CustumCarousal({ data, type }) {
       },
     };
   };
-  console.log(data);
+  console.log("checked", data);
   function PauseAutoplay() {
     ref.current.autoplay.stop();
   }

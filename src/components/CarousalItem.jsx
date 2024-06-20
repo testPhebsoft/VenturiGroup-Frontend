@@ -15,6 +15,9 @@ export default function CarousalItem({
   const swiper = useSwiperSlide();
   const isOutsideViewport = swiper.isActive;
   const [isOpen, setIsOpen] = useState(false);
+  console.log("isOutsideViewport", item);
+
+  const name = item.anonymous === true ? null : item.name;
   function handleOpen(e) {
     console.log(e);
     setIsOpen(false);
@@ -90,7 +93,7 @@ export default function CarousalItem({
                   </div>
                   <div className="flex md:hidden flex-col mt-auto justify-between w-full  h-fit">
                     <h3 className="text-[clamp(20px,6vw,36px)]  font-[lust-text] font-light ">
-                      {item.name && item.name}
+                      {name}
                     </h3>
                     <p className="text-primary font-AntarcticanMonoSemiBold w-full text-[16px] uppercase">
                       {item.job_title && item.job_title},{" "}
@@ -102,7 +105,7 @@ export default function CarousalItem({
                 <div className="w-full  max-md:mt-10 ">
                   <div className="flex max-md:hidden justify-between w-full items-center  h-fit">
                     <h3 className="text-[clamp(20px,6vw,36px)]  font-[lust-text] font-light ">
-                      {item.name && item.name}
+                      {name}
                     </h3>
                     <p className="text-primary font-AntarcticanMonoSemiBold text-[16px] uppercase">
                       {item.job_title && item.job_title},{" "}
