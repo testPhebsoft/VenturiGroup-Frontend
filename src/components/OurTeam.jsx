@@ -115,9 +115,14 @@ const RenderCard = ({
           </div>
           <div className="w-full mx-auto pointer-events-none ">
             <div className="w-full mt-5 flex justify-between   text-[clamp(18px,3.2vw,24px)] font-[lust-text]">
-              <p className="w-full  whitespace-normal">{name || "Isabella "}</p>
+              <p translate="no" className="w-full  whitespace-normal">
+                {name || "Isabella "}
+              </p>
             </div>
-            <p className="font-AntarcticanMonoMedium text-left uppercase  mt-5 text-primary">
+            <p
+              translate="no"
+              className="font-AntarcticanMonoMedium text-left uppercase  mt-5 text-primary"
+            >
               {" "}
               {jobTitle || "Job Title"}
             </p>
@@ -140,23 +145,35 @@ const RenderCard = ({
               />
             </div>
             <div>
-              <h2 className="w-full lg:hidden max-w-[344px]  text-[clamp(24px,7vw,36px)] whitespace-normal  font-[lust-text]">
+              <h2
+                translate="no"
+                className="w-full lg:hidden max-w-[344px]  text-[clamp(24px,7vw,36px)] whitespace-normal  font-[lust-text]"
+              >
                 {" "}
                 {name || "Data & Analytics"}
               </h2>
-              <p className="font-AntarcticanMonoMedium lg:hidden text-left uppercase   text-primary">
+              <p
+                translate="no"
+                className="font-AntarcticanMonoMedium lg:hidden text-left uppercase   text-primary"
+              >
                 {" "}
                 {jobTitle || "Job Title"}
               </p>
             </div>
           </div>
           <div className="lg:w-[50%] flex flex-col py-10">
-            <h2 className="w-full max-lg:hidden lg:max-w-[344px]  text-[clamp(24px,7vw,36px)] whitespace-normal  font-[lust-text]">
+            <h2
+              translate="no"
+              className="w-full max-lg:hidden lg:max-w-[344px]  text-[clamp(24px,7vw,36px)] whitespace-normal  font-[lust-text]"
+            >
               {" "}
               {name || "Data & Analytics"}
             </h2>
 
-            <p className="font-AntarcticanMonoMedium max-lg:hidden text-left uppercase   text-primary">
+            <p
+              translate="no"
+              className="font-AntarcticanMonoMedium max-lg:hidden text-left uppercase   text-primary"
+            >
               {" "}
               {jobTitle || "Job Title"}
             </p>

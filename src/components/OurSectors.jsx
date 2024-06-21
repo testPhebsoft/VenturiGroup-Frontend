@@ -124,7 +124,7 @@ export default function OurSector() {
           "/sector2.jpg",
           "02",
           "Software Engineering",
-          "We leverage our extensive knowledge in software engineering to help businesses develop robust platforms and software products. Highly skilled engineers are crucial in this process, as they ensure the creation of efficient, reliable, and scalable solutions. They bring expertise in the latest technologies and best practices, leading to innovative and high-quality software that meets business needs. Our engineers excel in problem-solving, optimizing performance, and ensuring security, all while maintaining a user-centric approach By having top-tier engineers on your team, you can achieve superior functionality, faster development cycles, and a competitive edge in the market. Our commitment is to empower your business with these advantages through exceptional software solutions, ensuring your long-term success and growth."
+          "We leverage our extensive knowledge in software engineering to help businesses develop robust platforms and software products. Highly skilled engineers are crucial in this process, as they ensure the creation of efficient, reliable, and scalable solutions. They bring expertise in the latest technologies and best practices, leading to innovative and high-quality software that meets business needs. Our engineers excel in problem-solving, optimizing performance, and ensuring security, all while maintaining a user-centric approach. By having top-tier engineers on your team, you can achieve superior functionality, faster development cycles, and a competitive edge in the market. Our commitment is to empower your business with these advantages through exceptional software solutions, ensuring your long-term success and growth."
         )}
         {renderCard(
           "/sector3.jpg",
@@ -132,7 +132,7 @@ export default function OurSector() {
           <>
             ERP & <br></br>CRM
           </>,
-          "We are passionate about helping businesses implement ERP systems because we see firsthand how transformative they can be. ERP systems streamline processes and reduce manual tasks, leading to improved efficiency. They integrate information across departments, providing a single source of truth for better decision-making, and offer real-time insights for accurate forecasting. Additionally, ERP systems optimize resource management, support scalability for business growth, ensure regulatory compliance, and enhance customer service with better order accuracy and faster response times. We are dedicated to bringing these powerful benefits to our clients, driving their success and growth."
+          "We are passionate about helping businesses implement ERP systems because we see firsthand how transformative they can be. ERP systems streamline processes and reduce manual tasks, leading to improved efficiency. They integrate information across departments, providing a single source of truth for better decision-making, and offer real-time insights for accurate forecasting. Additionally, ERP systems optimise  resource management, support scalability for business growth, ensure regulatory compliance, and enhance customer service with better order accuracy and faster response times. We are dedicated to bringing these powerful benefits to our clients, driving their success and growth."
         )}
       </div>
     </div>
