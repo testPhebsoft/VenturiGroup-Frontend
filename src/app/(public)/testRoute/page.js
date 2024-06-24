@@ -4,6 +4,7 @@ import {
   getCategoriesBlog,
   getLocations,
   getLocationsByCode,
+  getPageData,
   getPartners,
   getTeamMembersByLocations,
   getTestimonials,
@@ -52,7 +53,7 @@ export default async function Page() {
     },
   ];
 
-  let res = await getCategoriesBlog({ slug: "blogs" });
+  let res = await getPageData();
   // console.log(res);
   // let res = await getLocationsByCode();
   // console.log(res);
@@ -60,6 +61,7 @@ export default async function Page() {
   //   let locations = await getLocations();
   //   console.log(locations);
   // } catch (e) {}
+
   return (
     <div className="pt-40  max-w-screen-maxScreenSize mx-auto">
       {/* <Final data={data} /> */}

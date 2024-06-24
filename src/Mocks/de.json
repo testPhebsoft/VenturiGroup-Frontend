@@ -1,0 +1,45 @@
+{
+  "home-banner": {
+    "main-heading": "<p>Verbinde <span class=\"text-[#9E76E9]\">große Köpfe</span>, entzünde Erfolg</p>",
+    "sub-heading": "Technik-Talente freisetzen",
+    "description": "Es braucht Fachwissen, um Menschen zu finden, die eine Idee, ein Projekt oder eine Strategie zum Leben erwecken – und sie größer machen, als du es dir vorgestellt hast. Wir wissen das. Es liegt in unserer DNA. Wir bringen unglaubliche Techniktalente dorthin, wo sie am meisten gebraucht werden, von Startups bis hin zu globalen Unternehmen.",
+    "btn-text": "MEHR ERFAHREN +"
+  },
+  "tailored-recruitment": {
+    "heading": "Maßgeschneiderte Rekrutierung",
+    "main-heading": " <p> <span class=\"text-input/50\"> Stelle die </span>Experten <span class=\"text-input/50\"> zusammen, um vorwärts zu kommen</span> </p>",
+    "description": "Unser Angebot umfasst mehrere Technologiebereiche, darunter Daten & Analytik, ERP, CRM und Softwareentwicklung. Wir arbeiten mit erstklassigen Talenten und entwickeln uns ständig mit der Technologielandschaft weiter. Wenn du mit jemandem über deine Einstellungspläne sprechen musst, sprich mit uns. Wir können unsere Unterstützung auf deine Bedürfnisse, Ambitionen und Zeitrahmen zuschneiden – was auch immer die Arbeit erfordert.",
+    "btn-text": "KONTAKTIERE UNS +"
+  },
+  "our-sectors": {
+    "heading": "Unsere Sektoren",
+    "main-heading": "Sieh dir unsere <span class=\" text-[#9E76E9] \">Fachgebiete</span> an",
+    "sector-one": {
+      "name": "Daten & Analytik",
+      "description": "<p>In der heutigen datenreichen Technikumgebung ist es entscheidend, detailorientierte Denker zu haben, die große Datensätze durchforsten und wertvolle Erkenntnisse gewinnen können. Aber während der Bedarf an Datenkompetenz immer vorhanden ist, verändert sich die Landschaft ständig – mit neuen und ausgefeilten Möglichkeiten, Informationen zu nutzen, zu verwalten und zuzugreifen.<br /><br />Wir wissen, dass Daten deinem Unternehmen einen klaren und wettbewerbsfähigen Vorteil verschaffen können. Wir wissen auch, dass du die richtigen Leute brauchst, um die Punkte zu verbinden und diese Informationen zu nutzen. Das bedeutet Experten, die mit den neuesten Technologien, Vorschriften und Datenerhebungstechniken auf dem Laufenden sind – sei es Verbraucherdaten aus deinem CRM oder Geschäftsinformationen.<br /><br />Von Datenwissenschaftlern und Ingenieuren bis hin zu Business Intelligence-Analysten arbeiten wir mit einer Vielzahl von Daten- und Analytik-Talenten. Und weil wir die Landschaft in- und auswendig kennen, können wir dir helfen, die Personen zu identifizieren, die zur Umsetzung deiner Pläne benötigt werden.</p>"
+    },
+    "sector-two": {
+      "name": "Softwareentwicklung",
+      "description": "Wir nutzen unser umfangreiches Wissen in der Softwareentwicklung, um Unternehmen zu helfen, robuste Plattformen und Softwareprodukte zu entwickeln. Hochqualifizierte Ingenieure sind in diesem Prozess entscheidend, da sie die Erstellung effizienter, zuverlässiger und skalierbarer Lösungen sicherstellen. Sie bringen Expertise in den neuesten Technologien und Best Practices mit, was zu innovativer und hochwertiger Software führt, die den Geschäftsanforderungen entspricht. Unsere Ingenieure zeichnen sich durch Problemlösung, Leistungsoptimierung und Sicherstellung der Sicherheit aus, wobei sie stets einen benutzerzentrierten Ansatz verfolgen. Mit erstklassigen Ingenieuren in deinem Team kannst du überlegene Funktionalität, schnellere Entwicklungszyklen und einen Wettbewerbsvorteil auf dem Markt erreichen. Unser Engagement besteht darin, dein Unternehmen mit diesen Vorteilen durch außergewöhnliche Softwarelösungen zu stärken und deinen langfristigen Erfolg und Wachstum zu sichern."
+    },
+    "sector-three": {
+      "name": "ERP & CRM",
+      "description": "Wir sind leidenschaftlich daran interessiert, Unternehmen bei der Implementierung von ERP-Systemen zu helfen, weil wir aus erster Hand sehen, wie transformativ sie sein können. ERP-Systeme rationalisieren Prozesse und reduzieren manuelle Aufgaben, was zu verbesserter Effizienz führt. Sie integrieren Informationen über Abteilungen hinweg und bieten eine einzige Quelle der Wahrheit für bessere Entscheidungsfindung sowie Echtzeiteinblicke für genaue Prognosen. Darüber hinaus optimieren ERP-Systeme das Ressourcenmanagement, unterstützen die Skalierbarkeit für Unternehmenswachstum, gewährleisten die Einhaltung gesetzlicher Vorschriften und verbessern den Kundenservice durch bessere Auftragsgenauigkeit und schnellere Reaktionszeiten. Wir sind bestrebt, diese leistungsstarken Vorteile unseren Kunden zu bringen und so ihren Erfolg und ihr Wachstum zu fördern."
+    }
+  },
+  "explore-next": {
+    "heading": "ERKUNDE DEIN NÄCHSTES KAPITEL",
+    "main-heading": " <p> Ich bin ein <span class=\"text-primary lg:text-white\">Kandidat</span> </p>",
+    "description": "Sprich mit uns über den nächsten Schritt in deiner Karriere und entfache deinen Erfolg.",
+    "btn-text": "WAGE DEN SPRUNG +"
+  },
+  "our-clients": {
+    "heading": " <span class=\" text-input/50\">Unsere</span> <br /> Kunden",
+    "description": " <p>Wir sind in Großbritannien, den USA, Deutschland und den Niederlanden ansässig, aber unsere Kunden sind auf der ganzen Welt zu finden. Die Unternehmen, mit denen wir arbeiten, umfassen mehrere Sektoren und Branchen. Was sie alle verbindet – sei es eine globale B2C-Marke oder ein Deep-Tech-Startup – ist der Bedarf an außergewöhnlichen Talenten. </p>",
+    "btn-text": "MEHR ERFAHREN +"
+  },
+  "bringus-on": {
+    "description": "Arbeite mit uns zusammen und finde die Leute, die Dinge möglich machen. Die Visionäre, die Wachstum freisetzen. Erfahrene Führungskräfte mit technischem Hintergrund. Disruptoren, die eine neue Herausforderung suchen. Wir helfen dir, unglaubliche Talente zu entdecken, egal welche Einstellungspläne du hast.",
+    "btn-text": "MACH ES MÖGLICH +"
+  }
+}

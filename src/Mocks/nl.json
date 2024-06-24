@@ -1,0 +1,45 @@
+{
+  "home-banner": {
+    "main-heading": "<p>Verbinden van <span class=\"text-[#9E76E9]\">geweldige geesten</span>, ontsteken van succes</p>",
+    "sub-heading": "Ontgrendelen van Tech Talent",
+    "description": "Het vergt expertise om mensen te vinden die een idee, project of strategie tot leven brengen – en het groter maken dan je dacht dat mogelijk was. Dat zit in ons DNA. Wij plaatsen ongelofelijk tech talent waar het het meest nodig is, van startups tot wereldwijde bedrijven.",
+    "btn-text": "MEER ONTDEKKEN +"
+  },
+  "tailored-recruitment": {
+    "heading": "Op Maat Gemaakte Werving",
+    "main-heading": "<p><span class=\"text-input/50\">Stel de </span>experts <span class=\"text-input/50\">samen om</span> vooruit te gaan</p>",
+    "description": "Ons aanbod omvat meerdere tech disciplines, waaronder data & analytics, ERP, CRM en software engineering. We werken met talent van wereldklasse en evolueren voortdurend met het tech landschap mee. Als u met iemand wilt praten over uw wervingsplannen, praat dan met ons. We kunnen onze ondersteuning afstemmen op uw behoeften, ambities en tijdlijnen – wat het werk ook vereist.",
+    "btn-text": "NEEM CONTACT OP +"
+  },
+  "our-sectors": {
+    "heading": "Onze Sectoren",
+    "main-heading": "Bekijk onze gebieden van <span class=\"text-[#9E76E9]\">expertise</span>",
+    "sector-one": {
+      "name": "Data & Analytics",
+      "description": "<p>In de data-rijke tech omgeving van vandaag zijn gedetailleerde denkers die grote datasets kunnen ontrafelen en waardevolle inzichten kunnen produceren van cruciaal belang. Maar terwijl de behoefte aan data-expertise altijd aanwezig is, verandert het landschap voortdurend – met nieuwe en geavanceerde manieren om informatie te gebruiken, te beheren en te benaderen.<br /><br />We weten dat data uw bedrijf een duidelijke en competitieve voorsprong kunnen geven. We weten ook dat u de juiste mensen nodig heeft om de puntjes op de i te zetten en deze informatie te gebruiken. Dat betekent experts die up-to-date zijn met de nieuwste technologie, regelgeving en technieken voor gegevensverzameling – of het nu gaat om consumentengegevens uit uw CRM of business intelligence.<br /><br />Van datawetenschappers en engineers tot business intelligence analisten, we werken samen met een diverse reeks talenten op het gebied van data & analytics. En omdat we het landschap grondig kennen, kunnen we u helpen de benodigde personen te identificeren om uw plannen uit te voeren.</p>"
+    },
+    "sector-two": {
+      "name": "Software Engineering",
+      "description": "We maken gebruik van onze uitgebreide kennis op het gebied van software engineering om bedrijven te helpen robuuste platforms en softwareproducten te ontwikkelen. Hoogopgeleide engineers zijn cruciaal in dit proces, omdat ze ervoor zorgen dat efficiënte, betrouwbare en schaalbare oplossingen worden gecreëerd. Ze brengen expertise in de nieuwste technologieën en beste praktijken, wat leidt tot innovatieve en hoogwaardige software die voldoet aan de zakelijke behoeften. Onze engineers excelleren in probleemoplossing, optimaliseren van prestaties en waarborgen van veiligheid, allemaal met behoud van een gebruikersgerichte aanpak. Door toptalent engineers in uw team te hebben, kunt u superieure functionaliteit bereiken, snellere ontwikkelingscycli en een concurrentievoordeel op de markt. Onze toewijding is om uw bedrijf te versterken met deze voordelen door uitzonderlijke softwareoplossingen, wat uw langetermijnsucces en groei garandeert."
+    },
+    "sector-three": {
+      "name": "ERP & CRM",
+      "description": "We zijn gepassioneerd over het helpen van bedrijven bij het implementeren van ERP-systemen, omdat we uit eerste hand zien hoe transformerend ze kunnen zijn. ERP-systemen stroomlijnen processen en verminderen handmatige taken, wat leidt tot verbeterde efficiëntie. Ze integreren informatie over afdelingen heen, wat zorgt voor een enkele bron van waarheid voor betere besluitvorming, en bieden real-time inzichten voor nauwkeurige prognoses. Bovendien optimaliseren ERP-systemen het beheer van middelen, ondersteunen ze schaalbaarheid voor bedrijfsgroei, zorgen ze voor regelgevende naleving en verbeteren ze de klantenservice met een betere order nauwkeurigheid en snellere responstijden. We zijn toegewijd om deze krachtige voordelen naar onze klanten te brengen, wat hun succes en groei stimuleert."
+    }
+  },
+  "explore-next": {
+    "heading": "VERKEN UW VOLGENDE HOOFDSTUK",
+    "main-heading": "<p>Ik ben een <span class=\"text-primary lg:text-white\">kandidaat</span></p>",
+    "description": "Praat met ons over de volgende stap in uw carrière en ontsteek uw succes.",
+    "btn-text": "MAAK DE SPRONG +"
+  },
+  "our-clients": {
+    "heading": "<span class=\"text-input/50\">Onze</span><br />klanten",
+    "description": "<p>We zijn gevestigd in het Verenigd Koninkrijk, de Verenigde Staten, Duitsland en Nederland, maar onze klanten zijn over de hele wereld te vinden. De bedrijven waarmee we werken bestrijken meerdere sectoren en industrieën. Wat hen allemaal verbindt – of het nu gaat om een wereldwijd B2C-merk of een deep tech startup – is de behoefte aan uitzonderlijk talent.</p>",
+    "btn-text": "MEER ONTDEKKEN +"
+  },
+  "bringus-on": {
+    "description": "Werk met ons samen en vind de mensen die dingen laten gebeuren. De visionairs die groei ontgrendelen. Ervaren leiders met technische achtergronden. Disruptors op zoek naar een nieuwe uitdaging. We helpen u ongelofelijk talent te ontdekken, wat uw wervingsplannen ook zijn.",
+    "btn-text": "LAAT HET GEBEUREN +"
+  }
+}

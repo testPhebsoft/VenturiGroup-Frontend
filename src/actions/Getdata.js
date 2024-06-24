@@ -1,8 +1,11 @@
 "use server";
 import { fetchDataFromApi } from "@/lib/fetchDataFromApi";
 import { cache } from "react";
-import { getCode, getCodeServer } from "@/lib/serverUtils/getCode";
-
+import { getCode, getCodeServer, getLangCode } from "@/lib/serverUtils/getCode";
+import endata from "../Mocks/en.json";
+import dedata from "../Mocks/de.json";
+import nldata from "../Mocks/nl.json";
+import engbdata from "../Mocks/en-gb.json";
 const serverUrl = process.env.SERVER_URL || "";
 const revalidate = 800;
 export async function getCategories() {
@@ -111,6 +114,23 @@ export async function Name() {
     return response;
   } catch (e) {
     console.log("error at Name", e);
+  }
+}
+
+export async function getPageData() {
+  let langCode = await getLangCode();
+  console.log(langCode);
+  if (langCode == "en") {
+    return endata;
+  }
+  if (langCode == "de") {
+    return dedata;
+  }
+  if (langCode == "nl") {
+    return nldata;
+  }
+  if (langCode == "en-gb") {
+    return engbdata;
   }
 }
 

@@ -1,3 +1,4 @@
+import { getPageData } from "@/actions/Getdata";
 import BringUsOn from "@/components/BringUsOn";
 import ExploreNext from "@/components/ExploreNext";
 import HomeBanner from "@/components/HomeBanner";
@@ -11,17 +12,30 @@ function sleep(delay) {
   return new Promise((resolve) => setTimeout(resolve, delay));
 }
 export default async function Home() {
+  let pageData;
+  try {
+    pageData = await getPageData();
+  } catch (error) {
+    console.log(error);
+  }
   return (
     <main>
-      <HomeBanner />
-      <TailoredRecuritment />
-      <OurSector />
+      <HomeBanner data={(pageData && pageData["home-banner"]) ?? {}} />
+      <TailoredRecuritment
+        data={(pageData && pageData["tailored-recruitment"]) ?? {}}
+      />
+      <OurSector data={(pageData && pageData["our-sectors"]) ?? {}} />
       <OurCustomers />
-      <ExploreNext />
-      <OurClients />
+      <ExploreNext
+        heading={pageData && pageData["explore-next"].heading}
+        heading2={pageData && pageData["explore-next"]["main-heading"]}
+        text={pageData && pageData["explore-next"].description}
+        buttonText={pageData && pageData["explore-next"]["btn-text"]}
+      />
+      <OurClients data={(pageData && pageData["our-clients"]) ?? {}} />
       <TrendingJobsWrapper />
 
-      <BringUsOn />
+      <BringUsOn data={(pageData && pageData["bringus-on"]) ?? {}} />
     </main>
   );
 }

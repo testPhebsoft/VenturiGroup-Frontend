@@ -6,7 +6,7 @@ import { Button } from "./ui/button";
 import { getPartners } from "@/actions/Getdata";
 import Link from "next/link";
 
-export default async function OurClients() {
+export default async function OurClients({ data }) {
   let res;
   try {
     res = await getPartners();
@@ -67,24 +67,37 @@ export default async function OurClients() {
               </div>
             }
             <div className=" min-[984px]:w-1/2    max-[984px]:w-full min-[984px]:max-w-[496px] flex flex-col gap-10 ">
-              <h3 className="text-[clamp(24px,9vw,36px)] font-[lust-text] font-light ">
-                <span className=" text-input/50">Our </span> <br />
-                clients
-              </h3>
-              <p className=" w-full">
-                We&apos;re based in the UK, US, Germany and the Netherlands, but
-                our clients can be found all over the world. The businesses we
-                work with span multiple sectors and industries. What connects
-                all of them – be it a global B2C brand or a deep tech startup –
-                is the need for exceptional talent. 
-              </p>
-              <Link
-                target="_blank"
-                tabIndex={0}
-                href={"https://jcdqujpmxoo.typeform.com/to/A1l2iv9l"}
-              >
-                <Button className="uppercase w-fit">find out more +</Button>{" "}
-              </Link>
+              {data && (
+                <h3
+                  dangerouslySetInnerHTML={{
+                    __html:
+                      data["heading"] ??
+                      '  <span className=" text-input/50">Our </span> <br />       clients',
+                  }}
+                  className="text-[clamp(24px,9vw,36px)] font-[lust-text] font-light "
+                ></h3>
+              )}
+              {data && (
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html:
+                      data["description"] ??
+                      " <p>   We&apos;re based in the UK, US, Germany and the Netherlands, but    our clients can be found all over the world. The businesses we    work with span multiple sectors and industries. What connects    all of them – be it a global B2C brand or a deep tech startup –    is the need for exceptional talent.  </p>",
+                  }}
+                  className=" w-full"
+                ></p>
+              )}
+              {data && (
+                <Link
+                  target="_blank"
+                  tabIndex={0}
+                  href={"https://jcdqujpmxoo.typeform.com/to/A1l2iv9l"}
+                >
+                  <Button className="uppercase w-fit">
+                    {data["btn-text"] || "find out more +"}
+                  </Button>{" "}
+                </Link>
+              )}
             </div>
           </MaxWidthWrapper>
         </div>

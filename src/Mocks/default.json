@@ -1,0 +1,46 @@
+{
+  "home-banner": {
+    "main-heading": "<p>Connecting <span class=\"text-[#9E76E9]\">great minds</span>, igniting success</p>",
+    "sub-heading": "Unlocking Tech Talent",
+    "description": " It takes expertise to find people who will bring an idea, project or strategy to life – and make it bigger than you thought possible. We should know. It's in our DNA. We place incredible tech talent where it's needed most, from startups to global corporations.",
+    "btn-text": "FIND OUT MORE +"
+  },
+  "tailored-recruitment": {
+    "heading": "Tailored Recruitment",
+    "main-heading": " <p> <span class=\"text-input/50\"> Assemble the </span>experts <span class=\"text-input/50\"> to move</span> forward </p>",
+    "description": " Our offering spans multiple tech disciplines, including data &            analytics, ERP, CRM and software engineering. We work with            best-in-class talent and continually evolve with the tech landscape.            If you need to speak to someone about your hiring plans, speak to            us. We can tailor our support around your needs, ambitions and            timeframes – whatever the work requires.",
+    "btn-text": "get in touch +"
+  },
+  "our-sectors": {
+    "heading": "Our Sectors",
+    "main-heading": " View our areas of <span class=\" text-[#9E76E9] \"> expertise</span>",
+    "sector-one": {
+      "name": "Data & Analytics",
+      "description": "<p>In today’s data rich tech environment, having detail-driven thinkers who can unpick large datasets and produce valuable insights is vital. But while the need for data expertise is always present, the landscape is constantly changing – with new and sophisticated ways of utilising, managing and accessing intel.<br /><br />We know data can give your business a clear and competitive edge. We also know you need the right people to connect the dots and put this intel to use. That means experts who are up-to-date with the latest technology, regulations and data gathering techniques – whether that’s consumer data from your CRM or business intelligence.<br /><br />From data scientists and engineers to business intelligence analysts, we work with a diverse range of data & analytics talent. And because we know the landscape in-depth, we can help you identify the individuals needed to implement your plans</p>"
+    },
+    "sector-two": {
+      "name": "Software Engineering",
+      "description": "We leverage our extensive knowledge in software engineering to help businesses develop robust platforms and software products. Highly skilled engineers are crucial in this process, as they ensure the creation of efficient, reliable, and scalable solutions. They bring expertise in the latest technologies and best practices, leading to innovative and high-quality software that meets business needs. Our engineers excel in problem-solving, optimizing performance, and ensuring security, all while maintaining a user-centric approach. By having top-tier engineers on your team, you can achieve superior functionality, faster development cycles, and a competitive edge in the market. Our commitment is to empower your business with these advantages through exceptional software solutions, ensuring your long-term success and growth."
+    },
+    "sector-three": {
+      "name": "ERP & CRM",
+      "description": "We are passionate about helping businesses implement ERP systems because we see firsthand how transformative they can be. ERP systems streamline processes and reduce manual tasks, leading to improved efficiency. They integrate information across departments, providing a single source of truth for better decision-making, and offer real-time insights for accurate forecasting. Additionally, ERP systems optimise resource management, support scalability for business growth, ensure regulatory compliance, and enhance customer service with better order accuracy and faster response times. We are dedicated to bringing these powerful benefits to our clients, driving their success and growth."
+    }
+  },
+
+  "explore-next": {
+    "heading": "EXPLORE YOUR NEXT CHAPTER",
+    "main-heading": " <p> I&apos;m a <span class=\"text-primary lg:text-white\"> candidate </span> </p>",
+    "description": "     Speak to us about taking the next step in your career and igniting your        success.",
+    "btn-text": "MAKE THE LEAP +"
+  },
+  "our-clients": {
+    "heading": "  <span class=\" text-input/50\">Our </span> <br />       clients",
+    "description": " <p> We&apos;re based in the UK, US, Germany and the Netherlands, but    our clients can be found all over the world. The businesses we    work with span multiple sectors and industries. What connects    all of them – be it a global B2C brand or a deep tech startup –    is the need for exceptional talent.  </p>",
+    "btn-text": "FIND OUT MORE +"
+  },
+  "bringus-on": {
+    "description": " Partner with us and find the people that make things happen. The visionaries who unlock growth. Experienced leaders with technical            backgrounds. Disruptors looking for a new challenge. We&apos;ll help            you uncover incredible talent, whatever your hiring plans.",
+    "btn-text": "make it happen +"
+  }
+}

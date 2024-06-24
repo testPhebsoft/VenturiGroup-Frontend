@@ -45,9 +45,10 @@ export default function ExploreNext({
                   <h1 className="uppercase  whitespace-nowrap  font-AntarcticanMonoSemiBold">
                     {heading}
                   </h1>
-                  <h2 className=" max-[839px]:text-[clamp(16px,10vw,36px)] max-[839px]:leading-[clamp(24px,10vw,36px)] text-[clamp(16px,3.2vw,36px)] leading-[clamp(24px,3.3vw,36px)] font-[lust-text] ">
-                    {heading2}
-                  </h2>
+                  <h2
+                    dangerouslySetInnerHTML={{ __html: heading2 }}
+                    className=" max-[839px]:text-[clamp(16px,10vw,36px)] max-[839px]:leading-[clamp(24px,10vw,36px)] text-[clamp(16px,3.2vw,36px)] leading-[clamp(24px,3.3vw,36px)] font-[lust-text] "
+                  ></h2>
                   <p className=" text-[clamp(12px,1.5vw,16px)] leading-[clamp(14px,3vw,25px)] w-full lg:max-w-[387px] ">
                     {text}
                   </p>
