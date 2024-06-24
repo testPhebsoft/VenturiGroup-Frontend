@@ -92,9 +92,11 @@ export default function CarousalItem({
                     />
                   </div>
                   <div className="flex md:hidden flex-col mt-auto justify-between w-full  h-fit">
-                    <h3 className="text-[clamp(20px,6vw,36px)]  font-[lust-text] font-light ">
-                      {name}
-                    </h3>
+                    {!item.anonymous && (
+                      <h3 className="text-[clamp(20px,6vw,36px)]  font-[lust-text] font-light ">
+                        {name}
+                      </h3>
+                    )}
                     <p className="text-primary font-AntarcticanMonoSemiBold w-full text-[16px] uppercase">
                       {item.job_title && item.job_title},{" "}
                       {item.company && item.company}
@@ -104,9 +106,11 @@ export default function CarousalItem({
 
                 <div className="w-full  max-md:mt-10 ">
                   <div className="flex max-md:hidden justify-between w-full items-center  h-fit">
-                    <h3 className="text-[clamp(20px,6vw,36px)]  font-[lust-text] font-light ">
-                      {name}
-                    </h3>
+                    {!item.anonymous && (
+                      <h3 className="text-[clamp(20px,6vw,36px)]  font-[lust-text] font-light ">
+                        {name}
+                      </h3>
+                    )}
                     <p className="text-primary font-AntarcticanMonoSemiBold text-[16px] uppercase">
                       {item.job_title && item.job_title},{" "}
                       {item.company && item.company}
