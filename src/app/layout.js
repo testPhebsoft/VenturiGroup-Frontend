@@ -35,7 +35,6 @@ import {
 } from "@/fonts/AntarcticanMono";
 import InitStoreFunctions from "@/components/IntialiseStore";
 import GoogleTranslate from "@/components/GoogleTranslate";
-import { getCooKies } from "@/lib/actions";
 
 export const metadata = {
   title: "Venturi Group",
@@ -43,14 +42,8 @@ export const metadata = {
 };
 
 export default async function RootLayout({ children }) {
-  let googe;
-  try {
-    googe = await getCooKies("googtrans");
-    googe = googe.value;
-  } catch (error) {}
-
   return (
-    <html lang="en" className={googe == "/en/en" ? "notranslate" : ""}>
+    <html lang="en">
       <body
         className={cn(
           "text-[#1A1B1D] overflow-x-hidden  bg-background",
