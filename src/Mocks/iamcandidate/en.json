@@ -1,0 +1,51 @@
+{
+  "banner": {
+    "main-heading": "Your          <span class=\"text-primary\"> Talent</span>,<br />          <span class=\" max-md:hidden\">&nbsp;&nbsp;</span> Our          <span className=\"text-primary\"> Connections</span>",
+    "sub-heading": "Our mission is to connect great minds and ignite successes.",
+    "description": "That means placing you in a role where you can be a catalyst – the            spark that leads to progress. Our approach is to listen. Really            listen. To your needs, ambitions and the things that set you apart.            Our goal for you to feel heard, empowered and energised.",
+    "btn-text": "FIND OUT MORE +"
+  },
+  "people-first": {
+    "heading": " Putting <span class=\"text-input\"> People</span> First",
+    "description": "<p>            Thanks to our years of experience, our excellent reputation and our            knowledge of the market, you can trust us to offer you genuine            career advice and ongoing support whenever you may need it.          </p>          <p>            We value every candidate&apos;s individuality. We will never treat            you as just another number; that&apos;s not how we would want to be            treated. To gain your trust and respect, we must operate with            integrity and honesty.          </p>"
+  },
+  "recruitment-steps": {
+    "heading": "The recruitment steps",
+    "step-one": {
+      "heading": "Introduction",
+      "description": "Whether you&apos;ve reached out or we&apos;ve approached you, our first      step is to understand your ambitions. Tell us where you see your future      and how we can help."
+    },
+    "step-two": {
+      "heading": "Search",
+      "description": "We&apos;ll work proactively on your behalf. This includes                speaking with businesses who share your ambitions and scoping                out opportunities based on what you&apos;ve told us.             "
+    },
+    "step-three": {
+      "heading": "Interview",
+      "description": "Our focus turns to the interview process. We&apos;ll prepare you       for any online or face-to-face meetings. We&apos;ll also provide       feedback and answer any questions you have."
+    },
+    "step-four": {
+      "heading": "Offer & negotation",
+      "description": "We&apos;ll assist with the negotiation process and make sure                everything runs as smoothly as possible. Our goal is for you to                have a clear route to your new role."
+    },
+    "step-five": {
+      "heading": "Onboarding",
+      "description": "  The onboarding process is crucial. We make it seamless by                navigating your notice period, removing any hurdles and working                in tandem with your needs."
+    },
+    "step-six": {
+      "heading": "Embedding",
+      "description": "  The journey with Venturi doesn&apos;t stop there. We&apos;re                  here for as long as you need us. We&apos;ll make sure your new                role is right for you and check in from time to time."
+    }
+  },
+
+  "explore-your-next": {
+    "heading": "Explore your next chapter with        <span class=\" text-primary\">Venturi</span>",
+    "main-heading": "<p>I&apos;m a <span class=\"text-primary lg:text-white\">candidate</span></p>",
+    "description": "Speak to us about taking the next step in your career and igniting your success.",
+    "btn-text": "get in touch +"
+  },
+  "our-clients": {
+    "heading": "<span class=\"text-input/50\">Our</span><br />clients",
+    "description": "<p>We&apos;re based in the UK, US, Germany, and the Netherlands, but our clients can be found all over the world. The businesses we work with span multiple sectors and industries. What connects all of them – be it a global B2C brand or a deep tech startup – is the need for exceptional talent.</p>",
+    "btn-text": "FIND OUT MORE +"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "about-banner": {
+    "main-heading": " Our <br /><span class=\"text-primary\"> Story </span>",
+    "sub-heading": "About Venturi",
+    "description": "Our name isn’t a coincidence. It dates back to 18th century Italy and a physicist named Giovanni Battista Venturi. Giovanni discovered that fluid in a pipeline flows faster and with less pressure when it travels through narrow sections of pipe. The Venturi effect has inspired countless engineering feats and how we think about recruitment…"
+  },
+
+  "our-story": {
+    "heading": "Our story",
+    "main-heading": " The <span class=\" text-input\">evolution</span> <br /> of Venturi",
+    "description": {
+      "part-one": " We believe when you reduce pressure in your business, like the pressure of being under-resourced, you can move at speed. Similar to the Venturi effect, our approach is to narrow tech&apos;s ever-widening talent pool down to the individuals we deem best-in-class. They&apos;re who we look for. This philosophy has driven our mission from the beginning. Alongside a people-first approach, it&apos;s what sets us apart. <br /> <br /> When we set out, our ambitions were simple – to be a great place to work and a great company to work with. In a crowded space, that&apos;s meant striving for excellence, and being obsessed with other people&apos;s ambitions. Whether that&apos;s the ambitions of our clients, candidates or our own teams – they&apos;re what matter most to us.",
+      "part-two": " But we haven&apos;t got to where we&apos;ve got to on this belief alone. Our approach is based on our in-depth understanding of the tech sector – from trends to changing skill sets. It&apos;s helped us to create a fast and seamless onboarding process for the businesses we work with. One that alleviates hiring pressures to make a bigger impact. It&apos;s evolved over more than 15 years and will continue to evolve alongside the tech landscape. <br /> <br /> Fast-forward to today and we continue to proudly support our clients, candidates and our own people. Over the years, we&apos;ve been industry accredited, won numerous awards and have garnered a revered reputation in our field. This is a testament to our people and the care and passion they have for what we do. They make the difference."
+    },
+    "btn-text": "join us +"
+  },
+  "our-sectors": {
+    "heading": "Our Sectors",
+    "main-heading": "View our areas of <span class=\"text-[#9E76E9]\">expertise</span>",
+    "sector-one": {
+      "name": "Data & Analytics",
+      "description": "<p>In today’s data-rich tech environment, having detail-driven thinkers who can unpick large datasets and produce valuable insights is vital. But while the need for data expertise is always present, the landscape is constantly changing – with new and sophisticated ways of utilising, managing, and accessing intel.<br /><br />We know data can give your business a clear and competitive edge. We also know you need the right people to connect the dots and put this intel to use. That means experts who are up-to-date with the latest technology, regulations, and data gathering techniques – whether that’s consumer data from your CRM or business intelligence.<br /><br />From data scientists and engineers to business intelligence analysts, we work with a diverse range of data & analytics talent. And because we know the landscape in-depth, we can help you identify the individuals needed to implement your plans.</p>"
+    },
+    "sector-two": {
+      "name": "Software Engineering",
+      "description": "We leverage our extensive knowledge in software engineering to help businesses develop robust platforms and software products. Highly skilled engineers are crucial in this process, as they ensure the creation of efficient, reliable, and scalable solutions. They bring expertise in the latest technologies and best practices, leading to innovative and high-quality software that meets business needs. Our engineers excel in problem-solving, optimising performance, and ensuring security, all while maintaining a user-centric approach. By having top-tier engineers on your team, you can achieve superior functionality, faster development cycles, and a competitive edge in the market. Our commitment is to empower your business with these advantages through exceptional software solutions, ensuring your long-term success and growth."
+    },
+    "sector-three": {
+      "name": "ERP & CRM",
+      "description": "We are passionate about helping businesses implement ERP systems because we see firsthand how transformative they can be. ERP systems streamline processes and reduce manual tasks, leading to improved efficiency. They integrate information across departments, providing a single source of truth for better decision-making, and offer real-time insights for accurate forecasting. Additionally, ERP systems optimise resource management, support scalability for business growth, ensure regulatory compliance, and enhance customer service with better order accuracy and faster response times. We are dedicated to bringing these powerful benefits to our clients, driving their success and growth."
+    }
+  },
+
+  "our-clients": {
+    "heading": "<span class=\"text-input/50\">Our</span><br />clients",
+    "description": "<p>We&apos;re based in the UK, US, Germany, and the Netherlands, but our clients can be found all over the world. The businesses we work with span multiple sectors and industries. What connects all of them – be it a global B2C brand or a deep tech start-up – is the need for exceptional talent.</p>",
+    "btn-text": "FIND OUT MORE +"
+  }
+}

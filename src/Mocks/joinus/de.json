@@ -1,0 +1,43 @@
+{
+  "joinus-banner": {
+    "main-heading": "<p> Teil der <br />                  <span class=\"text-primary\"> Venturi </span> Geschichte <br/>werden</p>",
+    "description": "Menschen sind das Lebenselixier unserer Tätigkeit. Wir suchen ständig ehrgeizige Personen, die unsere Werte teilen und an unsere Mission glauben.",
+    "sub-heading": " Interessiert an <span class=\"text-input\"> Beitritt</span>?",
+    "description-one": " Wenn Sie leidenschaftlich daran interessiert sind, großartige Köpfe zu vernetzen und Erfolg zu entfachen, gehören Sie hierher. In einer blühenden, inklusiven Umgebung, die den Menschen an erster Stelle setzt.",
+    "description-two": " Im Gegenzug erhalten Sie Zugang zu Gesundheits- und Wohlfahrtsunterstützung, persönlicher Entwicklungsbegleitung und Schulungsplänen. Alles, was Sie brauchen, um die beste Version Ihrer selbst zu sein.",
+    "btn-text": "MEHR ERFAHREN +"
+  },
+
+  "explore-next": {
+    "heading": "DAS LEBEN BEI VENTURI",
+    "main-heading": "<p> Ein <span class=\"max-lg:text-primary\">inklusives, fürsorgliches </span> Team</p>",
+    "description": "Menschen gedeihen, wenn sie unterstützt, umsorgt und gehört werden. Das ist es, was Sie bei Venturi erwarten können. Unsere Mitarbeiter sind alles. Daher tun wir alles Mögliche, um ihnen zu helfen, das Beste zu sein. Unsere Kultur ist uns wichtig. Sie unterscheidet uns.",
+    "btn-text": "DEN SPRUNG WAGEN +"
+  },
+  "our-benifits": {
+    "heading": "Unsere <span class=\" text-input \"> Vorteile</span>",
+    "content": {
+      "0": "UNBEGRENZTE PROVISION",
+      "1": "Betriebliche Altersvorsorge",
+      "2": "Anreize",
+      "3": "Team- und Firmenveranstaltungen",
+      "4": "Perkbox",
+      "5": "Bierkühlschrankfreitage",
+      "6": "Geburtstag frei",
+      "7": "Zusätzliche Tage zu Weihnachten",
+      "8": "Finanzielle Wohlbefinden-Workshops",
+      "9": "Online-Übungsklassen",
+      "10": "Ernährungsworkshop",
+      "11": "Psychologe für psychische Gesundheit",
+      "12": "Firmenhandy",
+      "13": "Wohltätigkeitsfreie Tage",
+      "14": "Dienstjubiläumsauszeichnungen",
+      "15": "Abrechnungsmeilenstein-Auszeichnungen"
+    }
+  },
+  "employee-refrel-scheme": {
+    "heading": " Mitarbeiter-<span class=\"text-input/50\"> Empfehlungs</span> programm",
+    "description": "Wenn Sie leidenschaftlich daran interessiert sind, großartige Köpfe zu vernetzen und Erfolg zu entfachen, gehören Sie hierher. In einer blühenden, inklusiven Umgebung, die den Menschen an erster Stelle setzt.",
+    "btn-text": "KONTAKTIERE UNS +"
+  }
+}

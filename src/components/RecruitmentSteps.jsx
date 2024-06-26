@@ -1,83 +1,77 @@
 import Image from "next/image";
 import MaxWidthWrapper from "./MaxWidthWraper";
 
-export default function RecruitmentSteps() {
+export default function RecruitmentSteps({ data }) {
   return (
     <MaxWidthWrapper className="w-full py-10 ">
-      <h2 className=" text-[clamp(24px,4.5vw,36px)] font-[lust-text] max-md:text-center ">
-        The recruitment steps
-      </h2>
-      <div
-        style={{
-          WebkitOverflowScrolling: "touch",
-          scrollbarWidth: "none",
-          msOverflowStyle: "none",
-        }}
-        className=" grid grid-cols-1 max-md:block mt-10 md:grid-cols-2 max-md:snap-x  max-md:snap-mandatory max-md:overflow-x-scroll max-md:whitespace-nowrap lg:grid-cols-3 gap-x-5 gap-y-10"
-      >
-        <RecruitmentStep />
-        <RecruitmentStep
-          image="/search.jpg"
-          number="02"
-          heading="Search"
-          text={
-            <>
-              {" "}
-              We&apos;ll work proactively on your behalf. This includes speaking
-              with businesses who share your ambitions and scoping out
-              opportunities based on what you&apos;ve told us.
-            </>
-          }
-        />
-        <RecruitmentStep
-          image="/interview.jpg"
-          number="03"
-          heading="Interview"
-          text={
-            <>
-              Our focus turns to the interview process. We&apos;ll prepare you
-              for any online or face-to-face meetings. We&apos;ll also provide
-              feedback and answer any questions you have.  
-            </>
-          }
-        />
-        <RecruitmentStep
-          image="/offer.jpg"
-          number="04"
-          heading="Offer & negotation"
-          text={
-            <>
-              We&apos;ll assist with the negotiation process and make sure
-              everything runs as smoothly as possible. Our goal is for you to
-              have a clear route to your new role.
-            </>
-          }
-        />
-        <RecruitmentStep
-          image="/onboarding.jpg"
-          number="05"
-          heading="Onboarding"
-          text={
-            <>
-              The onboarding process is crucial. We make it seamless by
-              navigating your notice period, removing any hurdles and working in
-              tandem with your needs.
-            </>
-          }
-        />
-        <RecruitmentStep
-          image="/embeding.jpg"
-          number="06"
-          heading="Embedding"
-          text={
-            <>
-              The journey with Venturi doesn&apos;t stop there. We&apos;re here
-              for as long as you need us. We&apos;ll make sure your new role is
-              right for you and check in from time to time.
-            </>
-          }
-        />
-      </div>
+      {data && (
+        <h2 className=" text-[clamp(24px,4.5vw,36px)] font-[lust-text] max-md:text-center ">
+          {data["heading"] ?? "The recruitment steps"}
+        </h2>
+      )}
+      {data && (
+        <div
+          style={{
+            WebkitOverflowScrolling: "touch",
+            scrollbarWidth: "none",
+            msOverflowStyle: "none",
+          }}
+          className=" grid grid-cols-1 max-md:block mt-10 md:grid-cols-2 max-md:snap-x  max-md:snap-mandatory max-md:overflow-x-scroll max-md:whitespace-nowrap lg:grid-cols-3 gap-x-5 gap-y-10"
+        >
+          <RecruitmentStep
+            heading={data["step-one"]["heading"] ?? "Introduction"}
+            text={
+              data["step-one"]["description"] ??
+              "Whether you&apos;ve reached out or we&apos;ve approached you, our first      step is to understand your ambitions. Tell us where you see your future      and how we can help."
+            }
+          />
+          <RecruitmentStep
+            image="/search.jpg"
+            number="02"
+            heading={data["step-two"]["heading"] ?? "Search"}
+            text={
+              data["step-two"]["description"] ??
+              "We&apos;ll work proactively on your behalf. This includes                speaking with businesses who share your ambitions and scoping                out opportunities based on what you&apos;ve told us.             "
+            }
+          />
+          <RecruitmentStep
+            image="/interview.jpg"
+            number="03"
+            heading={data["step-three"]["heading"] ?? "Interview"}
+            text={
+              data["step-three"]["description"] ??
+              "Our focus turns to the interview process. We&apos;ll prepare you       for any online or face-to-face meetings. We&apos;ll also provide       feedback and answer any questions you have."
+            }
+          />
+          <RecruitmentStep
+            image="/offer.jpg"
+            number="04"
+            heading={data["step-four"]["heading"] ?? "Offer & negotation"}
+            text={
+              data["step-four"]["description"] ??
+              "We&apos;ll assist with the negotiation process and make sure                everything runs as smoothly as possible. Our goal is for you to                have a clear route to your new role."
+            }
+          />
+          <RecruitmentStep
+            image="/onboarding.jpg"
+            number="05"
+            heading={data["step-five"]["heading"] ?? "Onboarding"}
+            text={
+              data["step-five"]["description"] ??
+              "  The onboarding process is crucial. We make it seamless by                navigating your notice period, removing any hurdles and working                in tandem with your needs."
+            }
+          />
+          <RecruitmentStep
+            image="/embeding.jpg"
+            number="06"
+            heading={data["step-six"]["heading"] ?? "Embedding"}
+            text={
+              data["step-six"]["description"] ??
+              "  The journey with Venturi doesn&apos;t stop there. We&apos;re                  here for as long as you need us. We&apos;ll make sure your new                role is right for you and check in from time to time."
+            }
+          />
+        </div>
+      )}
     </MaxWidthWrapper>
   );
 }

@@ -2,10 +2,31 @@
 import { fetchDataFromApi } from "@/lib/fetchDataFromApi";
 import { cache } from "react";
 import { getCode, getCodeServer, getLangCode } from "@/lib/serverUtils/getCode";
-import endata from "../Mocks/en.json";
-import dedata from "../Mocks/de.json";
-import nldata from "../Mocks/nl.json";
-import engbdata from "../Mocks/en-gb.json";
+import endata from "../Mocks/home/en.json";
+import dedata from "../Mocks/home/de.json";
+import nldata from "../Mocks/home/nl.json";
+import engbdata from "../Mocks/home/en-gb.json";
+
+import enAboutData from "../Mocks/about/en.json";
+import deAboutData from "../Mocks/about/de.json";
+import nlAboutData from "../Mocks/about/nl.json";
+import engbAboutData from "../Mocks/about/en-gb.json";
+
+import enJoinusData from "../Mocks/joinus/en.json";
+import deJoinusData from "../Mocks/joinus/de.json";
+import nlJoinusData from "../Mocks/joinus/nl.json";
+import engbJoinusData from "../Mocks/joinus/en-gb.json";
+
+import enInsightsData from "../Mocks/insights/en.json";
+import deInsightsData from "../Mocks/insights/de.json";
+import nlInsightsData from "../Mocks/insights/nl.json";
+import engbInsightsData from "../Mocks/insights/en-gb.json";
+
+import enIamcandidateData from "../Mocks/iamcandidate/en.json";
+import deIamcandidateData from "../Mocks/iamcandidate/de.json";
+import nlIamcandidateData from "../Mocks/iamcandidate/nl.json";
+import engbIamcandidateData from "../Mocks/iamcandidate/en-gb.json";
+
 const serverUrl = process.env.SERVER_URL || "";
 const revalidate = 800;
 export async function getCategories() {
@@ -117,20 +138,85 @@ export async function Name() {
   }
 }
 
-export async function getPageData() {
+export async function getPageData({ pageName } = { pageName: "home" }) {
   let langCode = await getLangCode();
-  console.log(langCode);
-  if (langCode == "en") {
-    return endata;
-  }
-  if (langCode == "de") {
-    return dedata;
-  }
-  if (langCode == "nl") {
-    return nldata;
-  }
-  if (langCode == "en-gb") {
-    return engbdata;
+  switch (langCode) {
+    case "en": {
+      switch (pageName) {
+        case "home": {
+          return endata;
+        }
+        case "about": {
+          return enAboutData;
+        }
+        case "joinus": {
+          return enJoinusData;
+        }
+        case "insights": {
+          return enInsightsData;
+        }
+        case "iamcandidate": {
+          return enIamcandidateData;
+        }
+      }
+    }
+    case "de": {
+      switch (pageName) {
+        case "home": {
+          return dedata;
+        }
+        case "about": {
+          return deAboutData;
+        }
+        case "joinus": {
+          return deJoinusData;
+        }
+        case "insights": {
+          return deInsightsData;
+        }
+        case "iamcandidate": {
+          return deIamcandidateData;
+        }
+      }
+    }
+    case "nl": {
+      switch (pageName) {
+        case "home": {
+          return nldata;
+        }
+        case "about": {
+          return nlAboutData;
+        }
+        case "joinus": {
+          return nlJoinusData;
+        }
+        case "insights": {
+          return nlInsightsData;
+        }
+        case "iamcandidate": {
+          return nlIamcandidateData;
+        }
+      }
+    }
+    case "en-gb": {
+      switch (pageName) {
+        case "home": {
+          return engbdata;
+        }
+        case "about": {
+          return engbAboutData;
+        }
+        case "joinus": {
+          return engbJoinusData;
+        }
+        case "insights": {
+          return engbInsightsData;
+        }
+        case "iamcandidate": {
+          return engbIamcandidateData;
+        }
+      }
+    }
   }
 }
 

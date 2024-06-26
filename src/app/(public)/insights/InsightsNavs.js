@@ -3,15 +3,21 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export function InsightsNavs({ categories }) {
+export function InsightsNavs({ data = {}, categories }) {
   const pathName = usePathname();
   if (pathName.split("/").length == 2 || pathName.split("/").length == 3)
     return (
       <>
         <div className=" h-[400px] flex justify-center items-end  ">
-          <h1 className="text-[clamp(64px,15vw,121px)] text-center font-[lust-text] w-fit mx-auto">
-            Our <span className="text-primary">insights</span>
-          </h1>
+          {data && (
+            <h1
+              dangerouslySetInnerHTML={{
+                __html:
+                  data ?? '   Our <span class="text-primary">insights</span>',
+              }}
+              className="text-[clamp(64px,15vw,121px)] text-center font-[lust-text] w-fit mx-auto"
+            ></h1>
+          )}
         </div>
         <div
           style={{

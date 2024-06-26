@@ -1,0 +1,44 @@
+{
+  "joinus-banner": {
+    "main-heading": "<p> Sluit je aan bij het <br />                  <span class=\"text-primary\"> Venturi </span> verhaal</p>",
+
+    "description": "Mensen zijn de levensader van wat we doen. We zijn voortdurend op zoek naar ambitieuze individuen die onze waarden delen en geloven in onze missie.",
+    "sub-heading": " Geïnteresseerd om <span class=\"text-input\"> lid te worden</span>?",
+    "description-one": "Als je gepassioneerd bent over het verbinden van geweldige geesten en het ontsteken van succes, hoor je hier thuis. In een bloeiende, inclusieve omgeving waar mensen op de eerste plaats komen.",
+    "description-two": "In ruil daarvoor heb je toegang tot gezondheids- en welzijnssteun, begeleiding bij persoonlijke ontwikkeling en trainingsplannen. Alles wat je nodig hebt om de beste versie van jezelf te zijn.",
+    "btn-text": "MEER ONTDEKKEN +"
+  },
+
+  "explore-next": {
+    "heading": "LEVEN BIJ VENTURI",
+    "main-heading": "<p> Een <span class=\"max-lg:text-primary\">inclusief, zorgzaam </span>            team</p>",
+    "description": "Mensen gedijen wanneer ze zich ondersteund voelen, verzorgd worden en gehoord worden. Dat is wat je kunt verwachten bij Venturi. Onze mensen zijn alles. Daarom doen we er alles aan om hen te helpen hun beste zelf te zijn. Onze cultuur is belangrijk voor ons. Het is wat ons onderscheidt.",
+    "btn-text": "NEEM DE SPRONG +"
+  },
+  "our-benifits": {
+    "heading": "Onze <span class=\" text-input \"> voordelen</span>",
+    "content": {
+      "0": "ONBEPERKT COMMISSIE",
+      "1": "Werkplek pensioen",
+      "2": "Incentives",
+      "3": "Team- & bedrijfsuitjes",
+      "4": "Perkbox",
+      "5": "Vrijdag bierkoelkast",
+      "6": "Verjaardag vrij",
+      "7": "Extra dagen met Kerstmis",
+      "8": "Financiële welzijnsworkshops",
+      "9": "Online oefenlessen",
+      "10": "Voedingsworkshop",
+      "11": "Geestelijke gezondheidspraktitioner",
+      "12": "Bedrijfsmobiel",
+      "13": "Charity dag vrij",
+      "14": "Lengte van de dienst awards",
+      "15": "Factureringsmijlpaal awards"
+    }
+  },
+  "employee-refrel-scheme": {
+    "heading": " Medewerker <span class=\"text-input/50\"> verwijzings</span> regeling",
+    "description": "Als je gepassioneerd bent over het verbinden van geweldige geesten en het ontsteken van succes, hoor je hier thuis. In een bloeiende, inclusieve omgeving waar mensen op de eerste plaats komen",
+    "btn-text": "neem contact op +"
+  }
+}

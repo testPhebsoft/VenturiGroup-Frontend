@@ -1,0 +1,50 @@
+{
+  "banner": {
+    "main-heading": "Jouw          <span class=\"text-primary\"> Talent</span>,<br />          <span class=\" max-md:hidden\">&nbsp;&nbsp;</span> Onze          <span className=\"text-primary\"> Connecties</span>",
+    "sub-heading": "Onze missie is om geweldige geesten te verbinden en successen te ontsteken.",
+    "description": "Dat betekent dat we je plaatsen in een rol waar je een katalysator kunt zijn – de vonk die leidt tot vooruitgang. Onze aanpak is om echt te luisteren. Naar jouw behoeften, ambities en de dingen die jou uniek maken. Ons doel is dat je je gehoord, empowered en energiek voelt.",
+    "btn-text": "MEER ONTDEKKEN +"
+  },
+  "people-first": {
+    "heading": " Mensen <span class=\"text-input\"> Op de Eerste Plaats</span>",
+    "description": "<p>            Dankzij onze jarenlange ervaring, uitstekende reputatie en kennis van de markt, kun je erop vertrouwen dat we je eerlijk carrière-advies bieden en doorlopende ondersteuning wanneer je het nodig hebt.          </p>          <p>            We waarderen de individualiteit van elke kandidaat. We zullen je nooit behandelen als slechts een nummer; zo willen we zelf ook niet behandeld worden. Om jouw vertrouwen en respect te verdienen, moeten we opereren met integriteit en eerlijkheid.          </p>"
+  },
+  "recruitment-steps": {
+    "heading": "De wervingsstappen",
+    "step-one": {
+      "heading": "Kennismaking",
+      "description": "Of je nu contact met ons hebt opgenomen of wij jou benaderd hebben, onze eerste stap is om jouw ambities te begrijpen. Vertel ons waar je je toekomst ziet en hoe we kunnen helpen."
+    },
+    "step-two": {
+      "heading": "Zoeken",
+      "description": "We zullen proactief namens jou optreden. Dit omvat het spreken met bedrijven die jouw ambities delen en het verkennen van mogelijkheden op basis van wat jij ons hebt verteld."
+    },
+    "step-three": {
+      "heading": "Sollicitatiegesprek",
+      "description": "Onze focus ligt nu op het sollicitatieproces. We bereiden je voor op online of persoonlijke ontmoetingen. We geven ook feedback en beantwoorden al jouw vragen."
+    },
+    "step-four": {
+      "heading": "Aanbod & onderhandeling",
+      "description": "We zullen helpen bij het onderhandelingsproces en ervoor zorgen dat alles zo soepel mogelijk verloopt. Ons doel is dat je een duidelijke route hebt naar jouw nieuwe rol."
+    },
+    "step-five": {
+      "heading": "Inwerken",
+      "description": "Het inwerkproces is cruciaal. We maken het naadloos door jouw opzegtermijn te begeleiden, eventuele obstakels weg te nemen en te werken in overeenstemming met jouw behoeften."
+    },
+    "step-six": {
+      "heading": "Inbedding",
+      "description": "De reis met Venturi eindigt hier niet. We zijn er zolang je ons nodig hebt. We zorgen ervoor dat jouw nieuwe rol bij je past en houden regelmatig contact."
+    }
+  },
+  "explore-your-next": {
+    "heading": "Ontdek je volgende hoofdstuk met        <span class=\" text-primary\">Venturi</span>",
+    "main-heading": "<p>Ik ben een <span class=\"text-primary lg:text-white\">kandidaat</span></p>",
+    "description": "Neem contact met ons op over de volgende stap in jouw carrière en ontsteek jouw succes.",
+    "btn-text": "NEEM CONTACT OP +"
+  },
+  "our-clients": {
+    "heading": "<span class=\"text-input/50\">Onze</span><br />klanten",
+    "description": "<p>We zijn gevestigd in het VK, de VS, Duitsland en Nederland, maar onze klanten zijn over de hele wereld te vinden. De bedrijven waarmee we werken beslaan meerdere sectoren en industrieën. Wat hen verbindt – of het nu een wereldwijd B2C-merk is of een diepgaande tech-startup – is de behoefte aan uitzonderlijk talent.</p>",
+    "btn-text": "MEER ONTDEKKEN +"
+  }
+}

@@ -1,3 +1,4 @@
+import { getPageData } from "@/actions/Getdata";
 import EmployeeRefral from "@/components/EmployeRefrel";
 import ExploreNext from "@/components/ExploreNext";
 import JoinUsBanner from "@/components/JoinUsBanner";
@@ -5,33 +6,30 @@ import OurBenifit from "@/components/OurBenifits";
 import TabsWrapper from "@/components/TabsWraper";
 import TrendingJobsWrapper from "@/components/TrendingJobsWrapper";
 
-export default function Page() {
+export default async function Page() {
+  let pageData;
+  try {
+    pageData = await getPageData({ pageName: "joinus" });
+  } catch (error) {
+    console.log(error);
+  }
   return (
     <div>
-      <JoinUsBanner />
+      <JoinUsBanner data={(pageData && pageData["joinus-banner"]) ?? {}} />
 
       <ExploreNext
-        heading="LIFE AT VENTURI"
-        heading2={
-          <>
-            An <span className="max-lg:text-primary">inclusive,caring </span>
-            team
-          </>
-        }
-        text={
-          <>
-            People thrive when they feel supported, looked after and listened
-            to. That&apos;s what you can expect at Venturi. Our people are
-            everything. So we do everything possible to help them be their best.
-            Our culture matters to us. It&apos;s what sets us apart.
-          </>
-        }
+        heading={pageData && pageData["explore-next"].heading}
+        heading2={pageData && pageData["explore-next"]["main-heading"]}
+        text={pageData && pageData["explore-next"].description}
+        buttonText={pageData && pageData["explore-next"]["btn-text"]}
       />
       <TabsWrapper />
-      <OurBenifit />
+      <OurBenifit data={(pageData && pageData["our-benifits"]) ?? {}} />
 
       <TrendingJobsWrapper isInternal label="Jobs at Venturi" />
-      <EmployeeRefral />
+      <EmployeeRefral
+        data={(pageData && pageData["employee-refrel-scheme"]) ?? {}}
+      />
     </div>
   );
 }

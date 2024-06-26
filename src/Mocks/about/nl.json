@@ -1,0 +1,39 @@
+{
+  "about-banner": {
+    "main-heading": " Ons <br /><span class=\"text-primary\"> Verhaal </span>",
+    "sub-heading": "Over Venturi",
+    "description": "Onze naam is geen toeval. Het gaat terug naar het 18e-eeuwse Italië en een natuurkundige genaamd Giovanni Battista Venturi. Giovanni ontdekte dat vloeistof in een pijpleiding sneller stroomt en met minder druk wanneer het door smalle secties van de pijp reist. Het Venturi-effect heeft talloze technische prestaties geïnspireerd en beïnvloedt hoe wij over recruitment denken…"
+  },
+
+  "our-story": {
+    "heading": "Ons verhaal",
+    "main-heading": " De <span class=\" text-input\">evolutie</span> <br /> van Venturi",
+    "description": {
+      "part-one": " Wij geloven dat wanneer je de druk in je bedrijf vermindert, zoals de druk van onderbezetting, je snel kunt bewegen. Net als het Venturi-effect is onze aanpak om de steeds bredere talentenpool in de techsector te verkleinen tot de individuen die wij als beste beschouwen. Zij zijn degene die wij zoeken. Deze filosofie heeft vanaf het begin onze missie gedreven. Samen met een mensgerichte benadering is dit wat ons onderscheidt. <br /> <br /> Toen we begonnen, waren onze ambities eenvoudig – een geweldige plek om te werken en een geweldig bedrijf om mee samen te werken. In een drukke markt betekende dit streven naar excellentie en een obsessie met de ambities van anderen. Of dat nu de ambities zijn van onze klanten, kandidaten of onze eigen teams – zij zijn wat het meest voor ons telt.",
+      "part-two": " Maar we zijn niet gekomen waar we nu zijn door alleen in deze overtuiging te geloven. Onze aanpak is gebaseerd op ons diepgaand begrip van de techsector – van trends tot veranderende vaardigheden. Dit heeft ons geholpen om een snel en naadloos onboardingproces te creëren voor de bedrijven waarmee we samenwerken. Een proces dat de druk bij het inhuren verlicht en een grotere impact maakt. Het is geëvolueerd over meer dan 15 jaar en zal blijven evolueren naast het technologische landschap. <br /> <br /> Vandaag de dag blijven we trots onze klanten, kandidaten en ons eigen team ondersteunen. Door de jaren heen zijn we erkend door de industrie, hebben we talrijke prijzen gewonnen en hebben we een gerespecteerde reputatie in ons vakgebied opgebouwd. Dit is een testament aan onze mensen en de zorg en passie die zij hebben voor wat we doen. Zij maken het verschil."
+    },
+    "btn-text": "Doe mee +"
+  },
+  "our-sectors": {
+    "heading": "Onze Sectoren",
+    "main-heading": "Bekijk onze gebieden van <span class=\"text-[#9E76E9]\">expertise</span>",
+    "sector-one": {
+      "name": "Data & Analytics",
+      "description": "<p>In de hedendaagse data-rijke techomgeving is het hebben van detailgerichte denkers die grote datasets kunnen ontrafelen en waardevolle inzichten kunnen produceren essentieel. Hoewel de behoefte aan data-expertise altijd aanwezig is, verandert het landschap voortdurend – met nieuwe en geavanceerde manieren om intel te gebruiken, te beheren en te benaderen.<br /><br />We weten dat data je bedrijf een duidelijk en competitief voordeel kan geven. We weten ook dat je de juiste mensen nodig hebt om de punten te verbinden en deze intel te gebruiken. Dat betekent experts die up-to-date zijn met de nieuwste technologie, regelgeving en data-verzamelingstechnieken – of dat nu consumentendata van je CRM of business intelligence is.<br /><br />Van datawetenschappers en -ingenieurs tot business intelligence-analisten, wij werken met een divers scala aan data & analytics-talent. En omdat we het landschap grondig kennen, kunnen we je helpen de individuen te identificeren die nodig zijn om je plannen uit te voeren.</p>"
+    },
+    "sector-two": {
+      "name": "Software Engineering",
+      "description": "We maken gebruik van onze uitgebreide kennis in software-engineering om bedrijven te helpen robuuste platforms en softwareproducten te ontwikkelen. Hooggekwalificeerde ingenieurs zijn cruciaal in dit proces, omdat zij zorgen voor de creatie van efficiënte, betrouwbare en schaalbare oplossingen. Zij brengen expertise in de nieuwste technologieën en best practices, wat leidt tot innovatieve en hoogwaardige software die voldoet aan de behoeften van het bedrijf. Onze ingenieurs excelleren in probleemoplossing, optimalisatie van prestaties en beveiliging, terwijl ze een gebruikersgerichte aanpak behouden. Door topingenieurs in je team te hebben, kun je superieure functionaliteit, snellere ontwikkelingscycli en een concurrentievoordeel in de markt bereiken. Onze inzet is om je bedrijf te versterken met deze voordelen door middel van uitzonderlijke softwareoplossingen, waardoor je langdurig succes en groei wordt gegarandeerd."
+    },
+    "sector-three": {
+      "name": "ERP & CRM",
+      "description": "We zijn gepassioneerd over het helpen van bedrijven bij het implementeren van ERP-systemen, omdat we uit de eerste hand zien hoe transformatief ze kunnen zijn. ERP-systemen stroomlijnen processen en verminderen handmatige taken, wat leidt tot verbeterde efficiëntie. Ze integreren informatie over afdelingen heen, bieden een enkele bron van waarheid voor betere besluitvorming en bieden realtime-inzichten voor nauwkeurige voorspellingen. Bovendien optimaliseren ERP-systemen het resourcebeheer, ondersteunen ze schaalbaarheid voor bedrijfsuitbreiding, zorgen ze voor naleving van regelgeving en verbeteren ze de klantenservice met betere ordernauwkeurigheid en snellere reactietijden. We zijn toegewijd aan het brengen van deze krachtige voordelen naar onze klanten, waardoor hun succes en groei wordt gedreven."
+    }
+  },
+
+  "our-clients": {
+    "heading": "<span class=\"text-input/50\">Onze</span><br />klanten",
+    "description": "<p>We zijn gevestigd in het VK, de VS, Duitsland en Nederland, maar onze klanten zijn overal ter wereld te vinden. De bedrijven waarmee we werken beslaan meerdere sectoren en industrieën. Wat hen allemaal verbindt – of het nu een wereldwijd B2C-merk of een deep tech-startup is – is de behoefte aan uitzonderlijk talent.</p>",
+    "btn-text": "ONTDEK MEER +"
+  }
+}

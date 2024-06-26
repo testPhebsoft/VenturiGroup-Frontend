@@ -1,0 +1,44 @@
+{
+  "joinus-banner": {
+    "main-heading": "<p> Join the <br />                  <span class=\"text-primary\"> Venturi </span> story</p>",
+
+    "description": "People are the lifeblood of what we do. We&apos;re                    constantly looking for ambitious individuals who share our                    values and believe in our mission. ",
+    "sub-heading": " Interested in <span class=\"text-input\"> joining</span>?",
+    "description-one": "  If you&apos;re passionate about connecting great minds and igniting          success, you belong here. In a thriving, inclusive environment that          puts people first. ",
+    "description-two": "     In return you&apos;ll have access to health & wellbeing support,          personal development guidance and training plans. Everything you need          to be the best version of yourself. ",
+    "btn-text": "FIND OUT MORE +"
+  },
+
+  "explore-next": {
+    "heading": "LIFE AT VENTURI",
+    "main-heading": "<p> An <span class=\"max-lg:text-primary\">inclusive,caring </span>            team</p>",
+    "description": "People thrive when they feel supported, looked after and listened            to. That&apos;s what you can expect at Venturi. Our people are            everything. So we do everything possible to help them be their best.            Our culture matters to us. It&apos;s what sets us apart.",
+    "btn-text": "MAKE THE LEAP +"
+  },
+  "our-benifits": {
+    "heading": "Our <span class=\" text-input \"> benefits</span>",
+    "content": {
+      "0": "UNCAPPED COMMISSION",
+      "1": "Workplace pension",
+      "2": "Incentives",
+      "3": "Team & company socials",
+      "4": "Perkbox",
+      "5": "Beer fridge Fridays",
+      "6": "Birthday off",
+      "7": "Extra days at Christmas",
+      "8": "Financial Wellbeing Workshops",
+      "9": "Online exercise classes",
+      "10": "Nutrition workshop",
+      "11": "Mental health practitioner",
+      "12": "Company mobile",
+      "13": "Charity day offs",
+      "14": "Length of service awards",
+      "15": "Billing milestone awards"
+    }
+  },
+  "employee-refrel-scheme": {
+    "heading": " Employee <span class=\"text-input/50\"> referral</span> scheme",
+    "description": "If you&apos;re passionate about connecting great minds and igniting          success, you belong here. In a thriving, inclusive environment that          puts people first",
+    "btn-text": "contact us +"
+  }
+}

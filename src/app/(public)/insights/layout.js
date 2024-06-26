@@ -1,8 +1,16 @@
-import { getCategories } from "@/actions/Getdata";
+import { getCategories, getPageData } from "@/actions/Getdata";
 import { InsightsNavs } from "./InsightsNavs";
 
 export default async function Layout({ children }) {
   let res;
+
+  let pageData;
+  try {
+    pageData = await getPageData({ pageName: "insights" });
+    console.log(pageData);
+  } catch (error) {
+    console.log(error);
+  }
 
   try {
     res = await getCategories();
@@ -12,7 +20,12 @@ export default async function Layout({ children }) {
 
   return (
     <>
-      {res && res.length !== 0 && <InsightsNavs categories={res} />}
+      {res && res.length !== 0 && (
+        <InsightsNavs
+          data={(pageData && pageData["main-heading"]) ?? {}}
+          categories={res}
+        />
+      )}
       {children}
     </>
   );

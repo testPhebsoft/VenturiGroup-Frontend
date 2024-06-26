@@ -78,14 +78,14 @@ export default async function OurClients({ data }) {
                 ></h3>
               )}
               {data && (
-                <p
+                <div
                   dangerouslySetInnerHTML={{
                     __html:
                       data["description"] ??
                       " <p>   We&apos;re based in the UK, US, Germany and the Netherlands, but    our clients can be found all over the world. The businesses we    work with span multiple sectors and industries. What connects    all of them – be it a global B2C brand or a deep tech startup –    is the need for exceptional talent.  </p>",
                   }}
                   className=" w-full"
-                ></p>
+                ></div>
               )}
               {data && (
                 <Link

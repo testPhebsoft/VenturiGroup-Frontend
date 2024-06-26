@@ -1,3 +1,4 @@
+import { getPageData } from "@/actions/Getdata";
 import AboutBanner from "@/components/AboutBanner";
 import BringUsOn from "@/components/BringUsOn";
 import Evolution from "@/components/Evolution";
@@ -16,13 +17,20 @@ function sleep(delay) {
   return new Promise((resolve) => setTimeout(resolve, delay));
 }
 export default async function Home() {
+  let pageData;
+  try {
+    pageData = await getPageData({ pageName: "about" });
+  } catch (error) {
+    console.log(error);
+  }
+
   return (
     <main>
-      <AboutBanner />
-      <Evolution />
+      <AboutBanner data={(pageData && pageData["about-banner"]) ?? {}} />
+      <Evolution data={(pageData && pageData["our-story"]) ?? {}} />
 
       <OurTeamsWrapper />
-      <OurSector />
+      <OurSector data={(pageData && pageData["our-sectors"]) ?? {}} />
       <OurTeamsWrapper
         isGlobal
         heading={
@@ -35,7 +43,7 @@ export default async function Home() {
         }
       />
 
-      <OurClients />
+      <OurClients data={(pageData && pageData["our-clients"]) ?? {}} />
       {/* <Medals /> */}
     </main>
   );

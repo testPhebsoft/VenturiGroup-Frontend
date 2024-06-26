@@ -1,0 +1,51 @@
+{
+  "banner": {
+    "main-heading": "Dein          <span class=\"text-primary\"> Talent</span>,<br />          <span class=\" max-md:hidden\">&nbsp;&nbsp;</span> Unsere          <span className=\"text-primary\"> Verbindungen</span>",
+    "sub-heading": "Unsere Mission ist es, großartige Köpfe zu verbinden und Erfolge anzustoßen.",
+    "description": "Das bedeutet, dich in eine Rolle zu bringen, in der du ein Katalysator sein kannst – der Funke, der Fortschritt bringt. Unser Ansatz ist zu hören. Wirklich zu hören. Deine Bedürfnisse, Ambitionen und das, was dich auszeichnet. Unser Ziel ist es, dass du dich gehört, gestärkt und energiegeladen fühlst.",
+    "btn-text": "MEHR ERFAHREN +"
+  },
+  "people-first": {
+    "heading": "Den <span class=\"text-input\">Menschen</span> an erster Stelle",
+    "description": "<p>Dank unserer langjährigen Erfahrung, unserem exzellenten Ruf und unserem Marktverständnis kannst du darauf vertrauen, dass wir dir echte Karriereberatung und fortlaufende Unterstützung bieten, wann immer du sie benötigst.</p><p>Wir schätzen die Individualität jedes Kandidaten. Wir behandeln dich niemals als eine Nummer – so möchten wir selbst nicht behandelt werden. Um dein Vertrauen und Respekt zu gewinnen, müssen wir mit Integrität und Ehrlichkeit handeln.</p>"
+  },
+  "recruitment-steps": {
+    "heading": "Die Rekrutierungsschritte",
+    "step-one": {
+      "heading": "Einführung",
+      "description": "Ob du uns kontaktierst oder wir dich ansprechen, unser erster Schritt ist es, deine Ambitionen zu verstehen. Sag uns, wo du deine Zukunft siehst und wie wir helfen können."
+    },
+    "step-two": {
+      "heading": "Suche",
+      "description": "Wir werden proaktiv in deinem Namen arbeiten. Dies beinhaltet Gespräche mit Unternehmen, die deine Ambitionen teilen, und die Erkundung von Möglichkeiten basierend auf dem, was du uns gesagt hast."
+    },
+    "step-three": {
+      "heading": "Vorstellungsgespräch",
+      "description": "Unser Fokus liegt auf dem Bewerbungsprozess. Wir bereiten dich auf Online- oder persönliche Treffen vor und geben Feedback sowie beantworten deine Fragen."
+    },
+    "step-four": {
+      "heading": "Angebot & Verhandlung",
+      "description": "Wir unterstützen dich im Verhandlungsprozess und sorgen dafür, dass alles so reibungslos wie möglich verläuft. Unser Ziel ist es, dass du einen klaren Weg zu deiner neuen Rolle hast."
+    },
+    "step-five": {
+      "heading": "Onboarding",
+      "description": "Der Onboarding-Prozess ist entscheidend. Wir machen ihn nahtlos, indem wir deine Kündigungsfrist navigieren, Hindernisse beseitigen und deine Bedürfnisse berücksichtigen."
+    },
+    "step-six": {
+      "heading": "Einbetten",
+      "description": "Die Reise mit Venturi endet hier nicht. Wir sind so lange für dich da, wie du uns brauchst. Wir stellen sicher, dass deine neue Rolle zu dir passt und checken von Zeit zu Zeit bei dir ein."
+    }
+  },
+
+  "explore-your-next": {
+    "heading": "Erkunde dein nächstes Kapitel mit        <span class=\" text-primary\">Venturi</span>",
+    "main-heading": "<p>Ich bin ein <span class=\"text-primary lg:text-white\">Kandidat</span></p>",
+    "description": "Sprich mit uns darüber, den nächsten Schritt in deiner Karriere zu gehen und deinen Erfolg anzustoßen.",
+    "btn-text": "NIMM KONTAKT AUF +"
+  },
+  "our-clients": {
+    "heading": "<span class=\"text-input/50\">Unsere</span><br />Kunden",
+    "description": "<p>Wir sind in Großbritannien, den USA, Deutschland und den Niederlanden ansässig, aber unsere Kunden sind weltweit zu finden. Die Unternehmen, mit denen wir zusammenarbeiten, kommen aus verschiedenen Branchen und Industrien. Was sie alle verbindet – sei es eine globale B2C-Marke oder ein Deep-Tech-Startup – ist der Bedarf an außergewöhnlichen Talenten.</p>",
+    "btn-text": "MEHR ERFAHREN +"
+  }
+}
