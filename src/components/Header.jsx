@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 import { getLocations } from "@/actions/Getdata";
 import { Locations } from "./Locations";
 
-export default async function Header() {
+export default async function Header({ data }) {
   let locations;
   let LocationsData;
   try {
@@ -37,29 +37,31 @@ export default async function Header() {
           </Link>
         </div>
         <div className=" flex gap-8">
-          <ul className="max-[1070px]:hidden flex text-[clamp(14,2vw,18px)]  items-center font-AntarcticanMonoMedium gap-8  uppercase">
-            <Link className="hover:text-input/50" href={"/about"}>
-              {" "}
-              <li>About</li>
-            </Link>
-            <Link className="hover:text-input/50" href={"/join-us"}>
-              {" "}
-              <li>join us</li>
-            </Link>
-            <Link className="hover:text-input/50" href={"/insights"}>
-              {" "}
-              <li>insights</li>
-            </Link>
-            <Link
-              target="_blank"
-              tabIndex={0}
-              className="hover:text-input/50"
-              href={"https://jcdqujpmxoo.typeform.com/to/A1l2iv9l"}
-            >
-              {" "}
-              <li>contact</li>
-            </Link>
-          </ul>
+          {data && (
+            <ul className="max-[1070px]:hidden flex text-[clamp(14,2vw,18px)]  items-center font-AntarcticanMonoMedium gap-8  uppercase">
+              <Link className="hover:text-input/50" href={"/about"}>
+                {" "}
+                <li> {(data["links"] && data["links"]["1"]) ?? "About"}</li>
+              </Link>
+              <Link className="hover:text-input/50" href={"/join-us"}>
+                {" "}
+                <li>{(data["links"] && data["links"]["2"]) ?? "join us"}</li>
+              </Link>
+              <Link className="hover:text-input/50" href={"/insights"}>
+                {" "}
+                <li>{(data["links"] && data["links"]["3"]) ?? "insights"}</li>
+              </Link>
+              <Link
+                target="_blank"
+                tabIndex={0}
+                className="hover:text-input/50"
+                href={"https://jcdqujpmxoo.typeform.com/to/A1l2iv9l"}
+              >
+                {" "}
+                <li>{(data["links"] && data["links"]["4"]) ?? "contact"}</li>
+              </Link>
+            </ul>
+          )}
           <Link
             href={"/i-am-candidate"}
             className={cn(
@@ -67,8 +69,7 @@ export default async function Header() {
               "max-md:hidden"
             )}
           >
-            {" "}
-            I’m a candidate{" "}
+            {(data["links"] && data["links"]["5"]) ?? "I’m a candidate"}
           </Link>
           <Languages
             className={"max-sm:hidden"}
@@ -76,6 +77,7 @@ export default async function Header() {
           />
 
           <HeaderMenu
+            data={data}
             LocationsData={LocationsData && LocationsData}
             className={"min-[1070px]:hidden"}
           />

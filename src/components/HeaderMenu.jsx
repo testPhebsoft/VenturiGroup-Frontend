@@ -17,7 +17,7 @@ import Image from "next/image";
 import { Socials } from "./Socials";
 import { Locations } from "./Locations";
 
-export default function HeaderMenu({ LocationsData, ...props }) {
+export default function HeaderMenu({ data, LocationsData, ...props }) {
   return (
     <Sheet {...props}>
       <SheetTrigger className="min-[1070px]:hidden">
@@ -50,18 +50,18 @@ export default function HeaderMenu({ LocationsData, ...props }) {
             <Link className="hover:text-input/60" href={"/about"}>
               {" "}
               <SheetClose>
-                <li>About</li>{" "}
+                <li>{(data["links"] && data["links"]["1"]) ?? "About"}</li>{" "}
               </SheetClose>
             </Link>{" "}
             <Link className="hover:text-input/60" href={"/join-us"}>
               <SheetClose>
                 {" "}
-                <li>Join us</li>
+                <li>{(data["links"] && data["links"]["2"]) ?? "join us"}</li>
               </SheetClose>
             </Link>{" "}
             <Link className="hover:text-input/60" href={"/insights"}>
               <SheetClose>
-                <li>Insights</li>
+                <li>{(data["links"] && data["links"]["3"]) ?? "insights"}</li>
               </SheetClose>
             </Link>{" "}
             <Link
@@ -71,13 +71,15 @@ export default function HeaderMenu({ LocationsData, ...props }) {
               href={"https://jcdqujpmxoo.typeform.com/to/A1l2iv9l"}
             >
               <SheetClose>
-                <li>Contact</li>
+                <li>{(data["links"] && data["links"]["4"]) ?? "contact"}</li>
               </SheetClose>
             </Link>{" "}
             <Link className="hover:text-input/60" href={"/i-am-candidate"}>
               {" "}
               <SheetClose>
-                <li> I’m a candidate </li>
+                <li>
+                  {(data["links"] && data["links"]["5"]) ?? "I’m a candidate"}
+                </li>
               </SheetClose>
             </Link>{" "}
             <Socials className="flex gap-5 items-center mt-[5vh] " />

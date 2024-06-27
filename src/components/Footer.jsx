@@ -5,6 +5,7 @@ import { Socials } from "./Socials";
 import { getCodeServer } from "@/lib/serverUtils/getCode";
 
 export default async function Footer({
+  staticData,
   data = [
     {
       city: "manchester",
@@ -37,20 +38,29 @@ export default async function Footer({
         <div className="flex flex-wrap lg:justify-between justify-center gap-y-10 ">
           <div className=" w-full flex flex-col max-lg:text-center max-lg:items-center max-w-[clamp(191px,2vw,235px)]">
             <p className=" font-AntarcticanMonoSemiBold text-primary uppercase">
-              Links
+              {(staticData["Headings"] && staticData["Headings"]["1"]) ??
+                "Links"}
             </p>
             <ul className=" font-ArticulateMedium mt-10 flex flex-col gap-4">
               <Link className="hover:text-input/60" href={"/about"}>
                 {" "}
-                <li>About</li>
+                <li>
+                  {(staticData["links"] && staticData["links"]["1"]) ?? "About"}
+                </li>
               </Link>
               <Link className="hover:text-input/60" href={"/join-us"}>
                 {" "}
-                <li>Join us</li>
+                <li>
+                  {(staticData["links"] && staticData["links"]["2"]) ??
+                    "Join us"}
+                </li>
               </Link>
               <Link className="hover:text-input/60" href={"/insights"}>
                 {" "}
-                <li>Insights</li>
+                <li>
+                  {(staticData["links"] && staticData["links"]["3"]) ??
+                    "Insights"}
+                </li>
               </Link>
               <Link
                 target="_blank"
@@ -59,11 +69,17 @@ export default async function Footer({
                 href={"https://jcdqujpmxoo.typeform.com/to/A1l2iv9l"}
               >
                 {" "}
-                <li>Contact</li>
+                <li>
+                  {(staticData["links"] && staticData["links"]["4"]) ??
+                    "Contact"}
+                </li>
               </Link>
               <Link className="hover:text-input/60" href={"/i-am-candidate"}>
                 {" "}
-                <li>I’m a candidate</li>
+                <li>
+                  {(staticData["links"] && staticData["links"]["5"]) ??
+                    "I’m a candidate"}
+                </li>
               </Link>
             </ul>
           </div>
@@ -72,7 +88,9 @@ export default async function Footer({
           ))}
         </div>
         <div className="flex flex-col max-lg:items-center">
-          <p className="text-input mt-10">Follow us</p>
+          <p className="text-input mt-10">
+            {staticData["text"] ?? "Follow us"}
+          </p>
           <Socials className="mt-10 ">
             <div className="relative before:absolute before:block before:rounded-full before:size-8 before:-inset-[6px] before:bottom-[50%] size-5   before:bg-[#1A1B1D1A]  ">
               <Image className="  " alt="Instagram" fill src="/instagram.svg" />
@@ -102,13 +120,14 @@ export default async function Footer({
           </Socials>
           <div className=" mt-10 flex w-full max-lg:max-w-[250px]  justify-between gap-5 ">
             <Link className=" lg:hidden hover:text-input/60" href={"/cookies"}>
-              Cookies
+              {(staticData["links"] && staticData["links"]["6"]) ?? "Cookies"}
             </Link>
             <Link
               className="hover:text-input/60 lg:hidden"
               href={"/privacy-policy"}
             >
-              Privacy policy
+              {(staticData["links"] && staticData["links"]["7"]) ??
+                "Privacy policy"}
             </Link>
             {code === "DE" && (
               <Link

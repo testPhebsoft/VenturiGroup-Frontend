@@ -12,6 +12,16 @@ import deAboutData from "../Mocks/about/de.json";
 import nlAboutData from "../Mocks/about/nl.json";
 import engbAboutData from "../Mocks/about/en-gb.json";
 
+import enHeaderData from "../Mocks/header/en.json";
+import deHeaderData from "../Mocks/header/de.json";
+import nlHeaderData from "../Mocks/header/nl.json";
+import engbHeaderData from "../Mocks/header/en-gb.json";
+
+import enFooterData from "../Mocks/footer/en.json";
+import deFooterData from "../Mocks/footer/de.json";
+import nlFooterData from "../Mocks/footer/nl.json";
+import engbFooterData from "../Mocks/footer/en-gb.json";
+
 import enJoinusData from "../Mocks/joinus/en.json";
 import deJoinusData from "../Mocks/joinus/de.json";
 import nlJoinusData from "../Mocks/joinus/nl.json";
@@ -46,6 +56,36 @@ export async function getCategories() {
   }
 }
 
+export async function getHeaderData() {
+  const langCode = await getLangCode();
+  switch (langCode) {
+    case "en":
+      return enHeaderData;
+    case "de":
+      return deHeaderData;
+    case "nl":
+      return nlHeaderData;
+    case "en-gb":
+      return engbHeaderData;
+    default:
+      return enHeaderData;
+  }
+}
+export async function getFooterData() {
+  const langCode = await getLangCode();
+  switch (langCode) {
+    case "en":
+      return enFooterData;
+    case "de":
+      return deFooterData;
+    case "nl":
+      return nlFooterData;
+    case "en-gb":
+      return engbFooterData;
+    default:
+      return enFooterData;
+  }
+}
 export const getPostData = async function ({ slug }) {
   let config = {
     url: `${serverUrl}/posts/${slug}`,
