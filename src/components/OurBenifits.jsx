@@ -13,7 +13,7 @@ export default function OurBenifit({ data }) {
           className=" text-center font-[lust-text] mt-7 text-[clamp(24px,5vw,36px)] leading-[clamp(24px,5vw,36px)]  text-input/50 font-light"
         ></h2>
       )}
-      {data && (
+      {data && data["content"] && (
         <div className=" grid mt-10 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
           <Card text={data["content"]["0"]} />
           <Card

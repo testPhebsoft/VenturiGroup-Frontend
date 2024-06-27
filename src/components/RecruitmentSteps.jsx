@@ -9,7 +9,7 @@ export default function RecruitmentSteps({ data }) {
           {data["heading"] ?? "The recruitment steps"}
         </h2>
       )}
-      {data && (
+      {data && data["step-one"] && (
         <div
           style={{
             WebkitOverflowScrolling: "touch",

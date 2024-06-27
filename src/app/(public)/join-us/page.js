@@ -18,7 +18,9 @@ export default async function Page() {
       <JoinUsBanner data={(pageData && pageData["joinus-banner"]) ?? {}} />
 
       <ExploreNext
-        heading={pageData && pageData["explore-next"].heading}
+        heading={
+          (pageData && pageData["explore-next"]["heading"]) ?? "LIFE AT VENTURI"
+        }
         heading2={pageData && pageData["explore-next"]["main-heading"]}
         text={pageData && pageData["explore-next"].description}
         buttonText={pageData && pageData["explore-next"]["btn-text"]}
