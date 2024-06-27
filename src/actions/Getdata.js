@@ -1,7 +1,12 @@
 "use server";
 import { fetchDataFromApi } from "@/lib/fetchDataFromApi";
 import { cache } from "react";
-import { getCode, getCodeServer, getLangCode } from "@/lib/serverUtils/getCode";
+import {
+  getCode,
+  getCodeServer,
+  getLangCode,
+  getLangCodeServer,
+} from "@/lib/serverUtils/getCode";
 import endata from "../Mocks/home/en.json";
 import dedata from "../Mocks/home/de.json";
 import nldata from "../Mocks/home/nl.json";
@@ -57,7 +62,7 @@ export async function getCategories() {
 }
 
 export async function getHeaderData() {
-  const langCode = await getLangCode();
+  const langCode = await getLangCodeServer();
   switch (langCode) {
     case "en":
       return enHeaderData;
@@ -72,7 +77,7 @@ export async function getHeaderData() {
   }
 }
 export async function getFooterData() {
-  const langCode = await getLangCode();
+  const langCode = await getLangCodeServer();
   switch (langCode) {
     case "en":
       return enFooterData;
@@ -179,7 +184,7 @@ export async function Name() {
 }
 
 export async function getPageData({ pageName } = { pageName: "home" }) {
-  let langCode = await getLangCode();
+  let langCode = await getLangCodeServer();
   switch (langCode) {
     case "en": {
       switch (pageName) {
