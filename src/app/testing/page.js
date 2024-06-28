@@ -1,5 +1,7 @@
-import { Suspense } from "react";
-import { headers } from "next/headers";
+"use client";
+import { Suspense, useEffect } from "react";
+// import { headers } from "next/headers";
+import { getCode } from "@/lib/serverUtils/getCode";
 
 function normalizeIPv6toIPv4(ipv6) {
   // Check if the address is in the IPv4-mapped IPv6 format
@@ -27,9 +29,8 @@ function IP() {
 }
 
 export default function Page() {
-  return (
-    <Suspense fallback={null}>
-      <IP />
-    </Suspense>
-  );
+  useEffect(() => {
+    getCode();
+  }, []);
+  return <Suspense fallback={null}>{/* <IP /> */}</Suspense>;
 }

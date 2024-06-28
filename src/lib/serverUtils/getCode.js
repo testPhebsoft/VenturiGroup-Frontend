@@ -10,8 +10,7 @@ export const getCode = async () => {
 
   if (forwardedFor) {
     ip = normalizeIPv6toIPv4(forwardedFor);
-
-    return forwardedFor.split(",")[0] ?? FALLBACK_IP_ADDRESS;
+    // ip = "206.81.17.253";
   }
 
   let code = await getCooKies("selectedLocationCode");
@@ -21,12 +20,17 @@ export const getCode = async () => {
     code = code.value;
   } else {
     if (ip) {
+      console.log("inside ip ");
       try {
-        let data = await fetch(`https://api.country.is/?${ip}`);
+        console.log(`https://api.country.is/${ip}`);
+        let data = await fetch(`https://api.country.is/${ip}`);
         let incomingCountry = (await data.json()).country;
-
-        if (["GB", "UK", "DE", "Nl"].includes(incomingCountry)) {
-          code = (await data.json()).country;
+        console.log(ip, incomingCountry);
+        if (
+          ["GB", "UK", "DE", "Nl"].filter((cu) => cu == incomingCountry)
+            .length !== 0
+        ) {
+          code = incomingCountry;
           setCookies("selectedLocationCode", code);
         } else {
           throw "country unavailbale";
