@@ -29,11 +29,8 @@ export function Languages({ data, className }) {
 
   const onChange = (value) => {
     if (value == "en" || value == "en-gb") {
-      document.documentElement.classList.add("notranslate");
       setSelectedLangLocationCode(value);
     } else {
-      document.documentElement.classList.remove("notranslate");
-
       setSelectedLangLocationCode(value);
     }
   };

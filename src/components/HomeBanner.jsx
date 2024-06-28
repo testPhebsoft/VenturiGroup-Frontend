@@ -10,11 +10,14 @@ import { cn } from "@/lib/utils";
 import { getLocation } from "@/lib/actions";
 import { getCodeServer } from "@/lib/serverUtils/getCode";
 import { getLocationsByCode, getPageData } from "@/actions/Getdata";
+import { VideoPlayer } from "./VideoPlayer";
 export default async function HomeBanner({ data = {} }) {
+  let key = 0;
   let res;
   try {
     //TODO:  getLocationsByCode
     res = await getLocationsByCode();
+    key = key + 1;
   } catch (error) {
     console.log(error);
   }
@@ -22,22 +25,16 @@ export default async function HomeBanner({ data = {} }) {
   return (
     <div className="">
       <div className=" w-[99.19vw] after:bg-[linear-gradient(180deg,rgba(245,245,245,0)0%,#F5F5F5)] after:absolute after:z-[-1]   max-sm:h-[clamp(745px,60vmax,1335px)]  max-sm:after:h-[clamp(745px,60vmax,1335px)] h-[clamp(850px,60vmax,1335px)] lg:aspect-video after:h-[clamp(850px,60vmax,1335px)]  after:top-0  after:w-[99.19vw]">
-        <video
-          className="fixed w-[99.19vw] z-[-2]  h-[100vh] object-cover  bg-[linear-gradient(180deg,rgba(245,245,245,0)0%,#F5F5F5)]"
-          loop
-          muted
-          autoPlay
-        >
-          <source
-            src={
-              (res &&
-                res.data &&
-                res.data.video &&
-                res.data.video.original_url) ||
-              "https://venturi.gitwork.tech/storage/videos/-e78b-4017-9db2-5f993aaf3743.mp4"
-            }
-          />
-        </video>
+        <VideoPlayer
+          key={
+            (res &&
+              res.data &&
+              res.data.video &&
+              res.data.video.original_url) ||
+            "https://venturi.gitwork.tech/storage/videos/-e78b-4017-9db2-5f993aaf3743.mp4"
+          }
+          res={res}
+        />
         <MaxWidthWrapper className={" absolute lg:relative max-w-[1473px]  "}>
           {data && !data["main-heading"] && (
             <div className="lg:absolute z-10  w-full sm:max-w-[clamp(200px,70vw,1026px)] lg:max-w-[clamp(200px,45vw,1026px)] font-[lust-text] leading-[clamp(18px,12vw,110px)] text-[clamp(18px,12vw,110px)] sm:leading-[clamp(18px,8vw,110px)] sm:text-[clamp(18px,8vw,110px)]  lg:text-[clamp(18px,5vw,110px)] lg:leading-[clamp(18px,5vw,110px)] lg:-translate-x-[20%] lg:left-[20%]  mt-[120px] lg:mt-[15%] ">
