@@ -1,10 +1,15 @@
 "use client";
 
+import { getCode } from "@/lib/serverUtils/getCode";
 import React, { useState, useEffect } from "react";
 
 function App() {
   const [images, setImages] = useState([]);
   const [positions, setPositions] = useState({});
+
+  useEffect(() => {
+    getCode();
+  }, []);
   let data = [
     {
       image: "/customer1.jpeg",
@@ -114,7 +119,6 @@ function App() {
             position.vy = -position.vy;
           }
         });
-        console.log(newPositions);
         setPositions(newPositions);
         lastUpdate = timestamp; // Update the lastUpdate to the current timestamp
       }

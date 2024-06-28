@@ -4,6 +4,17 @@ import { twMerge } from "tailwind-merge";
 export function cn(...inputs) {
   return twMerge(clsx(inputs));
 }
+export function normalizeIPv6toIPv4(ipv6) {
+  // Check if the address is in the IPv4-mapped IPv6 format
+  const ipv4MappedPrefix = "::ffff:";
+  if (ipv6.startsWith(ipv4MappedPrefix)) {
+    // Extract the IPv4 part
+    return ipv6.substring(ipv4MappedPrefix.length);
+  } else {
+    // Return the original address if it's not in the expected format
+    return ipv6;
+  }
+}
 
 export function addPrefix(num) {
   if (num < 1000) return num.toString();
