@@ -27,7 +27,7 @@ export const getCode = async () => {
         let incomingCountry = (await data.json()).country;
         console.log(ip, incomingCountry);
         if (
-          ["GB", "UK", "DE", "Nl"].filter((cu) => cu == incomingCountry)
+          ["GB", "UK", "DE", "NL"].filter((cu) => cu == incomingCountry)
             .length !== 0
         ) {
           code = incomingCountry;
