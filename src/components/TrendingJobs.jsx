@@ -16,6 +16,7 @@ import useTranslatexDraggable from "./hooks/useTranslatexDrag";
 import { addPrefix, convertToCapitalizedString } from "@/lib/utils";
 import Link from "next/link";
 import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
+import Image from "next/image";
 export default function TrendingJobs({
   isInternal,
   label = "Trending Jobs",
@@ -224,12 +225,15 @@ const JobCard = ({
   return (
     <div
       data-src={backgroundImage}
-      style={{
-        backgroundImage: `url(${backgroundImage})`,
-      }}
       {...props}
-      className={`mx-2   shrink-0 select-none inline-block snap-start w-[clamp(300px,30vw,367px)] aspect-[0.812] bg-cover bg-no-repeat border rounded-[24px] `}
+      className={`mx-2  relative  shrink-0 select-none inline-block snap-start w-[clamp(300px,30vw,367px)] aspect-[0.812] bg-cover bg-no-repeat border rounded-[24px] `}
     >
+      <Image
+        src={backgroundImage}
+        alt={backgroundImage}
+        fill
+        className="object-cover z-[-1] rounded-[24px]"
+      />
       <div className="p-10 py-10 flex flex-col h-full">
         {!isInternal && (
           <div className="text-white flex flex-col flex-1 justify-between pb-3 ">
