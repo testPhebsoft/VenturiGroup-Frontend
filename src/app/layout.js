@@ -1,4 +1,4 @@
-import { Inter } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import {
   ArticulateRegular,
@@ -52,6 +52,7 @@ export default function RootLayout({ children }) {
       >
         <InitStoreFunctions />
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );
