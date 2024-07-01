@@ -28,7 +28,10 @@ export default async function Page() {
       <TabsWrapper />
       <OurBenifit data={(pageData && pageData["our-benifits"]) ?? {}} />
 
-      <TrendingJobsWrapper isInternal label="Jobs at Venturi" />
+      <TrendingJobsWrapper
+        data={(pageData && pageData["trending-jobs"]) ?? {}}
+        isInternal
+      />
       <EmployeeRefral
         data={(pageData && pageData["employee-refrel-scheme"]) ?? {}}
       />

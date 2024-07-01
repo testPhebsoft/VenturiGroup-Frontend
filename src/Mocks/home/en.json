@@ -42,5 +42,20 @@
   "bringus-on": {
     "description": "Partner with us and find the people that make things happen. The visionaries who unlock growth. Experienced leaders with technical backgrounds. Disruptors looking for a new challenge. We&apos;ll help you uncover incredible talent, whatever your hiring plans.",
     "btn-text": "MAKE IT HAPPEN +"
+  },
+
+  "trending-jobs": {
+    "heading": "Trending Jobs",
+    "card": {
+      "location": "LOCATION",
+      "salary": "SALARY",
+      "job-contract": "Job contract",
+      "work-style": "Work style",
+      "company": "COMPANY",
+      "heading1": "job description",
+      "heading2": "job Requirements",
+      "btn-text": "quick apply",
+      "more-info": "more info +"
+    }
   }
 }

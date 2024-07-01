@@ -36,6 +36,7 @@
       "description": "The journey with Venturi doesn&apos;t stop there. We&apos;re here for as long as you need us. We&apos;ll make sure your new role is right for you and check in from time to time."
     }
   },
+
   "explore-your-next": {
     "heading": "Explore your next chapter with <span class=\" text-primary\">Venturi</span>",
     "main-heading": "<p>I&apos;m a <span class=\"text-primary lg:text-white\">candidate</span></p>",
@@ -46,5 +47,19 @@
     "heading": "<span class=\"text-input/50\">Our</span><br />clients",
     "description": "<p>We&apos;re based in the UK, US, Germany, and the Netherlands, but our clients can be found all over the world. The businesses we work with span multiple sectors and industries. What connects all of them – be it a global B2C brand or a deep tech startup – is the need for exceptional talent.</p>",
     "btn-text": "FIND OUT MORE +"
+  },
+  "trending-jobs": {
+    "heading": "Trending Jobs",
+    "card": {
+      "location": "LOCATION",
+      "salary": "SALARY",
+      "job-contract": "Job contract",
+      "work-style": "Work style",
+      "company": "COMPANY",
+      "heading1": "job description",
+      "heading2": "job Requirements",
+      "btn-text": "quick apply",
+      "more-info": "more info +"
+    }
   }
 }

@@ -8,6 +8,20 @@
     "btn-text": "MEHR ERFAHREN +"
   },
 
+  "trending-jobs": {
+    "heading": "Stellenangebote bei Venturi",
+    "card": {
+      "location": "STANDORT",
+      "salary": "GEHALT",
+      "job-contract": "Arbeitsvertrag",
+      "work-style": "Arbeitsstil",
+      "company": "UNTERNEHMEN",
+      "heading1": "Stellenbeschreibung",
+      "heading2": "Anforderungen",
+      "btn-text": "schnell bewerben",
+      "more-info": "mehr Infos +"
+    }
+  },
   "explore-next": {
     "heading": "DAS LEBEN BEI VENTURI",
     "main-heading": "<p> Ein <span class=\"max-lg:text-primary\">inklusives, fürsorgliches </span> Team</p>",

@@ -33,7 +33,9 @@ export default async function Page() {
         buttonText={pageData && pageData["explore-next"]["btn-text"]}
       />
       <OurClients data={(pageData && pageData["our-clients"]) ?? {}} />
-      <TrendingJobsWrapper />
+      <TrendingJobsWrapper
+        data={(pageData && pageData["trending-jobs"]) ?? {}}
+      />
 
       <BringUsOn data={(pageData && pageData["bringus-on"]) ?? {}} />
     </>

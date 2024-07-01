@@ -41,5 +41,19 @@
   "bringus-on": {
     "description": "Arbeite mit uns zusammen und finde die Leute, die Dinge möglich machen. Die Visionäre, die Wachstum freisetzen. Erfahrene Führungskräfte mit technischem Hintergrund. Disruptoren, die eine neue Herausforderung suchen. Wir helfen dir, unglaubliche Talente zu entdecken, egal welche Einstellungspläne du hast.",
     "btn-text": "MACH ES MÖGLICH +"
+  },
+  "trending-jobs": {
+    "heading": "Trendjobs",
+    "card": {
+      "location": "STANDORT",
+      "salary": "GEHALT",
+      "job-contract": "Arbeitsvertrag",
+      "work-style": "Arbeitsstil",
+      "company": "UNTERNEHMEN",
+      "heading1": "Stellenbeschreibung",
+      "heading2": "Anforderungen",
+      "btn-text": "schnell bewerben",
+      "more-info": "mehr Infos +"
+    }
   }
 }

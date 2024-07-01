@@ -15,6 +15,7 @@
       "heading": "Einführung",
       "description": "Ob du uns kontaktierst oder wir dich ansprechen, unser erster Schritt ist es, deine Ambitionen zu verstehen. Sag uns, wo du deine Zukunft siehst und wie wir helfen können."
     },
+
     "step-two": {
       "heading": "Suche",
       "description": "Wir werden proaktiv in deinem Namen arbeiten. Dies beinhaltet Gespräche mit Unternehmen, die deine Ambitionen teilen, und die Erkundung von Möglichkeiten basierend auf dem, was du uns gesagt hast."
@@ -47,5 +48,19 @@
     "heading": "<span class=\"text-input/50\">Unsere</span><br />Kunden",
     "description": "<p>Wir sind in Großbritannien, den USA, Deutschland und den Niederlanden ansässig, aber unsere Kunden sind weltweit zu finden. Die Unternehmen, mit denen wir zusammenarbeiten, kommen aus verschiedenen Branchen und Industrien. Was sie alle verbindet – sei es eine globale B2C-Marke oder ein Deep-Tech-Startup – ist der Bedarf an außergewöhnlichen Talenten.</p>",
     "btn-text": "MEHR ERFAHREN +"
+  },
+  "trending-jobs": {
+    "heading": "Trendjobs",
+    "card": {
+      "location": "STANDORT",
+      "salary": "GEHALT",
+      "job-contract": "Arbeitsvertrag",
+      "work-style": "Arbeitsstil",
+      "company": "UNTERNEHMEN",
+      "heading1": "Stellenbeschreibung",
+      "heading2": "Anforderungen",
+      "btn-text": "schnell bewerben",
+      "more-info": "mehr Infos +"
+    }
   }
 }

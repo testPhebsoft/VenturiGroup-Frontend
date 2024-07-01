@@ -18,6 +18,7 @@ import Link from "next/link";
 import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
 import Image from "next/image";
 export default function TrendingJobs({
+  staticData,
   isInternal,
   label = "Trending Jobs",
   data,
@@ -59,6 +60,7 @@ export default function TrendingJobs({
                   <CarouselItem className="basis-auto" key={index}>
                     {" "}
                     <JobCard
+                      data={staticData ?? {}}
                       id={value.id}
                       title={value.title}
                       company={value.company && value.company.company_name}
@@ -108,73 +110,6 @@ export default function TrendingJobs({
             ))}
           </CarouselContent>
         </Carousel>
-        {/* <div
-          ref={parentRef}
-          style={{
-            WebkitOverflowScrolling: "touch",
-            scrollbarWidth: "none",
-            msOverflowStyle: "none",
-            // mr-[calc(-50vw+51%)]
-          }}
-          className="   overflow-y-hidden mt-10 relative  overflow-hidden "
-        >
-          <div
-            style={style}
-            ref={scrollContainerRef}
-            className="flex w-fit gap-1"
-          >
-            {data.map((value, index) => (
-              <>
-                {value && (
-                  <JobCard
-                    id={value.id}
-                    title={value.title}
-                    company={value.company && value.company.company_name}
-                    salaryType={
-                      value.salary_type &&
-                      convertToCapitalizedString(value.salary_type)
-                    }
-                    employmentType={
-                      value.job_type &&
-                      convertToCapitalizedString(value.job_type)
-                    }
-                    salary={`${
-                      value.salary_min ? addPrefix(value.salary_min) : ""
-                    } - ${
-                      value.salary_max ? addPrefix(value.salary_max) : ""
-                    } `}
-                    description1={value?.job_description || ""}
-                    description2={value?.job_requirement || ""}
-                    toStart={value?.to_start || ""}
-                    toApply={value?.apply_at || ""}
-                    location={value?.location?.name || ""}
-                    backgroundImage={
-                      value.location && value.location.image
-                        ? value.location.image.url
-                        : ""
-                    }
-                    key={index}
-                    city={(value.city && value.city.name) || ""}
-                    curancySymbol={
-                      currencySymbols[value.location && value.location.code]
-                    }
-                    locationBase={
-                      (value.location_base &&
-                        convertToCapitalizedString(value.location_base)) ||
-                      ""
-                    }
-                    jobContract={
-                      (value.job_contract &&
-                        convertToCapitalizedString(value.job_contract)) ||
-                      ""
-                    }
-                    isInternal={isInternal}
-                  />
-                )}{" "}
-              </>
-            ))}
-          </div>
-        </div> */}
       </MaxWidthWrapper>
     </div>
   );
@@ -201,7 +136,7 @@ const JobCard = ({
   isInternal,
   jobContract,
   locationBase,
-
+  data,
   ...props
 }) => {
   const [open, setOpen] = useState(false);
@@ -301,7 +236,7 @@ const JobCard = ({
             onClick={() => setOpen(true)}
             className="uppercase cursor-pointer text-[clamp(12px,1.29vw,16px)] text-white font-AntarcticanMonoMedium"
           >
-            more info +
+            {(data["card"] && data["card"]["more-info"]) ?? "more info +"}
           </p>
           <Button
             onClick={() => setOpen(true)}
@@ -335,23 +270,40 @@ const JobCard = ({
             </h2>
             <div className=" mt-10   flex justify-between gap-5  max-md:flex-col w-full ">
               <div className=" flex flex-col w-full gap-5 ">
-                {company && renderProperties("company", company)}
+                {company &&
+                  renderProperties(
+                    (data["card"] && data["card"]["company"]) ?? "company",
+                    company
+                  )}
 
                 {(city || location) &&
-                  renderProperties("LOCATION", city + ", " + location)}
+                  renderProperties(
+                    (data["card"] && data["card"]["location"]) ?? "LOCATION",
+                    city + ", " + location
+                  )}
                 {salary &&
                   salaryType &&
                   renderProperties(
-                    "SALARY",
+                    (data["card"] && data["card"]["salary"]) ?? "SALARY",
                     `${curancySymbol}${salary}  ${salaryType.toLocaleLowerCase()} Dependent on experience`
                   )}
-                {jobContract && renderProperties("Job contract", jobContract)}
-                {locationBase && renderProperties("Work style", locationBase)}
+                {jobContract &&
+                  renderProperties(
+                    (data["card"] && data["card"]["job-contract"]) ??
+                      "Job contract",
+                    jobContract
+                  )}
+                {locationBase &&
+                  renderProperties(
+                    (data["card"] && data["card"]["work-style"]) ??
+                      "Work style",
+                    locationBase
+                  )}
               </div>
               <div className=" flex flex-col gap-8 w-full max-w-[629px]">
                 <div className=" flex flex-col gap-8 w-full ">
                   <h3 className=" capitalize  font-AntarcticanMonoMedium text-primary text-[clamp(12px,1.1vw,16px)]">
-                    {heading1}
+                    {(data["card"] && data["card"]["heading1"]) ?? heading1}
                   </h3>
                   <p
                     dangerouslySetInnerHTML={{ __html: description1 }}
@@ -360,7 +312,7 @@ const JobCard = ({
                 </div>
                 <div>
                   <h3 className="  capitalize  font-AntarcticanMonoMedium text-primary text-[clamp(12px,1.1vw,16px)]">
-                    {heading2}
+                    {(data["card"] && data["card"]["heading2"]) ?? heading2}
                   </h3>
                   <p
                     dangerouslySetInnerHTML={{ __html: description2 }}
@@ -382,7 +334,8 @@ const JobCard = ({
                     >
                       <p className="h-[clamp(12px,1.29vw,16px)] text-center  text-[clamp(12px,1.29vw,16px)]">
                         {" "}
-                        quick apply
+                        {(data["card"] && data["card"]["btn-text"]) ??
+                          "quick apply"}
                       </p>{" "}
                       {false && (
                         <svg

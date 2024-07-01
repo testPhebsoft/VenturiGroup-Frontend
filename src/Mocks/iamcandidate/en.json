@@ -9,6 +9,20 @@
     "heading": " Putting <span class=\"text-input\"> People</span> First",
     "description": "<p>            Thanks to our years of experience, our excellent reputation and our            knowledge of the market, you can trust us to offer you genuine            career advice and ongoing support whenever you may need it.          </p>          <p>            We value every candidate&apos;s individuality. We will never treat            you as just another number; that&apos;s not how we would want to be            treated. To gain your trust and respect, we must operate with            integrity and honesty.          </p>"
   },
+  "trending-jobs": {
+    "heading": "Trending Jobs",
+    "card": {
+      "location": "LOCATION",
+      "salary": "SALARY",
+      "job-contract": "Job contract",
+      "work-style": "Work style",
+      "company": "COMPANY",
+      "heading1": "job description",
+      "heading2": "job Requirements",
+      "btn-text": "quick apply",
+      "more-info": "more info +"
+    }
+  },
   "recruitment-steps": {
     "heading": "The recruitment steps",
     "step-one": {

@@ -41,5 +41,19 @@
   "bringus-on": {
     "description": "Werk met ons samen en vind de mensen die dingen laten gebeuren. De visionairs die groei ontgrendelen. Ervaren leiders met technische achtergronden. Disruptors op zoek naar een nieuwe uitdaging. We helpen u ongelofelijk talent te ontdekken, wat uw wervingsplannen ook zijn.",
     "btn-text": "LAAT HET GEBEUREN +"
+  },
+  "trending-jobs": {
+    "heading": "Trending Banen",
+    "card": {
+      "location": "LOCATIE",
+      "salary": "SALARIS",
+      "job-contract": "Arbeidscontract",
+      "work-style": "Werkstijl",
+      "company": "BEDRIJF",
+      "heading1": "Functieomschrijving",
+      "heading2": "Functie-eisen",
+      "btn-text": "snel solliciteren",
+      "more-info": "meer info +"
+    }
   }
 }

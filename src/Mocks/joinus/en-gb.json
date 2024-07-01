@@ -8,6 +8,20 @@
     "description-two": "     In return you'll have access to health & wellbeing support, personal development guidance and training plans. Everything you need to be the best version of yourself.",
     "btn-text": "FIND OUT MORE +"
   },
+  "trending-jobs": {
+    "heading": "Jobs at Venturi",
+    "card": {
+      "location": "LOCATION",
+      "salary": "SALARY",
+      "job-contract": "Job contract",
+      "work-style": "Work style",
+      "company": "COMPANY",
+      "heading1": "job description",
+      "heading2": "job Requirements",
+      "btn-text": "quick apply",
+      "more-info": "more info +"
+    }
+  },
 
   "explore-next": {
     "heading": "LIFE AT VENTURI",

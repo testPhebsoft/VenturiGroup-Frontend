@@ -11,6 +11,21 @@
     "description": "Our offering spans multiple tech disciplines, including data & analytics, ERP, CRM, and software engineering. We work with best-in-class talent and continually evolve with the tech landscape. If you need to speak to someone about your hiring plans, speak to us. We can tailor our support around your needs, ambitions, and timeframes – whatever the work requires.",
     "btn-text": "GET IN TOUCH +"
   },
+
+  "trending-jobs": {
+    "heading": "Trending Jobs",
+    "card": {
+      "location": "LOCATION",
+      "salary": "SALARY",
+      "job-contract": "Job contract",
+      "work-style": "Work style",
+      "company": "COMPANY",
+      "heading1": "job description",
+      "heading2": "job Requirements",
+      "btn-text": "quick apply",
+      "more-info": "more info +"
+    }
+  },
   "our-sectors": {
     "heading": "Our Sectors",
     "main-heading": "View our areas of <span class=\"text-[#9E76E9]\">expertise</span>",

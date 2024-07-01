@@ -1,9 +1,9 @@
 import { getJobs, getJobsInternal } from "@/actions/Getdata";
 import TrendingJobs from "./TrendingJobs";
 
-export default async function TrendingJobsWrapper({ isInternal, label }) {
+export default async function TrendingJobsWrapper({ data, isInternal, label }) {
   let res;
-
+  console.log("data here", data);
   try {
     if (!isInternal) res = await getJobs();
     if (isInternal) {
@@ -23,8 +23,9 @@ export default async function TrendingJobsWrapper({ isInternal, label }) {
     res.length !== 0 && (
       <TrendingJobs
         isInternal={isInternal}
+        staticData={data}
         data={res && res}
-        label={label && label}
+        label={data["heading"] ?? "Trending Jobs"}
       />
     )
   );

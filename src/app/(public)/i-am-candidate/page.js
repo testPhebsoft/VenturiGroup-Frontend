@@ -19,7 +19,9 @@ export default async function Page() {
       <CandidateBanner data={(pageData && pageData["banner"]) ?? {}} />
       <PuttingPeople data={(pageData && pageData["people-first"]) ?? {}} />
       <OurCustomers type="candidate" />
-      <TrendingJobsWrapper />
+      <TrendingJobsWrapper
+        data={(pageData && pageData["trending-jobs"]) ?? {}}
+      />
       <RecruitmentSteps
         data={(pageData && pageData["recruitment-steps"]) ?? {}}
       />

@@ -40,5 +40,20 @@
     "heading": " Medewerker <span class=\"text-input/50\"> verwijzings</span> regeling",
     "description": "Als je gepassioneerd bent over het verbinden van geweldige geesten en het ontsteken van succes, hoor je hier thuis. In een bloeiende, inclusieve omgeving waar mensen op de eerste plaats komen",
     "btn-text": "neem contact op +"
+  },
+
+  "trending-jobs": {
+    "heading": "Vacatures bij Venturi",
+    "card": {
+      "location": "LOCATIE",
+      "salary": "SALARIS",
+      "job-contract": "Arbeidscontract",
+      "work-style": "Werkstijl",
+      "company": "BEDRIJF",
+      "heading1": "Functieomschrijving",
+      "heading2": "Functie-eisen",
+      "btn-text": "snel solliciteren",
+      "more-info": "meer info +"
+    }
   }
 }
