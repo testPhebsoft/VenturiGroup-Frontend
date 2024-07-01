@@ -374,15 +374,13 @@ export async function getJobs() {
       temp.data = response.data.map((i) => {
         const { translations, location, ...i1 } = i;
 
-        const { DE } = translations.reduce((acc, t) => {
-          Object.keys(t).map((k) => {
-            if (deApiJobsdata[k]) {
-              t[k] = deApiJobsdata[k][t[k]];
-            }
-            acc[t.language] = t;
-          });
-          return acc;
-        }, {});
+        const DE = translations.filter((t) => t.language === "DE")[0];
+
+        Object.keys(DE).map((k) => {
+          if (deApiJobsdata[k]) {
+            t[k] = deApiJobsdata[k][t[k]];
+          }
+        });
         const { name, slug } = location.translations.DE;
 
         return { ...i1, ...DE, location: { ...location, name, slug } };

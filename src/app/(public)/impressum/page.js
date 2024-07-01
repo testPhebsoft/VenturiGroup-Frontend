@@ -3,96 +3,47 @@ import MaxWidthWrapper from "@/components/MaxWidthWraper";
 export default function Page() {
   return (
     <MaxWidthWrapper className={"mt-[150px]"}>
-      <h1 className="text-3xl font-bold mb-4">Impressum</h1>
-      <p className="text-gray-600">Last Updated: [Date]</p>
+      <h1 className="text-2xl font-bold mb-2">Impressum</h1>
 
       <div className="my-6">
-        <h2 className="text-2xl font-semibold mb-2">Angaben gemäß § 5 TMG:</h2>
-        {/* <p className="text-gray-800">
-          Max Mustermann
-          <br />
-          Musterstraße 123
-          <br />
-          12345 Musterstadt
-          <br />
-          Deutschland
-          <br />
-          Telefon: 01234 567890
-          <br />
-          E-Mail: max.mustermann@example.com
-          <br />
-        </p> */}
-        <p className="text-gray-800">
+        <div className="text-gray-800">
+          Angaben gemäß § 5 TMG <br />
           Venturi Germany GmbH
           <br />
           Graf-Adolf-Platz 15
           <br />
           40213 Düsseldorf
+          <div className="my-4  ">
+            <span className="font-bold "> Handelsregister:</span> HRB 95440
+            <br />
+            <span className="font-bold"> Registergericht:</span> Düsseldorf
+          </div>
+          <span className="font-bold"> Vertreten durch: </span>
           <br />
-          Handelsregister: HRB 95440
+          Bradley James Lamb <br />
+          Konstantin Minchin (Prokurist) <br />
           <br />
-          Registergericht: Düsseldorf
           <br />
-          Vertreten durch:Bradley James Lamb
+          <span className=" font-bold">Kontakt</span>
           <br />
-          Konstantin Minchin (Prokurist)
+          E-Mail:{" "}
+          <a
+            className="text-blue-400"
+            href={`mailto:enquiries@venturi-group.com`}
+          >
+            enquiries@venturi-group.com
+          </a>
           <br />
-          Kontakt
           <br />
-          Telefon: [Telefonnummer]
-          <br />
-          Umsatzsteuer-ID
+          <span className="font-bold">Umsatzsteuer-ID</span>
           <br />
           Umsatzsteuer-Identifikationsnummer gemäß § 27 a
-          Umsatzsteuergesetz:DE318606138
           <br />
-          E-Mail: enquiries@venturi-group.com
+          Umsatzsteuergesetz:
           <br />
-        </p>
-      </div>
-
-      <div className="my-6">
-        <h2 className="text-2xl font-semibold mb-2">Vertreten durch:</h2>
-        <p className="text-gray-800">Max Mustermann (Geschäftsführer)</p>
-      </div>
-
-      <div className="my-6">
-        <h2 className="text-2xl font-semibold mb-2">
-          Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:
-        </h2>
-        <p className="text-gray-800">
-          Max Mustermann
+          DE318606138
           <br />
-          Musterstraße 123
-          <br />
-          12345 Musterstadt
-          <br />
-          Deutschland
-        </p>
-      </div>
-
-      <div className="my-6">
-        <h2 className="text-2xl font-semibold mb-2">
-          Haftungsausschluss (Disclaimer):
-        </h2>
-        <p className="text-gray-800">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-          condimentum tortor vitae metus faucibus, id faucibus quam aliquam.
-          Aenean efficitur dapibus ipsum, non dapibus erat vehicula vel. Integer
-          nec varius felis, vitae rhoncus velit. Proin pretium felis sed
-          ullamcorper varius. Aenean ac dolor a eros bibendum vulputate.
-        </p>
-      </div>
-
-      <div className="my-6">
-        <h2 className="text-2xl font-semibold mb-2">Haftung für Links:</h2>
-        <p className="text-gray-800">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-          condimentum tortor vitae metus faucibus, id faucibus quam aliquam.
-          Aenean efficitur dapibus ipsum, non dapibus erat vehicula vel. Integer
-          nec varius felis, vitae rhoncus velit. Proin pretium felis sed
-          ullamcorper varius. Aenean ac dolor a eros bibendum vulputate.
-        </p>
+        </div>
       </div>
     </MaxWidthWrapper>
   );
