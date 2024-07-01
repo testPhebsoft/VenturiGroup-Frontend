@@ -28,6 +28,8 @@ export function addPrefix(num) {
 }
 
 export function convertToCapitalizedString(str) {
+  if (!str) return str;
+  console.log(str);
   return str
     .split("_")
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())

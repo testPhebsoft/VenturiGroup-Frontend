@@ -7,6 +7,11 @@ import {
   getLangCode,
   getLangCodeServer,
 } from "@/lib/serverUtils/getCode";
+import enApiJobsdata from "../Mocks/api/Jobs/en.json";
+import deApiJobsdata from "../Mocks/api/Jobs/de.json";
+import nlApiJobsdata from "../Mocks/api/Jobs/nl.json";
+import enApiJobsgbdata from "../Mocks/api/Jobs/en-gb.json";
+
 import endata from "../Mocks/home/en.json";
 import dedata from "../Mocks/home/de.json";
 import nldata from "../Mocks/home/nl.json";
@@ -367,13 +372,20 @@ export async function getJobs() {
       let temp = {};
 
       temp.data = response.data.map((i) => {
-        let i2 = {
-          ...i,
-          ...i.translations.filter((i) => i.language == "DE")[0],
-        };
-        i2.location.name = i2.location.translations.DE.name;
-        i2.location.slug = i2.location.translations.DE.slug;
-        return i2;
+        const { translations, location, ...i1 } = i;
+
+        const { DE } = translations.reduce((acc, t) => {
+          Object.keys(t).map((k) => {
+            if (deApiJobsdata[k]) {
+              t[k] = deApiJobsdata[k][t[k]];
+            }
+            acc[t.language] = t;
+          });
+          return acc;
+        }, {});
+        const { name, slug } = location.translations.DE;
+
+        return { ...i1, ...DE, location: { ...location, name, slug } };
       });
 
       return temp;

@@ -1,0 +1,16 @@
+{
+  "job_type": { "full_time": "vollzeit", "part_time": "teilzeit" },
+  "location_base": {
+    "on_site": "vor_ort",
+    "remote": "fern",
+    "hybrid": "hybrid"
+  },
+  "job_contract": { "permanent": "unbefristet", "contract": "befristet" },
+  "salary_type": {
+    "per_annum": "pro_jahr",
+    "per_hour": "pro_stunde",
+    "per_month": "pro_monat",
+    "per_year": "pro_jahr",
+    "per_day": "pro_tag"
+  }
+}
