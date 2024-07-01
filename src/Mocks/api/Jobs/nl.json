@@ -1,11 +1,11 @@
 {
-  "job_type": { "full_time": "full_time", "part_time": "full_time" },
+  "job_type": { "full_time": "voltijd", "part_time": "deeltijd" },
   "location_base": {
-    "on_site": "on_site",
-    "remote": "remote",
-    "hybrid": "hybrid"
+    "on_site": "op_locatie",
+    "remote": "op_afstand",
+    "hybrid": "hybride"
   },
-  "job_contract": { "permanent": "permanent", "contract": "contract" },
+  "job_contract": { "permanent": "vast", "contract": "contract" },
   "salary_type": {
     "per_annum": "per_jaar",
     "per_hour": "per_uur",
