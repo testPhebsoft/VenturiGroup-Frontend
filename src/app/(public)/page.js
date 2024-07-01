@@ -11,7 +11,7 @@ import TrendingJobsWrapper from "@/components/TrendingJobsWrapper";
 function sleep(delay) {
   return new Promise((resolve) => setTimeout(resolve, delay));
 }
-export default async function Home() {
+export default async function Page() {
   let pageData;
   try {
     pageData = await getPageData();
@@ -19,7 +19,7 @@ export default async function Home() {
     console.log(error);
   }
   return (
-    <main>
+    <>
       <HomeBanner data={(pageData && pageData["home-banner"]) ?? {}} />
       <TailoredRecuritment
         data={(pageData && pageData["tailored-recruitment"]) ?? {}}
@@ -36,6 +36,6 @@ export default async function Home() {
       <TrendingJobsWrapper />
 
       <BringUsOn data={(pageData && pageData["bringus-on"]) ?? {}} />
-    </main>
+    </>
   );
 }

@@ -25,7 +25,7 @@ export default async function Home() {
   }
 
   return (
-    <main>
+    <>
       <AboutBanner data={(pageData && pageData["about-banner"]) ?? {}} />
       <Evolution data={(pageData && pageData["our-story"]) ?? {}} />
 
@@ -45,6 +45,6 @@ export default async function Home() {
 
       <OurClients data={(pageData && pageData["our-clients"]) ?? {}} />
       {/* <Medals /> */}
-    </main>
+    </>
   );
 }

@@ -88,8 +88,8 @@ function RecruitmentStep({
   ),
 }) {
   return (
-    <div className=" whitespace-normal  relative max-md:inline-block snap-start  max-md:w-[90%]  rounded-3xl">
-      <div className="relative w-full  aspect-square  max-md:max-w-[90%]   md:max-w-[clamp(217px,43vw,408px)]  rounded-3xl">
+    <div className=" whitespace-normal  relative max-md:inline-block snap-start  max-md:w-[max(90%,350px)]  rounded-3xl">
+      <div className="relative w-full  aspect-square  max-md:max-w-[max(90%,320px)]   md:max-w-[clamp(250px,43vw,408px)]  rounded-3xl">
         <Image
           fill
           src={image}

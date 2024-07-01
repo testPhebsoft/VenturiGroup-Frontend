@@ -318,6 +318,7 @@ export async function getTabsLocation() {
 
 export async function getJobs() {
   const code = await getCodeServer();
+  const lang = await getLangCodeServer();
   console.log(code);
   let config = {
     url: `${serverUrl}/jobs?location=${code}`,
@@ -329,7 +330,54 @@ export async function getJobs() {
   };
   try {
     let response = await fetchDataFromApi(config);
-    return response;
+    if (lang == "en-gb") {
+      return response;
+    }
+    if (lang == "en") {
+      let temp = {};
+
+      temp.data = response.data.map((i) => {
+        let i2 = {
+          ...i,
+          ...i.translations.filter((i) => i.language == "US")[0],
+        };
+        i2.location.name = i2.location.translations.US.name;
+        i2.location.slug = i2.location.translations.US.slug;
+        return i2;
+      });
+
+      return temp;
+    }
+    if (lang == "nl") {
+      let temp = {};
+
+      temp.data = response.data.map((i) => {
+        let i2 = {
+          ...i,
+          ...i.translations.filter((i) => i.language == "NL")[0],
+        };
+        i2.location.name = i2.location.translations.NL.name;
+        i2.location.slug = i2.location.translations.NL.slug;
+        return i2;
+      });
+
+      return temp;
+    }
+    if (lang == "de") {
+      let temp = {};
+
+      temp.data = response.data.map((i) => {
+        let i2 = {
+          ...i,
+          ...i.translations.filter((i) => i.language == "DE")[0],
+        };
+        i2.location.name = i2.location.translations.DE.name;
+        i2.location.slug = i2.location.translations.DE.slug;
+        return i2;
+      });
+
+      return temp;
+    }
   } catch (e) {
     console.log("error at getJobs", e);
   }
