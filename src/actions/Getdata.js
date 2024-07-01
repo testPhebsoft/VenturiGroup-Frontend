@@ -342,13 +342,18 @@ export async function getJobs() {
       let temp = {};
 
       temp.data = response.data.map((i) => {
-        let i2 = {
-          ...i,
-          ...i.translations.filter((i) => i.language == "US")[0],
-        };
-        i2.location.name = i2.location.translations.US.name;
-        i2.location.slug = i2.location.translations.US.slug;
-        return i2;
+        const { translations, location, ...i1 } = i;
+
+        const US = translations.filter((t) => t.language === "US")[0];
+
+        Object.keys(US).map((k) => {
+          if (enApiJobsdata[k]) {
+            US[k] = enApiJobsdata[k][US[k]];
+          }
+        });
+        const { name, slug } = location.translations.US;
+
+        return { ...i1, ...US, location: { ...location, name, slug } };
       });
 
       return temp;
