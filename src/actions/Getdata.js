@@ -357,13 +357,17 @@ export async function getJobs() {
       let temp = {};
 
       temp.data = response.data.map((i) => {
-        let i2 = {
-          ...i,
-          ...i.translations.filter((i) => i.language == "NL")[0],
-        };
-        i2.location.name = i2.location.translations.NL.name;
-        i2.location.slug = i2.location.translations.NL.slug;
-        return i2;
+        const { translations, location, ...i1 } = i;
+
+        const NL = translations.filter((t) => t.language === "NL")[0];
+        Object.keys(NL).map((k) => {
+          if (nlApiJobsdata[k]) {
+            NL[k] = nlApiJobsdata[k][NL[k]];
+          }
+        });
+        const { name, slug } = location.translations.NL;
+
+        return { ...i1, ...NL, location: { ...location, name, slug } };
       });
 
       return temp;
@@ -378,7 +382,7 @@ export async function getJobs() {
 
         Object.keys(DE).map((k) => {
           if (deApiJobsdata[k]) {
-            t[k] = deApiJobsdata[k][t[k]];
+            DE[k] = deApiJobsdata[k][DE[k]];
           }
         });
         const { name, slug } = location.translations.DE;
